@@ -1,28 +1,13 @@
 'use client'
 
-import {
-  Button,
-  FormControl,
-  FormErrorMessage,
-  Input,
-  Heading,
-  InputLeftAddon,
-  InputGroup,
-  Stack
-} from '@chakra-ui/react'
-import { userTypes } from '@components/molecules/Forms/Register/Register.constants'
-import { specialties } from '@constants/index'
+import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@chakra-ui/react'
+import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
 import Image from 'next/image'
-import React, { ReactElement, useMemo, useState } from 'react'
-import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
+import React, { ReactElement, useState } from 'react'
+import { Controller, useForm, FieldErrors } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialtiesOptions = specialties.map((option) => ({
-  value: option.name,
-  label: option.name
-}))
-
-const userTypeOptions = userTypes.map((option) => ({
+const institutionTypeOptions = institutionTypes.map((option) => ({
   value: option.name,
   label: option.name
 }))
@@ -34,18 +19,17 @@ type ReactSelectOption = {
 }
 
 type FormData = {
-  type: ReactSelectOption | null
   firstname: string
   lastname: string
-  id: string
-  birthdate: string
   credential: string
   email: string
-  phone: string
   password: string
   repeatPassword: string
-  specialty: ReactSelectOption | null
   code: string
+  title: string
+  institution: string
+  institutionId: string
+  institutionType: ReactSelectOption | null
 }
 
 function RegisterHeader() {
@@ -77,11 +61,6 @@ export default function RegisterForm(): ReactElement {
 
   // --- Local state -----------------------------------------------------------
   const [step, setStep] = useState(1)
-
-  const typeField = useWatch({
-    control,
-    name: 'type'
-  })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -109,8 +88,6 @@ export default function RegisterForm(): ReactElement {
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
-
-  const type = useMemo(() => typeField?.value, [typeField])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -123,106 +100,57 @@ export default function RegisterForm(): ReactElement {
           >
             <RegisterHeader />
             <Heading as="h2" size="sm" mb={4} noOfLines={1}>
-              Datos personales
+              Datos de la institución
             </Heading>
             <Stack spacing={4} className="h-3/4 overflow-scroll">
+              <Input
+                id="institution"
+                placeholder="Nombre de la institución"
+                {...register('institution', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>
+                {errors?.institution && errors?.institution?.message}
+              </FormErrorMessage>
+              <Input
+                id="institutionId"
+                placeholder="RIF"
+                {...register('institutionId', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>
+                {errors?.institutionId && errors?.institutionId?.message}
+              </FormErrorMessage>
+              <Input
+                id="credential"
+                placeholder="Credenciales"
+                {...register('credential', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>
+                {errors?.credential && errors?.credential?.message}
+              </FormErrorMessage>
               <Controller
                 control={control}
-                name="type"
+                name="institutionType"
                 rules={{
                   required: 'Este campo es obligatorio'
                 }}
                 render={({ field }) => (
-                  <Select id="type" {...field} placeholder="Tipo" options={userTypeOptions} />
+                  <Select
+                    id="institutionType"
+                    {...field}
+                    placeholder="Tipo de institución"
+                    options={institutionTypeOptions}
+                  />
                 )}
               />
-              <FormErrorMessage>{errors?.type && errors?.type?.message}</FormErrorMessage>
-              <Input
-                id="firstname"
-                placeholder="Nombres"
-                {...register('firstname', {
-                  required: 'Este campo es obligatorio'
-                })}
-              />
-              <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
-              <Input
-                id="lastname"
-                placeholder="Apellidos"
-                {...register('lastname', {
-                  required: 'Este campo es obligatorio'
-                })}
-              />
-              <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
-              <Input
-                id="id"
-                placeholder="Cédula"
-                {...register('id', {
-                  required: 'Este campo es obligatorio'
-                })}
-              />
-              <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
-              <Input
-                id="birthdate"
-                type="date"
-                placeholder="Fecha de nacimiento"
-                {...register('birthdate', {
-                  required: 'Este campo es obligatorio'
-                })}
-              />
-              <FormErrorMessage>{errors?.birthdate && errors?.birthdate?.message}</FormErrorMessage>
-              {type === 'Médico' && (
-                <>
-                  <Input
-                    id="credential"
-                    placeholder="Credencial"
-                    {...register('credential', {
-                      required: 'Este campo es obligatorio'
-                    })}
-                  />
-                  <FormErrorMessage>
-                    {errors?.credential && errors?.credential?.message}
-                  </FormErrorMessage>
-                  <Controller
-                    control={control}
-                    name="specialty"
-                    rules={{
-                      required: 'Este campo es obligatorio'
-                    }}
-                    render={({ field }) => (
-                      <Select
-                        id="specialty"
-                        isMulti
-                        {...field}
-                        placeholder="Especialidad"
-                        options={specialtiesOptions}
-                      />
-                    )}
-                  />
-                  <FormErrorMessage>
-                    {errors?.specialty && errors?.specialty?.message}
-                  </FormErrorMessage>
-                </>
-              )}
-              <Input
-                id="email"
-                placeholder="Correo electrónico"
-                {...register('email', {
-                  required: 'Este campo es obligatorio'
-                })}
-              />
-              <FormErrorMessage>{errors?.email && errors?.email?.message}</FormErrorMessage>
-              <InputGroup>
-                <InputLeftAddon>+58</InputLeftAddon>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="Teléfono"
-                  {...register('phone', {
-                    required: 'Este campo es obligatorio'
-                  })}
-                />
-              </InputGroup>
-              <FormErrorMessage>{errors?.phone && errors?.phone?.message}</FormErrorMessage>
+              <FormErrorMessage>
+                {errors?.institutionType && errors?.institutionType?.message}
+              </FormErrorMessage>
             </Stack>
             <Button isLoading={isSubmitting} type="submit">
               Siguiente
@@ -238,29 +166,41 @@ export default function RegisterForm(): ReactElement {
           >
             <RegisterHeader />
             <Heading as="h2" size="sm" mb={4} noOfLines={1}>
-              Seguridad
+              Datos de administración
             </Heading>
             <Stack spacing={4} className="h-3/4 overflow-scroll">
               <Input
-                id="password"
-                type="password"
-                placeholder="Contraseña"
-                {...register('password', {
+                id="firstname"
+                placeholder="Nombre"
+                {...register('firstname', {
                   required: 'Este campo es obligatorio'
                 })}
               />
-              <FormErrorMessage>{errors?.password && errors?.password?.message}</FormErrorMessage>
+              <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
               <Input
-                id="repeatPassword"
-                type="password"
-                placeholder="Repetir contraseña"
-                {...register('repeatPassword', {
+                id="lastname"
+                placeholder="Apellido"
+                {...register('lastname', {
                   required: 'Este campo es obligatorio'
                 })}
               />
-              <FormErrorMessage>
-                {errors?.repeatPassword && errors?.repeatPassword?.message}
-              </FormErrorMessage>
+              <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
+              <Input
+                id="title"
+                placeholder="Cargo"
+                {...register('title', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.title && errors?.title?.message}</FormErrorMessage>
+              <Input
+                id="email"
+                placeholder="Correo electrónico"
+                {...register('email', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.email && errors?.email?.message}</FormErrorMessage>
             </Stack>
             <Button isLoading={isSubmitting} type="submit">
               Siguiente
@@ -289,7 +229,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.code && errors?.code?.message}</FormErrorMessage>
             </Stack>
             <Button isLoading={isSubmitting} type="submit">
-              {type === 'Institución' ? 'Registrar institución' : 'Registrarse'}
+              Registrar institución
             </Button>
           </FormControl>
         </form>

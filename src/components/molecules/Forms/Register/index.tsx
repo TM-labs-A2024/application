@@ -1,3 +1,4 @@
-import RegisterView from './Register'
+import RegisterForm from './Register'
+import RegisterInstitutionForm from './RegisterInstitution'
 
-export default RegisterView
+export { RegisterForm, RegisterInstitutionForm }

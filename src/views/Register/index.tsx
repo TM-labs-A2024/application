@@ -1,4 +1,4 @@
-import RegisterForm from '@components/molecules/Forms/Register'
+import { RegisterForm } from '@components/molecules/Forms/Register'
 import React from 'react'
 
 export default function RegisterView() {

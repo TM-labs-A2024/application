@@ -1,4 +1,4 @@
-export const playerTypes = [
+export const userTypes = [
   {
     id: 1,
     name: 'Médico'
@@ -6,10 +6,6 @@ export const playerTypes = [
   {
     id: 2,
     name: 'Paciente'
-  },
-  {
-    id: 3,
-    name: 'Institución'
   }
 ]
 
