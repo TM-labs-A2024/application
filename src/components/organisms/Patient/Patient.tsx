@@ -10,7 +10,8 @@ export default function Patient({
 }: {
   patient: {
     id: number
-    name: string
+    firstname: string
+    lastname: string
     birthdate: string
     email: string
     phone: string
@@ -46,7 +47,7 @@ export default function Patient({
       </div>
       <Stack spacing={1} mb={6}>
         <Heading as="h3" size="md" noOfLines={1}>
-          {patient.name}
+          {patient.firstname} {patient.lastname}
         </Heading>
         <Text>CI: {patient.id.toLocaleString('es-ES')}</Text>
       </Stack>
