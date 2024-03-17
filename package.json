@@ -13,10 +13,12 @@
     "eslint:format": "eslint src --fix"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "date-fns": "^3.5.0",
     "framer-motion": "^11.0.3",
     "next": "14.1.0",
     "react": "^18",

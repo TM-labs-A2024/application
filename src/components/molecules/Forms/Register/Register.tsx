@@ -11,13 +11,13 @@ import {
   Stack
 } from '@chakra-ui/react'
 import { userTypes } from '@components/molecules/Forms/Register/Register.constants'
-import { specialties } from '@constants/index'
+import { specialities } from '@constants/index'
 import Image from 'next/image'
 import React, { ReactElement, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialtiesOptions = specialties.map((option) => ({
+const specialitiesOptions = specialities.map((option: { name: string }) => ({
   value: option.name,
   label: option.name
 }))
@@ -58,7 +58,7 @@ function RegisterHeader() {
         height={80}
         className="mx-auto my-4 hidden md:block"
       />
-      <Heading as="h1" size="md" mb={4} noOfLines={1}>
+      <Heading as="h2" size="md" mb={4} noOfLines={1}>
         Registro
       </Heading>
     </>
@@ -194,7 +194,7 @@ export default function RegisterForm(): ReactElement {
                         isMulti
                         {...field}
                         placeholder="Especialidad"
-                        options={specialtiesOptions}
+                        options={specialitiesOptions}
                       />
                     )}
                   />

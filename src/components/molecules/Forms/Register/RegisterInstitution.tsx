@@ -42,7 +42,7 @@ function RegisterHeader() {
         height={80}
         className="mx-auto my-4 hidden md:block"
       />
-      <Heading as="h1" size="md" mb={4} noOfLines={1}>
+      <Heading as="h2" size="md" mb={4} noOfLines={1}>
         Registro
       </Heading>
     </>

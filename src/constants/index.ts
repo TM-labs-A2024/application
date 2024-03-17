@@ -1,3 +1,5 @@
-import { specialties } from './specialties'
+import { doctors } from './doctors'
+import { patient } from './patient'
+import { specialities } from './specialities'
 
-export { specialties }
+export { specialities, doctors, patient }

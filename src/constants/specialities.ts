@@ -1,4 +1,4 @@
-export const specialties = [
+export const specialities = [
   {
     id: 1,
     name: 'Alergología'
