@@ -13,7 +13,7 @@ export default function Specialities() {
   // --- END: Hooks ------------------------------------------------------------
 
   return (
-    <div className="mx-auto block h-screen w-screen overflow-hidden px-8 pt-8 lg:w-1/2">
+    <div className="mx-auto block h-screen w-screen overflow-hidden px-8 pb-56 pt-8 lg:w-1/2">
       <Image
         alt="logo"
         src="/static/images/logo-horizontal.png"
