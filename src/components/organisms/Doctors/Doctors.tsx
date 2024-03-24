@@ -1,5 +1,3 @@
-'use client'
-
 import { Heading } from '@chakra-ui/react'
 import DoctorList from '@components/molecules/DoctorsList/DoctorsList'
 import { doctors } from '@constants/index'

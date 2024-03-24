@@ -1,5 +1,3 @@
-'use client'
-
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
 import { specialities } from '@src/constants'

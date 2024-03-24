@@ -1,5 +1,3 @@
-'use client'
-
 import { specialities } from '@src/constants'
 import SpecialitiesSearchView from '@views/Specialities/Search'
 import React, { useCallback, useMemo, useState } from 'react'

@@ -1,5 +1,3 @@
-'use client'
-
 import { SearchIcon } from '@chakra-ui/icons'
 import { InputGroup, Input, InputLeftElement } from '@chakra-ui/react'
 import React from 'react'

@@ -1,4 +1,3 @@
-'use client'
 import { Text, Heading, Stack, Link } from '@chakra-ui/react'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'

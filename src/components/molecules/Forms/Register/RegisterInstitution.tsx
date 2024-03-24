@@ -1,5 +1,3 @@
-'use client'
-
 import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@chakra-ui/react'
 import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
 import Image from 'next/image'

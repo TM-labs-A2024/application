@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Text, Avatar } from '@chakra-ui/react'
 import React from 'react'
 

@@ -1,5 +1,3 @@
-'use client'
-
 import { Link } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'

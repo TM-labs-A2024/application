@@ -24,7 +24,9 @@
       "@app/*": ["./app/*"],
       "@views/*": ["./views/*"],
       "@constants/*": ["./constants/*"],
-      "@layouts/*": ["./layouts/*"]
+      "@layouts/*": ["./layouts/*"],
+      "@styles/*": ["./styles/*"],
+      "@providers/*": ["./providers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
