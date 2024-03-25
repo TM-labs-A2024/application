@@ -1,4 +1,5 @@
 import { Link } from '@chakra-ui/next-js'
+import { isIOS } from '@utils/index'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
@@ -16,7 +17,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="h-screen w-screen overflow-hidden">
       {children}
       <nav>
-        <ul className="fixed bottom-0 flex h-16 w-full flex-row justify-around">
+        <ul
+          className={`fixed ${isIOS() ? 'bottom-8' : 'bottom-0'} flex h-16 w-full flex-row justify-around`}
+        >
           <li
             className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/especialidades' ? 'border-b-4 border-black' : ''}`}
           >

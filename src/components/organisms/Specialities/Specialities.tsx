@@ -1,6 +1,7 @@
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
 import { specialities } from '@src/constants'
+import { isIOS } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
@@ -11,7 +12,9 @@ export default function Specialities() {
   // --- END: Hooks ------------------------------------------------------------
 
   return (
-    <div className="mx-auto block h-screen w-screen overflow-hidden px-8 pb-56 pt-8 lg:w-1/2">
+    <div
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pb-64 pt-20' : 'pb-56 pt-8'}`}
+    >
       <Image
         alt="logo"
         src="/static/images/logo-horizontal.png"

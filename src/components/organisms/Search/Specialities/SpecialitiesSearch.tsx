@@ -1,6 +1,7 @@
 import { Link } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
+import { isIOS } from '@utils/index'
 import NextLink from 'next/link'
 import React, { useEffect } from 'react'
 
@@ -41,7 +42,9 @@ export default function SpecialitiesSearch({
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className="mx-auto block h-screen w-screen overflow-hidden px-8 pt-8 lg:w-1/2">
+    <div
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+    >
       <div className="mb-8 flex flex-row items-center gap-4">
         <SearchInputComponent
           placeholder="Buscar especialidad"

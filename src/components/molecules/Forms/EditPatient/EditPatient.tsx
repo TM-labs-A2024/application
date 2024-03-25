@@ -11,6 +11,7 @@ import {
   IconButton,
   Text
 } from '@chakra-ui/react'
+import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement } from 'react'
@@ -69,7 +70,7 @@ export default function EditPatientForm({
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className="flex h-screen w-screen flex-col p-8 lg:px-96">
+    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
       <div className="mb-8 flex flex-row items-center justify-start gap-4">
         <IconButton
           size="xl"
@@ -93,7 +94,7 @@ export default function EditPatientForm({
           <Stack spacing={4} className="h-3/4 overflow-scroll">
             <Input
               id="firstname"
-              value={patient.firstname}
+              defaultValue={patient.firstname}
               placeholder="Nombres"
               {...register('firstname', {
                 required: 'Este campo es obligatorio'
@@ -102,7 +103,7 @@ export default function EditPatientForm({
             <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
             <Input
               id="lastname"
-              value={patient.lastname}
+              defaultValue={patient.lastname}
               placeholder="Apellidos"
               {...register('lastname', {
                 required: 'Este campo es obligatorio'
@@ -111,7 +112,7 @@ export default function EditPatientForm({
             <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
             <Input
               id="id"
-              value={patient.id}
+              defaultValue={patient.id}
               placeholder="Cédula"
               {...register('id', {
                 required: 'Este campo es obligatorio'
@@ -120,7 +121,7 @@ export default function EditPatientForm({
             <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
             <Input
               id="birthdate"
-              value={format(new Date(patient.birthdate), 'yyyy-MM-dd')}
+              defaultValue={format(new Date(patient.birthdate), 'yyyy-MM-dd')}
               type="date"
               placeholder="Fecha de nacimiento"
               {...register('birthdate', {
@@ -130,7 +131,7 @@ export default function EditPatientForm({
             <FormErrorMessage>{errors?.birthdate && errors?.birthdate?.message}</FormErrorMessage>
             <Input
               id="email"
-              value={patient.email}
+              defaultValue={patient.email}
               placeholder="Correo electrónico"
               {...register('email', {
                 required: 'Este campo es obligatorio'
@@ -141,7 +142,7 @@ export default function EditPatientForm({
               <InputLeftAddon>+58</InputLeftAddon>
               <Input
                 id="phone"
-                value={patient.phone}
+                defaultValue={patient.phone}
                 type="tel"
                 placeholder="Teléfono"
                 {...register('phone', {

@@ -1,12 +1,7 @@
-import PatientView from '@components/organisms/Patient'
 import { patient } from '@constants/index'
-import Layout from '@layouts/index'
+import PatientView from '@views/Patient'
 import React from 'react'
 
 export default function Patient() {
-  return (
-    <Layout>
-      <PatientView patient={patient} />
-    </Layout>
-  )
+  return <PatientView patient={patient} />
 }

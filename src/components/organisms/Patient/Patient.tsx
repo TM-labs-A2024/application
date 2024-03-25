@@ -1,4 +1,5 @@
 import { Text, Heading, Stack, Link } from '@chakra-ui/react'
+import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import NextLink from 'next/link'
@@ -35,7 +36,9 @@ export default function Patient({
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className="mx-auto block h-screen w-screen overflow-hidden px-8 pt-8 lg:w-1/2">
+    <div
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+    >
       <div className="mb-8 flex w-full flex-row justify-between">
         <Heading as="h2" size="md" noOfLines={1}>
           Perfil
