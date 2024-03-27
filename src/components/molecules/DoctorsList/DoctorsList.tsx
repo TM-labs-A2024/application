@@ -5,7 +5,15 @@ import React from 'react'
 export default function DoctorList({
   doctors
 }: {
-  doctors: { name: string; id: number; speciality: string }[]
+  doctors: {
+    id: number
+    firstname: string
+    lastname: string
+    birthdate: string
+    email: string
+    phone: string
+    speciality: string
+  }[]
 }) {
   return (
     <Stack divider={<StackDivider />} spacing="4" className="h-full overflow-scroll">

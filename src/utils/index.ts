@@ -1,3 +1,3 @@
-import { isWeb, isIOS, isAndroid } from './platform'
+import { isWeb, isIOS, isAndroid, isMobile } from './platform'
 
-export { isWeb, isIOS, isAndroid }
+export { isWeb, isIOS, isAndroid, isMobile }
