@@ -11,6 +11,7 @@ export default function DoctorView({
     birthdate: string
     email: string
     phone: string
+    speciality: string
   }
 }) {
   return <Doctor doctor={doctor} />

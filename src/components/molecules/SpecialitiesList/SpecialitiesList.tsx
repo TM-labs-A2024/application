@@ -18,7 +18,11 @@ export default function SpecialitiesList({
       )}
       <List spacing={3} className="h-full overflow-scroll">
         {specialities.map((speciality) => (
-          <Speciality name={speciality.name} key={`speciality-${speciality.id}`} />
+          <Speciality
+            name={speciality.name}
+            id={String(speciality.id)}
+            key={`speciality-${speciality.id}`}
+          />
         ))}
       </List>
     </Stack>
