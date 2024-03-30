@@ -5,7 +5,7 @@ import Sidebar from '@components/atoms/Sidebar'
 import { isIOS, isMobile } from '@utils/index'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 import Home from '../../public/static/icons/Home.svg'
 import Doctors from '../../public/static/icons/Medicos.svg'
@@ -17,13 +17,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
 
+  // --- Local state -----------------------------------------------------------
+  const [_window, setWindow] = useState({ screen: { availWidth: 999 } })
+  // --- END: Local state ------------------------------------------------------
+
+  // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    setWindow(window)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  // --- END: Side effects -----------------------------------------------------
+
   // --- Refs ------------------------------------------------------------------
   const btnRef = useRef<HTMLButtonElement>(null)
   // --- END: Refs -------------------------------------------------------------
 
   return (
     <div className="h-screen w-screen overflow-hidden">
-      {!isMobile() && (
+      {!isMobile(_window) && (
         <IconButton
           size="xl"
           fontSize="30px"
@@ -35,7 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       )}
       {children}
-      {isMobile() ? (
+      {isMobile(_window) ? (
         <nav>
           <ul
             className={`fixed ${isIOS() ? 'bottom-8' : 'bottom-0'} flex h-16 w-full flex-row justify-around`}

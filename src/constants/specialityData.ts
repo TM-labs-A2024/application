@@ -2,63 +2,63 @@ export const specialityData = {
   evolutions: [
     {
       id: 1,
-      type: 'Evolución',
+      type: 'Evolución 1',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 2,
-      type: 'Evolución',
+      type: 'Evolución 2',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 3,
-      type: 'Evolución',
+      type: 'Evolución 3',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 4,
-      type: 'Evolución',
+      type: 'Evolución 4',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 5,
-      type: 'Evolución',
+      type: 'Evolución 5',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 6,
-      type: 'Evolución',
+      type: 'Evolución 6',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 7,
-      type: 'Evolución',
+      type: 'Evolución 7',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 8,
-      type: 'Evolución',
+      type: 'Evolución 8',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 9,
-      type: 'Evolución',
+      type: 'Evolución 9',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'

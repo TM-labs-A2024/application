@@ -83,7 +83,7 @@ export default function Doctor({
 
   // --- Data and handlers -----------------------------------------------------
   const onSuccess = useCallback(() => {
-    Store.addNotification(ACCESS_REMOVED(isMobile()))
+    Store.addNotification(ACCESS_REMOVED(isMobile(window)))
     onClose()
     router.push('/medicos')
   }, [onClose, router])

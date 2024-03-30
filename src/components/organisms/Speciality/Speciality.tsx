@@ -14,7 +14,7 @@ import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
 import { isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 type Evolution = {
   href: string
@@ -42,6 +42,7 @@ export default function Speciality({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const [_window, setWindow] = useState({ screen: { availWidth: 999 } })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -51,6 +52,10 @@ export default function Speciality({
   // --- END: Redux ------------------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    setWindow(window)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -84,28 +89,28 @@ export default function Speciality({
           }}
         />
       )}
-      <Tabs isFitted={!isMobile()} variant="unstyled">
+      <Tabs isFitted={!isMobile(_window)} variant="unstyled" className="h-full">
         <TabList>
-          <Tab fontSize={isMobile() ? '0.6rem' : '1rem'} width="30%">
+          <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
             Evoluciones
           </Tab>
-          <Tab fontSize={isMobile() ? '0.6rem' : '1rem'} width="40%">
+          <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="50%">
             Ordenes médicas
           </Tab>
-          <Tab fontSize={isMobile() ? '0.6rem' : '1rem'} width="30%">
+          <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
             Análisis
           </Tab>
         </TabList>
         <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="1px" />
 
-        <TabPanels>
-          <TabPanel>
+        <TabPanels className="h-full pb-36">
+          <TabPanel className="h-full overflow-scroll">
             <EvolutionsList evolutions={data.evolutions} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="h-full overflow-scroll">
             <EvolutionsList evolutions={data.orders} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="h-full overflow-scroll">
             <EvolutionsList evolutions={data.tests} />
           </TabPanel>
         </TabPanels>
