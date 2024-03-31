@@ -12,16 +12,10 @@ import {
 } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
+import { Evolution } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
-
-type Evolution = {
-  href: string
-  title: string
-  description: string
-  comment: string
-}[]
 
 export default function Speciality({
   speciality,
@@ -108,10 +102,20 @@ export default function Speciality({
             <EvolutionsList evolutions={data.evolutions} />
           </TabPanel>
           <TabPanel className="h-full overflow-scroll">
-            <EvolutionsList evolutions={data.orders} />
+            {data.orders.length > 0 && <EvolutionsList evolutions={data.orders} />}
+            {data.orders.length === 0 && (
+              <div className="flex h-full w-full items-center justify-center">
+                <Text>No hay ordenes disponibles</Text>
+              </div>
+            )}
           </TabPanel>
           <TabPanel className="h-full overflow-scroll">
-            <EvolutionsList evolutions={data.tests} />
+            {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
+            {data.tests.length === 0 && (
+              <div className="flex h-full w-full items-center justify-center">
+                <Text>No hay análisis disponibles</Text>
+              </div>
+            )}
           </TabPanel>
         </TabPanels>
       </Tabs>

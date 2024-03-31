@@ -1,13 +1,19 @@
-import { specialities } from '@src/constants'
-import SpecialitiesSearchView from '@views/Specialities/Search'
+import { specialityData } from '@src/constants'
+import SpecialitySearchView from '@views/Speciality/Search'
+import { format } from 'date-fns'
+import { es } from 'date-fns/locale/es'
+import { useRouter } from 'next/router'
 import React, { useCallback, useMemo, useState } from 'react'
 
 export default function SpecialitySearchPage() {
   // --- Hooks -----------------------------------------------------------------
+  const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const [specialitiesList, setSpecialitiesList] = useState(specialities)
+  const [evolutionsList, setEvolutionsList] = useState(specialityData.evolutions)
+  const [ordersList, setOrdersList] = useState(specialityData.orders)
+  const [testsList, setTestsList] = useState(specialityData.tests)
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -21,22 +27,65 @@ export default function SpecialitySearchPage() {
 
   // --- Data and handlers -----------------------------------------------------
   const onChange = useCallback((value: string) => {
-    const newList = specialities.filter((speciality) =>
-      speciality.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    const newEvolutionsList = specialityData.evolutions.filter((evolution) =>
+      evolution.type.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     )
 
-    setSpecialitiesList(newList)
+    setEvolutionsList(newEvolutionsList)
+
+    const newOrdersList = specialityData.orders.filter((evolution) =>
+      evolution.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    )
+
+    setOrdersList(newOrdersList)
+
+    const newTestsList = specialityData.tests.filter((test) =>
+      test.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    )
+
+    setTestsList(newTestsList)
   }, [])
+
+  const data = useMemo(
+    () => ({
+      evolutions: evolutionsList.map(({ id, date, type, author, reason }) => ({
+        href: `/evolucion/${router.query.slug}/${id}`,
+        title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
+          locale: es
+        })}`,
+        description: `Editado por: ${author}`,
+        comment: `Patología: ${reason}`
+      })),
+      orders: ordersList.map(({ id, title, date, author }) => ({
+        href: `/orden/${router.query.slug}/${id}`,
+        title,
+        description: `${format(new Date(date), 'dd, MMMM yyyy', {
+          locale: es
+        })}`,
+        comment: `Agregado por: ${author}`
+      })),
+      tests: testsList.map(({ id, title, date, author }) => ({
+        href: `/analisis/${router.query.slug}/${id}`,
+        title,
+        description: `${format(new Date(date), 'dd, MMMM yyyy', {
+          locale: es
+        })}`,
+        comment: `Agregado por: ${author}`
+      }))
+    }),
+    [evolutionsList, ordersList, router.query.slug, testsList]
+  )
 
   const context = useMemo(
     () => ({
-      specialities: specialitiesList,
+      speciality: router.query.slug,
       onChange,
-      matches: `${specialitiesList.length} resultados`
+      data,
+      matches: `${evolutionsList.length} resultados`
     }),
-    [onChange, specialitiesList]
+    [data, evolutionsList.length, onChange, router.query.slug]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialitiesSearchView context={context} />
+  return <SpecialitySearchView context={context} />
 }

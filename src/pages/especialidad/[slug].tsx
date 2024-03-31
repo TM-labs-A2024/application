@@ -1,5 +1,5 @@
-import Speciality from '@components/organisms/Speciality'
 import { specialities, specialityData } from '@constants/index'
+import SpecialityView from '@views/Speciality'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/router'
@@ -59,5 +59,5 @@ export default function SpecialityPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <Speciality speciality={speciality ?? specialities[0]} data={data} />
+  return <SpecialityView speciality={speciality ?? specialities[0]} data={data} />
 }

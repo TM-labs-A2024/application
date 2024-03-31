@@ -13,15 +13,16 @@ export default function EvolutionsList({
   }[]
 }) {
   return (
-    <List spacing={3} className="h-full overflow-scroll">
+    <List spacing={3} className="h-full">
       {evolutions.map((evolution) => (
-        <Evolution
-          href={evolution.href}
-          title={evolution.title}
-          description={evolution.description}
-          comment={evolution.comment}
-          key={evolution.href}
-        />
+        <div className="border-b border-black last:border-transparent" key={evolution.href}>
+          <Evolution
+            href={evolution.href}
+            title={evolution.title}
+            description={evolution.description}
+            comment={evolution.comment}
+          />
+        </div>
       ))}
     </List>
   )

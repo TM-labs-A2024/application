@@ -1,5 +1,5 @@
 import { Link } from '@chakra-ui/next-js'
-import { Text, Divider } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import React from 'react'
 
@@ -17,8 +17,8 @@ export default function Evolution({
   comment: string
 }) {
   return (
-    <Link as={NextLink} href={href} padding="0.5rem" className="w-full border-black">
-      <div className="mb-4 flex flex-row items-center justify-between">
+    <Link as={NextLink} href={href} padding="0.5rem" className="w-full">
+      <div className="mb-1 flex flex-row items-center justify-between">
         <div className="flex flex-col items-start gap-1">
           <Text fontSize="md" as="b">
             {title}
@@ -30,7 +30,6 @@ export default function Evolution({
         </div>
         <Chevron />
       </div>
-      <Divider />
     </Link>
   )
 }
