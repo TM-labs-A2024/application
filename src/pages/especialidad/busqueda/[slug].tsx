@@ -76,14 +76,19 @@ export default function SpecialitySearchPage() {
     [evolutionsList, ordersList, router.query.slug, testsList]
   )
 
+  const matchesCount = useMemo(
+    () => evolutionsList.length + ordersList.length + testsList.length,
+    [evolutionsList, ordersList, testsList]
+  )
+
   const context = useMemo(
     () => ({
       speciality: router.query.slug,
       onChange,
       data,
-      matches: `${evolutionsList.length} resultados`
+      matches: matchesCount > 0 ? `${matchesCount} resultados` : ''
     }),
-    [data, evolutionsList.length, onChange, router.query.slug]
+    [data, matchesCount, onChange, router.query.slug]
   )
   // --- END: Data and handlers ------------------------------------------------
 

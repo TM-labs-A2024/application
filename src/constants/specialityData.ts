@@ -67,55 +67,55 @@ export const specialityData = {
   orders: [
     {
       id: 1,
-      title: 'Orden',
+      title: 'Orden 1',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 2,
-      title: 'Orden',
+      title: 'Orden 2',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 3,
-      title: 'Orden',
+      title: 'Orden 3',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 4,
-      title: 'Orden',
+      title: 'Orden 4',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 5,
-      title: 'Orden',
+      title: 'Orden 5',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 6,
-      title: 'Orden',
+      title: 'Orden 6',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 7,
-      title: 'Orden',
+      title: 'Orden 7',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 8,
-      title: 'Orden',
+      title: 'Orden 8',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 9,
-      title: 'Orden',
+      title: 'Orden 9',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     }
@@ -123,55 +123,55 @@ export const specialityData = {
   tests: [
     {
       id: 1,
-      title: 'Análisis',
+      title: 'Análisis 1',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 2,
-      title: 'Análisis',
+      title: 'Análisis 2',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 3,
-      title: 'Análisis',
+      title: 'Análisis 3',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 4,
-      title: 'Análisis',
+      title: 'Análisis 4',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 5,
-      title: 'Análisis',
+      title: 'Análisis 5',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 6,
-      title: 'Análisis',
+      title: 'Análisis 6',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 7,
-      title: 'Análisis',
+      title: 'Análisis 7',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 8,
-      title: 'Análisis',
+      title: 'Análisis 8',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     },
     {
       id: 9,
-      title: 'Análisis',
+      title: 'Análisis 9',
       date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez'
     }
