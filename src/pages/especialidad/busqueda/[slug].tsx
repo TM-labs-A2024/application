@@ -1,4 +1,5 @@
 import { specialityData } from '@src/constants'
+import { ReactSelectOption } from '@src/types'
 import SpecialitySearchView from '@views/Speciality/Search'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -14,6 +15,12 @@ export default function SpecialitySearchPage() {
   const [evolutionsList, setEvolutionsList] = useState(specialityData.evolutions)
   const [ordersList, setOrdersList] = useState(specialityData.orders)
   const [testsList, setTestsList] = useState(specialityData.tests)
+  const [fromDate, setFromDate] = useState('')
+  const [toDate, setToDate] = useState('')
+  const [type, setType] = useState<ReactSelectOption>({
+    value: 0,
+    label: ''
+  })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -86,9 +93,15 @@ export default function SpecialitySearchPage() {
       speciality: router.query.slug,
       onChange,
       data,
-      matches: matchesCount > 0 ? `${matchesCount} resultados` : ''
+      matches: matchesCount > 0 ? `${matchesCount} resultados` : '',
+      fromDate,
+      toDate,
+      type,
+      setFromDate,
+      setToDate,
+      setType
     }),
-    [data, matchesCount, onChange, router.query.slug]
+    [data, fromDate, matchesCount, onChange, router.query.slug, toDate, type]
   )
   // --- END: Data and handlers ------------------------------------------------
 

@@ -16,8 +16,9 @@ import {
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionList from '@components/molecules/EvolutionsList'
 import { evolutionTypes } from '@constants/index'
-import { Evolution } from '@src/types'
+import { Evolution, ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
+import { format } from 'date-fns'
 import NextLink from 'next/link'
 import React, { useEffect, useState, useCallback } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
@@ -30,14 +31,8 @@ const evolutionTypesOptions = evolutionTypes.map(({ id, name }: { id: number; na
 
 import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
 
-type ReactSelectOption = {
-  value: string | number
-  label: string
-  unit?: string
-}
-
 type FormData = {
-  evolution: ReactSelectOption | null
+  type: ReactSelectOption | null
   fromDate: string
   toDate: string
 }
@@ -54,6 +49,12 @@ export default function SpecialitySearch({
       tests: Evolution
     }
     matches: string
+    fromDate: string
+    toDate: string
+    type: ReactSelectOption
+    setFromDate: React.Dispatch<React.SetStateAction<string>>
+    setToDate: React.Dispatch<React.SetStateAction<string>>
+    setType: React.Dispatch<React.SetStateAction<ReactSelectOption>>
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -61,12 +62,17 @@ export default function SpecialitySearch({
     handleSubmit,
     formState: { errors },
     control,
-    register
+    register,
+    watch
   } = useForm<FormData>()
+
+  const values = watch()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
   const [showFilters, setShowFilters] = useState(false)
+
+  const { fromDate, toDate, type, setFromDate, setToDate, setType } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -86,11 +92,20 @@ export default function SpecialitySearch({
 
   // --- Data and handlers -----------------------------------------------------
   const removeFilters = useCallback(() => {
+    setFromDate('')
+    setToDate('')
+    setType({
+      value: 0,
+      label: ''
+    })
     setShowFilters(false)
   }, [setShowFilters])
 
   const onSubmit = (data: FormData) => {
-    alert(JSON.stringify(data))
+    setFromDate(data.fromDate)
+    setToDate(data.toDate)
+    setType(data?.type)
+    setShowFilters(false)
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
@@ -120,10 +135,19 @@ export default function SpecialitySearch({
                     id="fromDate"
                     type="date"
                     placeholder="Desde"
+                    defaultValue={fromDate}
                     {...register('fromDate', {
-                      required: 'Este campo es obligatorio'
+                      validate: {
+                        dateBefore: (value) =>
+                          values.toDate === null ||
+                          value <= values.toDate ||
+                          'La fecha de comienzo debe ser menor a la fecha final'
+                      }
                     })}
                   />
+                  <FormErrorMessage>
+                    {errors?.fromDate && errors?.fromDate?.message}
+                  </FormErrorMessage>
                 </div>
                 <div className="flex w-1/2 flex-col">
                   <FormLabel>Hasta</FormLabel>
@@ -131,28 +155,26 @@ export default function SpecialitySearch({
                     id="toDate"
                     type="date"
                     placeholder="Hasta"
+                    defaultValue={toDate}
                     {...register('toDate', {
-                      required: 'Este campo es obligatorio'
+                      validate: {
+                        dateBefore: (value) =>
+                          values.fromDate === null ||
+                          value >= values.fromDate ||
+                          'La fecha final debe ser mayor a la fecha de comienzo'
+                      }
                     })}
                   />
+                  <FormErrorMessage>{errors?.toDate && errors?.toDate?.message}</FormErrorMessage>
                 </div>
               </div>
               <Controller
                 control={control}
-                name="evolution"
-                rules={{
-                  required: 'Este campo es obligatorio'
-                }}
+                name="type"
                 render={({ field }) => (
-                  <Select
-                    id="evolution"
-                    {...field}
-                    placeholder="Especialidad"
-                    options={evolutionTypesOptions}
-                  />
+                  <Select id="type" {...field} placeholder="Tipo" options={evolutionTypesOptions} />
                 )}
               />
-              <FormErrorMessage>{errors?.evolution && errors?.evolution?.message}</FormErrorMessage>
               <Stack spacing={4} mt={4} className="absolute bottom-0 w-full">
                 <Button type="submit">Aplicar filtros</Button>
                 <Button
@@ -181,24 +203,32 @@ export default function SpecialitySearch({
               Cancelar
             </Link>
           </div>
-          <HStack spacing={4} mb={4}>
-            <Tag size="md" variant="outline" colorScheme="blackAlpha">
-              <TagLabel>Filtro demasiado largooooo</TagLabel>
-              <TagCloseButton />
-            </Tag>
-            <Tag size="md" variant="outline" colorScheme="blackAlpha">
-              <TagLabel>Filtro demasiado largooooo</TagLabel>
-              <TagCloseButton />
-            </Tag>
-            <Tag size="md" variant="outline" colorScheme="blackAlpha">
-              <TagLabel>Filtro demasiado largooooo</TagLabel>
-              <TagCloseButton />
-            </Tag>
-            <Tag size="md" variant="outline" colorScheme="blackAlpha">
-              <TagLabel>Filtro demasiado largooooo</TagLabel>
-              <TagCloseButton />
-            </Tag>
-          </HStack>
+          <div className="w-full overflow-x-scroll">
+            <HStack spacing={4} mb={4} className="w-max">
+              {fromDate && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>
+                    Desde: {format(new Date(fromDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
+                  </TagLabel>
+                  <TagCloseButton onClick={() => setFromDate('')} />
+                </Tag>
+              )}
+              {toDate && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>
+                    Hasta: {format(new Date(toDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
+                  </TagLabel>
+                  <TagCloseButton onClick={() => setToDate('')} />
+                </Tag>
+              )}
+              {type?.label && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Tipo: {type.label}</TagLabel>
+                  <TagCloseButton onClick={() => setType(null)} />
+                </Tag>
+              )}
+            </HStack>
+          </div>
           {context.matches !== '' && (
             <Heading as="h2" size="sm" noOfLines={1} className="mb-4">
               {context.matches}

@@ -1,5 +1,6 @@
 import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@chakra-ui/react'
 import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
+import { ReactSelectOption } from '@src/types'
 import Image from 'next/image'
 import React, { ReactElement, useState } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
@@ -9,12 +10,6 @@ const institutionTypeOptions = institutionTypes.map((option) => ({
   value: option.name,
   label: option.name
 }))
-
-type ReactSelectOption = {
-  value: string | number
-  label: string
-  unit?: string
-}
 
 type FormData = {
   firstname: string

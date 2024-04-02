@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { userTypes } from '@components/molecules/Forms/Register/Register.constants'
 import { specialities } from '@constants/index'
+import { ReactSelectOption } from '@src/types'
 import Image from 'next/image'
 import React, { ReactElement, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
@@ -24,12 +25,6 @@ const userTypeOptions = userTypes.map((option) => ({
   value: option.name,
   label: option.name
 }))
-
-type ReactSelectOption = {
-  value: string | number
-  label: string
-  unit?: string
-}
 
 type FormData = {
   type: ReactSelectOption | null
