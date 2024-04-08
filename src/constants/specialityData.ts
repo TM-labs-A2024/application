@@ -3,21 +3,21 @@ export const specialityData = {
     {
       id: 1,
       type: 'Evolución 1',
-      date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
+      date: 'Wed Sep 17 2024 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 2,
       type: 'Evolución 2',
-      date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
+      date: 'Wed Sep 17 2024 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },
     {
       id: 3,
       type: 'Evolución 3',
-      date: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
+      date: 'Wed Sep 17 2024 00:00:00 GMT-0400 (hora de Venezuela)',
       author: 'Pedro Pérez',
       reason: 'Dolor'
     },

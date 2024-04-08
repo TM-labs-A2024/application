@@ -99,7 +99,7 @@ export default function SpecialitySearch({
       label: ''
     })
     setShowFilters(false)
-  }, [setShowFilters])
+  }, [setFromDate, setToDate, setType])
 
   const onSubmit = (data: FormData) => {
     setFromDate(data.fromDate)
