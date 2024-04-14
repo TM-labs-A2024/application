@@ -248,7 +248,7 @@ export default function SpecialitySearch({
               <EvolutionList evolutions={context.data.tests} />
             </div>
           </div>
-          <div className="absolute bottom-4 w-full pr-16">
+          <div className="absolute bottom-16 w-full pr-16">
             <Button className="w-full gap-2" onClick={() => setShowFilters(!showFilters)}>
               <Swimmer /> Filtros
             </Button>

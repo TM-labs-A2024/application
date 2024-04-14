@@ -4,7 +4,8 @@ import React from 'react'
 
 export default function SpecialityView({
   speciality,
-  data
+  data,
+  currentTab
 }: {
   speciality: {
     id: number
@@ -15,6 +16,7 @@ export default function SpecialityView({
     orders: Evolution
     tests: Evolution
   }
+  currentTab: number
 }) {
-  return <Speciality speciality={speciality} data={data} />
+  return <Speciality speciality={speciality} data={data} currentTab={currentTab} />
 }

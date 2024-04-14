@@ -16,7 +16,7 @@ export default function SpecialitiesList({
           {label}
         </Heading>
       )}
-      <List spacing={3} className="h-full overflow-scroll">
+      <List spacing={3} className="h-full overflow-scroll pb-24">
         {specialities.map((speciality) => (
           <Speciality
             name={speciality.name}

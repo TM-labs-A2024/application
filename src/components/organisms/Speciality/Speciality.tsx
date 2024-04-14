@@ -19,7 +19,8 @@ import React, { useState, useEffect } from 'react'
 
 export default function Speciality({
   speciality,
-  data
+  data,
+  currentTab
 }: {
   speciality: {
     id: number
@@ -30,6 +31,7 @@ export default function Speciality({
     orders: Evolution
     tests: Evolution
   }
+  currentTab: number
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
@@ -56,9 +58,7 @@ export default function Speciality({
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
-    >
+    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
       <div className="mb-8 flex flex-row items-center justify-between">
         <div className="flex flex-row items-center justify-start gap-4">
           <IconButton
@@ -83,7 +83,12 @@ export default function Speciality({
           }}
         />
       )}
-      <Tabs isFitted={!isMobile(_window)} variant="unstyled" className="h-full">
+      <Tabs
+        isFitted={!isMobile(_window)}
+        variant="unstyled"
+        className="h-[80%]"
+        defaultIndex={currentTab}
+      >
         <TabList>
           <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
             Evoluciones
@@ -97,7 +102,7 @@ export default function Speciality({
         </TabList>
         <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="1px" />
 
-        <TabPanels className="h-full pb-36">
+        <TabPanels className="h-full pb-0">
           <TabPanel className="h-full overflow-scroll">
             <EvolutionsList evolutions={data.evolutions} />
           </TabPanel>

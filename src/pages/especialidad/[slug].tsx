@@ -28,6 +28,19 @@ export default function SpecialityPage() {
     [router.query.slug]
   )
 
+  const currentTab = useMemo(() => {
+    switch (router.query.type) {
+      case 'evolution':
+        return 0
+      case 'order':
+        return 1
+      case 'test':
+        return 2
+      default:
+        return 0
+    }
+  }, [router])
+
   const data = useMemo(
     () => ({
       evolutions: specialityData.evolutions.map(({ id, date, type, author, reason }) => ({
@@ -59,5 +72,11 @@ export default function SpecialityPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialityView speciality={speciality ?? specialities[0]} data={data} />
+  return (
+    <SpecialityView
+      speciality={speciality ?? specialities[0]}
+      data={data}
+      currentTab={currentTab}
+    />
+  )
 }
