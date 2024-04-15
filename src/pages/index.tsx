@@ -6,7 +6,16 @@ export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-center">
       <Link as={NextLink} href="/especialidades">
-        test
+        Paciente
+      </Link>
+      <Link as={NextLink} href="/pacientes">
+        Doctor
+      </Link>
+      <Link as={NextLink} href="/institucion/solicitudes">
+        Institución
+      </Link>
+      <Link as={NextLink} href="/ministerio/solicitudes">
+        Ministerio
       </Link>
     </main>
   )

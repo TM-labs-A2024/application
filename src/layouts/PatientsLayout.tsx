@@ -90,7 +90,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </nav>
       ) : (
-        <Sidebar isOpen={isOpen} onClose={onClose} ref={btnRef}>
+        <Sidebar isOpen={isOpen} onClose={onClose} innerRef={btnRef}>
           <nav>
             <ul>
               <li

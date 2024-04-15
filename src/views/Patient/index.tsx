@@ -1,5 +1,5 @@
 import Patient from '@components/organisms/Patient'
-import Layout from '@layouts/index'
+import { PatientsLayout } from '@layouts/index'
 import React from 'react'
 
 export default function PatientView({
@@ -15,8 +15,8 @@ export default function PatientView({
   }
 }) {
   return (
-    <Layout>
+    <PatientsLayout>
       <Patient patient={patient} />
-    </Layout>
+    </PatientsLayout>
   )
 }

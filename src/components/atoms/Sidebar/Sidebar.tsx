@@ -15,15 +15,15 @@ export default function Sidebar({
   isOpen,
   onClose,
   children,
-  ref
+  innerRef
 }: {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
-  ref: React.RefObject<HTMLButtonElement>
+  innerRef: React.RefObject<HTMLButtonElement>
 }) {
   return (
-    <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={ref}>
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={innerRef}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />

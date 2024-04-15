@@ -1,3 +1,4 @@
-import Layout from './Layout'
+import DoctorsLayout from './DoctorsLayout'
+import PatientsLayout from './PatientsLayout'
 
-export default Layout
+export { PatientsLayout, DoctorsLayout }
