@@ -94,11 +94,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav>
             <ul>
               <li
-                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/especialidades' ? 'bg-gray-200' : ''}`}
+                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/pacientes' ? 'bg-gray-200' : ''}`}
               >
                 <Link
                   as={NextLink}
-                  href="/especialidades"
+                  href="/pacientes"
                   className="flex w-full flex-row items-center justify-start gap-8"
                 >
                   <Home className="cursor-pointer" />

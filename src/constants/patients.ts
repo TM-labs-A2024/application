@@ -6,7 +6,8 @@ export const patients = [
     govId: 'E99885566',
     birthdate: '1997-08-20',
     email: 'user@example.com',
-    phoneNumber: '+584127659814'
+    phoneNumber: '+584127659814',
+    pending: true
   },
   {
     uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa2',
@@ -15,7 +16,8 @@ export const patients = [
     govId: 'E99885566',
     birthdate: '1997-08-20',
     email: 'user@example.com',
-    phoneNumber: '+584127659814'
+    phoneNumber: '+584127659814',
+    pending: true
   },
   {
     uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa3',
