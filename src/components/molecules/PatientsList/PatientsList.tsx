@@ -59,7 +59,7 @@ export default function PatientsList({
               </Text>
             )}
             <List>
-              {patients.map((patient) => (
+              {patients?.map((patient) => (
                 <div
                   className="border-b border-black py-4 last:border-transparent"
                   key={patient.href}

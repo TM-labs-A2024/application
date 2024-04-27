@@ -24,12 +24,12 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
 import Select from 'react-select'
 
+import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
+
 const evolutionTypesOptions = evolutionTypes.map(({ id, name }: { id: number; name: string }) => ({
   value: id,
   label: name
 }))
-
-import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
 
 type FormData = {
   type: ReactSelectOption | null
@@ -72,7 +72,7 @@ export default function SpecialitySearch({
   // --- Local state -----------------------------------------------------------
   const [showFilters, setShowFilters] = useState(false)
 
-  const { fromDate, toDate, type, setFromDate, setToDate, setType } = context
+  const { fromDate, toDate, type, setFromDate, setToDate, setType, onChange } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -196,7 +196,7 @@ export default function SpecialitySearch({
             <SearchInputComponent
               placeholder="ingresar criterio"
               className="w-full"
-              onChange={context.onChange}
+              onChange={onChange}
               inputRef={inputRef}
             />
             <Link as={NextLink} href={`/especialidad/${context.speciality}`}>

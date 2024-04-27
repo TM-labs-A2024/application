@@ -19,16 +19,19 @@ export default function Patients() {
   // --- Data and handlers -----------------------------------------------------
   const patientsFormatted = useMemo(
     () =>
-      patients.map(({ uuid, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
-        href: pending ? '/pacientes' : `/paciente/${uuid}`,
-        title: `${firstname} ${lastname}`,
-        description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
-          locale: es,
-          roundingMethod: 'floor'
-        })}${status ? `, Cama: ${bed}` : ''}`,
-        status,
-        pending
-      })),
+      patients.map(
+        ({ uuid, birthdate, govId, status, bed, firstname, lastname, pending, gender }) => ({
+          href: pending ? '/pacientes' : `/paciente/${uuid}`,
+          title: `${firstname} ${lastname}`,
+          description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
+            locale: es,
+            roundingMethod: 'floor'
+          })}${status ? `, Cama: ${bed}` : ''}`,
+          status,
+          pending,
+          gender
+        })
+      ),
     []
   )
 

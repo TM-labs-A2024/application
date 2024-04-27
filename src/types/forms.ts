@@ -1,5 +1,5 @@
 export type ReactSelectOption = {
-  value: string | number
+  value: string | number | null
   label: string
   unit?: string
 } | null
