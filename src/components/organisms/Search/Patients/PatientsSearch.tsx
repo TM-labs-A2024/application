@@ -18,7 +18,6 @@ import PatientList from '@components/molecules/PatientsList'
 import { genderOptions, statusOptions, specialities } from '@constants/index'
 import { ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
-import { format } from 'date-fns'
 import NextLink from 'next/link'
 import React, { useEffect, useState, useCallback } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
@@ -45,8 +44,8 @@ type FormData = {
   gender: ReactSelectOption | null
   status: ReactSelectOption | null
   speciality: ReactSelectOption | null
-  fromDate: string
-  toDate: string
+  fromAge: string
+  toAge: string
 }
 
 export default function PatientsSearch({
@@ -62,13 +61,13 @@ export default function PatientsSearch({
       pending: boolean | undefined
     }[]
     matches: string
-    fromDate: string
-    toDate: string
+    fromAge: string
+    toAge: string
     gender: ReactSelectOption
     status: ReactSelectOption
     speciality: ReactSelectOption
-    setFromDate: React.Dispatch<React.SetStateAction<string>>
-    setToDate: React.Dispatch<React.SetStateAction<string>>
+    setFromAge: React.Dispatch<React.SetStateAction<string>>
+    setToAge: React.Dispatch<React.SetStateAction<string>>
     setGender: React.Dispatch<React.SetStateAction<ReactSelectOption>>
     setStatus: React.Dispatch<React.SetStateAction<ReactSelectOption>>
     setSpeciality: React.Dispatch<React.SetStateAction<ReactSelectOption>>
@@ -80,7 +79,8 @@ export default function PatientsSearch({
     formState: { errors },
     control,
     register,
-    watch
+    watch,
+    setValue
   } = useForm<FormData>()
 
   const values = watch()
@@ -90,13 +90,13 @@ export default function PatientsSearch({
   const [showFilters, setShowFilters] = useState(false)
 
   const {
-    fromDate,
-    toDate,
+    fromAge,
+    toAge,
     gender,
     status,
     speciality,
-    setFromDate,
-    setToDate,
+    setFromAge,
+    setToAge,
     setGender,
     setStatus,
     setSpeciality
@@ -120,13 +120,13 @@ export default function PatientsSearch({
 
   // --- Data and handlers -----------------------------------------------------
   const removeFilters = useCallback(() => {
-    setFromDate('')
-    setToDate('')
+    setFromAge('')
+    setToAge('')
     setGender({
       value: 0,
       label: ''
     })
-    setGender({
+    setStatus({
       value: 0,
       label: ''
     })
@@ -134,12 +134,17 @@ export default function PatientsSearch({
       value: null,
       label: ''
     })
+    setValue('fromAge', '')
+    setValue('toAge', '')
+    setValue('gender', null)
+    setValue('status', null)
+    setValue('speciality', null)
     setShowFilters(false)
-  }, [setFromDate, setToDate, setGender, setSpeciality])
+  }, [setFromAge, setToAge, setGender, setStatus, setSpeciality, setValue])
 
   const onSubmit = (data: FormData) => {
-    setFromDate(data.fromDate)
-    setToDate(data.toDate)
+    setFromAge(data.fromAge)
+    setToAge(data.toAge)
     setGender(data?.gender)
     setStatus(data?.status)
     setSpeciality(data?.speciality)
@@ -161,46 +166,8 @@ export default function PatientsSearch({
               Cancelar
             </Button>
           </div>
-          <div className="w-full overflow-x-scroll">
-            <HStack spacing={4} mb={4} className="w-max">
-              {fromDate && (
-                <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>
-                    Desde: {format(new Date(fromDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
-                  </TagLabel>
-                  <TagCloseButton onClick={() => setFromDate('')} />
-                </Tag>
-              )}
-              {toDate && (
-                <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>
-                    Hasta: {format(new Date(toDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
-                  </TagLabel>
-                  <TagCloseButton onClick={() => setToDate('')} />
-                </Tag>
-              )}
-              {gender?.label && (
-                <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>Sexo: {gender.label}</TagLabel>
-                  <TagCloseButton onClick={() => setGender(null)} />
-                </Tag>
-              )}
-              {status?.label && (
-                <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>Sexo: {status.label}</TagLabel>
-                  <TagCloseButton onClick={() => setGender(null)} />
-                </Tag>
-              )}
-              {speciality?.label && (
-                <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>Sexo: {speciality.label}</TagLabel>
-                  <TagCloseButton onClick={() => setGender(null)} />
-                </Tag>
-              )}
-            </HStack>
-          </div>
           <Heading as="h2" size="md">
-            Fechas de evolución
+            Fechas de consulta
           </Heading>
           <form onSubmit={handleSubmit(onSubmit)} className="h-full w-full">
             <FormControl isInvalid={verifyErrors(errors)} className="relative h-4/5 w-full">
@@ -208,40 +175,40 @@ export default function PatientsSearch({
                 <div className="flex w-1/2 flex-col">
                   <FormLabel>Desde</FormLabel>
                   <Input
-                    id="fromDate"
-                    type="date"
+                    id="fromAge"
+                    type="number"
                     placeholder="Desde"
-                    defaultValue={fromDate}
-                    {...register('fromDate', {
+                    defaultValue={fromAge}
+                    {...register('fromAge', {
                       validate: {
-                        dateBefore: (value) =>
-                          values.toDate === null ||
-                          value <= values.toDate ||
-                          'La fecha de comienzo debe ser menor a la fecha final'
+                        ageFrom: (value) =>
+                          values.toAge === null ||
+                          values.toAge === '' ||
+                          value <= values.toAge ||
+                          'La edad de comienzo debe ser menor a la edad final'
                       }
                     })}
                   />
-                  <FormErrorMessage>
-                    {errors?.fromDate && errors?.fromDate?.message}
-                  </FormErrorMessage>
+                  <FormErrorMessage>{errors?.fromAge && errors?.fromAge?.message}</FormErrorMessage>
                 </div>
                 <div className="flex w-1/2 flex-col">
                   <FormLabel>Hasta</FormLabel>
                   <Input
-                    id="toDate"
-                    type="date"
+                    id="toAge"
+                    type="number"
                     placeholder="Hasta"
-                    defaultValue={toDate}
-                    {...register('toDate', {
+                    defaultValue={toAge}
+                    {...register('toAge', {
                       validate: {
-                        dateBefore: (value) =>
-                          values.fromDate === null ||
-                          value >= values.fromDate ||
-                          'La fecha final debe ser mayor a la fecha de comienzo'
+                        ageTo: (value) =>
+                          values.fromAge === null ||
+                          values.fromAge !== '' ||
+                          value >= values.fromAge ||
+                          'La edad final debe ser mayor a la edad de comienzo'
                       }
                     })}
                   />
-                  <FormErrorMessage>{errors?.toDate && errors?.toDate?.message}</FormErrorMessage>
+                  <FormErrorMessage>{errors?.toAge && errors?.toAge?.message}</FormErrorMessage>
                 </div>
               </div>
               <Controller
@@ -302,7 +269,7 @@ export default function PatientsSearch({
         <>
           <div className="mb-8 flex flex-row items-center gap-4">
             <SearchInputComponent
-              placeholder="Buscar especialidad"
+              placeholder="Buscar paciente"
               className="w-full"
               onChange={context.onChange}
               inputRef={inputRef}
@@ -310,6 +277,65 @@ export default function PatientsSearch({
             <Link as={NextLink} href="/pacientes">
               Cancelar
             </Link>
+          </div>
+          <div className="w-full overflow-x-scroll">
+            <HStack spacing={4} mb={4} className="w-max">
+              {fromAge && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Desde: {fromAge}</TagLabel>
+                  <TagCloseButton
+                    onClick={() => {
+                      setFromAge('')
+                      setValue('fromAge', '')
+                    }}
+                  />
+                </Tag>
+              )}
+              {toAge && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Hasta: {toAge}</TagLabel>
+                  <TagCloseButton
+                    onClick={() => {
+                      setToAge('')
+                      setValue('toAge', '')
+                    }}
+                  />
+                </Tag>
+              )}
+              {gender?.label && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Sexo: {gender.label}</TagLabel>
+                  <TagCloseButton
+                    onClick={() => {
+                      setGender(null)
+                      setValue('gender', null)
+                    }}
+                  />
+                </Tag>
+              )}
+              {status?.label && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Estado: {status.label}</TagLabel>
+                  <TagCloseButton
+                    onClick={() => {
+                      setStatus(null)
+                      setValue('status', null)
+                    }}
+                  />
+                </Tag>
+              )}
+              {speciality?.label && (
+                <Tag size="md" variant="outline" colorScheme="blackAlpha">
+                  <TagLabel>Especialidad: {speciality.label}</TagLabel>
+                  <TagCloseButton
+                    onClick={() => {
+                      setSpeciality(null)
+                      setValue('speciality', null)
+                    }}
+                  />
+                </Tag>
+              )}
+            </HStack>
           </div>
           <div className="h-3/4 overflow-scroll">
             <PatientList pendingPatients={[]} patients={context.patients} label={context.matches} />

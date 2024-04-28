@@ -18,7 +18,7 @@ export const patients = [
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
     govId: 'E99885562',
-    birthdate: '1997-08-20',
+    birthdate: '1998-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814',
     pending: true
@@ -30,7 +30,7 @@ export const patients = [
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
     govId: 'E99885563',
-    birthdate: '1997-08-20',
+    birthdate: '1996-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814',
     status: 'hospitalizado',
@@ -43,7 +43,7 @@ export const patients = [
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
     govId: 'E99885564',
-    birthdate: '1997-08-20',
+    birthdate: '1995-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814',
     status: 'hospitalizado',
@@ -56,7 +56,7 @@ export const patients = [
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
     govId: 'E99885565',
-    birthdate: '1997-08-20',
+    birthdate: '1994-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814'
   },
@@ -67,7 +67,7 @@ export const patients = [
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
     govId: 'E99885566',
-    birthdate: '1997-08-20',
+    birthdate: '1993-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814'
   },
@@ -78,7 +78,7 @@ export const patients = [
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
     govId: 'E99885567',
-    birthdate: '1997-08-20',
+    birthdate: '1992-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814'
   },
@@ -89,7 +89,7 @@ export const patients = [
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
     govId: 'E99885568',
-    birthdate: '1997-08-20',
+    birthdate: '1991-08-20',
     email: 'user@example.com',
     phoneNumber: '+584127659814'
   },

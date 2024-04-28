@@ -40,7 +40,10 @@ export default function PatientsSearchPage() {
           status,
           pending,
           gender,
-          birthdate,
+          age: formatDistanceToNowStrict(new Date(birthdate), {
+            locale: es,
+            roundingMethod: 'floor'
+          }).split(' ')[0],
           bed,
           specialities
         })
@@ -57,8 +60,8 @@ export default function PatientsSearchPage() {
   // --- Local state -----------------------------------------------------------
   const [patientsList, setPatientsList] = useState(approvedPatients)
   const [search, setSearch] = useState('')
-  const [fromDate, setFromDate] = useState('')
-  const [toDate, setToDate] = useState('')
+  const [fromAge, setFromAge] = useState('')
+  const [toAge, setToAge] = useState('')
   const [gender, setGender] = useState<ReactSelectOption>({
     value: 0,
     label: ''
@@ -88,8 +91,8 @@ export default function PatientsSearchPage() {
 
     // Gender filtering
     if (gender?.value) {
-      filteredPatientsList = filteredPatientsList.filter((patient) =>
-        patient.gender.toLocaleLowerCase().includes(String(gender?.value))
+      filteredPatientsList = filteredPatientsList.filter(
+        (patient) => patient.gender === gender?.value
       )
     }
 
@@ -106,24 +109,20 @@ export default function PatientsSearchPage() {
     }
 
     // Dates filtering
-    if (fromDate !== '') {
-      const formattedFromDate = new Date(fromDate).getTime()
-
+    if (fromAge !== '') {
       filteredPatientsList = filteredPatientsList.filter(
-        (patient) => new Date(patient.birthdate).getTime() >= formattedFromDate
+        (patient) => Number(patient.age) >= Number(fromAge)
       )
     }
 
-    if (toDate !== '') {
-      const formattedToDate = new Date(toDate).getTime()
-
+    if (toAge !== '') {
       filteredPatientsList = filteredPatientsList.filter(
-        (patient) => new Date(patient.birthdate).getTime() <= formattedToDate
+        (patient) => Number(patient.age) <= Number(toAge)
       )
     }
 
     setPatientsList(filteredPatientsList)
-  }, [approvedPatients, fromDate, gender?.value, search, toDate])
+  }, [approvedPatients, gender?.value, search, status?.label, speciality?.value, fromAge, toAge])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -136,18 +135,18 @@ export default function PatientsSearchPage() {
       patients: patientsList,
       onChange,
       matches: `${patientsList.length} resultados`,
-      fromDate,
-      toDate,
+      fromAge,
+      toAge,
       gender,
       status,
       speciality,
-      setFromDate,
-      setToDate,
+      setFromAge,
+      setToAge,
       setGender,
       setStatus,
       setSpeciality
     }),
-    [fromDate, gender, onChange, patientsList, speciality, status, toDate]
+    [fromAge, gender, onChange, patientsList, speciality, status, toAge]
   )
   // --- END: Data and handlers ------------------------------------------------
 

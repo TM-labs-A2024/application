@@ -15,13 +15,13 @@ export default function PatientsSearchView({
       pending: boolean | undefined
     }[]
     matches: string
-    fromDate: string
-    toDate: string
+    fromAge: string
+    toAge: string
     gender: ReactSelectOption
     status: ReactSelectOption
     speciality: ReactSelectOption
-    setFromDate: React.Dispatch<React.SetStateAction<string>>
-    setToDate: React.Dispatch<React.SetStateAction<string>>
+    setFromAge: React.Dispatch<React.SetStateAction<string>>
+    setToAge: React.Dispatch<React.SetStateAction<string>>
     setGender: React.Dispatch<React.SetStateAction<ReactSelectOption>>
     setStatus: React.Dispatch<React.SetStateAction<ReactSelectOption>>
     setSpeciality: React.Dispatch<React.SetStateAction<ReactSelectOption>>

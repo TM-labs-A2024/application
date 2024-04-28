@@ -63,7 +63,8 @@ export default function SpecialitySearch({
     formState: { errors },
     control,
     register,
-    watch
+    watch,
+    setValue
   } = useForm<FormData>()
 
   const values = watch()
@@ -98,8 +99,11 @@ export default function SpecialitySearch({
       value: 0,
       label: ''
     })
+    setValue('fromDate', '')
+    setValue('toDate', '')
+    setValue('type', null)
     setShowFilters(false)
-  }, [setFromDate, setToDate, setType])
+  }, [setFromDate, setToDate, setType, setValue])
 
   const onSubmit = (data: FormData) => {
     setFromDate(data.fromDate)
@@ -140,6 +144,7 @@ export default function SpecialitySearch({
                       validate: {
                         dateBefore: (value) =>
                           values.toDate === null ||
+                          values.toDate === '' ||
                           value <= values.toDate ||
                           'La fecha de comienzo debe ser menor a la fecha final'
                       }
@@ -160,6 +165,7 @@ export default function SpecialitySearch({
                       validate: {
                         dateBefore: (value) =>
                           values.fromDate === null ||
+                          values.fromDate !== '' ||
                           value >= values.fromDate ||
                           'La fecha final debe ser mayor a la fecha de comienzo'
                       }
@@ -210,7 +216,12 @@ export default function SpecialitySearch({
                   <TagLabel>
                     Desde: {format(new Date(fromDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
                   </TagLabel>
-                  <TagCloseButton onClick={() => setFromDate('')} />
+                  <TagCloseButton
+                    onClick={() => {
+                      setFromDate('')
+                      setValue('fromDate', '')
+                    }}
+                  />
                 </Tag>
               )}
               {toDate && (
@@ -218,13 +229,23 @@ export default function SpecialitySearch({
                   <TagLabel>
                     Hasta: {format(new Date(toDate.replace(/-/g, '/')), 'dd/MM/yyyy')}
                   </TagLabel>
-                  <TagCloseButton onClick={() => setToDate('')} />
+                  <TagCloseButton
+                    onClick={() => {
+                      setToDate('')
+                      setValue('toDate', '')
+                    }}
+                  />
                 </Tag>
               )}
               {type?.label && (
                 <Tag size="md" variant="outline" colorScheme="blackAlpha">
                   <TagLabel>Tipo: {type.label}</TagLabel>
-                  <TagCloseButton onClick={() => setType(null)} />
+                  <TagCloseButton
+                    onClick={() => {
+                      setType(null)
+                      setValue('type', null)
+                    }}
+                  />
                 </Tag>
               )}
             </HStack>
