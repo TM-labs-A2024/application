@@ -11,6 +11,7 @@ export default function SpecialitiesSearchView({
       name: string
     }[]
     matches: string
+    uuid?: string
   }
 }) {
   return <SpecialitiesSearch context={context} />

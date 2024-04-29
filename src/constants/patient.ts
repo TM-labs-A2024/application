@@ -1,11 +1,14 @@
 export const patient = {
-  id: 1234567,
-  firstname: 'José',
-  lastname: 'Pérez',
-  birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
-  email: 'joseperez@gmail.com ',
-  phone: '4127775522',
-  gender: 'male'
+  uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa1',
+  specialities: [1, 2, 3],
+  gender: 'male',
+  firstname: 'José Feliciano',
+  lastname: 'Gutierrez García',
+  govId: 'E99885561',
+  birthdate: '1997-08-20',
+  email: 'user@example.com',
+  phoneNumber: '+584127659814',
+  pending: true
 }
 
 export const genderOptions = [

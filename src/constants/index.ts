@@ -1,6 +1,6 @@
 import { doctors } from './doctors'
 import { evolutionTypes } from './evolutionTypes'
-import { ACCESS_REMOVED } from './notifications'
+import { ACCESS_REMOVED, FILTERS_APPLIED } from './notifications'
 import { patient, genderOptions, statusOptions } from './patient'
 import { patients } from './patients'
 import { specialities } from './specialities'
@@ -15,5 +15,6 @@ export {
   specialityData,
   evolutionTypes,
   patients,
-  ACCESS_REMOVED
+  ACCESS_REMOVED,
+  FILTERS_APPLIED
 }

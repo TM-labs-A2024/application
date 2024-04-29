@@ -16,12 +16,14 @@ import {
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionList from '@components/molecules/EvolutionsList'
 import { evolutionTypes } from '@constants/index'
+import { FILTERS_APPLIED } from '@constants/index'
 import { Evolution, ReactSelectOption } from '@src/types'
-import { isIOS } from '@utils/index'
+import { isIOS, isMobile } from '@utils/index'
 import { format } from 'date-fns'
 import NextLink from 'next/link'
 import React, { useEffect, useState, useCallback } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
+import { Store } from 'react-notifications-component'
 import Select from 'react-select'
 
 import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
@@ -110,6 +112,7 @@ export default function SpecialitySearch({
     setToDate(data.toDate)
     setType(data?.type)
     setShowFilters(false)
+    Store.addNotification(FILTERS_APPLIED(isMobile(window)))
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
@@ -117,7 +120,7 @@ export default function SpecialitySearch({
 
   return (
     <div
-      className={`relative mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      className={`relative mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
     >
       {showFilters && (
         <>

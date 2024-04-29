@@ -18,3 +18,18 @@ export const ACCESS_REMOVED = (isMobile: boolean) => ({
     onScreen: true
   }
 })
+
+// Filters applied successfully message
+export const FILTERS_APPLIED = (isMobile: boolean) => ({
+  title: 'Message',
+  message: 'Filtros aplicados',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 5000,
+    onScreen: true
+  }
+})

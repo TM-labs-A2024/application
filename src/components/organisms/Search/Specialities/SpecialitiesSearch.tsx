@@ -15,12 +15,14 @@ export default function SpecialitiesSearch({
       name: string
     }[]
     matches: string
+    uuid?: string
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const { uuid } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -43,7 +45,7 @@ export default function SpecialitiesSearch({
 
   return (
     <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
     >
       <div className="mb-8 flex flex-row items-center gap-4">
         <SearchInputComponent
@@ -52,7 +54,7 @@ export default function SpecialitiesSearch({
           onChange={context.onChange}
           inputRef={inputRef}
         />
-        <Link as={NextLink} href="/especialidades">
+        <Link as={NextLink} href={uuid ? `/especialidades/${uuid}` : '/especialidades'}>
           Cancelar
         </Link>
       </div>

@@ -1,9 +1,12 @@
 import { specialities } from '@src/constants'
 import SpecialitiesSearchView from '@views/Specialities/Search'
+import { useRouter } from 'next/router'
 import React, { useCallback, useMemo, useState } from 'react'
 
 export default function SpecialitiesSearchPage() {
   // --- Hooks -----------------------------------------------------------------
+  const router = useRouter()
+  router?.query?.slug?.[0]
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -32,9 +35,10 @@ export default function SpecialitiesSearchPage() {
     () => ({
       specialities: specialitiesList,
       onChange,
-      matches: `${specialitiesList.length} resultados`
+      matches: `${specialitiesList.length} resultados`,
+      uuid: router?.query?.slug?.[0]
     }),
-    [onChange, specialitiesList]
+    [onChange, router?.query?.slug, specialitiesList]
   )
   // --- END: Data and handlers ------------------------------------------------
 

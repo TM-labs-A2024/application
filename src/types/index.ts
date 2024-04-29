@@ -1,4 +1,5 @@
 import { Evolution } from './evolutions'
 import { ReactSelectOption } from './forms'
+import { Patient } from './patients'
 
-export type { Evolution, ReactSelectOption }
+export type { Evolution, ReactSelectOption, Patient }

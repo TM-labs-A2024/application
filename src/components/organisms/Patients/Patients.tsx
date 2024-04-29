@@ -19,19 +19,16 @@ export default function Patients() {
   // --- Data and handlers -----------------------------------------------------
   const patientsFormatted = useMemo(
     () =>
-      patients.map(
-        ({ uuid, birthdate, govId, status, bed, firstname, lastname, pending, gender }) => ({
-          href: pending ? '/pacientes' : `/paciente/${uuid}`,
-          title: `${firstname} ${lastname}`,
-          description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
-            locale: es,
-            roundingMethod: 'floor'
-          })}${status ? `, Cama: ${bed}` : ''}`,
-          status,
-          pending,
-          gender
-        })
-      ),
+      patients.map(({ uuid, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
+        href: pending ? '/pacientes' : `/especialidades/${uuid}`,
+        title: `${firstname} ${lastname}`,
+        description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
+          locale: es,
+          roundingMethod: 'floor'
+        })}${status ? `, Cama: ${bed}` : ''}`,
+        status,
+        pending
+      })),
     []
   )
 
@@ -48,7 +45,7 @@ export default function Patients() {
 
   return (
     <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pb-64 pt-20' : 'pb-56'} ${isAndroid() ?? 'pt-8'}`}
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-64 pt-20' : 'pb-56'} ${isAndroid() ?? 'pt-8'}`}
     >
       <Image
         alt="logo"

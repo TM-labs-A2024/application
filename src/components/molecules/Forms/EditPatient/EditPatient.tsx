@@ -11,6 +11,7 @@ import {
   IconButton,
   Text
 } from '@chakra-ui/react'
+import { Patient } from '@src/types'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { useRouter } from 'next/navigation'
@@ -26,18 +27,7 @@ type FormData = {
   phone: string
 }
 
-export default function EditPatientForm({
-  patient
-}: {
-  patient: {
-    id: number
-    firstname: string
-    lastname: string
-    birthdate: string
-    email: string
-    phone: string
-  }
-}): ReactElement {
+export default function EditPatientForm({ patient }: { patient: Patient }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
@@ -112,7 +102,7 @@ export default function EditPatientForm({
             <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
             <Input
               id="id"
-              defaultValue={patient.id}
+              defaultValue={patient.govId}
               placeholder="Cédula"
               {...register('id', {
                 required: 'Este campo es obligatorio'
@@ -142,7 +132,7 @@ export default function EditPatientForm({
               <InputLeftAddon>+58</InputLeftAddon>
               <Input
                 id="phone"
-                defaultValue={patient.phone}
+                defaultValue={patient.phoneNumber}
                 type="tel"
                 placeholder="Teléfono"
                 {...register('phone', {
