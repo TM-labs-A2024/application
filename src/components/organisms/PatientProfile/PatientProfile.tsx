@@ -1,24 +1,13 @@
-import { ArrowBackIcon, WarningIcon } from '@chakra-ui/icons'
-import {
-  Text,
-  Heading,
-  Stack,
-  IconButton,
-  Divider,
-  Tag,
-  TagLeftIcon,
-  TagLabel
-} from '@chakra-ui/react'
+import { Text, Heading, Stack, Link } from '@chakra-ui/react'
 import { Patient as PatientType } from '@src/types'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
-import { useRouter } from 'next/navigation'
+import NextLink from 'next/link'
 import React from 'react'
 
-export default function Patient({ patient }: { patient: PatientType }) {
+export default function PatientProfile({ patient }: { patient: PatientType }) {
   // --- Hooks -----------------------------------------------------------------
-  const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -40,48 +29,35 @@ export default function Patient({ patient }: { patient: PatientType }) {
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
     >
-      <div className="my-8 flex flex-row items-center justify-start gap-4">
-        <IconButton
-          size="xl"
-          aria-label="back"
-          variant="link"
-          icon={<ArrowBackIcon />}
-          onClick={() => {
-            router.push(`/especialidades/${patient?.uuid}`)
-          }}
-        />
-        <Text className="font-medium">Ficha médica</Text>
+      <div className="mb-8 flex w-full flex-row justify-between">
+        <Heading as="h2" size="md" noOfLines={1}>
+          Perfil
+        </Heading>
+        <Link as={NextLink} href="/perfil/editar">
+          Editar
+        </Link>
       </div>
-      <div className="flex flex-row items-center justify-between">
-        <Stack spacing={1} mb={6}>
-          <Heading as="h2" size="md" noOfLines={1}>
-            {patient?.firstname} {patient?.lastname}
-          </Heading>
-          <Text>CI: {patient?.govId.toLocaleString()}</Text>
-        </Stack>
-        {patient?.status && (
-          <Tag size="md" key={patient?.status} variant="subtle" colorScheme="gray">
-            <TagLeftIcon boxSize="12px" as={WarningIcon} />
-            <TagLabel>{patient?.status}</TagLabel>
-          </Tag>
-        )}
-      </div>
-      <Divider orientation="horizontal" />
-      <Stack mb={6} mt={6}>
+      <Stack spacing={1} mb={6}>
+        <Heading as="h3" size="md" noOfLines={1}>
+          {patient.firstname} {patient.lastname}
+        </Heading>
+        <Text>CI: {patient.govId.toLocaleString()}</Text>
+      </Stack>
+      <Stack mb={6}>
         <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
         <Text className="font-medium">
-          {format(new Date(patient?.birthdate), "dd 'de' MMMM, yyyy", {
+          {format(new Date(patient.birthdate), "dd 'de' MMMM, yyyy", {
             locale: es
           })}
         </Text>
       </Stack>
       <Stack mb={6}>
         <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-        <Text className="font-medium">{patient?.email}</Text>
+        <Text className="font-medium">{patient.email}</Text>
       </Stack>
       <Stack mb={6}>
         <h4 className="text-sm text-gray-600">Teléfono</h4>
-        <Text className="font-medium">{patient?.phoneNumber}</Text>
+        <Text className="font-medium">{patient.phoneNumber}</Text>
       </Stack>
     </div>
   )

@@ -1,8 +1,10 @@
-import { Heading } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import DoctorList from '@components/molecules/DoctorsList/DoctorsList'
 import { doctors } from '@constants/index'
 import { isIOS } from '@utils/index'
 import React from 'react'
+
+import Logo from '../../../../public/static/icons/logo.svg'
 
 export default function Doctors() {
   return (
@@ -12,7 +14,16 @@ export default function Doctors() {
       <Heading as="h2" size="lg" mb={4} noOfLines={1}>
         Medicos con acceso
       </Heading>
-      <DoctorList doctors={doctors} />
+      {doctors.length > 0 && <DoctorList doctors={doctors} />}
+      {doctors.length === 0 && (
+        <div className="flex h-full w-full flex-col items-center justify-center">
+          <Logo />
+          <Text textAlign="center" mt={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
+            risus vel elementum in vulputate.
+          </Text>
+        </div>
+      )}
     </div>
   )
 }

@@ -16,8 +16,8 @@ import React, { ReactElement, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialitiesOptions = specialities.map((option: { name: string }) => ({
-  value: option.name,
+const specialitiesOptions = specialities.map((option: { name: string; id: number }) => ({
+  value: option.id,
   label: option.name
 }))
 

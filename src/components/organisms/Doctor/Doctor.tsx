@@ -14,6 +14,8 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ACCESS_REMOVED } from '@constants/index'
+import { specialities } from '@constants/index'
+import { Doctor as DoctorType } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -51,19 +53,7 @@ function ConfirmationModal({
   )
 }
 
-export default function Doctor({
-  doctor
-}: {
-  doctor: {
-    id: number
-    firstname: string
-    lastname: string
-    birthdate: string
-    email: string
-    phone: string
-    speciality: string
-  }
-}): ReactElement {
+export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -114,7 +104,16 @@ export default function Doctor({
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
-            <Text className="font-medium">{doctor.speciality}</Text>
+            <div className="flex flex-row gap-2">
+              {doctor.specialities?.map((speciality, idx) => (
+                <Text className="text-nowrap font-medium" key={`doctor-card-${speciality}`}>
+                  {specialities.find((el) => el.id === speciality)?.name}
+                  {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
+                    ? ','
+                    : ''}
+                </Text>
+              ))}
+            </div>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>

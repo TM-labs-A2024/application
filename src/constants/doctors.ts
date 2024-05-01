@@ -1,7 +1,7 @@
 export const doctors = [
   {
     id: 1000000,
-    speciality: 'Alergología',
+    specialities: [1],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -10,7 +10,7 @@ export const doctors = [
   },
   {
     id: 2000000,
-    speciality: 'Anestesiología y reanimación',
+    specialities: [2, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -19,7 +19,7 @@ export const doctors = [
   },
   {
     id: 3000000,
-    speciality: 'Aparato digestivo',
+    specialities: [3, 5, 7],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -28,7 +28,7 @@ export const doctors = [
   },
   {
     id: 4000000,
-    speciality: 'Cardiología',
+    specialities: [4, 1],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -37,7 +37,7 @@ export const doctors = [
   },
   {
     id: 5000000,
-    speciality: 'Endocrinología y nutrición',
+    specialities: [5, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -46,7 +46,7 @@ export const doctors = [
   },
   {
     id: 6000000,
-    speciality: 'Geriatría',
+    specialities: [6, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -55,7 +55,7 @@ export const doctors = [
   },
   {
     id: 7000000,
-    speciality: 'Hematología y hemoterapia',
+    specialities: [7, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -64,7 +64,7 @@ export const doctors = [
   },
   {
     id: 8000000,
-    speciality: 'Medicina de la educación física y del deporte',
+    specialities: [8, 9, 5, 1, 3, 4],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -73,7 +73,7 @@ export const doctors = [
   },
   {
     id: 9000000,
-    speciality: 'Medicina espacial',
+    specialities: [9, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -82,7 +82,7 @@ export const doctors = [
   },
   {
     id: 10000000,
-    speciality: 'Medicina intensiva',
+    specialities: [10, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -91,7 +91,7 @@ export const doctors = [
   },
   {
     id: 11000000,
-    speciality: 'Medicina interna',
+    specialities: [11, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -100,7 +100,7 @@ export const doctors = [
   },
   {
     id: 12000000,
-    speciality: 'Medicina legal y forense',
+    specialities: [12, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -109,7 +109,7 @@ export const doctors = [
   },
   {
     id: 13000000,
-    speciality: 'Medicina preventiva y salud pública',
+    specialities: [13, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -118,7 +118,7 @@ export const doctors = [
   },
   {
     id: 14000000,
-    speciality: 'Medicina del trabajo',
+    specialities: [14, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -127,7 +127,7 @@ export const doctors = [
   },
   {
     id: 15000000,
-    speciality: 'Nefrología',
+    specialities: [15, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -136,7 +136,7 @@ export const doctors = [
   },
   {
     id: 16000000,
-    speciality: 'Neumología',
+    specialities: [16, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -145,7 +145,7 @@ export const doctors = [
   },
   {
     id: 17000000,
-    speciality: 'Neurología',
+    specialities: [17, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -154,7 +154,7 @@ export const doctors = [
   },
   {
     id: 18000000,
-    speciality: 'Neurofisiología Clínica',
+    specialities: [18, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -163,7 +163,7 @@ export const doctors = [
   },
   {
     id: 19000000,
-    speciality: 'Oncología médica',
+    specialities: [19, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -172,7 +172,7 @@ export const doctors = [
   },
   {
     id: 20000000,
-    speciality: 'Oncología radioterápica',
+    specialities: [20, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -181,7 +181,7 @@ export const doctors = [
   },
   {
     id: 21000000,
-    speciality: 'Pediatría',
+    specialities: [21, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -190,7 +190,7 @@ export const doctors = [
   },
   {
     id: 22000000,
-    speciality: 'Psiquiatría',
+    specialities: [22, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -199,7 +199,7 @@ export const doctors = [
   },
   {
     id: 23000000,
-    speciality: 'Rehabilitación',
+    specialities: [23, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -208,7 +208,7 @@ export const doctors = [
   },
   {
     id: 24000000,
-    speciality: 'Reumatología',
+    specialities: [24, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -217,7 +217,7 @@ export const doctors = [
   },
   {
     id: 25000000,
-    speciality: 'Medicina familiar y comunitaria',
+    specialities: [25, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -226,7 +226,7 @@ export const doctors = [
   },
   {
     id: 26000000,
-    speciality: 'Cirugía cardiovascular',
+    specialities: [26, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -235,7 +235,7 @@ export const doctors = [
   },
   {
     id: 27000000,
-    speciality: 'Cirugía general y del aparato digestivo',
+    specialities: [27, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -244,7 +244,7 @@ export const doctors = [
   },
   {
     id: 28000000,
-    speciality: 'Cirugía oral y maxilofacial',
+    specialities: [28, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -253,7 +253,7 @@ export const doctors = [
   },
   {
     id: 29000000,
-    speciality: 'Cirugía ortopédica y traumatología',
+    specialities: [29, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -262,7 +262,7 @@ export const doctors = [
   },
   {
     id: 30000000,
-    speciality: 'Cirugía pediátrica',
+    specialities: [30, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -271,7 +271,7 @@ export const doctors = [
   },
   {
     id: 31000000,
-    speciality: 'Cirugía plástica, estética y reparadora',
+    specialities: [31, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -280,7 +280,7 @@ export const doctors = [
   },
   {
     id: 32000000,
-    speciality: 'Cirugía torácica',
+    specialities: [32, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -289,7 +289,7 @@ export const doctors = [
   },
   {
     id: 33000000,
-    speciality: 'Neurocirugía',
+    specialities: [33, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -298,7 +298,7 @@ export const doctors = [
   },
   {
     id: 34000000,
-    speciality: 'Angiología y cirugía vascular',
+    specialities: [34, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -307,7 +307,7 @@ export const doctors = [
   },
   {
     id: 35000000,
-    speciality: 'Dermatología médico-quirúrgica y venereología',
+    specialities: [35, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -316,7 +316,7 @@ export const doctors = [
   },
   {
     id: 36000000,
-    speciality: 'Obstetricia y ginecología',
+    specialities: [36, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -325,7 +325,7 @@ export const doctors = [
   },
   {
     id: 37000000,
-    speciality: 'Oftalmología',
+    specialities: [37, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -334,7 +334,7 @@ export const doctors = [
   },
   {
     id: 38000000,
-    speciality: 'Otorrinolaringología',
+    specialities: [38, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -343,7 +343,7 @@ export const doctors = [
   },
   {
     id: 39000000,
-    speciality: 'Urología',
+    specialities: [39, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -352,7 +352,7 @@ export const doctors = [
   },
   {
     id: 40000000,
-    speciality: 'Análisis clínicos',
+    specialities: [40, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -361,7 +361,7 @@ export const doctors = [
   },
   {
     id: 41000000,
-    speciality: 'Anatomía patológica',
+    specialities: [41, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -370,7 +370,7 @@ export const doctors = [
   },
   {
     id: 42000000,
-    speciality: 'Bioquímica clínica',
+    specialities: [42, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -379,7 +379,7 @@ export const doctors = [
   },
   {
     id: 43000000,
-    speciality: 'Farmacología clínica',
+    specialities: [43, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -388,7 +388,7 @@ export const doctors = [
   },
   {
     id: 44000000,
-    speciality: 'Inmunología',
+    specialities: [44, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -397,7 +397,7 @@ export const doctors = [
   },
   {
     id: 45000000,
-    speciality: 'Medicina nuclear',
+    specialities: [45, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -406,7 +406,7 @@ export const doctors = [
   },
   {
     id: 46000000,
-    speciality: 'Microbiología y parasitología',
+    specialities: [46, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -415,7 +415,7 @@ export const doctors = [
   },
   {
     id: 47000000,
-    speciality: 'Neurofisiología clínica',
+    specialities: [47, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -424,7 +424,7 @@ export const doctors = [
   },
   {
     id: 48000000,
-    speciality: 'Radiodiagnóstico',
+    specialities: [48, 9, 5],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
