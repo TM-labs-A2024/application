@@ -76,11 +76,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             </li>
             <li
-              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/perfil' ? 'border-b-4 border-black' : ''}`}
+              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/perfil/doctor' ? 'border-b-4 border-black' : ''}`}
             >
               <Link
                 as={NextLink}
-                href="/perfil"
+                href="/perfil/doctor"
                 className="flex h-full flex-col items-center justify-center"
               >
                 <Profile className="cursor-pointer" />
@@ -118,11 +118,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </Link>
               </li>
               <li
-                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/perfil' ? 'bg-gray-200' : ''}`}
+                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/perfil/doctor' ? 'bg-gray-200' : ''}`}
               >
                 <Link
                   as={NextLink}
-                  href="/perfil"
+                  href="/perfil/doctor"
                   className="flex w-full flex-row items-center justify-start gap-8"
                 >
                   <Profile className="cursor-pointer" />
