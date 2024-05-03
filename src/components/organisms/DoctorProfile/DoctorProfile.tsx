@@ -15,30 +15,10 @@ const specialitiesOptions = specialities?.map((option: { name: string; id: numbe
 }))
 
 type FormData = {
-  specialities: ReactSelectOption | null
+  specialities: ReactSelectOption[]
 }
 
 export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElement {
-  // --- Hooks -----------------------------------------------------------------
-  const {
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    control
-  } = useForm<FormData>()
-  // --- END: Hooks ------------------------------------------------------------
-
-  // --- Local state -----------------------------------------------------------
-  // --- END: Local state ------------------------------------------------------
-
-  // --- Refs ------------------------------------------------------------------
-  // --- END: Refs -------------------------------------------------------------
-
-  // --- Redux -----------------------------------------------------------------
-  // --- END: Redux ------------------------------------------------------------
-
-  // --- Side effects ----------------------------------------------------------
-  // --- END: Side effects -----------------------------------------------------
-
   // --- Data and handlers -----------------------------------------------------
   const onSubmitDetails = (data: FormData) => {
     alert(JSON.stringify(data))
@@ -52,6 +32,26 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
     [doctor?.specialities]
   )
   // --- END: Data and handlers ------------------------------------------------
+
+  // --- Hooks -----------------------------------------------------------------
+  const {
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    control
+  } = useForm<FormData>({ defaultValues: { specialities: selectedSpecialities } })
+  // --- END: Hooks ------------------------------------------------------------
+
+  // --- Local state -----------------------------------------------------------
+  // --- END: Local state ------------------------------------------------------
+
+  // --- Refs ------------------------------------------------------------------
+  // --- END: Refs -------------------------------------------------------------
+
+  // --- Redux -----------------------------------------------------------------
+  // --- END: Redux ------------------------------------------------------------
+
+  // --- Side effects ----------------------------------------------------------
+  // --- END: Side effects -----------------------------------------------------
 
   return (
     <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}>
