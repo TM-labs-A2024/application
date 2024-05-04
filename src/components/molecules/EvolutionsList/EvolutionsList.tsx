@@ -1,17 +1,9 @@
 import { List } from '@chakra-ui/react'
 import Evolution from '@components/atoms/Cards/Evolution'
+import { Evolutions } from '@src/types'
 import React from 'react'
 
-export default function EvolutionsList({
-  evolutions
-}: {
-  evolutions: {
-    href: string
-    title: string
-    description: string
-    comment: string
-  }[]
-}) {
+export default function EvolutionsList({ evolutions }: { evolutions: Evolutions }) {
   return (
     <List spacing={3} className="h-full">
       {evolutions.map((evolution) => (

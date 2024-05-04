@@ -1,4 +1,5 @@
 import { specialityData } from '@src/constants'
+import { getSession } from '@src/shared'
 import { ReactSelectOption } from '@src/types'
 import SpecialitySearchView from '@views/Speciality/Search'
 import { format } from 'date-fns'
@@ -104,6 +105,24 @@ export default function SpecialitySearchPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isPatient = useMemo(() => getSession() === 'patient', [])
+
+  const specialityId = useMemo(
+    () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
+    [isPatient, router.query.slug]
+  )
+
+  const patientId = useMemo(
+    () => !isPatient && router.query.slug?.[0],
+    [isPatient, router.query.slug]
+  )
+
+  const goBackRef = useMemo(
+    () =>
+      isPatient ? `/especialidad/${specialityId}` : `/especialidad/${patientId}/${specialityId}`,
+    [isPatient, patientId, specialityId]
+  )
+
   const onChange = useCallback((value: string) => {
     setSearch(value)
   }, [])
@@ -111,7 +130,9 @@ export default function SpecialitySearchPage() {
   const data = useMemo(() => {
     return {
       evolutions: evolutionsList.map(({ id, date, type, author, reason }) => ({
-        href: `/evolucion/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/evolucion/${specialityId}/${id}`
+          : `/evolucion/${patientId}/${specialityId}/${id}`,
         title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
         })}`,
@@ -119,7 +140,9 @@ export default function SpecialitySearchPage() {
         comment: `Patología: ${reason}`
       })),
       orders: ordersList.map(({ id, title, date, author }) => ({
-        href: `/orden/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/orden/${specialityId}/${id}`
+          : `/orden/${patientId}/${specialityId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
@@ -127,7 +150,9 @@ export default function SpecialitySearchPage() {
         comment: `Agregado por: ${author}`
       })),
       tests: testsList.map(({ id, title, date, author }) => ({
-        href: `/analisis/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/analisis/${specialityId}/${id}`
+          : `/analisis/${patientId}/${specialityId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
@@ -135,7 +160,7 @@ export default function SpecialitySearchPage() {
         comment: `Agregado por: ${author}`
       }))
     }
-  }, [evolutionsList, ordersList, router.query.slug, testsList])
+  }, [evolutionsList, isPatient, ordersList, patientId, specialityId, testsList])
 
   const matchesCount = useMemo(
     () => evolutionsList.length + ordersList.length + testsList.length,
@@ -144,7 +169,7 @@ export default function SpecialitySearchPage() {
 
   const context = useMemo(
     () => ({
-      speciality: router.query.slug,
+      goBackRef,
       onChange,
       data,
       matches: matchesCount > 0 ? `${matchesCount} resultados` : '',
@@ -155,7 +180,7 @@ export default function SpecialitySearchPage() {
       setToDate,
       setType
     }),
-    [data, fromDate, matchesCount, onChange, router.query.slug, toDate, type]
+    [data, fromDate, goBackRef, matchesCount, onChange, toDate, type]
   )
   // --- END: Data and handlers ------------------------------------------------
 

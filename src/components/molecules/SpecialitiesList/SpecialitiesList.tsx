@@ -1,11 +1,14 @@
 import { List, Stack, Heading } from '@chakra-ui/react'
 import Speciality from '@components/atoms/Cards/Speciality'
+import { Patient } from '@src/types'
 import React from 'react'
 
 export default function SpecialitiesList({
   specialities,
-  label
+  label,
+  patient
 }: {
+  patient?: Patient
   specialities: { name: string; id: number }[]
   label: string
 }) {
@@ -22,6 +25,7 @@ export default function SpecialitiesList({
             name={speciality.name}
             id={String(speciality.id)}
             key={`speciality-${speciality.id}`}
+            patient={patient}
           />
         ))}
       </List>

@@ -5,18 +5,16 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function Evolution({
-  speciality,
+  goBackRef,
   title,
-  data,
-  type
+  data
 }: {
-  speciality: string
+  goBackRef: string
   title: string
   data: {
     description: string
     attachments: { url: string; alt: string }[]
   }
-  type: string
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
@@ -31,7 +29,7 @@ export default function Evolution({
           variant="link"
           icon={<ArrowBackIcon />}
           onClick={() => {
-            router.push(`/especialidad/${speciality}?type=${type}`)
+            router.push(goBackRef)
           }}
         />
         <Text className="font-medium">{title}</Text>

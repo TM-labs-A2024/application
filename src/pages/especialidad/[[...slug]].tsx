@@ -1,4 +1,5 @@
 import { specialities, specialityData } from '@constants/index'
+import { getSession } from '@shared/index'
 import SpecialityView from '@views/Speciality'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -11,6 +12,7 @@ export default function SpecialityPage() {
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const isPatient = useMemo(() => getSession() === 'patient', [])
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -23,9 +25,19 @@ export default function SpecialityPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const specialityId = useMemo(
+    () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
+    [isPatient, router.query.slug]
+  )
+
+  const patientId = useMemo(
+    () => !isPatient && router.query.slug?.[0],
+    [isPatient, router.query.slug]
+  )
+
   const speciality = useMemo(
-    () => specialities.find((speciality) => String(speciality.id) === router.query.slug),
-    [router.query.slug]
+    () => specialities.find((speciality) => String(speciality.id) === specialityId),
+    [specialityId]
   )
 
   const currentTab = useMemo(() => {
@@ -44,7 +56,9 @@ export default function SpecialityPage() {
   const data = useMemo(
     () => ({
       evolutions: specialityData.evolutions.map(({ id, date, type, author, reason }) => ({
-        href: `/evolucion/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/evolucion/${specialityId}/${id}`
+          : `/evolucion/${patientId}/${specialityId}/${id}`,
         title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
         })}`,
@@ -52,7 +66,9 @@ export default function SpecialityPage() {
         comment: `Patología: ${reason}`
       })),
       orders: specialityData.orders.map(({ id, title, date, author }) => ({
-        href: `/orden/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/orden/${specialityId}/${id}`
+          : `/orden/${patientId}/${specialityId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
@@ -60,7 +76,9 @@ export default function SpecialityPage() {
         comment: `Agregado por: ${author}`
       })),
       tests: specialityData.tests.map(({ id, title, date, author }) => ({
-        href: `/analisis/${router.query.slug}/${id}`,
+        href: isPatient
+          ? `/analisis/${specialityId}/${id}`
+          : `/analisis/${patientId}/${specialityId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
@@ -68,12 +86,13 @@ export default function SpecialityPage() {
         comment: `Agregado por: ${author}`
       }))
     }),
-    [router.query.slug]
+    [isPatient, patientId, specialityId]
   )
   // --- END: Data and handlers ------------------------------------------------
 
   return (
     <SpecialityView
+      isPatient={isPatient}
       speciality={speciality ?? specialities[0]}
       data={data}
       currentTab={currentTab}

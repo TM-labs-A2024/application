@@ -12,29 +12,33 @@ import {
 } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
-import { Evolution } from '@src/types'
+import { Evolutions } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
-import React, { useState, useEffect } from 'react'
+import { useRouter as queryRouter } from 'next/router'
+import React, { useState, useEffect, useMemo } from 'react'
 
 export default function Speciality({
+  isPatient,
   speciality,
   data,
   currentTab
 }: {
+  isPatient: boolean
   speciality: {
     id: number
     name: string
   }
   data: {
-    evolutions: Evolution
-    orders: Evolution
-    tests: Evolution
+    evolutions: Evolutions
+    orders: Evolutions
+    tests: Evolutions
   }
   currentTab: number
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  const route = queryRouter()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -55,6 +59,7 @@ export default function Speciality({
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const patientId = useMemo(() => !isPatient && route?.query.slug?.[0], [isPatient, route])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -67,7 +72,9 @@ export default function Speciality({
             variant="link"
             icon={<ArrowBackIcon />}
             onClick={() => {
-              router.push('/especialidades')
+              patientId
+                ? router.push(`/especialidades/${patientId}`)
+                : router.push('/especialidades')
             }}
           />
           <Text className="font-medium">{speciality.name}</Text>
@@ -79,7 +86,9 @@ export default function Speciality({
           placeholder="Buscar especialidad"
           className="mb-8 w-full"
           onClick={() => {
-            router.push(`/especialidad/busqueda/${speciality.id}`)
+            patientId
+              ? router.push(`/especialidad/busqueda/${patientId}/${speciality.id}`)
+              : router.push(`/especialidad/busqueda/${speciality.id}`)
           }}
         />
       )}

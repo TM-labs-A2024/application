@@ -1,4 +1,5 @@
 import { specialityData } from '@constants/index'
+import { getSession } from '@src/shared'
 import AttachmentsView from '@views/Attachments'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
@@ -24,13 +25,31 @@ export default function OrdersPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isPatient = useMemo(() => getSession() === 'patient', [])
   const order = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
   const orderData = useMemo(
     () => specialityData.orders.find((item) => String(item.id) === order),
     [order]
   )
   const title = useMemo(() => String(orderData?.title), [orderData])
-  const speciality = useMemo(() => String(router?.query?.slug?.[0]), [router.query.slug])
+  const speciality = useMemo(
+    () => (isPatient ? String(router?.query?.slug?.[0]) : String(router?.query?.slug?.[1])),
+    [isPatient, router?.query?.slug]
+  )
+
+  const patientId = useMemo(
+    () => !isPatient && router?.query?.slug?.[0],
+    [isPatient, router?.query?.slug]
+  )
+
+  const goBackRef = useMemo(
+    () =>
+      isPatient
+        ? `/especialidad/${speciality}?type=order`
+        : `/especialidad/${patientId}/${speciality}?type=order`,
+    [isPatient, patientId, speciality]
+  )
+
   const data = useMemo(
     () => ({
       description: lorem,
@@ -49,5 +68,5 @@ export default function OrdersPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <AttachmentsView speciality={speciality} title={title} data={data} type={'order'} />
+  return <AttachmentsView goBackRef={goBackRef} title={title} data={data} />
 }

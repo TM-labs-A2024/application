@@ -3,4 +3,6 @@ export type Evolution = {
   title: string
   description: string
   comment: string
-}[]
+}
+
+export type Evolutions = Evolution[]

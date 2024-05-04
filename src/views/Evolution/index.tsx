@@ -2,16 +2,16 @@ import Evolution from '@components/organisms/Evolution'
 import React from 'react'
 
 export default function EvolutionView({
-  speciality,
+  goBackRef,
   title,
   data
 }: {
-  speciality: string
+  goBackRef: string
   title: string
   data: {
     title: string
     content: string
   }[]
 }) {
-  return <Evolution speciality={speciality} title={title} data={data} />
+  return <Evolution goBackRef={goBackRef} title={title} data={data} />
 }

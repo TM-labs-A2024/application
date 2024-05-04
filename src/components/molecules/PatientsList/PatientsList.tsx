@@ -35,10 +35,10 @@ export default function PatientsList({
               Pendientes
             </Text>
             <List>
-              {pendingPatients.map((patient) => (
+              {pendingPatients.map((patient, idx) => (
                 <div
                   className="border-b border-black py-4 last:border-transparent"
-                  key={patient.href}
+                  key={`${patient.href}-${idx + 1}`}
                 >
                   <Patient
                     href={patient.href}

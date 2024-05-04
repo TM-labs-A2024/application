@@ -1,15 +1,24 @@
 import { Link } from '@chakra-ui/next-js'
 import { Text, Avatar } from '@chakra-ui/react'
+import { Patient } from '@src/types'
 import NextLink from 'next/link'
 import React from 'react'
 
 import Chevron from '../../../../../public/static/icons/chevron.svg'
 
-export default function Speciality({ name, id }: { name: string; id: string }) {
+export default function Speciality({
+  name,
+  id,
+  patient
+}: {
+  name: string
+  id: string
+  patient?: Patient
+}) {
   return (
     <Link
       as={NextLink}
-      href={`/especialidad/${id}`}
+      href={patient ? `/especialidad/${patient?.uuid}/${id}` : `/especialidad/${id}`}
       className="border-1 flex w-full rounded-md border border-gray-400 p-4"
     >
       <div className="flex w-full flex-row items-center justify-between">

@@ -7,11 +7,11 @@ export default function SpecialitiesView({
   context
 }: {
   context: {
-    role: string
+    isPatient: boolean
     patient?: Patient
   }
 }) {
-  return context.role === 'patient' ? (
+  return context.isPatient ? (
     <PatientsLayout>
       <Specialities context={context} />
     </PatientsLayout>

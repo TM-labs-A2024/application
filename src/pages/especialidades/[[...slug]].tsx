@@ -11,12 +11,14 @@ export default function SpecialitiesPage() {
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isPatient = useMemo(() => getSession() === 'patient', [])
+
   const context = useMemo(
     () => ({
-      role: getSession(),
+      isPatient,
       patient: patients?.find((patient) => patient.uuid === router?.query?.slug?.[0]) as Patient
     }),
-    [router?.query?.slug]
+    [router?.query?.slug, isPatient]
   )
   // --- END: Data and handlers ------------------------------------------------
 

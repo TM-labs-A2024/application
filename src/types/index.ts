@@ -1,6 +1,6 @@
 import { Doctor } from './doctors'
-import { Evolution } from './evolutions'
+import { Evolution, Evolutions } from './evolutions'
 import { ReactSelectOption } from './forms'
 import { Patient } from './patients'
 
-export type { Evolution, ReactSelectOption, Patient, Doctor }
+export type { Evolution, Evolutions, ReactSelectOption, Patient, Doctor }

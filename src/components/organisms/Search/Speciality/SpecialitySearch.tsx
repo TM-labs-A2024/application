@@ -17,7 +17,7 @@ import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionList from '@components/molecules/EvolutionsList'
 import { evolutionTypes } from '@constants/index'
 import { FILTERS_APPLIED } from '@constants/index'
-import { Evolution, ReactSelectOption } from '@src/types'
+import { Evolutions, ReactSelectOption } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { format } from 'date-fns'
 import NextLink from 'next/link'
@@ -43,12 +43,12 @@ export default function SpecialitySearch({
   context
 }: {
   context: {
-    speciality: string | string[] | undefined
+    goBackRef: string
     onChange: (value: string) => void
     data: {
-      evolutions: Evolution
-      orders: Evolution
-      tests: Evolution
+      evolutions: Evolutions
+      orders: Evolutions
+      tests: Evolutions
     }
     matches: string
     fromDate: string
@@ -75,7 +75,7 @@ export default function SpecialitySearch({
   // --- Local state -----------------------------------------------------------
   const [showFilters, setShowFilters] = useState(false)
 
-  const { fromDate, toDate, type, setFromDate, setToDate, setType, onChange } = context
+  const { fromDate, toDate, type, setFromDate, setToDate, setType, onChange, goBackRef } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -208,7 +208,7 @@ export default function SpecialitySearch({
               onChange={onChange}
               inputRef={inputRef}
             />
-            <Link as={NextLink} href={`/especialidad/${context.speciality}`}>
+            <Link as={NextLink} href={goBackRef}>
               Cancelar
             </Link>
           </div>

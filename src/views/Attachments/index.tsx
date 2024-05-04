@@ -2,18 +2,16 @@ import Attachments from '@src/components/organisms/Attachments'
 import React from 'react'
 
 export default function AttachmentsView({
-  speciality,
+  goBackRef,
   title,
-  data,
-  type
+  data
 }: {
-  speciality: string
+  goBackRef: string
   title: string
   data: {
     description: string
     attachments: { url: string; alt: string }[]
   }
-  type: string
 }) {
-  return <Attachments speciality={speciality} title={title} data={data} type={type} />
+  return <Attachments goBackRef={goBackRef} title={title} data={data} />
 }

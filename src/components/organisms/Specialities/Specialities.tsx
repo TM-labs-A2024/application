@@ -7,7 +7,7 @@ import { Patient } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import Avatar from '../../../../public/static/icons/Avatar.svg'
 import Logo from '../../../../public/static/icons/logo.svg'
@@ -15,19 +15,15 @@ import Logo from '../../../../public/static/icons/logo.svg'
 export default function Specialities({
   context
 }: {
-  context: { role: string; patient?: Patient }
+  context: { isPatient: boolean; patient?: Patient }
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { role, patient } = context
+  const { isPatient, patient } = context
   // --- END: Local state ------------------------------------------------------
-
-  // --- Data and handlers -----------------------------------------------------
-  const isPatient = useMemo(() => role === 'patient', [role])
-  // --- END: Data and handlers ------------------------------------------------
 
   return (
     <div
@@ -76,7 +72,7 @@ export default function Specialities({
         />
       )}
       {specialities.length > 0 && (
-        <SpecialitiesList specialities={specialities} label="Especialidades" />
+        <SpecialitiesList specialities={specialities} label="Especialidades" patient={patient} />
       )}
       {specialities.length === 0 && (
         <div className="flex h-full w-full flex-col items-center justify-center">

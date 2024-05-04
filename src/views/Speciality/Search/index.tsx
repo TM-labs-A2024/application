@@ -1,17 +1,17 @@
 import SpecialitySearch from '@components/organisms/Search/Speciality'
-import { Evolution, ReactSelectOption } from '@src/types'
+import { Evolutions, ReactSelectOption } from '@src/types'
 import React from 'react'
 
 export default function SpecialitySearchView({
   context
 }: {
   context: {
-    speciality: string | string[] | undefined
+    goBackRef: string
     onChange: (value: string) => void
     data: {
-      evolutions: Evolution
-      orders: Evolution
-      tests: Evolution
+      evolutions: Evolutions
+      orders: Evolutions
+      tests: Evolutions
     }
     matches: string
     fromDate: string

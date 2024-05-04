@@ -1,5 +1,5 @@
 import AddPatient from '@components/organisms/AddPatient'
-import { PatientsLayout } from '@layouts/index'
+import { DoctorsLayout } from '@layouts/index'
 import { Patient } from '@src/types'
 import React from 'react'
 
@@ -13,8 +13,8 @@ export default function AddPatientView({
   }
 }) {
   return (
-    <PatientsLayout>
+    <DoctorsLayout>
       <AddPatient context={context} />
-    </PatientsLayout>
+    </DoctorsLayout>
   )
 }

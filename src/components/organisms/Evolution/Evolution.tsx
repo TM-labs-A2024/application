@@ -14,11 +14,11 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function Evolution({
-  speciality,
+  goBackRef,
   title,
   data
 }: {
-  speciality: string
+  goBackRef: string
   title: string
   data: {
     title: string
@@ -38,7 +38,7 @@ export default function Evolution({
           variant="link"
           icon={<ArrowBackIcon />}
           onClick={() => {
-            router.push(`/especialidad/${speciality}?type=evolution`)
+            router.push(goBackRef)
           }}
         />
         <Text className="font-medium">{title}</Text>
