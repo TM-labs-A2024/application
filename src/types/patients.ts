@@ -8,7 +8,7 @@ export type Patient = {
   birthdate: string
   email: string
   phoneNumber: string
-  pending: boolean
+  pending?: boolean
   status?: string
   bed?: string
 }
