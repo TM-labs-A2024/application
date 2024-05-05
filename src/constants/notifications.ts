@@ -14,8 +14,35 @@ export const ACCESS_REMOVED = (isMobile: boolean) => ({
   animationIn: ['animated', 'fadeIn'],
   animationOut: ['animated', 'fadeOut'],
   dismiss: {
-    duration: 5000,
-    onScreen: true
+    duration: 3000
+  }
+})
+
+// Successful deletion of attachments
+export const ATTACHMENT_DELETED = (isMobile: boolean, isOrder: boolean) => ({
+  title: 'Mensaje',
+  message: isOrder ? 'Orden eliminada' : 'Análisis eliminado',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})
+
+// Successful deletion of image
+export const IMAGE_DELETED = (isMobile: boolean) => ({
+  title: 'Mensaje',
+  message: 'Imagen eliminada',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
   }
 })
 
@@ -29,8 +56,7 @@ export const ACCESS_REQUESTED = (isMobile: boolean) => ({
   animationIn: ['animated', 'fadeIn'],
   animationOut: ['animated', 'fadeOut'],
   dismiss: {
-    duration: 5000,
-    onScreen: true
+    duration: 3000
   }
 })
 
@@ -44,7 +70,6 @@ export const FILTERS_APPLIED = (isMobile: boolean) => ({
   animationIn: ['animated', 'fadeIn'],
   animationOut: ['animated', 'fadeOut'],
   dismiss: {
-    duration: 5000,
-    onScreen: true
+    duration: 3000
   }
 })

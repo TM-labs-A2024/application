@@ -68,5 +68,13 @@ export default function OrdersPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <AttachmentsView goBackRef={goBackRef} title={title} data={data} />
+  return (
+    <AttachmentsView
+      goBackRef={goBackRef}
+      title={title}
+      data={data}
+      isPatient={isPatient}
+      type="order"
+    />
+  )
 }

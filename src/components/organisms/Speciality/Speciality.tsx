@@ -129,7 +129,10 @@ export default function Speciality({
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
                   risus vel elementum in vulputate.
                 </Text>
-                <Button mt={4} onClick={() => router.push(`/crear-orden/${patientId}`)}>
+                <Button
+                  mt={4}
+                  onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
+                >
                   Nueva orden
                 </Button>
               </div>
@@ -144,7 +147,10 @@ export default function Speciality({
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
                   risus vel elementum in vulputate.
                 </Text>
-                <Button mt={4} onClick={() => router.push(`/crear-analisis/${patientId}`)}>
+                <Button
+                  mt={4}
+                  onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
+                >
                   Nuevo análisis
                 </Button>
               </div>
@@ -161,7 +167,7 @@ export default function Speciality({
           {!isPatient && tabIndex === 1 && (
             <Button
               className="mt-4 w-full"
-              onClick={() => router.push(`/crear-orden/${patientId}`)}
+              onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
             >
               Nueva orden
             </Button>
@@ -169,7 +175,7 @@ export default function Speciality({
           {!isPatient && tabIndex === 2 && (
             <Button
               className="mt-4 w-full"
-              onClick={() => router.push(`/crear-analisi/${patientId}`)}
+              onClick={() => router.push(`/crear-adjunto/${patientId}?type=test`)}
             >
               Nuevo análisis
             </Button>

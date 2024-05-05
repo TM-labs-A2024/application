@@ -4,7 +4,9 @@ import React from 'react'
 export default function AttachmentsView({
   goBackRef,
   title,
-  data
+  data,
+  isPatient,
+  type
 }: {
   goBackRef: string
   title: string
@@ -12,6 +14,16 @@ export default function AttachmentsView({
     description: string
     attachments: { url: string; alt: string }[]
   }
+  isPatient: boolean
+  type: string
 }) {
-  return <Attachments goBackRef={goBackRef} title={title} data={data} />
+  return (
+    <Attachments
+      goBackRef={goBackRef}
+      title={title}
+      data={data}
+      isPatient={isPatient}
+      type={type}
+    />
+  )
 }

@@ -1,13 +1,59 @@
-import { ArrowBackIcon } from '@chakra-ui/icons'
-import { IconButton, Text, Heading, Image } from '@chakra-ui/react'
-import { isIOS } from '@utils/index'
+import { ArrowBackIcon, DeleteIcon } from '@chakra-ui/icons'
+import {
+  IconButton,
+  Text,
+  Heading,
+  Image,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalFooter,
+  ModalBody,
+  Button,
+  useDisclosure
+} from '@chakra-ui/react'
+import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
+import { isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
+import { Store } from 'react-notifications-component'
 
-export default function Evolution({
+function ConfirmationModal({
+  isOpen,
+  onClose,
+  onSubmit,
+  description
+}: {
+  isOpen: boolean
+  onClose: () => void
+  onSubmit: () => void
+  description: string
+}) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalBody>{description}</ModalBody>
+
+        <ModalFooter>
+          <Button mr={3} onClick={onClose}>
+            Cancelar
+          </Button>
+          <Button colorScheme="blackAlpha" onClick={onSubmit}>
+            Aceptar
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  )
+}
+
+export default function Attachments({
   goBackRef,
   title,
-  data
+  data,
+  isPatient,
+  type
 }: {
   goBackRef: string
   title: string
@@ -15,24 +61,63 @@ export default function Evolution({
     description: string
     attachments: { url: string; alt: string }[]
   }
+  isPatient: boolean
+  type: string
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
+
+  // --- Local state -----------------------------------------------------------
+  const [deleteType, setDeleteType] = useState('all')
+  // --- END: Local state ------------------------------------------------------
+
+  // --- Data and handlers -----------------------------------------------------
+  const onClick = useCallback(
+    (type: string) => {
+      setDeleteType(type)
+      onOpen()
+    },
+    [onOpen]
+  )
+
+  const onSuccess = useCallback(() => {
+    onClose()
+    if (deleteType === 'all') {
+      Store.addNotification(ATTACHMENT_DELETED(isMobile(window), type === 'order'))
+      router.back()
+    } else {
+      Store.addNotification(IMAGE_DELETED(isMobile(window)))
+    }
+  }, [deleteType, onClose, router, type])
+  // --- END: Data and handlers ------------------------------------------------
 
   return (
     <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
-        <IconButton
-          size="xl"
-          aria-label="back"
-          variant="link"
-          icon={<ArrowBackIcon />}
-          onClick={() => {
-            router.push(goBackRef)
-          }}
-        />
-        <Text className="font-medium">{title}</Text>
+      <div
+        className={`mb-8 flex flex-row items-center gap-4 ${isPatient ? 'justify-start' : 'justify-between'}`}
+      >
+        <div className="flex flex-row gap-4">
+          <IconButton
+            size="xl"
+            aria-label="back"
+            variant="link"
+            icon={<ArrowBackIcon />}
+            onClick={() => {
+              router.push(goBackRef)
+            }}
+          />
+          <Text className="font-medium">{title}</Text>
+        </div>
+        {!isPatient && (
+          <IconButton
+            size="xl"
+            aria-label="back"
+            icon={<DeleteIcon />}
+            onClick={() => onClick('all')}
+          />
+        )}
       </div>
       <div className="flex h-full flex-col overflow-scroll">
         <div>
@@ -45,17 +130,35 @@ export default function Evolution({
           <Heading as="h2" size="sm" mt={4} mb={4}>
             Archivos adjuntos
           </Heading>
-          {data?.attachments?.map((image, idx) => (
-            <Image
-              key={`order-tests-image-${idx + 1}`}
-              src={image.url}
-              alt={image.alt}
-              mb={4}
-              mt={4}
-            />
-          ))}
+          {data?.attachments?.map((image, idx) => {
+            return (
+              <div className="relative w-full" key={`order-tests-image-${idx + 1}`}>
+                {!isPatient && (
+                  <button
+                    className="absolute right-2 top-2 z-20 rounded-md bg-white px-2 py-1"
+                    onClick={() => onClick('image')}
+                  >
+                    <DeleteIcon />
+                  </button>
+                )}
+                <Image src={image.url} alt={image.alt} mb={4} mt={4} className="" />
+              </div>
+            )
+          })}
         </div>
       </div>
+      <ConfirmationModal
+        isOpen={isOpen}
+        onClose={onClose}
+        onSubmit={onSuccess}
+        description={
+          deleteType === 'all'
+            ? type === 'order'
+              ? '¿Deseas eliminar la orden?'
+              : '¿Deseas eliminar el análisis?'
+            : '¿Deseas eliminar la imagen?'
+        }
+      />
     </div>
   )
 }
