@@ -52,11 +52,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             className={`fixed ${isIOS() ? 'bottom-8' : 'bottom-0'} flex h-16 w-full flex-row justify-around`}
           >
             <li
-              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/especialidades' ? 'border-b-4 border-black' : ''}`}
+              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/pacientes' ? 'border-b-4 border-black' : ''}`}
             >
               <Link
                 as={NextLink}
-                href="/especialidades"
+                href="/pacientes"
                 className="flex h-full flex-col items-center justify-center"
               >
                 <Home className="cursor-pointer" />

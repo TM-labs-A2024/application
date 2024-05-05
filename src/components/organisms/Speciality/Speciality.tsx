@@ -14,7 +14,7 @@ import {
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
 import { Evolutions } from '@src/types'
-import { isIOS, isMobile } from '@utils/index'
+import { isAndroid, isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import { useRouter as queryRouter } from 'next/router'
 import React, { useState, useEffect, useMemo } from 'react'
@@ -117,10 +117,10 @@ export default function Speciality({
         <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="1px" />
 
         <TabPanels className="h-full pb-0">
-          <TabPanel className="h-[90%] overflow-scroll">
+          <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
             <EvolutionsList evolutions={data.evolutions} />
           </TabPanel>
-          <TabPanel className="h-[90%] overflow-scroll">
+          <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
             {data.orders.length > 0 && <EvolutionsList evolutions={data.orders} />}
             {data.orders.length === 0 && (
               <div className="flex h-full w-full items-center justify-center">
@@ -131,14 +131,16 @@ export default function Speciality({
                 </Text>
                 <Button
                   mt={4}
-                  onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
+                  onClick={() =>
+                    router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
+                  }
                 >
                   Nueva orden
                 </Button>
               </div>
             )}
           </TabPanel>
-          <TabPanel className="h-[90%] overflow-scroll">
+          <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
             {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
             {data.tests.length === 0 && (
               <div className="flex h-full w-full items-center justify-center">
@@ -149,7 +151,9 @@ export default function Speciality({
                 </Text>
                 <Button
                   mt={4}
-                  onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
+                  onClick={() =>
+                    router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
+                  }
                 >
                   Nuevo análisis
                 </Button>
@@ -167,7 +171,7 @@ export default function Speciality({
           {!isPatient && tabIndex === 1 && (
             <Button
               className="mt-4 w-full"
-              onClick={() => router.push(`/crear-adjunto/${patientId}?type=order`)}
+              onClick={() => router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)}
             >
               Nueva orden
             </Button>
@@ -175,7 +179,7 @@ export default function Speciality({
           {!isPatient && tabIndex === 2 && (
             <Button
               className="mt-4 w-full"
-              onClick={() => router.push(`/crear-adjunto/${patientId}?type=test`)}
+              onClick={() => router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=test`)}
             >
               Nuevo análisis
             </Button>

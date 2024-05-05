@@ -22,10 +22,12 @@ type FormData = {
 
 export default function EditPatientForm({
   type,
-  patientId
+  patientId,
+  speciality
 }: {
   type: string
   patientId: string
+  speciality: string
 }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
@@ -70,8 +72,8 @@ export default function EditPatientForm({
           icon={<ArrowBackIcon />}
           onClick={() => {
             isOrder
-              ? router.push(`/especialidad/${patientId}?type=order`)
-              : router.push(`/especialidad/${patientId}?type=test`)
+              ? router.push(`/especialidad/${patientId}/${speciality}?type=order`)
+              : router.push(`/especialidad/${patientId}/${speciality}?type=test`)
           }}
         />
         {isOrder && <Text className="font-medium">Nueva orden médica</Text>}

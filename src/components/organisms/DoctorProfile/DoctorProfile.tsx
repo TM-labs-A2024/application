@@ -57,50 +57,53 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
     <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}>
       <Text className="mb-6 font-medium">Perfil</Text>
       <div className="flex h-full flex-col">
-        <Stack spacing={1} mb={6}>
-          <Heading as="h3" size="md" noOfLines={1}>
-            {doctor.firstname} {doctor.lastname}
-          </Heading>
-          <Text>CI: {doctor.id.toLocaleString('es-ES')}</Text>
-        </Stack>
-        <Stack mb={6}>
-          <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
-          <Text className="font-medium">
-            {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
-              locale: es
-            })}
-          </Text>
-        </Stack>
-        <Stack mb={6}>
-          <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-          <Text className="font-medium">{doctor.email}</Text>
-        </Stack>
-        <Stack mb={6}>
-          <h4 className="text-sm text-gray-600">Teléfono</h4>
-          <Text className="font-medium">{doctor.phone}</Text>
-        </Stack>
-        <Divider orientation="horizontal" />
-        <form onSubmit={handleSubmit(onSubmitDetails)} className="mt-6 w-full">
-          <Controller
-            control={control}
-            name="specialities"
-            rules={{
-              required: 'Este campo es obligatorio'
-            }}
-            render={({ field }) => (
-              <Select
-                id="specialities"
-                isMulti
-                {...field}
-                placeholder="Especialidad"
-                defaultValue={selectedSpecialities}
-                options={specialitiesOptions}
-              />
-            )}
-          />
-          <FormErrorMessage>
-            {errors?.specialities && errors?.specialities?.message}
-          </FormErrorMessage>
+        <form onSubmit={handleSubmit(onSubmitDetails)} className="h-full">
+          <div className="h-5/6 overflow-scroll">
+            <Stack spacing={1} mb={6}>
+              <Heading as="h3" size="md" noOfLines={1}>
+                {doctor.firstname} {doctor.lastname}
+              </Heading>
+              <Text>CI: {doctor.id.toLocaleString('es-ES')}</Text>
+            </Stack>
+            <Stack mb={6}>
+              <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
+              <Text className="font-medium">
+                {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
+                  locale: es
+                })}
+              </Text>
+            </Stack>
+            <Stack mb={6}>
+              <h4 className="text-sm text-gray-600">Correo electrónico</h4>
+              <Text className="font-medium">{doctor.email}</Text>
+            </Stack>
+            <Stack mb={6}>
+              <h4 className="text-sm text-gray-600">Teléfono</h4>
+              <Text className="font-medium">{doctor.phone}</Text>
+            </Stack>
+            <Divider orientation="horizontal" />
+            <Controller
+              control={control}
+              name="specialities"
+              rules={{
+                required: 'Este campo es obligatorio'
+              }}
+              render={({ field }) => (
+                <Select
+                  id="specialities"
+                  className="mt-6"
+                  isMulti
+                  {...field}
+                  placeholder="Especialidad"
+                  defaultValue={selectedSpecialities}
+                  options={specialitiesOptions}
+                />
+              )}
+            />
+            <FormErrorMessage>
+              {errors?.specialities && errors?.specialities?.message}
+            </FormErrorMessage>
+          </div>
           <Button isLoading={isSubmitting} type="submit" className="mt-8 w-full">
             Guardar
           </Button>

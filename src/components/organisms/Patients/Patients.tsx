@@ -45,14 +45,14 @@ export default function Patients() {
 
   return (
     <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-64 pt-20' : 'pb-56'} ${isAndroid() ?? 'pt-8'}`}
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-64 pt-20' : 'pb-56'} ${isAndroid() ?? 'pb-64 pt-8'}`}
     >
       <Image
         alt="logo"
         src="/static/images/logo-horizontal.png"
         width={200}
         height={80}
-        className="mx-auto mb-8"
+        className={`mx-auto mb-8 ${isAndroid() && 'mt-8'}`}
       />
       {patients.length > 0 && (
         <>
