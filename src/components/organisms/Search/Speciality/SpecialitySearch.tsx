@@ -140,6 +140,7 @@ export default function SpecialitySearch({
                   <FormLabel>Desde</FormLabel>
                   <Input
                     id="fromDate"
+                    className="min-h-10"
                     type="date"
                     placeholder="Desde"
                     defaultValue={fromDate}
@@ -161,6 +162,7 @@ export default function SpecialitySearch({
                   <FormLabel>Hasta</FormLabel>
                   <Input
                     id="toDate"
+                    className="min-h-10"
                     type="date"
                     placeholder="Hasta"
                     defaultValue={toDate}

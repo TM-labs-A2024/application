@@ -5,8 +5,10 @@ export default function InputComponent({
   placeholder,
   label,
   className,
-  disabled
+  disabled,
+  id
 }: {
+  id?: string
   placeholder: string
   label: string
   className: string
@@ -15,7 +17,7 @@ export default function InputComponent({
   return (
     <div className={className}>
       <label>{label}</label>
-      <Input placeholder={placeholder} size="md" disabled={disabled} />
+      <Input placeholder={placeholder} size="md" disabled={disabled} id={id} className="min-h-10" />
     </div>
   )
 }

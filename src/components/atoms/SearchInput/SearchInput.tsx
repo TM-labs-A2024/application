@@ -24,6 +24,7 @@ export default function SearchInputComponent({
           <SearchIcon color="gray.500" />
         </InputLeftElement>
         <Input
+          className="min-h-10"
           onFocus={onClick}
           ref={inputRef}
           placeholder={placeholder}

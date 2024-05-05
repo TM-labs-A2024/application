@@ -1,4 +1,4 @@
-import { specialityData } from '@constants/index'
+import { specialityData, patients } from '@constants/index'
 import { getSession } from '@src/shared'
 import EvolutionView from '@views/Evolution'
 import { format } from 'date-fns'
@@ -58,6 +58,8 @@ export default function EvolutionPage() {
     [isPatient, router?.query?.slug]
   )
 
+  const patient = useMemo(() => patients.find((patient) => patient.uuid === patientId), [patientId])
+
   const goBackRef = useMemo(
     () =>
       isPatient
@@ -97,5 +99,5 @@ export default function EvolutionPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <EvolutionView goBackRef={goBackRef} title={title} data={data} />
+  return <EvolutionView patient={patient} goBackRef={goBackRef} title={title} data={data} />
 }

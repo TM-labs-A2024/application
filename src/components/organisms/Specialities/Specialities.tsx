@@ -74,14 +74,14 @@ export default function Specialities({
       {specialities.length > 0 && (
         <SpecialitiesList specialities={specialities} label="Especialidades" patient={patient} />
       )}
-      {specialities.length === 0 && (
+      {!isPatient && specialities.length === 0 && (
         <div className="flex h-full w-full flex-col items-center justify-center">
           <Logo />
           <Text textAlign="center" mt={4}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
             risus vel elementum in vulputate.
           </Text>
-          <Button mt={4} onClick={() => router.push('/crear-historia')}>
+          <Button mt={4} onClick={() => router.push(`/crear-historia/${patient?.uuid}`)}>
             Crear historia
           </Button>
         </div>

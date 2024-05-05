@@ -9,15 +9,19 @@ import {
   AccordionIcon,
   Box
 } from '@chakra-ui/react'
+import Profile from '@src/components/atoms/Cards/Profile'
+import { Patient } from '@src/types'
 import { isIOS } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function Evolution({
+  patient,
   goBackRef,
   title,
   data
 }: {
+  patient?: Patient
   goBackRef: string
   title: string
   data: {
@@ -43,6 +47,7 @@ export default function Evolution({
         />
         <Text className="font-medium">{title}</Text>
       </div>
+      {patient && <Profile patient={patient} />}
       <div className="flex h-full flex-col overflow-scroll">
         <Accordion defaultIndex={[]} allowMultiple>
           {data?.map((item, idx) => (

@@ -41,7 +41,15 @@ export default function SpecialityPage() {
   )
 
   const currentTab = useMemo(() => {
-    switch (router.query.type) {
+    if (!router.query.type) return 0
+
+    const tab = router.query.type
+
+    if (typeof window !== 'undefined') {
+      router.replace(router.asPath.split('?')[0])
+    }
+
+    switch (tab) {
       case 'evolution':
         return 0
       case 'order':

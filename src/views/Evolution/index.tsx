@@ -1,11 +1,14 @@
 import Evolution from '@components/organisms/Evolution'
+import { Patient } from '@src/types'
 import React from 'react'
 
 export default function EvolutionView({
+  patient,
   goBackRef,
   title,
   data
 }: {
+  patient?: Patient
   goBackRef: string
   title: string
   data: {
@@ -13,5 +16,5 @@ export default function EvolutionView({
     content: string
   }[]
 }) {
-  return <Evolution goBackRef={goBackRef} title={title} data={data} />
+  return <Evolution patient={patient} goBackRef={goBackRef} title={title} data={data} />
 }

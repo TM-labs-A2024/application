@@ -47,7 +47,7 @@ export default function Patient({ patient }: { patient: PatientType }) {
           variant="link"
           icon={<ArrowBackIcon />}
           onClick={() => {
-            router.push(`/especialidades/${patient?.uuid}`)
+            router.back()
           }}
         />
         <Text className="font-medium">Ficha médica</Text>

@@ -179,6 +179,7 @@ export default function PatientsSearch({
                   <FormLabel>Desde</FormLabel>
                   <Input
                     id="fromAge"
+                    className="min-h-10"
                     type="number"
                     placeholder="Desde"
                     defaultValue={fromAge}
@@ -198,6 +199,7 @@ export default function PatientsSearch({
                   <FormLabel>Hasta</FormLabel>
                   <Input
                     id="toAge"
+                    className="min-h-10"
                     type="number"
                     placeholder="Hasta"
                     defaultValue={toAge}

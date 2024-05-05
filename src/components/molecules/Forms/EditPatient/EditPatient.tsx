@@ -84,6 +84,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
           <Stack spacing={4} className="h-3/4 overflow-scroll">
             <Input
               id="firstname"
+              className="min-h-10"
               defaultValue={patient.firstname}
               placeholder="Nombres"
               {...register('firstname', {
@@ -93,6 +94,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
             <Input
               id="lastname"
+              className="min-h-10"
               defaultValue={patient.lastname}
               placeholder="Apellidos"
               {...register('lastname', {
@@ -102,6 +104,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
             <Input
               id="id"
+              className="min-h-10"
               defaultValue={patient.govId}
               placeholder="Cédula"
               {...register('id', {
@@ -111,6 +114,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
             <Input
               id="birthdate"
+              className="min-h-10"
               defaultValue={format(new Date(patient.birthdate), 'yyyy-MM-dd')}
               type="date"
               placeholder="Fecha de nacimiento"
@@ -121,6 +125,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.birthdate && errors?.birthdate?.message}</FormErrorMessage>
             <Input
               id="email"
+              className="min-h-10"
               defaultValue={patient.email}
               placeholder="Correo electrónico"
               {...register('email', {
@@ -132,6 +137,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
               <InputLeftAddon>+58</InputLeftAddon>
               <Input
                 id="phone"
+                className="min-h-10"
                 defaultValue={patient.phoneNumber}
                 type="tel"
                 placeholder="Teléfono"

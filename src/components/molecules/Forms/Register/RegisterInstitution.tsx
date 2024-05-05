@@ -98,6 +98,7 @@ export default function RegisterForm(): ReactElement {
             <Stack spacing={4} className="h-3/4 overflow-scroll">
               <Input
                 id="institution"
+                className="min-h-10"
                 placeholder="Nombre de la institución"
                 {...register('institution', {
                   required: 'Este campo es obligatorio'
@@ -108,6 +109,7 @@ export default function RegisterForm(): ReactElement {
               </FormErrorMessage>
               <Input
                 id="institutionId"
+                className="min-h-10"
                 placeholder="RIF"
                 {...register('institutionId', {
                   required: 'Este campo es obligatorio'
@@ -118,6 +120,7 @@ export default function RegisterForm(): ReactElement {
               </FormErrorMessage>
               <Input
                 id="credential"
+                className="min-h-10"
                 placeholder="Credenciales"
                 {...register('credential', {
                   required: 'Este campo es obligatorio'
@@ -164,6 +167,7 @@ export default function RegisterForm(): ReactElement {
             <Stack spacing={4} className="h-3/4 overflow-scroll">
               <Input
                 id="firstname"
+                className="min-h-10"
                 placeholder="Nombre"
                 {...register('firstname', {
                   required: 'Este campo es obligatorio'
@@ -172,6 +176,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
               <Input
                 id="lastname"
+                className="min-h-10"
                 placeholder="Apellido"
                 {...register('lastname', {
                   required: 'Este campo es obligatorio'
@@ -180,6 +185,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
               <Input
                 id="title"
+                className="min-h-10"
                 placeholder="Cargo"
                 {...register('title', {
                   required: 'Este campo es obligatorio'
@@ -188,6 +194,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.title && errors?.title?.message}</FormErrorMessage>
               <Input
                 id="email"
+                className="min-h-10"
                 placeholder="Correo electrónico"
                 {...register('email', {
                   required: 'Este campo es obligatorio'
@@ -214,6 +221,7 @@ export default function RegisterForm(): ReactElement {
             <Stack spacing={4} className="h-3/4 overflow-scroll">
               <Input
                 id="code"
+                className="min-h-10"
                 placeholder="Ingresar código"
                 {...register('code', {
                   required: 'Este campo es obligatorio'
