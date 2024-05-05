@@ -9,14 +9,11 @@ import {
   ModalContent,
   ModalFooter,
   ModalBody,
-  Button,
-  useDisclosure
+  Button
 } from '@chakra-ui/react'
-import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
-import { isIOS, isMobile } from '@utils/index'
+import { isIOS } from '@utils/index'
 import { useRouter } from 'next/navigation'
-import React, { useCallback, useState } from 'react'
-import { Store } from 'react-notifications-component'
+import React from 'react'
 
 function ConfirmationModal({
   isOpen,
@@ -49,49 +46,37 @@ function ConfirmationModal({
 }
 
 export default function Attachments({
-  goBackRef,
-  title,
-  data,
-  isPatient,
-  type
+  context
 }: {
-  goBackRef: string
-  title: string
-  data: {
+  context: {
+    goBackRef: string
+    title: string
+    data: {
+      description: string
+      attachments: { url: string; alt: string }[]
+    }
+    isPatient: boolean
+    isOpen: boolean
     description: string
-    attachments: { url: string; alt: string }[]
+    onClose: () => void
+    onDeleteClick: (type: string) => void
+    onSubmit: () => void
   }
-  isPatient: boolean
-  type: string
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const {
+    goBackRef,
+    title,
+    data,
+    isPatient,
+    isOpen,
+    onClose,
+    onDeleteClick,
+    onSubmit,
+    description
+  } = context
   // --- END: Hooks ------------------------------------------------------------
-
-  // --- Local state -----------------------------------------------------------
-  const [deleteType, setDeleteType] = useState('all')
-  // --- END: Local state ------------------------------------------------------
-
-  // --- Data and handlers -----------------------------------------------------
-  const onClick = useCallback(
-    (type: string) => {
-      setDeleteType(type)
-      onOpen()
-    },
-    [onOpen]
-  )
-
-  const onSuccess = useCallback(() => {
-    onClose()
-    if (deleteType === 'all') {
-      Store.addNotification(ATTACHMENT_DELETED(isMobile(window), type === 'order'))
-      router.back()
-    } else {
-      Store.addNotification(IMAGE_DELETED(isMobile(window)))
-    }
-  }, [deleteType, onClose, router, type])
-  // --- END: Data and handlers ------------------------------------------------
 
   return (
     <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
@@ -115,7 +100,7 @@ export default function Attachments({
             size="xl"
             aria-label="back"
             icon={<DeleteIcon />}
-            onClick={() => onClick('all')}
+            onClick={() => onDeleteClick('all')}
           />
         )}
       </div>
@@ -136,7 +121,7 @@ export default function Attachments({
                 {!isPatient && (
                   <button
                     className="absolute right-2 top-2 z-20 rounded-md bg-white px-2 py-1"
-                    onClick={() => onClick('image')}
+                    onClick={() => onDeleteClick('image')}
                   >
                     <DeleteIcon />
                   </button>
@@ -150,14 +135,8 @@ export default function Attachments({
       <ConfirmationModal
         isOpen={isOpen}
         onClose={onClose}
-        onSubmit={onSuccess}
-        description={
-          deleteType === 'all'
-            ? type === 'order'
-              ? '¿Deseas eliminar la orden?'
-              : '¿Deseas eliminar el análisis?'
-            : '¿Deseas eliminar la imagen?'
-        }
+        onSubmit={onSubmit}
+        description={description}
       />
     </div>
   )

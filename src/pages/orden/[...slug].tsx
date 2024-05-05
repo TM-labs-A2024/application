@@ -1,8 +1,12 @@
+import { useDisclosure } from '@chakra-ui/react'
 import { specialityData } from '@constants/index'
+import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
 import { getSession } from '@src/shared'
+import { isMobile } from '@utils/index'
 import AttachmentsView from '@views/Attachments'
 import { useRouter } from 'next/router'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useCallback } from 'react'
+import { Store } from 'react-notifications-component'
 
 const lorem =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
@@ -10,9 +14,11 @@ const lorem =
 export default function OrdersPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const [deleteType, setDeleteType] = useState('all')
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -66,15 +72,57 @@ export default function OrdersPage() {
     }),
     []
   )
+
+  const onDeleteClick = useCallback(
+    (type: string) => {
+      setDeleteType(type)
+      onOpen()
+    },
+    [onOpen]
+  )
+
+  const onSubmit = useCallback(() => {
+    onClose()
+    if (deleteType === 'all') {
+      Store.addNotification(ATTACHMENT_DELETED(isMobile(window), true))
+      router.back()
+    } else {
+      Store.addNotification(IMAGE_DELETED(isMobile(window)))
+    }
+  }, [deleteType, onClose, router])
+
+  const description = useMemo(
+    () => (deleteType === 'all' ? '¿Deseas eliminar la orden?' : '¿Deseas eliminar la imagen?'),
+    [deleteType]
+  )
+
+  const context = useMemo(
+    () => ({
+      goBackRef,
+      title,
+      data,
+      isPatient,
+      description,
+      isOpen,
+      deleteType,
+      onClose,
+      onDeleteClick,
+      onSubmit
+    }),
+    [
+      goBackRef,
+      title,
+      data,
+      isPatient,
+      description,
+      isOpen,
+      deleteType,
+      onClose,
+      onDeleteClick,
+      onSubmit
+    ]
+  )
   // --- END: Data and handlers ------------------------------------------------
 
-  return (
-    <AttachmentsView
-      goBackRef={goBackRef}
-      title={title}
-      data={data}
-      isPatient={isPatient}
-      type="order"
-    />
-  )
+  return <AttachmentsView context={context} />
 }

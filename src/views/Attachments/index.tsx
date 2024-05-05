@@ -2,28 +2,22 @@ import Attachments from '@src/components/organisms/Attachments'
 import React from 'react'
 
 export default function AttachmentsView({
-  goBackRef,
-  title,
-  data,
-  isPatient,
-  type
+  context
 }: {
-  goBackRef: string
-  title: string
-  data: {
+  context: {
+    goBackRef: string
+    title: string
+    data: {
+      description: string
+      attachments: { url: string; alt: string }[]
+    }
+    isPatient: boolean
+    isOpen: boolean
     description: string
-    attachments: { url: string; alt: string }[]
+    onClose: () => void
+    onDeleteClick: (type: string) => void
+    onSubmit: () => void
   }
-  isPatient: boolean
-  type: string
 }) {
-  return (
-    <Attachments
-      goBackRef={goBackRef}
-      title={title}
-      data={data}
-      isPatient={isPatient}
-      type={type}
-    />
-  )
+  return <Attachments context={context} />
 }

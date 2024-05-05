@@ -77,7 +77,7 @@ export default function EditPatientForm({
           }}
         />
         {isOrder && <Text className="font-medium">Nueva orden médica</Text>}
-        {!isOrder && <Text className="font-medium">Nueva análisis</Text>}
+        {!isOrder && <Text className="font-medium">Nuevo análisis</Text>}
       </div>
       <form onSubmit={handleSubmit(onSubmitDetails)} className="h-full w-full">
         <FormControl
