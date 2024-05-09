@@ -104,7 +104,7 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
               {errors?.specialities && errors?.specialities?.message}
             </FormErrorMessage>
           </div>
-          <Button isLoading={isSubmitting} type="submit" className="mt-8 w-full">
+          <Button isLoading={isSubmitting} type="submit" className="mt-0 w-full">
             Guardar
           </Button>
         </form>

@@ -38,7 +38,7 @@ export default function Patient({ patient }: { patient: PatientType }) {
 
   return (
     <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-10' : 'pt-8'}`}
     >
       <div className="my-8 flex flex-row items-center justify-start gap-4">
         <IconButton
