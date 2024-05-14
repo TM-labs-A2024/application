@@ -1,9 +1,9 @@
-import { doctors } from '@constants/index'
-import DoctorView from '@views/Doctor'
+import { doctors } from '@src/constants'
+import InstitutionDoctorView from '@views/InstitutionDoctor'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
-export default function DoctorPage() {
+export default function InstitutionRequestsPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -22,10 +22,10 @@ export default function DoctorPage() {
 
   // --- Data and handlers -----------------------------------------------------
   const doctorData = useMemo(
-    () => doctors.find((doctor) => String(doctor.id) === router.query.slug),
+    () => doctors.find((doctor) => String(doctor.id) === router.query.slug?.[0]),
     [router.query.slug]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <DoctorView doctor={doctorData ?? doctors[0]} />
+  return <InstitutionDoctorView doctor={doctorData ?? doctors[0]} />
 }

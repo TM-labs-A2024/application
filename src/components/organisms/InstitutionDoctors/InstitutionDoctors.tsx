@@ -9,7 +9,7 @@ import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
-export default function InstitutionRequests({ doctors }: { doctors: DoctorType[] }) {
+export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] }) {
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
@@ -39,8 +39,8 @@ export default function InstitutionRequests({ doctors }: { doctors: DoctorType[]
             onClick={() => null}
           />
           <MenuList>
-            <MenuItem as="a" href="/institucion/medicos">
-              Médicos con acceso
+            <MenuItem as="a" href="/institucion/solicitudes">
+              Solicitudes pendientes
             </MenuItem>
             <MenuItem as="a" href="/perfil/institucion">
               Perfil de la institución
@@ -50,7 +50,7 @@ export default function InstitutionRequests({ doctors }: { doctors: DoctorType[]
       </div>
       {doctors.length > 0 && (
         <div className="h-full lg:px-80">
-          <RequestsList requests={formatedRequests} label="Solicitudes pendientes" />
+          <RequestsList requests={formatedRequests} label="Médicos con acceso" />
         </div>
       )}
       {doctors.length === 0 && (

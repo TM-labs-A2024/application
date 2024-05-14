@@ -6,7 +6,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 2000000,
@@ -15,7 +16,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 3000000,
@@ -24,7 +26,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 4000000,
@@ -33,7 +36,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 5000000,
@@ -42,7 +46,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 6000000,
@@ -51,7 +56,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 7000000,
@@ -60,7 +66,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 8000000,
@@ -141,7 +148,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 17000000,
@@ -150,7 +158,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 18000000,
@@ -159,7 +168,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 19000000,
@@ -168,7 +178,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 20000000,
@@ -177,7 +188,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 21000000,
@@ -186,7 +198,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 22000000,
@@ -195,7 +208,8 @@ export const doctors = [
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
     email: 'joseperez@gmail.com ',
-    phone: '4127775522'
+    phone: '4127775522',
+    pending: true
   },
   {
     id: 23000000,

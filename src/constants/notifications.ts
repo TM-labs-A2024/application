@@ -18,6 +18,48 @@ export const ACCESS_REMOVED = (isMobile: boolean) => ({
   }
 })
 
+// Successful access denied to doctor
+export const ACCESS_DENIED = (isMobile: boolean) => ({
+  title: 'Mensaje',
+  message: 'Acceso denegado',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})
+
+// Successful access removal to doctor
+export const ACCESS_REMOVAL = (isMobile: boolean) => ({
+  title: 'Mensaje',
+  message: 'Acceso denegado',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})
+
+// Successful access granted to doctor
+export const ACCESS_GRANTED = (isMobile: boolean) => ({
+  title: 'Mensaje',
+  message: 'Acceso concedido',
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})
+
 // Successful deletion of attachments
 export const ATTACHMENT_DELETED = (isMobile: boolean, isOrder: boolean) => ({
   title: 'Mensaje',
