@@ -1,24 +1,23 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Text, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import RequestsList from '@components/molecules/RequestsList'
-import { specialities as specialitiesList } from '@src/constants'
-import { Doctor as DoctorType } from '@src/types'
+import { Institution as InstitutionType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
-export default function InstitutionRequests({ doctors }: { doctors: DoctorType[] }) {
+export default function Institutions({ institutions }: { institutions: InstitutionType[] }) {
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
-      doctors.map(({ id, firstname, lastname, specialities }) => ({
-        href: `/institucion/medico/${id}`,
-        title: `${firstname} ${lastname}`,
-        description: `C.I: ${id},${specialities.map((speciality) => ' ' + specialitiesList.find((el) => el.id === speciality)?.name)}.`
+      institutions.map(({ id, name, credentials }) => ({
+        href: `/ministerio/institucion/${id}`,
+        title: name,
+        description: `RIF ${credentials}`
       })),
-    [doctors]
+    [institutions]
   )
   // --- END: Data and handlers ------------------------------------------------
 
@@ -39,18 +38,15 @@ export default function InstitutionRequests({ doctors }: { doctors: DoctorType[]
             onClick={() => null}
           />
           <MenuList>
-            <MenuItem as="a" href="/institucion/medicos">
-              Médicos con acceso
-            </MenuItem>
-            <MenuItem as="a" href="/perfil/institucion">
-              Perfil de la institución
+            <MenuItem as="a" href="/ministerio/solicitudes">
+              Solicitudes pendientes
             </MenuItem>
           </MenuList>
         </Menu>
       </div>
       {formatedRequests.length > 0 && (
         <div className="h-full lg:px-80">
-          <RequestsList requests={formatedRequests} label="Solicitudes pendientes" />
+          <RequestsList requests={formatedRequests} label="Instituciones con acceso" />
         </div>
       )}
       {formatedRequests.length === 0 && (

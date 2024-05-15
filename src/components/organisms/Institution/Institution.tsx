@@ -14,11 +14,8 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVAL } from '@constants/index'
-import { specialities } from '@constants/index'
-import { Doctor as DoctorType } from '@src/types'
+import { Institution as InstitutionType } from '@src/types'
 import { isIOS, isAndroid, isMobile } from '@utils/index'
-import { format } from 'date-fns'
-import { es } from 'date-fns/locale/es'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement, useCallback } from 'react'
@@ -58,7 +55,11 @@ function ConfirmationModal({
   )
 }
 
-export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): ReactElement {
+export default function Institution({
+  institution
+}: {
+  institution: InstitutionType
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -74,19 +75,19 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
   const onDenial = useCallback(() => {
     Store.addNotification(ACCESS_DENIED(isMobile(window)))
     onClose()
-    router.push('/institucion/solicitudes')
+    router.push('/ministerio/solicitudes')
   }, [onClose, router])
 
   const onApproval = useCallback(() => {
     Store.addNotification(ACCESS_GRANTED(isMobile(window)))
     onApprovalClose()
-    router.push('/institucion/solicitudes')
+    router.push('/ministerio/solicitudes')
   }, [onApprovalClose, router])
 
   const onRemoval = useCallback(() => {
     Store.addNotification(ACCESS_REMOVAL(isMobile(window)))
     onRemovalClose()
-    router.push('/institucion/medicos')
+    router.push('/ministerio/instituciones')
   }, [onRemovalClose, router])
   // --- END: Data and handlers ------------------------------------------------
 
@@ -113,42 +114,21 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
         <div>
           <Stack spacing={1} mb={6}>
             <Heading as="h3" size="md" noOfLines={1}>
-              {doctor.firstname} {doctor.lastname}
+              {institution.name}
             </Heading>
-            <Text>CI: {doctor.id.toLocaleString('es-ES')}</Text>
+            <Text>RIF {institution.credentials}</Text>
           </Stack>
           <Divider orientation="horizontal" />
-          <Stack mb={6} mt={6}>
-            <h4 className="text-sm text-gray-600">Especialidad</h4>
-            <div className="flex flex-row flex-wrap gap-2">
-              {doctor.specialities?.map((speciality, idx) => (
-                <Text className="text-nowrap font-medium" key={`doctor-card-${speciality}`}>
-                  {specialities.find((el) => el.id === speciality)?.name}
-                  {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
-                    ? ','
-                    : ''}
-                </Text>
-              ))}
-            </div>
-          </Stack>
-          <Stack mb={6}>
-            <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
-            <Text className="font-medium">
-              {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
-                locale: es
-              })}
-            </Text>
-          </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-            <Text className="font-medium">{doctor.email}</Text>
+            <Text className="font-medium">{institution.email}</Text>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{doctor.phone}</Text>
+            <Text className="font-medium">{institution.phone}</Text>
           </Stack>
         </div>
-        {doctor?.pending && (
+        {institution?.pending && (
           <div className="mb-4 flex w-full flex-row gap-4">
             <Button className="flex-grow" variant="outline" onClick={onOpen}>
               Rechazar
@@ -158,7 +138,7 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
             </Button>
           </div>
         )}
-        {!doctor?.pending && (
+        {!institution?.pending && (
           <div className="mb-4 flex w-full flex-row gap-4">
             <Button className="flex-grow" variant="outline" onClick={onRemovalOpen}>
               Revocar acceso
@@ -171,21 +151,21 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
         onClose={onClose}
         onSubmit={onDenial}
         method="Denegar"
-        name={`${doctor.firstname} ${doctor.lastname}`}
+        name={institution.name}
       />
       <ConfirmationModal
         isOpen={isApprovalOpen}
         onClose={onApprovalClose}
         onSubmit={onApproval}
         method="Conceder"
-        name={`${doctor.firstname} ${doctor.lastname}`}
+        name={institution.name}
       />
       <ConfirmationModal
         isOpen={isRemovalOpen}
         onClose={onRemovalClose}
         onSubmit={onRemoval}
         method="Revocar"
-        name={`${doctor.firstname} ${doctor.lastname}`}
+        name={institution.name}
       />
     </div>
   )

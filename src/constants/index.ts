@@ -1,6 +1,7 @@
 import { doctors } from './doctors'
 import { evolutionTypes } from './evolutionTypes'
 import { institution } from './institution'
+import { institutions } from './institutions'
 import {
   ACCESS_REMOVED,
   FILTERS_APPLIED,
@@ -26,6 +27,7 @@ export {
   evolutionTypes,
   patients,
   institution,
+  institutions,
   ACCESS_REMOVED,
   FILTERS_APPLIED,
   ACCESS_REQUESTED,

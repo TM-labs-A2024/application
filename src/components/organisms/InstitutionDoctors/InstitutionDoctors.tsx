@@ -48,12 +48,12 @@ export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] 
           </MenuList>
         </Menu>
       </div>
-      {doctors.length > 0 && (
+      {formatedRequests.length > 0 && (
         <div className="h-full lg:px-80">
           <RequestsList requests={formatedRequests} label="Médicos con acceso" />
         </div>
       )}
-      {doctors.length === 0 && (
+      {formatedRequests.length === 0 && (
         <div className="flex h-3/4 w-full flex-col items-center justify-center">
           <Logo />
           <Text textAlign="center" mt={4}>
