@@ -12,3 +12,11 @@ export type Patient = {
   status?: string
   bed?: string
 }
+
+export type PatientSummary = {
+  href: string
+  title: string
+  description: string
+  status?: string
+  pending?: boolean
+}

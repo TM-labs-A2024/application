@@ -22,22 +22,22 @@ import React, { useState, useEffect, useMemo } from 'react'
 import Logo from '../../../../public/static/icons/logo.svg'
 
 export default function Speciality({
-  isPatient,
-  speciality,
-  data,
-  currentTab
+  context
 }: {
-  isPatient: boolean
-  speciality: {
-    id: number
-    name: string
+  context: {
+    isPatient: boolean
+    isDoctor: boolean
+    speciality: {
+      id: number
+      name: string
+    }
+    data: {
+      evolutions: Evolutions
+      orders: Evolutions
+      tests: Evolutions
+    }
+    currentTab: number
   }
-  data: {
-    evolutions: Evolutions
-    orders: Evolutions
-    tests: Evolutions
-  }
-  currentTab: number
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
@@ -45,6 +45,7 @@ export default function Speciality({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const { isPatient, isDoctor, speciality, data, currentTab } = context
   const [_window, setWindow] = useState({ screen: { availWidth: 999 } })
   const [tabIndex, setTabIndex] = useState(currentTab)
   // --- END: Local state ------------------------------------------------------
@@ -87,7 +88,7 @@ export default function Speciality({
       </div>
       {data.evolutions.length > 0 && (
         <SearchInputComponent
-          placeholder="Buscar especialidad"
+          placeholder="Buscar"
           className="mb-8 w-full"
           onClick={() => {
             patientId
@@ -104,22 +105,28 @@ export default function Speciality({
         onChange={(index) => setTabIndex(index)}
       >
         <TabList>
-          <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
-            Evoluciones
-          </Tab>
+          {(isPatient || isDoctor) && (
+            <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
+              Evoluciones
+            </Tab>
+          )}
           <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="50%">
             Ordenes médicas
           </Tab>
-          <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
-            Análisis
-          </Tab>
+          {(isPatient || isDoctor) && (
+            <Tab fontSize={isMobile(_window) ? '0.8rem' : '1rem'} width="25%">
+              Análisis
+            </Tab>
+          )}
         </TabList>
         <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="1px" />
 
         <TabPanels className="h-full pb-0">
-          <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
-            <EvolutionsList evolutions={data.evolutions} />
-          </TabPanel>
+          {(isPatient || isDoctor) && (
+            <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
+              <EvolutionsList evolutions={data.evolutions} />
+            </TabPanel>
+          )}
           <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
             {data.orders.length > 0 && <EvolutionsList evolutions={data.orders} />}
             {data.orders.length === 0 && (
@@ -129,38 +136,42 @@ export default function Speciality({
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
                   risus vel elementum in vulputate.
                 </Text>
-                <Button
-                  mt={4}
-                  onClick={() =>
-                    router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
-                  }
-                >
-                  Nueva orden
-                </Button>
+                {isDoctor && (
+                  <Button
+                    mt={4}
+                    onClick={() =>
+                      router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
+                    }
+                  >
+                    Nueva orden
+                  </Button>
+                )}
               </div>
             )}
           </TabPanel>
-          <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
-            {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
-            {data.tests.length === 0 && (
-              <div className="flex h-full w-full items-center justify-center">
-                <Logo />
-                <Text textAlign="center" mt={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
-                  risus vel elementum in vulputate.
-                </Text>
-                <Button
-                  mt={4}
-                  onClick={() =>
-                    router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
-                  }
-                >
-                  Nuevo análisis
-                </Button>
-              </div>
-            )}
-          </TabPanel>
-          {!isPatient && tabIndex === 0 && (
+          {(isPatient || isDoctor) && (
+            <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
+              {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
+              {data.tests.length === 0 && (
+                <div className="flex h-full w-full items-center justify-center">
+                  <Logo />
+                  <Text textAlign="center" mt={4}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
+                    risus vel elementum in vulputate.
+                  </Text>
+                  <Button
+                    mt={4}
+                    onClick={() =>
+                      router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)
+                    }
+                  >
+                    Nuevo análisis
+                  </Button>
+                </div>
+              )}
+            </TabPanel>
+          )}
+          {isDoctor && tabIndex === 0 && (
             <Button
               className="mt-4 w-full"
               onClick={() => router.push(`/crear-historia/${patientId}`)}
@@ -168,7 +179,7 @@ export default function Speciality({
               Nueva evolución
             </Button>
           )}
-          {!isPatient && tabIndex === 1 && (
+          {isDoctor && tabIndex === 1 && (
             <Button
               className="mt-4 w-full"
               onClick={() => router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=order`)}
@@ -176,7 +187,7 @@ export default function Speciality({
               Nueva orden
             </Button>
           )}
-          {!isPatient && tabIndex === 2 && (
+          {isDoctor && tabIndex === 2 && (
             <Button
               className="mt-4 w-full"
               onClick={() => router.push(`/crear-adjunto/${patientId}/${speciality.id}?type=test`)}

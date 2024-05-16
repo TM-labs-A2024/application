@@ -12,6 +12,9 @@ export default function Home() {
       <Link as={NextLink} href="/pacientes" onClick={() => setSession('doctor')}>
         Doctor
       </Link>
+      <Link as={NextLink} href="/pacientes" onClick={() => setSession('enfermere')}>
+        Enfermera/o
+      </Link>
       <Link as={NextLink} href="/institucion/solicitudes" onClick={() => setSession('institucion')}>
         Institución
       </Link>

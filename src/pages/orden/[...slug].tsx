@@ -32,6 +32,7 @@ export default function OrdersPage() {
 
   // --- Data and handlers -----------------------------------------------------
   const isPatient = useMemo(() => getSession() === 'patient', [])
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
   const order = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
   const orderData = useMemo(
     () => specialityData.orders.find((item) => String(item.id) === order),
@@ -102,6 +103,7 @@ export default function OrdersPage() {
       title,
       data,
       isPatient,
+      isDoctor,
       description,
       isOpen,
       deleteType,
@@ -114,6 +116,7 @@ export default function OrdersPage() {
       title,
       data,
       isPatient,
+      isDoctor,
       description,
       isOpen,
       deleteType,

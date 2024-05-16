@@ -3,24 +3,22 @@ import { Evolutions } from '@src/types'
 import React from 'react'
 
 export default function SpecialityView({
-  isPatient,
-  speciality,
-  data,
-  currentTab
+  context
 }: {
-  isPatient: boolean
-  speciality: {
-    id: number
-    name: string
+  context: {
+    isPatient: boolean
+    isDoctor: boolean
+    speciality: {
+      id: number
+      name: string
+    }
+    data: {
+      evolutions: Evolutions
+      orders: Evolutions
+      tests: Evolutions
+    }
+    currentTab: number
   }
-  data: {
-    evolutions: Evolutions
-    orders: Evolutions
-    tests: Evolutions
-  }
-  currentTab: number
 }) {
-  return (
-    <Speciality isPatient={isPatient} speciality={speciality} data={data} currentTab={currentTab} />
-  )
+  return <Speciality context={context} />
 }

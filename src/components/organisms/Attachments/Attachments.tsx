@@ -56,6 +56,7 @@ export default function Attachments({
       attachments: { url: string; alt: string }[]
     }
     isPatient: boolean
+    isDoctor: boolean
     isOpen: boolean
     description: string
     onClose: () => void
@@ -65,18 +66,22 @@ export default function Attachments({
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  // --- END: Hooks ------------------------------------------------------------
+
+  // --- Local state -----------------------------------------------------------
   const {
     goBackRef,
     title,
     data,
     isPatient,
+    isDoctor,
     isOpen,
     onClose,
     onDeleteClick,
     onSubmit,
     description
   } = context
-  // --- END: Hooks ------------------------------------------------------------
+  // --- END: Local state ------------------------------------------------------
 
   return (
     <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
@@ -90,12 +95,12 @@ export default function Attachments({
             variant="link"
             icon={<ArrowBackIcon />}
             onClick={() => {
-              router.push(goBackRef)
+              return isPatient || isDoctor ? router.push(goBackRef) : router.back()
             }}
           />
           <Text className="font-medium">{title}</Text>
         </div>
-        {!isPatient && (
+        {isDoctor && (
           <IconButton
             size="xl"
             aria-label="back"
@@ -118,7 +123,7 @@ export default function Attachments({
           {data?.attachments?.map((image, idx) => {
             return (
               <div className="relative w-full" key={`order-tests-image-${idx + 1}`}>
-                {!isPatient && (
+                {isDoctor && (
                   <button
                     className="absolute right-2 top-2 z-20 rounded-md bg-white px-2 py-1"
                     onClick={() => onDeleteClick('image')}

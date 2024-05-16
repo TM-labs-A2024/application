@@ -1,47 +1,29 @@
 import { Text, Button } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import PatientsList from '@components/molecules/PatientsList'
-import { patients } from '@src/constants'
+import { PatientSummary } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
-import { formatDistanceToNowStrict } from 'date-fns'
-import { es } from 'date-fns/locale/es'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
-export default function Patients() {
+export default function Patients({
+  context
+}: {
+  context: {
+    pendingPatients: PatientSummary[]
+    approvedPatients: PatientSummary[]
+  }
+}) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
 
-  // --- Data and handlers -----------------------------------------------------
-  const patientsFormatted = useMemo(
-    () =>
-      patients.map(({ uuid, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
-        href: pending ? '/pacientes' : `/especialidades/${uuid}`,
-        title: `${firstname} ${lastname}`,
-        description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
-          locale: es,
-          roundingMethod: 'floor'
-        })}${status ? `, Cama: ${bed}` : ''}`,
-        status,
-        pending
-      })),
-    []
-  )
-
-  const pendingPatients = useMemo(
-    () => patientsFormatted.filter((patient) => patient.pending),
-    [patientsFormatted]
-  )
-
-  const approvedPatients = useMemo(
-    () => patientsFormatted.filter((patient) => !patient.pending),
-    [patientsFormatted]
-  )
-  // --- END: Data and handlers ------------------------------------------------
+  // --- Local state -----------------------------------------------------------
+  const { pendingPatients, approvedPatients } = context
+  // --- END: Local state ------------------------------------------------------
 
   return (
     <div
@@ -54,7 +36,7 @@ export default function Patients() {
         height={80}
         className={`mx-auto mb-8 ${isAndroid() && 'mt-8'}`}
       />
-      {patients.length > 0 && (
+      {(pendingPatients.length > 0 || approvedPatients.length > 0) && (
         <>
           <SearchInputComponent
             placeholder="Buscar paciente"
@@ -70,7 +52,7 @@ export default function Patients() {
           />
         </>
       )}
-      {patients.length === 0 && (
+      {pendingPatients.length === 0 && approvedPatients.length === 0 && (
         <div className="flex h-full w-full flex-col items-center justify-center">
           <Logo />
           <Text textAlign="center" mt={4}>

@@ -20,6 +20,7 @@ export default function SpecialitySearchView({
     setFromDate: React.Dispatch<React.SetStateAction<string>>
     setToDate: React.Dispatch<React.SetStateAction<string>>
     setType: React.Dispatch<React.SetStateAction<ReactSelectOption>>
+    isNurse: boolean
   }
 }) {
   return <SpecialitySearch context={context} />

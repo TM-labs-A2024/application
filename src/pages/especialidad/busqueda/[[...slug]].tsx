@@ -106,6 +106,8 @@ export default function SpecialitySearchPage() {
 
   // --- Data and handlers -----------------------------------------------------
   const isPatient = useMemo(() => getSession() === 'patient', [])
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
+  const isNurse = useMemo(() => !isPatient && !isDoctor, [isDoctor, isPatient])
 
   const specialityId = useMemo(
     () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
@@ -129,16 +131,18 @@ export default function SpecialitySearchPage() {
 
   const data = useMemo(() => {
     return {
-      evolutions: evolutionsList.map(({ id, date, type, author, reason }) => ({
-        href: isPatient
-          ? `/evolucion/${specialityId}/${id}`
-          : `/evolucion/${patientId}/${specialityId}/${id}`,
-        title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
-          locale: es
-        })}`,
-        description: `Editado por: ${author}`,
-        comment: `Patología: ${reason}`
-      })),
+      evolutions: !isNurse
+        ? evolutionsList.map(({ id, date, type, author, reason }) => ({
+            href: isPatient
+              ? `/evolucion/${specialityId}/${id}`
+              : `/evolucion/${patientId}/${specialityId}/${id}`,
+            title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
+              locale: es
+            })}`,
+            description: `Editado por: ${author}`,
+            comment: `Patología: ${reason}`
+          }))
+        : [],
       orders: ordersList.map(({ id, title, date, author }) => ({
         href: isPatient
           ? `/orden/${specialityId}/${id}`
@@ -149,22 +153,25 @@ export default function SpecialitySearchPage() {
         })}`,
         comment: `Agregado por: ${author}`
       })),
-      tests: testsList.map(({ id, title, date, author }) => ({
-        href: isPatient
-          ? `/analisis/${specialityId}/${id}`
-          : `/analisis/${patientId}/${specialityId}/${id}`,
-        title,
-        description: `${format(new Date(date), 'dd, MMMM yyyy', {
-          locale: es
-        })}`,
-        comment: `Agregado por: ${author}`
-      }))
+      tests: !isNurse
+        ? testsList.map(({ id, title, date, author }) => ({
+            href: isPatient
+              ? `/analisis/${specialityId}/${id}`
+              : `/analisis/${patientId}/${specialityId}/${id}`,
+            title,
+            description: `${format(new Date(date), 'dd, MMMM yyyy', {
+              locale: es
+            })}`,
+            comment: `Agregado por: ${author}`
+          }))
+        : []
     }
-  }, [evolutionsList, isPatient, ordersList, patientId, specialityId, testsList])
+  }, [evolutionsList, isDoctor, isPatient, ordersList, patientId, specialityId, testsList])
 
   const matchesCount = useMemo(
-    () => evolutionsList.length + ordersList.length + testsList.length,
-    [evolutionsList, ordersList, testsList]
+    () =>
+      !isNurse ? evolutionsList.length + ordersList.length + testsList.length : ordersList.length,
+    [evolutionsList.length, isNurse, ordersList.length, testsList.length]
   )
 
   const context = useMemo(
@@ -178,9 +185,10 @@ export default function SpecialitySearchPage() {
       type,
       setFromDate,
       setToDate,
-      setType
+      setType,
+      isNurse
     }),
-    [data, fromDate, goBackRef, matchesCount, onChange, toDate, type]
+    [data, fromDate, goBackRef, matchesCount, onChange, toDate, type, isNurse]
   )
   // --- END: Data and handlers ------------------------------------------------
 

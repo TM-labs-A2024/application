@@ -13,6 +13,7 @@ export default function SpecialityPage() {
 
   // --- Local state -----------------------------------------------------------
   const isPatient = useMemo(() => getSession() === 'patient', [])
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -96,14 +97,18 @@ export default function SpecialityPage() {
     }),
     [isPatient, patientId, specialityId]
   )
+
+  const context = useMemo(
+    () => ({
+      isPatient,
+      isDoctor,
+      speciality: speciality ?? specialities[0],
+      data,
+      currentTab
+    }),
+    [isPatient, speciality, data, currentTab, isDoctor]
+  )
   // --- END: Data and handlers ------------------------------------------------
 
-  return (
-    <SpecialityView
-      isPatient={isPatient}
-      speciality={speciality ?? specialities[0]}
-      data={data}
-      currentTab={currentTab}
-    />
-  )
+  return <SpecialityView context={context} />
 }

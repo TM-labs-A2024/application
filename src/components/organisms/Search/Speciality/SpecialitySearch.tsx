@@ -57,6 +57,7 @@ export default function SpecialitySearch({
     setFromDate: React.Dispatch<React.SetStateAction<string>>
     setToDate: React.Dispatch<React.SetStateAction<string>>
     setType: React.Dispatch<React.SetStateAction<ReactSelectOption>>
+    isNurse: boolean
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -75,7 +76,8 @@ export default function SpecialitySearch({
   // --- Local state -----------------------------------------------------------
   const [showFilters, setShowFilters] = useState(false)
 
-  const { fromDate, toDate, type, setFromDate, setToDate, setType, onChange, goBackRef } = context
+  const { fromDate, toDate, type, setFromDate, setToDate, setType, onChange, goBackRef, isNurse } =
+    context
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -179,13 +181,20 @@ export default function SpecialitySearch({
                   <FormErrorMessage>{errors?.toDate && errors?.toDate?.message}</FormErrorMessage>
                 </div>
               </div>
-              <Controller
-                control={control}
-                name="type"
-                render={({ field }) => (
-                  <Select id="type" {...field} placeholder="Tipo" options={evolutionTypesOptions} />
-                )}
-              />
+              {!isNurse && (
+                <Controller
+                  control={control}
+                  name="type"
+                  render={({ field }) => (
+                    <Select
+                      id="type"
+                      {...field}
+                      placeholder="Tipo"
+                      options={evolutionTypesOptions}
+                    />
+                  )}
+                />
+              )}
               <Stack spacing={4} mt={4} className="absolute bottom-0 w-full">
                 <Button type="submit">Aplicar filtros</Button>
                 <Button

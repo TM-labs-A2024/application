@@ -1,4 +1,5 @@
 import { patients } from '@src/constants'
+import { getSession } from '@src/shared'
 import { ReactSelectOption } from '@src/types'
 import PatientsSearchView from '@views/Patients/Search'
 import { formatDistanceToNowStrict } from 'date-fns'
@@ -16,6 +17,8 @@ export default function PatientsSearchPage() {
   // --- END: Redux ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
+
   const patientsFormatted = useMemo(
     () =>
       patients.map(
@@ -52,8 +55,13 @@ export default function PatientsSearchPage() {
   )
 
   const approvedPatients = useMemo(
-    () => patientsFormatted.filter((patient) => !patient.pending),
-    [patientsFormatted]
+    () =>
+      isDoctor
+        ? patientsFormatted.filter((patient) => !patient.pending)
+        : patientsFormatted.filter(
+            (patient) => !patient.pending && patient?.status === 'hospitalizado'
+          ),
+    [patientsFormatted, isDoctor]
   )
   // --- END: Data and handlers ------------------------------------------------
 

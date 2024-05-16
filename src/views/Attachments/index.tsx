@@ -12,6 +12,7 @@ export default function AttachmentsView({
       attachments: { url: string; alt: string }[]
     }
     isPatient: boolean
+    isDoctor: boolean
     isOpen: boolean
     description: string
     onClose: () => void
