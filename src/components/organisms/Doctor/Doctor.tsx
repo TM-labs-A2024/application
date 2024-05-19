@@ -13,7 +13,7 @@ import {
   ModalBody,
   useDisclosure
 } from '@chakra-ui/react'
-import { ACCESS_REMOVED } from '@constants/index'
+import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVED } from '@constants/index'
 import { specialities } from '@constants/index'
 import { Doctor as DoctorType } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
@@ -27,25 +27,29 @@ function ConfirmationModal({
   isOpen,
   onClose,
   onSubmit,
+  method,
   name
 }: {
   isOpen: boolean
   onClose: () => void
   onSubmit: () => void
+  method: string
   name: string
 }) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalBody>¿Seguro que desea revocar el acceso a {name}?</ModalBody>
+        <ModalBody>
+          ¿Seguro que desea {method.toLowerCase()} el acceso a {name}?
+        </ModalBody>
 
         <ModalFooter>
           <Button mr={3} onClick={onClose}>
             Cancelar
           </Button>
           <Button colorScheme="blackAlpha" onClick={onSubmit}>
-            Revocar acceso
+            {method} acceso
           </Button>
         </ModalFooter>
       </ModalContent>
@@ -57,6 +61,12 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const {
+    isOpen: isApprovalOpen,
+    onOpen: onApprovalOpen,
+    onClose: onApprovalClose
+  } = useDisclosure()
+  const { isOpen: isRemovalOpen, onOpen: onRemovalOpen, onClose: onRemovalClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -72,11 +82,23 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const onSuccess = useCallback(() => {
-    Store.addNotification(ACCESS_REMOVED(isMobile(window)))
+  const onApproval = useCallback(() => {
+    Store.addNotification(ACCESS_GRANTED(isMobile(window)))
+    onApprovalClose()
+    router.push('/medicos')
+  }, [onApprovalClose, router])
+
+  const onDenial = useCallback(() => {
+    Store.addNotification(ACCESS_DENIED(isMobile(window)))
     onClose()
     router.push('/medicos')
   }, [onClose, router])
+
+  const onRemoval = useCallback(() => {
+    Store.addNotification(ACCESS_REMOVED(isMobile(window)))
+    onRemovalClose()
+    router.push('/medicos')
+  }, [onRemovalClose, router])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -132,12 +154,37 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
             <Text className="font-medium">{doctor.phone}</Text>
           </Stack>
         </div>
-        <Button onClick={onOpen}>Revocar acceso</Button>
+        {!doctor?.patientPending && <Button onClick={onRemovalOpen}>Revocar acceso</Button>}
+        {doctor?.patientPending && (
+          <div className="flex w-full flex-row gap-4">
+            <Button className="flex-grow" variant="outline" onClick={onOpen}>
+              Rechazar
+            </Button>
+            <Button className="flex-grow" onClick={onApprovalOpen}>
+              Aceptar
+            </Button>
+          </div>
+        )}
       </div>
       <ConfirmationModal
         isOpen={isOpen}
         onClose={onClose}
-        onSubmit={onSuccess}
+        onSubmit={onDenial}
+        method="Denegar"
+        name={`${doctor.firstname} ${doctor.lastname}`}
+      />
+      <ConfirmationModal
+        isOpen={isApprovalOpen}
+        onClose={onApprovalClose}
+        onSubmit={onApproval}
+        method="Conceder"
+        name={`${doctor.firstname} ${doctor.lastname}`}
+      />
+      <ConfirmationModal
+        isOpen={isRemovalOpen}
+        onClose={onRemovalClose}
+        onSubmit={onRemoval}
+        method="Revocar"
         name={`${doctor.firstname} ${doctor.lastname}`}
       />
     </div>

@@ -9,7 +9,7 @@ import Chevron from '../../../../../public/static/icons/chevron.svg'
 
 export default function Doctor({ doctor }: { doctor: DoctorType }) {
   return (
-    <Link as={NextLink} href={`/medico/${doctor.id}`} padding="0.5rem" className="w-full">
+    <Link as={NextLink} href={`/medico/${doctor.id}`} className="w-full">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-col items-start gap-1 overflow-hidden">
           <Text>

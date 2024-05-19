@@ -108,7 +108,7 @@ export default function Institution({
             router.back()
           }}
         />
-        <Text className="font-medium">Perfil del médico</Text>
+        <Text className="font-medium">Perfil de la institución</Text>
       </div>
       <div className="flex h-4/5 flex-col justify-between lg:px-96">
         <div>

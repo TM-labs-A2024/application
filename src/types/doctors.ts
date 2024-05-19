@@ -7,4 +7,5 @@ export type Doctor = {
   phone: string
   specialities: number[]
   pending?: boolean
+  patientPending?: boolean
 }

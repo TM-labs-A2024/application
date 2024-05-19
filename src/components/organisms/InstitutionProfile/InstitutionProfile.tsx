@@ -36,7 +36,7 @@ export default function InstitutionProfile() {
             <Heading as="h3" size="md" noOfLines={1}>
               {institution.name}
             </Heading>
-            <Text>Credential: {institution.credentials}</Text>
+            <Text>Credencial: {institution.credentials}</Text>
           </Stack>
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>

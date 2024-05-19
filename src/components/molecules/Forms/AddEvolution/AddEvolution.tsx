@@ -26,7 +26,6 @@ type FormData = {
   type: ReactSelectOption | null
   reason: string
   description: string
-  id: string
   history: string
   examination: string
   comments: string
