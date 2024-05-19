@@ -1,6 +1,6 @@
 import { Link } from '@chakra-ui/next-js'
 import { Text } from '@chakra-ui/react'
-import { Evolution as EvolutionType } from '@src/types'
+import { CardEvolution as EvolutionType } from '@src/types'
 import NextLink from 'next/link'
 import React from 'react'
 

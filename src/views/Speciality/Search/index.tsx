@@ -1,5 +1,5 @@
 import SpecialitySearch from '@components/organisms/Search/Speciality'
-import { Evolutions, ReactSelectOption } from '@src/types'
+import { Evolutions } from '@src/types'
 import React from 'react'
 
 export default function SpecialitySearchView({
@@ -7,20 +7,15 @@ export default function SpecialitySearchView({
 }: {
   context: {
     goBackRef: string
-    onChange: (value: string) => void
-    data: {
+    specialityData: {
       evolutions: Evolutions
       orders: Evolutions
       tests: Evolutions
     }
-    matches: string
-    fromDate: string
-    toDate: string
-    type: ReactSelectOption
-    setFromDate: React.Dispatch<React.SetStateAction<string>>
-    setToDate: React.Dispatch<React.SetStateAction<string>>
-    setType: React.Dispatch<React.SetStateAction<ReactSelectOption>>
     isNurse: boolean
+    isPatient: boolean
+    patientId?: string | false
+    specialityId?: string
   }
 }) {
   return <SpecialitySearch context={context} />
