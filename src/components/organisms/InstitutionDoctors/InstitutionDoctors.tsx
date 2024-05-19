@@ -18,7 +18,7 @@ export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] 
         title: `${firstname} ${lastname}`,
         description: `C.I: ${id},${specialities.map((speciality) => ' ' + specialitiesList.find((el) => el.id === speciality)?.name)}.`
       })),
-    []
+    [doctors]
   )
   // --- END: Data and handlers ------------------------------------------------
 

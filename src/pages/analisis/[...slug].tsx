@@ -31,6 +31,7 @@ export default function OrdersPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
   const isPatient = useMemo(() => getSession() === 'patient', [])
   const test = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
   const testData = useMemo(
@@ -103,6 +104,7 @@ export default function OrdersPage() {
       title,
       data,
       isPatient,
+      isDoctor,
       description,
       isOpen,
       deleteType,

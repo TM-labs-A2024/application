@@ -166,7 +166,7 @@ export default function SpecialitySearchPage() {
           }))
         : []
     }
-  }, [evolutionsList, isDoctor, isPatient, ordersList, patientId, specialityId, testsList])
+  }, [evolutionsList, isNurse, isPatient, ordersList, patientId, specialityId, testsList])
 
   const matchesCount = useMemo(
     () =>
