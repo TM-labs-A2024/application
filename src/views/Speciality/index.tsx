@@ -1,5 +1,5 @@
 import Speciality from '@components/organisms/Speciality'
-import { Evolutions } from '@src/types'
+import { CardEvolution } from '@src/types'
 import React from 'react'
 
 export default function SpecialityView({
@@ -13,9 +13,9 @@ export default function SpecialityView({
       name: string
     }
     data: {
-      evolutions: Evolutions
-      orders: Evolutions
-      tests: Evolutions
+      evolutions: CardEvolution[]
+      orders: CardEvolution[]
+      tests: CardEvolution[]
     }
     currentTab: number
   }

@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
-import { Evolutions } from '@src/types'
+import { CardEvolution } from '@src/types'
 import { isAndroid, isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import { useRouter as queryRouter } from 'next/router'
@@ -32,9 +32,9 @@ export default function Speciality({
       name: string
     }
     data: {
-      evolutions: Evolutions
-      orders: Evolutions
-      tests: Evolutions
+      evolutions: CardEvolution[]
+      orders: CardEvolution[]
+      tests: CardEvolution[]
     }
     currentTab: number
   }
