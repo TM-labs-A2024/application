@@ -3,18 +3,16 @@ import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
 import { isIOS } from '@utils/index'
 import NextLink from 'next/link'
-import React, { useEffect } from 'react'
+import React, { useCallback, useMemo, useState, useEffect } from 'react'
 
 export default function SpecialitiesSearch({
   context
 }: {
   context: {
-    onChange: (value: string) => void
     specialities: {
       id: number
       name: string
     }[]
-    matches: string
     uuid?: string
   }
 }) {
@@ -22,7 +20,8 @@ export default function SpecialitiesSearch({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { uuid } = context
+  const { uuid, specialities } = context
+  const [specialitiesList, setSpecialitiesList] = useState(specialities)
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -41,6 +40,18 @@ export default function SpecialitiesSearch({
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const onChange = useCallback(
+    (value: string) => {
+      const newList = specialities.filter((speciality) =>
+        speciality.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+      )
+
+      setSpecialitiesList(newList)
+    },
+    [specialities]
+  )
+
+  const matches = useMemo(() => `${specialitiesList.length} resultados`, [specialitiesList.length])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -51,14 +62,14 @@ export default function SpecialitiesSearch({
         <SearchInputComponent
           placeholder="Buscar especialidad"
           className="w-full"
-          onChange={context.onChange}
+          onChange={onChange}
           inputRef={inputRef}
         />
         <Link as={NextLink} href={uuid ? `/especialidades/${uuid}` : '/especialidades'}>
           Cancelar
         </Link>
       </div>
-      <SpecialitiesList specialities={context.specialities} label={context.matches} />
+      <SpecialitiesList specialities={specialitiesList} label={matches} />
     </div>
   )
 }
