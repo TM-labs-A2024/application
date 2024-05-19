@@ -117,6 +117,7 @@ export default function OrdersPage() {
       title,
       data,
       isPatient,
+      isDoctor,
       description,
       isOpen,
       deleteType,

@@ -1,30 +1,12 @@
 import PatientsSearch from '@components/organisms/Search/Patients'
-import { ReactSelectOption } from '@src/types'
+import { Patient } from '@src/types'
 import React from 'react'
 
 export default function PatientsSearchView({
   context
 }: {
   context: {
-    onChange: (value: string) => void
-    patients: {
-      href: string
-      title: string
-      description: string
-      status: string | undefined
-      pending: boolean | undefined
-    }[]
-    matches: string
-    fromAge: string
-    toAge: string
-    gender: ReactSelectOption
-    status: ReactSelectOption
-    speciality: ReactSelectOption
-    setFromAge: React.Dispatch<React.SetStateAction<string>>
-    setToAge: React.Dispatch<React.SetStateAction<string>>
-    setGender: React.Dispatch<React.SetStateAction<ReactSelectOption>>
-    setStatus: React.Dispatch<React.SetStateAction<ReactSelectOption>>
-    setSpeciality: React.Dispatch<React.SetStateAction<ReactSelectOption>>
+    approvedPatients: Patient[]
   }
 }) {
   return <PatientsSearch context={context} />

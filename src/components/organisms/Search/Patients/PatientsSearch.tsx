@@ -17,10 +17,12 @@ import SearchInputComponent from '@components/atoms/SearchInput'
 import PatientList from '@components/molecules/PatientsList'
 import { FILTERS_APPLIED } from '@constants/index'
 import { genderOptions, statusOptions, specialities } from '@constants/index'
-import { ReactSelectOption } from '@src/types'
+import { ReactSelectOption, Patient } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
+import { formatDistanceToNowStrict } from 'date-fns'
+import { es } from 'date-fns/locale/es'
 import NextLink from 'next/link'
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
 import { Store } from 'react-notifications-component'
 import Select from 'react-select'
@@ -54,25 +56,7 @@ export default function PatientsSearch({
   context
 }: {
   context: {
-    onChange: (value: string) => void
-    patients: {
-      href: string
-      title: string
-      description: string
-      status: string | undefined
-      pending: boolean | undefined
-    }[]
-    matches: string
-    fromAge: string
-    toAge: string
-    gender: ReactSelectOption
-    status: ReactSelectOption
-    speciality: ReactSelectOption
-    setFromAge: React.Dispatch<React.SetStateAction<string>>
-    setToAge: React.Dispatch<React.SetStateAction<string>>
-    setGender: React.Dispatch<React.SetStateAction<ReactSelectOption>>
-    setStatus: React.Dispatch<React.SetStateAction<ReactSelectOption>>
-    setSpeciality: React.Dispatch<React.SetStateAction<ReactSelectOption>>
+    approvedPatients: Patient[]
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -89,20 +73,64 @@ export default function PatientsSearch({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const [showFilters, setShowFilters] = useState(false)
+  const { approvedPatients } = context
+  // --- END: Local state ------------------------------------------------------
 
-  const {
-    fromAge,
-    toAge,
-    gender,
-    status,
-    speciality,
-    setFromAge,
-    setToAge,
-    setGender,
-    setStatus,
-    setSpeciality
-  } = context
+  // --- Data and handlers -----------------------------------------------------
+  const patientsFormatted = useMemo(
+    () =>
+      approvedPatients.map(
+        ({
+          uuid,
+          birthdate,
+          govId,
+          status,
+          bed,
+          firstname,
+          lastname,
+          pending,
+          gender,
+          specialities
+        }) => ({
+          href: pending ? '/pacientes' : `/paciente/${uuid}`,
+          title: `${firstname} ${lastname}`,
+          description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
+            locale: es,
+            roundingMethod: 'floor'
+          })}${status ? `, Cama: ${bed}` : ''}`,
+          status,
+          pending,
+          gender,
+          age: formatDistanceToNowStrict(new Date(birthdate), {
+            locale: es,
+            roundingMethod: 'floor'
+          }).split(' ')[0],
+          bed,
+          specialities
+        })
+      ),
+    [approvedPatients]
+  )
+  // --- END: Data and handlers ------------------------------------------------
+
+  // --- Local state -----------------------------------------------------------
+  const [showFilters, setShowFilters] = useState(false)
+  const [patientsList, setPatientsList] = useState(patientsFormatted)
+  const [search, setSearch] = useState('')
+  const [fromAge, setFromAge] = useState('')
+  const [toAge, setToAge] = useState('')
+  const [gender, setGender] = useState<ReactSelectOption>({
+    value: 0,
+    label: ''
+  })
+  const [status, setStatus] = useState<ReactSelectOption>({
+    value: 0,
+    label: ''
+  })
+  const [speciality, setSpeciality] = useState<ReactSelectOption>({
+    value: null,
+    label: ''
+  })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -118,6 +146,62 @@ export default function PatientsSearch({
       inputRef.current.focus()
     }
   }, [inputRef])
+
+  useEffect(() => {
+    let filteredPatientsList = patientsFormatted
+
+    // Title filtering
+    if (search !== '') {
+      filteredPatientsList = filteredPatientsList.filter(
+        (patient) =>
+          patient.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
+          patient.description.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      )
+    }
+
+    // Gender filtering
+    if (gender?.value) {
+      filteredPatientsList = filteredPatientsList.filter(
+        (patient) => patient.gender === gender?.value
+      )
+    }
+
+    // Status filtering
+    if (status?.label) {
+      filteredPatientsList = filteredPatientsList.filter((patient) => patient?.bed)
+    }
+
+    // speciality filtering
+    if (speciality?.value) {
+      filteredPatientsList = filteredPatientsList.filter((patient) =>
+        patient.specialities.includes(Number(speciality?.value))
+      )
+    }
+
+    // Dates filtering
+    if (fromAge !== '') {
+      filteredPatientsList = filteredPatientsList.filter(
+        (patient) => Number(patient.age) >= Number(fromAge)
+      )
+    }
+
+    if (toAge !== '') {
+      filteredPatientsList = filteredPatientsList.filter(
+        (patient) => Number(patient.age) <= Number(toAge)
+      )
+    }
+
+    setPatientsList(filteredPatientsList)
+  }, [
+    approvedPatients,
+    gender?.value,
+    search,
+    status?.label,
+    speciality?.value,
+    fromAge,
+    toAge,
+    patientsFormatted
+  ])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -155,6 +239,12 @@ export default function PatientsSearch({
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
+
+  const matches = useMemo(() => `${patientsList.length} resultados`, [patientsList])
+
+  const onChange = useCallback((value: string) => {
+    setSearch(value)
+  }, [])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -170,7 +260,7 @@ export default function PatientsSearch({
             </Button>
           </div>
           <Heading as="h2" size="md">
-            Fechas de consulta
+            Edad del paciente
           </Heading>
           <form onSubmit={handleSubmit(onSubmit)} className="h-full w-full">
             <FormControl isInvalid={verifyErrors(errors)} className="relative h-4/5 w-full">
@@ -276,7 +366,7 @@ export default function PatientsSearch({
             <SearchInputComponent
               placeholder="Buscar paciente"
               className="w-full"
-              onChange={context.onChange}
+              onChange={onChange}
               inputRef={inputRef}
             />
             <Link as={NextLink} href="/pacientes">
@@ -343,7 +433,7 @@ export default function PatientsSearch({
             </HStack>
           </div>
           <div className="h-3/4 overflow-scroll">
-            <PatientList pendingPatients={[]} patients={context.patients} label={context.matches} />
+            <PatientList pendingPatients={[]} patients={patientsList} label={matches} />
           </div>
           <div className="absolute bottom-16 w-full pr-16">
             <Button className="w-full gap-2" onClick={() => setShowFilters(!showFilters)}>
