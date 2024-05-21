@@ -8,7 +8,11 @@ import {
   InputGroup,
   Stack
 } from '@chakra-ui/react'
-import { userTypes } from '@components/molecules/Forms/Register/Register.constants'
+import {
+  userTypes,
+  genderTypes,
+  institutions
+} from '@components/molecules/Forms/Register/Register.constants'
 import { specialities } from '@constants/index'
 import { ReactSelectOption } from '@src/types'
 import Image from 'next/image'
@@ -26,6 +30,16 @@ const userTypeOptions = userTypes.map((option) => ({
   label: option.name
 }))
 
+const genderTypeOptions = genderTypes.map((option) => ({
+  value: option.name,
+  label: option.name
+}))
+
+const institutionsOptions = institutions.map((option) => ({
+  value: option.name,
+  label: option.name
+}))
+
 type FormData = {
   type: ReactSelectOption | null
   firstname: string
@@ -38,6 +52,8 @@ type FormData = {
   password: string
   repeatPassword: string
   specialty: ReactSelectOption | null
+  gender: ReactSelectOption | null
+  institution: ReactSelectOption | null
   code: string
 }
 
@@ -148,6 +164,16 @@ export default function RegisterForm(): ReactElement {
                 })}
               />
               <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
+              <Controller
+                control={control}
+                name="gender"
+                rules={{
+                  required: 'Este campo es obligatorio'
+                }}
+                render={({ field }) => (
+                  <Select id="gender" {...field} placeholder="Sexo" options={genderTypeOptions} />
+                )}
+              />
               <Input
                 id="id"
                 className="min-h-10"
@@ -199,6 +225,21 @@ export default function RegisterForm(): ReactElement {
                   <FormErrorMessage>
                     {errors?.specialty && errors?.specialty?.message}
                   </FormErrorMessage>
+                  <Controller
+                    control={control}
+                    name="institution"
+                    rules={{
+                      required: 'Este campo es obligatorio'
+                    }}
+                    render={({ field }) => (
+                      <Select
+                        id="institution"
+                        {...field}
+                        placeholder="Institución"
+                        options={institutionsOptions}
+                      />
+                    )}
+                  />
                 </>
               )}
               <Input
