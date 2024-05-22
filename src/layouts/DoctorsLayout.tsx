@@ -2,10 +2,11 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import { Link } from '@chakra-ui/next-js'
 import { useDisclosure, IconButton } from '@chakra-ui/react'
 import Sidebar from '@components/atoms/Sidebar'
+import { getSession } from '@src/shared'
 import { isIOS, isMobile } from '@utils/index'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 
 import Home from '../../public/static/icons/Home.svg'
 import Profile from '../../public/static/icons/Perfil.svg'
@@ -20,6 +21,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // --- Local state -----------------------------------------------------------
   const [_window, setWindow] = useState({ screen: { availWidth: 999 } })
   // --- END: Local state ------------------------------------------------------
+
+  // --- Data and handlers -----------------------------------------------------
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
+  // --- END: Data and handlers ------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
   useEffect(() => {
@@ -63,24 +68,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 Home
               </Link>
             </li>
-            <li
-              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/agregar-paciente' ? 'border-b-4 border-black' : ''}`}
-            >
-              <Link
-                as={NextLink}
-                href="/agregar-paciente"
-                className="flex h-full flex-col items-center justify-center"
+            {isDoctor && (
+              <li
+                className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/agregar-paciente' ? 'border-b-4 border-black' : ''}`}
               >
-                <Plus className="cursor-pointer" />
-                Nuevo paciente
-              </Link>
-            </li>
+                <Link
+                  as={NextLink}
+                  href="/agregar-paciente"
+                  className="flex h-full flex-col items-center justify-center"
+                >
+                  <Plus className="cursor-pointer" />
+                  Nuevo paciente
+                </Link>
+              </li>
+            )}
             <li
-              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/perfil/doctor' ? 'border-b-4 border-black' : ''}`}
+              className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/perfil/doctor' || path === '/perfil/enfermero' ? 'border-b-4 border-black' : ''}`}
             >
               <Link
                 as={NextLink}
-                href="/perfil/doctor"
+                href={isDoctor ? '/perfil/doctor' : '/perfil/enfermero'}
                 className="flex h-full flex-col items-center justify-center"
               >
                 <Profile className="cursor-pointer" />
@@ -105,24 +112,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   Home
                 </Link>
               </li>
-              <li
-                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/agregar-paciente' ? 'bg-gray-200' : ''}`}
-              >
-                <Link
-                  as={NextLink}
-                  href="/agregar-paciente"
-                  className="flex w-full flex-row items-center justify-start gap-8"
+              {isDoctor && (
+                <li
+                  className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/agregar-paciente' ? 'bg-gray-200' : ''}`}
                 >
-                  <Plus className="cursor-pointer" />
-                  Nuevo paciente
-                </Link>
-              </li>
+                  <Link
+                    as={NextLink}
+                    href="/agregar-paciente"
+                    className="flex w-full flex-row items-center justify-start gap-8"
+                  >
+                    <Plus className="cursor-pointer" />
+                    Nuevo paciente
+                  </Link>
+                </li>
+              )}
               <li
-                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/perfil/doctor' ? 'bg-gray-200' : ''}`}
+                className={`flex h-20 w-full flex-row items-center justify-center pl-[30%] ${path === '/perfil/doctor' || path === '/perfil/enfermero' ? 'bg-gray-200' : ''}`}
               >
                 <Link
                   as={NextLink}
-                  href="/perfil/doctor"
+                  href={isDoctor ? '/perfil/doctor' : '/perfil/enfermero'}
                   className="flex w-full flex-row items-center justify-start gap-8"
                 >
                   <Profile className="cursor-pointer" />

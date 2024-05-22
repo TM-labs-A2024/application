@@ -12,6 +12,7 @@ import {
   ACCESS_GRANTED,
   ACCESS_REMOVAL
 } from './notifications'
+import { nurse } from './nurses'
 import { patient, genderOptions, statusOptions } from './patient'
 import { patients } from './patients'
 import { specialities } from './specialities'
@@ -20,6 +21,7 @@ import { specialityData } from './specialityData'
 export {
   specialities,
   doctors,
+  nurse,
   patient,
   genderOptions,
   statusOptions,
