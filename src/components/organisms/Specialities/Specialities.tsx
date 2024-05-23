@@ -82,7 +82,7 @@ export default function Specialities({
             risus vel elementum in vulputate.
           </Text>
           <Button mt={4} onClick={() => router.push(`/crear-historia/${patient?.uuid}`)}>
-            Crear historia
+            Crear evolución
           </Button>
         </div>
       )}
