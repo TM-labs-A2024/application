@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Atoms > Cards > Doctor test Match the snapshot 1`] = `
+exports[`Atoms > Cards > Doctor test Matches the snapshot 1`] = `
 <a
   class="chakra-link w-full css-spn4bz"
   data-testid="doctor-card"
