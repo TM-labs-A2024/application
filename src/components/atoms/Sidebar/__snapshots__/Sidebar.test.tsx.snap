@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Sidebar test Matches the snapshot 1`] = `
+<div
+  aria-describedby="chakra-modal--body-:r9:"
+  aria-labelledby="chakra-modal--header-:r9:"
+  aria-modal="true"
+  class="chakra-slide chakra-modal__content css-1o3pyl4"
+  id="chakra-modal-:r9:"
+  role="dialog"
+  style="position: fixed; left: 0px; top: 0px; bottom: 0px; width: 100%; transform: translateX(-100%) translateY(0px) translateZ(0);"
+  tabindex="-1"
+>
+  <button
+    aria-label="Close"
+    class="chakra-modal__close-btn css-1ik4h6n"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-onkibi"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+  <header
+    class="chakra-modal__header css-9fgtzh"
+    id="chakra-modal--header-:r9:"
+  >
+    Taco Medical
+  </header>
+  <div
+    class="chakra-modal__body css-79z5gx"
+    id="chakra-modal--body-:r9:"
+  >
+    <div>
+      Child
+    </div>
+  </div>
+  <footer
+    class="chakra-modal__footer css-k0waxj"
+  >
+    <button
+      aria-label="back"
+      class="chakra-button css-wpzvz6"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </footer>
+</div>
+`

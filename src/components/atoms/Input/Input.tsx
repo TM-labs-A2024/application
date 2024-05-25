@@ -15,7 +15,7 @@ export default function InputComponent({
   disabled: boolean
 }) {
   return (
-    <div className={className}>
+    <div className={className} data-testid="input-component">
       <label>{label}</label>
       <Input placeholder={placeholder} size="md" disabled={disabled} id={id} className="min-h-10" />
     </div>

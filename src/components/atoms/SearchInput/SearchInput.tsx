@@ -18,7 +18,7 @@ export default function SearchInputComponent({
   inputRef?: React.RefObject<HTMLInputElement>
 }) {
   return (
-    <div className={className}>
+    <div className={className} data-testid="search-input-component">
       <InputGroup>
         <InputLeftElement pointerEvents="none">
           <SearchIcon color="gray.500" />
