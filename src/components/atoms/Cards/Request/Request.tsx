@@ -15,7 +15,7 @@ export default function Request({
   description: string
 }) {
   return (
-    <Link as={NextLink} href={href} className="w-full">
+    <Link as={NextLink} href={href} className="w-full" data-testid="request-card">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-col items-start gap-1">
           <Text fontSize="md" as="b">

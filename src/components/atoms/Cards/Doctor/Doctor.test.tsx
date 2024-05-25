@@ -8,17 +8,15 @@ describe('Atoms > Cards > Doctor test', () => {
   test('The card shows the firstname, lastname and specialities of the doctor', async () => {
     render(<Doctor doctor={doctors[0]} />)
 
-    await screen.findByText('José Pérez')
-
-    expect(screen.getByText('José Pérez')).toBeInTheDocument()
+    expect(
+      await screen.findByText(`${doctors[0].firstname} ${doctors[0].lastname}`)
+    ).toBeInTheDocument()
   })
 
   test('The url matches the expected', async () => {
     render(<Doctor doctor={doctors[0]} />)
 
-    await screen.findByText('José Pérez')
-
-    const enlace = screen.getByRole('link')
+    const enlace = await screen.findByRole('link')
     expect(enlace).toHaveAttribute('href', `/medico/${doctors[0].id}`)
   })
 

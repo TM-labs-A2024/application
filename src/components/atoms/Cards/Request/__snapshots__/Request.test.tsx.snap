@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Cards > Request test Matches the snapshot 1`] = `
+<a
+  class="chakra-link w-full css-spn4bz"
+  data-testid="request-card"
+  href="/institucion/medico/1000000"
+>
+  <div
+    class="flex flex-row items-center justify-between"
+  >
+    <div
+      class="flex flex-col items-start gap-1"
+    >
+      <b
+        class="chakra-text css-qqfgvy"
+      >
+        José Pérez
+      </b>
+      <p
+        class="chakra-text css-0"
+      >
+        C.I: 1000000, Alergología.
+      </p>
+    </div>
+    <div />
+  </div>
+</a>
+`

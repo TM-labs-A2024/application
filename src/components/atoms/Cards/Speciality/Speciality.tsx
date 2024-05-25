@@ -20,6 +20,7 @@ export default function Speciality({
       as={NextLink}
       href={patient ? `/especialidad/${patient?.uuid}/${id}` : `/especialidad/${id}`}
       className="border-1 flex w-full rounded-md border border-gray-400 p-4"
+      data-testid="speciality-card"
     >
       <div className="flex w-full flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-4">
