@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function EvolutionsList({ evolutions }: { evolutions: CardEvolution[] }) {
   return (
-    <List spacing={3} className="h-full">
+    <List spacing={3} className="h-full" data-testid="evolutions-list">
       {evolutions.map((evolution) => (
         <div className="border-b border-black last:border-transparent" key={evolution.href}>
           <Evolution

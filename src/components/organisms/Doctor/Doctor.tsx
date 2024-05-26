@@ -128,7 +128,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
             <h4 className="text-sm text-gray-600">Especialidad</h4>
             <div className="flex flex-row flex-wrap gap-2">
               {doctor.specialities?.map((speciality, idx) => (
-                <Text className="text-nowrap font-medium" key={`doctor-card-${speciality}`}>
+                <Text className="text-nowrap font-medium" key={`doctor-${speciality}`}>
                   {specialities.find((el) => el.id === speciality)?.name}
                   {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
                     ? ','

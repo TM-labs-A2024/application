@@ -20,7 +20,7 @@ type FormData = {
   attachment: FormData
 }
 
-export default function EditPatientForm({
+export default function AddAttachmentForm({
   type,
   patientId,
   speciality
@@ -63,6 +63,7 @@ export default function EditPatientForm({
   return (
     <div
       className={`flex h-screen w-screen flex-col overflow-hidden p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="add-attachment-form"
     >
       <div className="mb-8 flex flex-row items-center justify-start gap-4">
         <IconButton

@@ -13,7 +13,7 @@ export default function SpecialitiesList({
   label: string
 }) {
   return (
-    <Stack spacing={3} className="h-full">
+    <Stack spacing={3} className="h-full" data-testid="specialities-list">
       {specialities.length > 0 && label && (
         <Heading as="h2" size="sm" noOfLines={1} className="mb-4">
           {label}

@@ -4,9 +4,9 @@ import React, { useMemo } from 'react'
 
 export default function Medicos() {
   // --- Data and handlers -----------------------------------------------------
-  const pendingDoctors = useMemo(() => doctors.filter((patient) => patient.patientPending), [])
+  const pendingDoctors = useMemo(() => doctors.filter((doctor) => doctor.patientPending), [])
 
-  const approvedDoctors = useMemo(() => doctors.filter((patient) => !patient.patientPending), [])
+  const approvedDoctors = useMemo(() => doctors.filter((doctor) => !doctor.patientPending), [])
 
   const context = useMemo(
     () => ({

@@ -8,6 +8,15 @@ import React from 'react'
 import Chevron from '../../../../../public/static/icons/chevron.svg'
 
 export default function Doctor({ doctor }: { doctor: DoctorType }) {
+  // --- Data and handlers -----------------------------------------------------
+  const doctorSpecialitiesList = doctor.specialities?.map(
+    (speciality, idx) =>
+      `${specialities.find((el) => el.id === speciality)?.name}${
+        doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1 ? ',' : ''
+      }${idx === doctor.specialities.length - 1 ? '.' : ' '}`
+  )
+  // --- END: Data and handlers ------------------------------------------------
+
   return (
     <Link as={NextLink} href={`/medico/${doctor.id}`} className="w-full" data-testid="doctor-card">
       <div className="flex flex-row items-center justify-between">
@@ -17,14 +26,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }) {
           </Text>
           <div className="flex flex-row flex-wrap items-center gap-2">
             <Text className="text-nowrap">CI: {doctor.id.toLocaleString('es-ES')}</Text>
-            {doctor.specialities?.map((speciality, idx) => (
-              <Text key={`doctor-card-${speciality}`} className="text-nowrap">
-                {specialities.find((el) => el.id === speciality)?.name}
-                {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
-                  ? ','
-                  : ''}
-              </Text>
-            ))}
+            <Text className="text-wrap">{doctorSpecialitiesList}</Text>
           </div>
         </div>
         <Chevron />

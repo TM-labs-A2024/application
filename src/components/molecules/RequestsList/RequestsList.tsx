@@ -2,7 +2,7 @@ import { List, Stack, Heading } from '@chakra-ui/react'
 import Request from '@components/atoms/Cards/Request'
 import React from 'react'
 
-export default function requestsList({
+export default function RequestsList({
   requests,
   label
 }: {
@@ -14,7 +14,7 @@ export default function requestsList({
   label: string
 }) {
   return (
-    <Stack className="h-full">
+    <Stack className="h-full" data-testid="requests-list">
       {requests.length > 0 && label && (
         <Heading as="h2" size="sm" className="mb-4">
           {label}

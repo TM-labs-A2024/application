@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
+<div
+  class="flex h-screen w-screen flex-col p-8 lg:px-96 pt-8"
+  data-testid="edit-patient-form"
+>
+  <div
+    class="mb-8 flex flex-row items-center justify-start gap-4"
+  >
+    <button
+      aria-label="back"
+      class="chakra-button css-84vx7q"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      Editar perfil
+    </p>
+  </div>
+  <form
+    class="w-full grow"
+  >
+    <div
+      class="chakra-form-control relative flex h-full w-full flex-col justify-between css-1kxonj9"
+      role="group"
+    >
+      <h2
+        class="chakra-heading css-89pyn4"
+      >
+        Datos personales
+      </h2>
+      <div
+        class="chakra-stack h-3/4 overflow-scroll css-1811skr"
+      >
+        <input
+          class="chakra-input min-h-10 css-1cjy4zv"
+          id="firstname"
+          name="firstname"
+          placeholder="Nombres"
+          value="José Feliciano"
+        />
+        <input
+          class="chakra-input min-h-10 css-1cjy4zv"
+          id="lastname"
+          name="lastname"
+          placeholder="Apellidos"
+          value="Gutierrez García"
+        />
+        <input
+          class="chakra-input min-h-10 css-1cjy4zv"
+          id="id"
+          name="id"
+          placeholder="Cédula"
+          value="E99885561"
+        />
+        <input
+          class="chakra-input min-h-10 css-1cjy4zv"
+          id="birthdate"
+          name="birthdate"
+          placeholder="Fecha de nacimiento"
+          type="date"
+          value="1997-08-19"
+        />
+        <input
+          class="chakra-input min-h-10 css-1cjy4zv"
+          id="email"
+          name="email"
+          placeholder="Correo electrónico"
+          value="user@example.com"
+        />
+        <div
+          class="chakra-input__group css-1y0e7gb"
+          data-group="true"
+        >
+          <div
+            class="chakra-input__left-addon css-127xmqf"
+          >
+            +58
+          </div>
+          <input
+            class="chakra-input min-h-10 css-10wjqo2"
+            id="phone"
+            name="phone"
+            placeholder="Teléfono"
+            type="tel"
+            value="+584127659814"
+          />
+        </div>
+      </div>
+      <button
+        class="chakra-button absolute top-0 css-ez23ye"
+        type="submit"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>
+`

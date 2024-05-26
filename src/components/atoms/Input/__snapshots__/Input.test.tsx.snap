@@ -5,7 +5,9 @@ exports[`Atoms > Input test Matches the snapshot 1`] = `
   class=""
   data-testid="input-component"
 >
-  <label>
+  <label
+    for=""
+  >
     Label
   </label>
   <input

@@ -86,7 +86,11 @@ export default function RegisterForm(): ReactElement {
   return (
     <div className="h-full w-full p-8 lg:px-96">
       {step === 1 && (
-        <form onSubmit={handleSubmit(onSubmitDetails)} className="h-full w-full">
+        <form
+          onSubmit={handleSubmit(onSubmitDetails)}
+          className="h-full w-full"
+          data-testid="register-institution-step-1"
+        >
           <FormControl
             isInvalid={verifyErrors(errors)}
             className="flex h-full w-full flex-col justify-between"

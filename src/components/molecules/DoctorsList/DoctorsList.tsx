@@ -3,7 +3,7 @@ import Doctor from '@components/atoms/Cards/Doctor'
 import { Doctor as DoctorType } from '@src/types'
 import React from 'react'
 
-export default function DoctorList({
+export default function DoctorsList({
   doctors,
   pendingDoctors
 }: {
@@ -11,7 +11,7 @@ export default function DoctorList({
   pendingDoctors: DoctorType[]
 }) {
   return (
-    <Stack divider={<StackDivider />} spacing="4" className="h-full">
+    <Stack divider={<StackDivider />} spacing="4" className="h-full" data-testid="doctors-list">
       <div className="overflow-auto">
         {pendingDoctors.length > 0 && (
           <>
@@ -20,7 +20,7 @@ export default function DoctorList({
             </Text>
             <Stack divider={<StackDivider />} spacing="4">
               {pendingDoctors.map((doctor) => (
-                <Doctor doctor={doctor} key={`doctor-${doctor.id}`} />
+                <Doctor doctor={doctor} key={`pending-doctor-${doctor.id}`} />
               ))}
             </Stack>
           </>
@@ -33,7 +33,9 @@ export default function DoctorList({
               </Text>
             )}
             <Stack divider={<StackDivider />} spacing="4">
-              {doctors?.map((doctor) => <Doctor doctor={doctor} key={`doctor-${doctor.id}`} />)}
+              {doctors?.map((doctor) => (
+                <Doctor doctor={doctor} key={`approved-doctor-${doctor.id}`} />
+              ))}
             </Stack>
           </>
         )}

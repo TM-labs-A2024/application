@@ -16,7 +16,7 @@ export default function InputComponent({
 }) {
   return (
     <div className={className} data-testid="input-component">
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <Input placeholder={placeholder} size="md" disabled={disabled} id={id} className="min-h-10" />
     </div>
   )

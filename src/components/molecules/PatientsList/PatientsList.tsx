@@ -22,7 +22,7 @@ export default function PatientsList({
   label: string
 }) {
   return (
-    <Stack className="h-full">
+    <Stack className="h-full" data-testid="patients-list">
       {(patients.length > 0 || pendingPatients.length > 0) && label && (
         <Heading as="h2" size="sm" className="mb-4">
           {label}

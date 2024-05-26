@@ -14,7 +14,8 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\"",
     "postinstall": "husky install",
     "eslint:format": "eslint src --fix",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:cache-clean": "jest --clearCache"
   },
   "dependencies": {
     "@capacitor/android": "^5.7.4",

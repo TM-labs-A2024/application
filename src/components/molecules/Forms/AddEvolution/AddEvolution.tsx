@@ -31,7 +31,7 @@ type FormData = {
   comments: string
 }
 
-export default function EditPatientForm(): ReactElement {
+export default function AddEvolutionForm(): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
@@ -66,6 +66,7 @@ export default function EditPatientForm(): ReactElement {
   return (
     <div
       className={`flex h-screen w-screen flex-col overflow-hidden p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="add-evolution-form"
     >
       <div className="mb-8 flex flex-row items-center justify-start gap-4">
         <IconButton
@@ -105,7 +106,9 @@ export default function EditPatientForm(): ReactElement {
               })}
             />
             <FormErrorMessage>{errors?.reason && errors?.reason?.message}</FormErrorMessage>
-            <label className="-mb-2">Descripción (Notas evolutivas)</label>
+            <label className="-mb-2" htmlFor="description">
+              Descripción (Notas evolutivas)
+            </label>
             <Textarea
               id="description"
               {...register('description', {
@@ -115,7 +118,9 @@ export default function EditPatientForm(): ReactElement {
             <FormErrorMessage>
               {errors?.description && errors?.description?.message}
             </FormErrorMessage>
-            <label className="-mb-2">Antecedentes</label>
+            <label className="-mb-2" htmlFor="history">
+              Antecedentes
+            </label>
             <Textarea
               id="history"
               {...register('history', {
@@ -123,7 +128,9 @@ export default function EditPatientForm(): ReactElement {
               })}
             />
             <FormErrorMessage>{errors?.history && errors?.history?.message}</FormErrorMessage>
-            <label className="-mb-2">Exámenes físicos</label>
+            <label className="-mb-2" htmlFor="examination">
+              Exámenes físicos
+            </label>
             <Textarea
               id="examination"
               {...register('examination', {
@@ -133,7 +140,9 @@ export default function EditPatientForm(): ReactElement {
             <FormErrorMessage>
               {errors?.examination && errors?.examination?.message}
             </FormErrorMessage>
-            <label className="-mb-2">Comentarios</label>
+            <label className="-mb-2" htmlFor="comments">
+              Comentarios
+            </label>
             <Textarea id="comments" {...register('comments')} />
           </Stack>
           <Button isLoading={isSubmitting} type="submit" className="absolute bottom-12">

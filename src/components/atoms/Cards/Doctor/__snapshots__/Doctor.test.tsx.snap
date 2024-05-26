@@ -29,9 +29,9 @@ exports[`Atoms > Cards > Doctor test Matches the snapshot 1`] = `
           1.000.000
         </p>
         <p
-          class="chakra-text text-nowrap css-0"
+          class="chakra-text text-wrap css-0"
         >
-          Alergología
+          Alergología.
         </p>
       </div>
     </div>
