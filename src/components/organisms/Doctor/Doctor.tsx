@@ -99,10 +99,20 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
     onRemovalClose()
     router.push('/medicos')
   }, [onRemovalClose, router])
+
+  const doctorSpecialitiesList = doctor.specialities?.map(
+    (speciality, idx) =>
+      `${specialities.find((el) => el.id === speciality)?.name}${
+        doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1 ? ',' : ''
+      }${idx === doctor.specialities.length - 1 ? '.' : ' '}`
+  )
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="doctor"
+    >
       <div className="mb-8 flex flex-row items-center justify-start gap-4">
         <IconButton
           size="xl"
@@ -126,16 +136,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
-            <div className="flex flex-row flex-wrap gap-2">
-              {doctor.specialities?.map((speciality, idx) => (
-                <Text className="text-nowrap font-medium" key={`doctor-${speciality}`}>
-                  {specialities.find((el) => el.id === speciality)?.name}
-                  {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
-                    ? ','
-                    : ''}
-                </Text>
-              ))}
-            </div>
+            <Text className="text-wrap">{doctorSpecialitiesList}</Text>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>

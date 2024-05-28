@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > AddPatient test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 pt-8"
+  data-testid="add-patient"
+>
+  <h2
+    class="chakra-heading mb-4 css-18j379d"
+  >
+    Nuevo paciente
+  </h2>
+  <div
+    class="mb-8 w-full"
+    data-testid="search-input-component"
+  >
+    <div
+      class="chakra-input__group css-1y0e7gb"
+      data-group="true"
+    >
+      <div
+        class="chakra-input__left-element css-gv1iwz"
+      >
+        <svg
+          class="chakra-icon css-13izzit"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <input
+        class="chakra-input min-h-10 css-qluo93"
+        placeholder="Ingresar cédula"
+      />
+    </div>
+  </div>
+  <h2
+    class="chakra-heading mb-4 css-o8iskg"
+  >
+    13 resultados
+  </h2>
+  <ul
+    class="h-full overflow-scroll pb-56 css-1xa84ef"
+    role="list"
+  >
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885561
+        </p>
+      </div>
+      <button
+        class="chakra-button cursor-not-allowed css-ez23ye"
+        type="button"
+      >
+        Solicitado
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885562
+        </p>
+      </div>
+      <button
+        class="chakra-button cursor-not-allowed css-ez23ye"
+        type="button"
+      >
+        Solicitado
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Josefa Feliciana
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885563
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885564
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Josefa Feliciana
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885565
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885566
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885567
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Josefa Feliciana
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885568
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885569
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Josefa Feliciana
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885560
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885511
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885512
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+    <div
+      class="flex flex-row items-center justify-between"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          E99885513
+        </p>
+      </div>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Solicitar acceso
+      </button>
+    </div>
+  </ul>
+</div>
+`

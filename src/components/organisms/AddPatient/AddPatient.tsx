@@ -26,6 +26,7 @@ export default function AddPatient({
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="add-patient"
     >
       <Heading as="h2" size="md" className="mb-4">
         Nuevo paciente

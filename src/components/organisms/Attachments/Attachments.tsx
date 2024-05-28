@@ -84,7 +84,10 @@ export default function Attachments({
   // --- END: Local state ------------------------------------------------------
 
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="attachments"
+    >
       <div
         className={`mb-8 flex flex-row items-center gap-4 ${isPatient ? 'justify-start' : 'justify-between'}`}
       >
@@ -103,7 +106,8 @@ export default function Attachments({
         {isDoctor && (
           <IconButton
             size="xl"
-            aria-label="back"
+            aria-label="delete"
+            data-testid="delete-button"
             icon={<DeleteIcon />}
             onClick={() => onDeleteClick('all')}
           />
@@ -125,6 +129,7 @@ export default function Attachments({
               <div className="relative w-full" key={`order-tests-image-${idx + 1}`}>
                 {isDoctor && (
                   <button
+                    data-testid="delete-image-button"
                     className="absolute right-2 top-2 z-20 rounded-md bg-white px-2 py-1"
                     onClick={() => onDeleteClick('image')}
                   >
