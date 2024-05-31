@@ -54,7 +54,10 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
   // --- END: Side effects -----------------------------------------------------
 
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}
+      data-testid="doctor-profile"
+    >
       <Text className="mb-6 font-medium">Perfil</Text>
       <div className="flex h-full flex-col">
         <form onSubmit={handleSubmit(onSubmitDetails)} className="h-full">

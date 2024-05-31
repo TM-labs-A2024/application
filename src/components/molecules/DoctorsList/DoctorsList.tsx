@@ -18,7 +18,7 @@ export default function DoctorsList({
             <Text size="sm" noOfLines={1} className="my-4">
               Pendientes
             </Text>
-            <Stack divider={<StackDivider />} spacing="4">
+            <Stack divider={<StackDivider />} spacing="4" data-testid="pending-doctors-list">
               {pendingDoctors.map((doctor) => (
                 <Doctor doctor={doctor} key={`pending-doctor-${doctor.id}`} />
               ))}
@@ -32,7 +32,7 @@ export default function DoctorsList({
                 Todos
               </Text>
             )}
-            <Stack divider={<StackDivider />} spacing="4">
+            <Stack divider={<StackDivider />} spacing="4" data-testid="approved-doctors-list">
               {doctors?.map((doctor) => (
                 <Doctor doctor={doctor} key={`approved-doctor-${doctor.id}`} />
               ))}

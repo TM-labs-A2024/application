@@ -94,6 +94,7 @@ export default function Institution({
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-0 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
+      data-testid="institution"
     >
       <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />

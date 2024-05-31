@@ -7,15 +7,7 @@ import '@testing-library/jest-dom'
 import Doctor from './Doctor'
 import 'next/navigation'
 
-import '@testing-library/jest-dom'
-
 jest.mock('next/navigation')
-
-// Si el doctor no tiene acceso, al hacer clic en el botón de conceder acceso se renderiza el modal de confirmación
-// El componente permite conceder el acceso al doctor
-// Si el doctor no tiene acceso, al hacer clic en el botón de rechazar la solicitud de acceso se renderiza el modal de confirmación
-// El componente permite rechazar el acceso al doctor
-// El renderizado del componente concuerda con la captura instantánea del componente
 
 describe('Organisms > Doctor test', () => {
   test('The component shows the name, govId, specialities, birthdate, email and phoneNumber of the doctor', () => {

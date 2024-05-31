@@ -1,0 +1,2052 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > Doctors test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 pb-32 pt-8"
+  data-testid="doctors"
+>
+  <h2
+    class="chakra-heading css-170f0s2"
+  >
+    Medicos
+  </h2>
+  <div
+    class="chakra-stack h-full css-j7qwjs"
+    data-testid="doctors-list"
+  >
+    <div
+      class="overflow-auto"
+    >
+      <p
+        class="chakra-text my-4 css-zvlevn"
+      >
+        Pendientes
+      </p>
+      <div
+        class="chakra-stack css-j7qwjs"
+        data-testid="pending-doctors-list"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/1000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  1.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Alergología.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/2000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  2.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Anestesiología y reanimación, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/3000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  3.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Aparato digestivo, 
+                  Endocrinología y nutrición, 
+                  Hematología y hemoterapia.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/4000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  4.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cardiología, 
+                  Alergología.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/5000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  5.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Endocrinología y nutrición, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/6000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  6.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Geriatría, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/7000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  7.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Hematología y hemoterapia, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/16000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  16.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Neumología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/17000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  17.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Neurología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/18000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  18.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Neurofisiología Clínica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/19000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  19.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Oncología médica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/20000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  20.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Oncología radioterápica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/21000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  21.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Pediatría, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/22000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  22.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Psiquiatría, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <p
+        class="chakra-text my-4 css-zvlevn"
+      >
+        Todos
+      </p>
+      <div
+        class="chakra-stack css-j7qwjs"
+        data-testid="approved-doctors-list"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/8000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  8.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina de la educación física y del deporte, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición, 
+                  Alergología, 
+                  Aparato digestivo, 
+                  Cardiología.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/9000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  9.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina espacial, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/10000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  10.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina intensiva, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/11000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  11.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina interna, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/12000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  12.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina legal y forense, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/13000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  13.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina preventiva y salud pública, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/14000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  14.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina del trabajo, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/15000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  15.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Nefrología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/23000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  23.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Rehabilitación, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/24000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  24.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Reumatología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/25000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  25.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina familiar y comunitaria, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/26000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  26.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía cardiovascular, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/27000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  27.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía general y del aparato digestivo, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/28000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  28.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía oral y maxilofacial, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/29000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  29.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía ortopédica y traumatología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/30000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  30.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía pediátrica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/31000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  31.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía plástica, estética y reparadora, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/32000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  32.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Cirugía torácica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/33000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  33.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Neurocirugía, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/34000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  34.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Angiología y cirugía vascular, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/35000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  35.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Dermatología médico-quirúrgica y venereología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/36000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  36.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Obstetricia y ginecología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/37000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  37.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Oftalmología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/38000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  38.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Otorrinolaringología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/39000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  39.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Urología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/40000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  40.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Análisis clínicos, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/41000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  41.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Anatomía patológica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/42000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  42.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Bioquímica clínica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/43000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  43.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Farmacología clínica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/44000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  44.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Inmunología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/45000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  45.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Medicina nuclear, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/46000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  46.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Microbiología y parasitología, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/47000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  47.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Neurofisiología clínica, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/48000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  48.000.000
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  Radiodiagnóstico, 
+                  Medicina espacial, 
+                  Endocrinología y nutrición.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`

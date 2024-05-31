@@ -34,7 +34,10 @@ export default function Evolution({
   // --- END: Hooks ------------------------------------------------------------
 
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="evolution"
+    >
       <div className="mb-8 flex flex-row items-center justify-start gap-4">
         <IconButton
           size="xl"

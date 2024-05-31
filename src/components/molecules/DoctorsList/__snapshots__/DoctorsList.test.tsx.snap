@@ -15,6 +15,7 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
     </p>
     <div
       class="chakra-stack css-j7qwjs"
+      data-testid="pending-doctors-list"
     >
       <a
         class="chakra-link w-full css-spn4bz"
@@ -605,6 +606,7 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
     </p>
     <div
       class="chakra-stack css-j7qwjs"
+      data-testid="approved-doctors-list"
     >
       <a
         class="chakra-link w-full css-spn4bz"
