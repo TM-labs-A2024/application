@@ -25,6 +25,7 @@ export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] 
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-24 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
+      data-testid="institution-doctors"
     >
       <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
@@ -54,7 +55,10 @@ export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] 
         </div>
       )}
       {formatedRequests.length === 0 && (
-        <div className="flex h-3/4 w-full flex-col items-center justify-center">
+        <div
+          className="flex h-3/4 w-full flex-col items-center justify-center"
+          data-testid="approved-doctors-empty-state"
+        >
           <Logo />
           <Text textAlign="center" mt={4}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam

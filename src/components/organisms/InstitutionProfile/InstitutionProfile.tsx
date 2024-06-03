@@ -1,12 +1,12 @@
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import { IconButton, Text, Stack, Heading, Divider } from '@chakra-ui/react'
-import { institution } from '@constants/index'
+import { Institution } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export default function InstitutionProfile() {
+export default function InstitutionProfile({ institution }: { institution: Institution }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -14,6 +14,7 @@ export default function InstitutionProfile() {
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-0 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
+      data-testid="institution-profile"
     >
       <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
