@@ -28,6 +28,7 @@ export default function Patients({
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-64 pt-20' : 'pb-64'} ${isAndroid() && 'pb-64 pt-8'}`}
+      data-testid="patients"
     >
       <Image
         alt="logo"
@@ -53,7 +54,10 @@ export default function Patients({
         </>
       )}
       {pendingPatients.length === 0 && approvedPatients.length === 0 && (
-        <div className="flex h-full w-full flex-col items-center justify-center">
+        <div
+          className="flex h-full w-full flex-col items-center justify-center"
+          data-testid="patients-empty-state"
+        >
           <Logo />
           <Text textAlign="center" mt={4}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam

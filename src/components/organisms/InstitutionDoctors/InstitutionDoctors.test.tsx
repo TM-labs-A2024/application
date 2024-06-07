@@ -4,7 +4,7 @@ import { render, screen } from '@test/utils/index'
 import '@testing-library/jest-dom'
 import InstitutionDoctors from './InstitutionDoctors'
 
-const approvedDoctors = doctors.filter((doctor) => !doctor.patientPending)
+const approvedDoctors = doctors.filter((doctor) => !doctor.pending)
 
 describe('Organisms > InstitutionDoctors test', () => {
   test('The component shows the list of doctors with access if it has at least one doctor', () => {

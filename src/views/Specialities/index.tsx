@@ -1,6 +1,6 @@
 import Specialities from '@components/organisms/Specialities'
 import { PatientsLayout } from '@layouts/index'
-import { Patient } from '@src/types'
+import { Patient, Specialities as SpecialitiesType } from '@src/types'
 import React from 'react'
 
 export default function SpecialitiesView({
@@ -9,6 +9,7 @@ export default function SpecialitiesView({
   context: {
     isPatient: boolean
     patient?: Patient
+    specialities: SpecialitiesType
   }
 }) {
   return context.isPatient ? (

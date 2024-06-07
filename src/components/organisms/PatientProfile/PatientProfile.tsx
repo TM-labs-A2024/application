@@ -7,27 +7,10 @@ import NextLink from 'next/link'
 import React from 'react'
 
 export default function PatientProfile({ patient }: { patient: PatientType }) {
-  // --- Hooks -----------------------------------------------------------------
-  // --- END: Hooks ------------------------------------------------------------
-
-  // --- Local state -----------------------------------------------------------
-  // --- END: Local state ------------------------------------------------------
-
-  // --- Refs ------------------------------------------------------------------
-  // --- END: Refs -------------------------------------------------------------
-
-  // --- Redux -----------------------------------------------------------------
-  // --- END: Redux ------------------------------------------------------------
-
-  // --- Side effects ----------------------------------------------------------
-  // --- END: Side effects -----------------------------------------------------
-
-  // --- Data and handlers -----------------------------------------------------
-  // --- END: Data and handlers ------------------------------------------------
-
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="patient-profile"
     >
       <div className="mb-8 flex w-full flex-row justify-between">
         <Heading as="h2" size="md" noOfLines={1}>

@@ -2,8 +2,7 @@ import { ArrowBackIcon } from '@chakra-ui/icons'
 import { IconButton, Text, Button } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
-import { specialities } from '@src/constants'
-import { Patient } from '@src/types'
+import { Patient, Specialities as SpecialitiesType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -15,19 +14,20 @@ import Logo from '../../../../public/static/icons/logo.svg'
 export default function Specialities({
   context
 }: {
-  context: { isPatient: boolean; patient?: Patient }
+  context: { isPatient: boolean; patient?: Patient; specialities: SpecialitiesType }
 }) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { isPatient, patient } = context
+  const { isPatient, patient, specialities } = context
   // --- END: Local state ------------------------------------------------------
 
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-72 pt-10' : !isPatient ? 'pb-44' : 'pb-64'} ${isAndroid() && 'pt-8'}`}
+      data-testid="specialities"
     >
       {!isPatient && (
         <div className="my-8 flex flex-row items-center justify-between">
@@ -75,7 +75,10 @@ export default function Specialities({
         <SpecialitiesList specialities={specialities} label="Especialidades" patient={patient} />
       )}
       {!isPatient && specialities.length === 0 && (
-        <div className="flex h-full w-full flex-col items-center justify-center">
+        <div
+          className="flex h-full w-full flex-col items-center justify-center"
+          data-testid="specialities-empty-state"
+        >
           <Logo />
           <Text textAlign="center" mt={4}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam

@@ -3,6 +3,6 @@ export const nurse = {
   firstname: 'José',
   lastname: 'Pérez',
   birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
-  email: 'joseperez@gmail.com ',
+  email: 'joseperez@gmail.com',
   phone: '4127775522'
 }

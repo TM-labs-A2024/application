@@ -7,7 +7,10 @@ import React, { ReactElement } from 'react'
 
 export default function NurseProfile({ nurse }: { nurse: Nurse }): ReactElement {
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}
+      data-testid="nurse-profile"
+    >
       <Text className="mb-6 font-medium">Perfil</Text>
       <div className="flex h-full flex-col">
         <Stack spacing={1} mb={6}>

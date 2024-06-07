@@ -17,6 +17,7 @@ export default function PendingDoctor({
   return (
     <div
       className={`flex h-screen w-screen flex-col items-center p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="pending-doctor"
     >
       <Image
         alt="logo"
