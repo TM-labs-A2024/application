@@ -68,7 +68,10 @@ export default function Speciality({
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}>
+    <div
+      className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="speciality"
+    >
       <div className="mb-8 flex flex-row items-center justify-between">
         <div className="flex flex-row items-center justify-start gap-4">
           <IconButton
@@ -130,7 +133,10 @@ export default function Speciality({
           <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
             {data.orders.length > 0 && <EvolutionsList evolutions={data.orders} />}
             {data.orders.length === 0 && (
-              <div className="flex h-full w-full items-center justify-center">
+              <div
+                className="flex h-full w-full items-center justify-center"
+                data-testid="orders-empty-state"
+              >
                 <Logo />
                 <Text textAlign="center" mt={4}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
@@ -153,7 +159,10 @@ export default function Speciality({
             <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
               {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
               {data.tests.length === 0 && (
-                <div className="flex h-full w-full items-center justify-center">
+                <div
+                  className="flex h-full w-full items-center justify-center"
+                  data-testid="tests-empty-state"
+                >
                   <Logo />
                   <Text textAlign="center" mt={4}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
