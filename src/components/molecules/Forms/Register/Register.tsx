@@ -15,7 +15,7 @@ import {
 } from '@components/molecules/Forms/Register/Register.constants'
 import { specialities } from '@constants/index'
 import { ReactSelectOption } from '@src/types'
-// import { sendEmail } from '@utils/email'
+import { sendEmail } from '@utils/email'
 import Image from 'next/image'
 import React, { ReactElement, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
@@ -110,19 +110,20 @@ export default function RegisterForm(): ReactElement {
 
   // --- Data and handlers -----------------------------------------------------
   const onSubmitDetails = (data: FormData) => {
-    alert(JSON.stringify(data))
+    const apiURL = process.env.NEXT_PUBLIC_API_URL
+    alert(JSON.stringify({ ...data, apiURL }))
     setStep(2)
   }
 
   const onSubmitPassword = (data: FormData) => {
     const verificationCode = String(Math.floor(Math.random() * 1000000))
-    // const emailTemplate = {
-    //   from_name: 'HealthCore',
-    //   to_name: data.firstname,
-    //   code: verificationCode,
-    //   to_email: data.email
-    // }
-    // sendEmail(emailTemplate)
+    const emailTemplate = {
+      from_name: 'HealthCore',
+      to_name: data.firstname,
+      code: verificationCode,
+      to_email: data.email
+    }
+    sendEmail(emailTemplate)
     setCodeToVerify(verificationCode)
     setStep(3)
     alert(JSON.stringify({ ...data, codeToVerify, verificationCode }))

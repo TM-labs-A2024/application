@@ -10,9 +10,11 @@ export function sendEmail(data: {
     ...data
   }
 
-  emailjs
-    .send('service_ftjwr8i', 'template_1ivxq9d', templateParams, 'vILwuN5a8B39LwX9Y')
-    .catch(() => {
-      alert('Algo salió mal, por favor reintenta el registro.')
-    })
+  const serviceKey = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY ?? ''
+  const templateKey = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY ?? ''
+  const apiKey = process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? ''
+
+  emailjs.send(serviceKey, templateKey, templateParams, apiKey).catch(() => {
+    alert('Algo salió mal, por favor reintenta el registro.')
+  })
 }
