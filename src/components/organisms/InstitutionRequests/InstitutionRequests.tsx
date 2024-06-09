@@ -5,6 +5,7 @@ import { specialities as specialitiesList } from '@src/constants'
 import { Doctor as DoctorType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
@@ -40,11 +41,11 @@ export default function InstitutionRequests({ doctors }: { doctors: DoctorType[]
             onClick={() => null}
           />
           <MenuList>
-            <MenuItem as="a" href="/institucion/medicos">
-              Médicos con acceso
+            <MenuItem>
+              <Link href="/institucion/medicos">Médicos con acceso</Link>
             </MenuItem>
-            <MenuItem as="a" href="/perfil/institucion">
-              Perfil de la institución
+            <MenuItem>
+              <Link href="/perfil/institucion">Perfil de la institución</Link>
             </MenuItem>
           </MenuList>
         </Menu>

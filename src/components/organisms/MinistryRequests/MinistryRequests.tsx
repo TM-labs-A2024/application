@@ -4,6 +4,7 @@ import RequestsList from '@components/molecules/RequestsList'
 import { Institution as InstitutionType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
@@ -39,8 +40,8 @@ export default function MinistryRequests({ institutions }: { institutions: Insti
             onClick={() => null}
           />
           <MenuList>
-            <MenuItem as="a" href="/ministerio/instituciones">
-              Instituciones con acceso
+            <MenuItem>
+              <Link href="/ministerio/instituciones">Instituciones con acceso</Link>
             </MenuItem>
           </MenuList>
         </Menu>

@@ -4,6 +4,7 @@ import RequestsList from '@components/molecules/RequestsList'
 import { Institution as InstitutionType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
@@ -23,7 +24,7 @@ export default function Institutions({ institutions }: { institutions: Instituti
 
   return (
     <div
-      className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-24 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
+      className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-24 pt-20' : 'pb-24 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
       data-testid="institutions"
     >
       <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
@@ -39,8 +40,8 @@ export default function Institutions({ institutions }: { institutions: Instituti
             onClick={() => null}
           />
           <MenuList>
-            <MenuItem as="a" href="/ministerio/solicitudes">
-              Solicitudes pendientes
+            <MenuItem>
+              <Link href="/ministerio/solicitudes">Solicitudes pendientes</Link>
             </MenuItem>
           </MenuList>
         </Menu>
