@@ -1,6 +1,7 @@
 import { Link } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialitiesList from '@components/molecules/SpecialitiesList'
+import { Patient } from '@src/types'
 import { isIOS } from '@utils/index'
 import NextLink from 'next/link'
 import React, { useCallback, useMemo, useState, useEffect } from 'react'
@@ -13,14 +14,16 @@ export default function SpecialitiesSearch({
       id: number
       name: string
     }[]
-    uuid?: string
+    patient?: Patient
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { uuid, specialities } = context
+  const { patient, specialities } = context
+  // eslint-disable-next-line no-console
+  console.log('patient?.uuid', patient?.uuid)
   const [specialitiesList, setSpecialitiesList] = useState(specialities)
   // --- END: Local state ------------------------------------------------------
 
@@ -66,11 +69,14 @@ export default function SpecialitiesSearch({
           onChange={onChange}
           inputRef={inputRef}
         />
-        <Link as={NextLink} href={uuid ? `/especialidades/${uuid}` : '/especialidades'}>
+        <Link
+          as={NextLink}
+          href={patient?.uuid ? `/especialidades/${patient?.uuid}` : '/especialidades'}
+        >
           Cancelar
         </Link>
       </div>
-      <SpecialitiesList specialities={specialitiesList} label={matches} />
+      <SpecialitiesList specialities={specialitiesList} label={matches} patient={patient} />
     </div>
   )
 }

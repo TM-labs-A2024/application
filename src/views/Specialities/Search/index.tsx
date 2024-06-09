@@ -1,4 +1,5 @@
 import SpecialitiesSearch from '@components/organisms/Search/Specialities'
+import { Patient } from '@src/types'
 import React from 'react'
 
 export default function SpecialitiesSearchVie({
@@ -9,7 +10,7 @@ export default function SpecialitiesSearchVie({
       id: number
       name: string
     }[]
-    uuid?: string
+    patient?: Patient
   }
 }) {
   return <SpecialitiesSearch context={context} />
