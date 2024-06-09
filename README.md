@@ -37,3 +37,15 @@ npx cap open android
 
 npx cap run android
 ```
+
+In order to run electron's dev version modify in the package.json file the dev script like this:
+
+```bash
+"dev": "concurrently -n \"NEXT,ELECTRON\" -c \"yellow,blue\" --kill-others \"next dev\" \"electron .\"",
+```
+
+In order to build elctron's app modify in the package.json file the dev script like this:
+
+```bash
+"build": "next build && electron-builder",
+```

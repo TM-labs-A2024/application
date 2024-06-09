@@ -21,6 +21,12 @@ export default function Home() {
       <Link as={NextLink} href="/ministerio/solicitudes" onClick={() => setSession('ministerio')}>
         Ministerio
       </Link>
+      <Link as={NextLink} href="/registro">
+        Registro
+      </Link>
+      <Link as={NextLink} href="/registro-institucion">
+        Registro institución
+      </Link>
     </main>
   )
 }
