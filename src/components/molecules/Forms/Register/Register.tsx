@@ -15,6 +15,7 @@ import {
 } from '@components/molecules/Forms/Register/Register.constants'
 import { specialities } from '@constants/index'
 import { ReactSelectOption } from '@src/types'
+// import { sendEmail } from '@utils/email'
 import Image from 'next/image'
 import React, { ReactElement, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
@@ -86,11 +87,16 @@ export default function RegisterForm(): ReactElement {
 
   // --- Local state -----------------------------------------------------------
   const [step, setStep] = useState(1)
+  const [codeToVerify, setCodeToVerify] = useState('')
 
   const typeField = useWatch({
     control,
     name: 'type'
   })
+
+  // const codeField = useWatch({
+  //   name: 'code'
+  // })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -109,8 +115,17 @@ export default function RegisterForm(): ReactElement {
   }
 
   const onSubmitPassword = (data: FormData) => {
-    alert(JSON.stringify(data))
+    const verificationCode = String(Math.floor(Math.random() * 1000000))
+    // const emailTemplate = {
+    //   from_name: 'HealthCore',
+    //   to_name: data.firstname,
+    //   code: verificationCode,
+    //   to_email: data.email
+    // }
+    // sendEmail(emailTemplate)
+    setCodeToVerify(verificationCode)
     setStep(3)
+    alert(JSON.stringify({ ...data, codeToVerify, verificationCode }))
   }
 
   const onSubmitConfirmation = (data: FormData) => {
@@ -335,7 +350,10 @@ export default function RegisterForm(): ReactElement {
                 className="min-h-10"
                 placeholder="Ingresar código"
                 {...register('code', {
-                  required: 'Este campo es obligatorio'
+                  required: 'Este campo es obligatorio',
+                  validate: {
+                    verifyCode: (code) => codeToVerify === code || 'El código no concuerda'
+                  }
                 })}
               />
               <FormErrorMessage>{errors?.code && errors?.code?.message}</FormErrorMessage>
