@@ -44,7 +44,7 @@ exports[`Organisms > AddPatient test Matches the snapshot 1`] = `
     13 resultados
   </h2>
   <ul
-    class="h-full overflow-scroll pb-56 css-1xa84ef"
+    class="h-5/6 overflow-scroll pb-24 css-1xa84ef"
     role="list"
   >
     <div

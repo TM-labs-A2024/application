@@ -54,7 +54,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {isMobile(_window) ? (
         <nav>
           <ul
-            className={`fixed ${isIOS() ? 'bottom-8' : 'bottom-0'} flex h-16 w-full flex-row justify-around`}
+            className={`fixed ${isIOS() ? 'bottom-8' : 'bottom-0'} flex h-20 w-full flex-row justify-around bg-white`}
           >
             <li
               className={`flex h-full w-1/3 flex-col items-center justify-center ${path === '/pacientes' ? 'border-b-4 border-black' : ''}`}

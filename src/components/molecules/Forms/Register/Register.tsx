@@ -94,9 +94,6 @@ export default function RegisterForm(): ReactElement {
     name: 'type'
   })
 
-  // const codeField = useWatch({
-  //   name: 'code'
-  // })
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -139,7 +136,7 @@ export default function RegisterForm(): ReactElement {
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <div className="h-full w-full p-8 lg:px-96">
+    <div className="h-full w-full px-8 py-12 lg:px-96">
       {step === 1 && (
         <form
           onSubmit={handleSubmit(onSubmitDetails)}
