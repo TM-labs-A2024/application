@@ -57,6 +57,7 @@ export default function SpecialitiesSearch({
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="specialities-search"
     >
       <div className="mb-8 flex flex-row items-center gap-4">
         <SearchInputComponent

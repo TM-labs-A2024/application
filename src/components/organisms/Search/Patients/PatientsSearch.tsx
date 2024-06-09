@@ -250,6 +250,7 @@ export default function PatientsSearch({
   return (
     <div
       className={`relative mx-auto block h-screen w-screen overflow-hidden px-8 lg:w-1/2 ${isIOS() ? 'pt-20' : 'pt-8'}`}
+      data-testid="patients-search"
     >
       {showFilters && (
         <>
