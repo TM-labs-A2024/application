@@ -6,7 +6,7 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
   data-testid="institution-profile"
 >
   <div
-    class="mb-8 flex flex-row justify-between false"
+    class="mb-8 flex flex-row justify-between"
   >
     <img
       alt="logo"
@@ -21,11 +21,11 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
     />
   </div>
   <div
-    class="mb-8 flex flex-row items-center justify-start gap-4"
+    class="mb-8 flex flex-row items-center justify-start"
   >
     <button
       aria-label="back"
-      class="chakra-button css-84vx7q"
+      class="chakra-button mr-4 css-84vx7q"
       type="button"
     >
       <svg

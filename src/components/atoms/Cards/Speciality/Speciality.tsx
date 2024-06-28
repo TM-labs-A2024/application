@@ -23,9 +23,9 @@ export default function Speciality({
       data-testid="speciality-card"
     >
       <div className="flex w-full flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center">
           <Avatar name={name} src="/" />
-          <Text>{name}</Text>
+          <Text className="ml-4">{name}</Text>
         </div>
         <Chevron />
       </div>

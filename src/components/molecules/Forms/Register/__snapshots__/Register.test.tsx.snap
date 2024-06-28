@@ -32,7 +32,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
       Datos personales
     </h2>
     <div
-      class="chakra-stack h-3/4 overflow-scroll css-1811skr"
+      class="chakra-stack mb-4 h-3/4 overflow-scroll css-8g8ihq"
     >
       <div
         class=" css-b62m3t-container"
@@ -117,19 +117,19 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
         />
       </div>
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="firstname"
         name="firstname"
         placeholder="Nombres"
       />
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="lastname"
         name="lastname"
         placeholder="Apellidos"
       />
       <div
-        class=" css-b62m3t-container"
+        class="mt-2 css-b62m3t-container"
         id="gender"
       >
         <span
@@ -211,26 +211,26 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
         />
       </div>
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="id"
         name="id"
         placeholder="Cédula"
       />
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="birthdate"
         name="birthdate"
         placeholder="Fecha de nacimiento"
         type="date"
       />
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="email"
         name="email"
         placeholder="Correo electrónico"
       />
       <div
-        class="chakra-input__group css-1y0e7gb"
+        class="chakra-input__group mt-2 css-1y0e7gb"
         data-group="true"
       >
         <div

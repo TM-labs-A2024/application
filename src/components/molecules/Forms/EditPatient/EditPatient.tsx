@@ -64,9 +64,10 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
       className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
       data-testid="edit-patient-form"
     >
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}
@@ -84,10 +85,10 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
           <Heading as="h2" size="sm" mb={4} noOfLines={1}>
             Datos personales
           </Heading>
-          <Stack spacing={4} className="h-3/4 overflow-scroll">
+          <Stack className="h-3/4 overflow-scroll">
             <Input
               id="firstname"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               defaultValue={patient.firstname}
               placeholder="Nombres"
               {...register('firstname', {
@@ -97,7 +98,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
             <Input
               id="lastname"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               defaultValue={patient.lastname}
               placeholder="Apellidos"
               {...register('lastname', {
@@ -107,7 +108,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
             <Input
               id="id"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               defaultValue={patient.govId}
               placeholder="Cédula"
               {...register('id', {
@@ -117,7 +118,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
             <Input
               id="birthdate"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               defaultValue={format(new Date(patient.birthdate), 'yyyy-MM-dd')}
               type="date"
               placeholder="Fecha de nacimiento"
@@ -128,7 +129,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
             <FormErrorMessage>{errors?.birthdate && errors?.birthdate?.message}</FormErrorMessage>
             <Input
               id="email"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               defaultValue={patient.email}
               placeholder="Correo electrónico"
               {...register('email', {
@@ -136,7 +137,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
               })}
             />
             <FormErrorMessage>{errors?.email && errors?.email?.message}</FormErrorMessage>
-            <InputGroup>
+            <InputGroup className="mt-2">
               <InputLeftAddon>+58</InputLeftAddon>
               <Input
                 id="phone"

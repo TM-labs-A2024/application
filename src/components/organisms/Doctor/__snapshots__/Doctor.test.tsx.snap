@@ -6,11 +6,11 @@ exports[`Organisms > Doctor test Matches the snapshot 1`] = `
   data-testid="doctor"
 >
   <div
-    class="mb-8 flex flex-row items-center justify-start gap-4"
+    class="mb-8 flex flex-row items-center justify-start"
   >
     <button
       aria-label="back"
-      class="chakra-button css-84vx7q"
+      class="chakra-button mr-4 css-84vx7q"
       type="button"
     >
       <svg
@@ -114,16 +114,16 @@ exports[`Organisms > Doctor test Matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full flex-row gap-4"
+      class="flex w-full flex-row"
     >
       <button
-        class="chakra-button flex-grow css-11494p6"
+        class="chakra-button mr-2 flex-grow css-11494p6"
         type="button"
       >
         Rechazar
       </button>
       <button
-        class="chakra-button flex-grow css-ez23ye"
+        class="chakra-button ml-2 flex-grow css-ez23ye"
         type="button"
       >
         Aceptar

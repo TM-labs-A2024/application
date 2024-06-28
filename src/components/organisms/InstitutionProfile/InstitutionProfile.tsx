@@ -16,12 +16,13 @@ export default function InstitutionProfile({ institution }: { institution: Insti
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-0 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
       data-testid="institution-profile"
     >
-      <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
+      <div className={`mb-8 flex flex-row justify-between`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
       </div>
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}

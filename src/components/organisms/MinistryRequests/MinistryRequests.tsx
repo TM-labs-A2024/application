@@ -27,7 +27,7 @@ export default function MinistryRequests({ institutions }: { institutions: Insti
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-24 pt-20' : 'pb-24 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
       data-testid="institution-requests"
     >
-      <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
+      <div className={`mb-8 flex flex-row justify-between`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
         <Menu>
           <MenuButton

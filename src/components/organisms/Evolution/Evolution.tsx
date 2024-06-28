@@ -38,9 +38,10 @@ export default function Evolution({
       className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
       data-testid="evolution"
     >
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}

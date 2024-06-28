@@ -10,7 +10,7 @@ exports[`Atoms > Cards > Speciality test Matches the snapshot 1`] = `
     class="flex w-full flex-row items-center justify-between"
   >
     <div
-      class="flex flex-row items-center gap-4"
+      class="flex flex-row items-center"
     >
       <span
         class="chakra-avatar css-1mw972v"
@@ -24,7 +24,7 @@ exports[`Atoms > Cards > Speciality test Matches the snapshot 1`] = `
         </div>
       </span>
       <p
-        class="chakra-text css-0"
+        class="chakra-text ml-4 css-0"
       >
         Alergología
       </p>

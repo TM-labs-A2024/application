@@ -6,7 +6,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
   data-testid="institution-requests"
 >
   <div
-    class="mb-8 flex flex-row justify-between false"
+    class="mb-8 flex flex-row justify-between"
   >
     <img
       alt="logo"
@@ -52,16 +52,20 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
         tabindex="-1"
       >
-        <a
+        <button
           class="chakra-menu__menuitem css-18esm8n"
           data-index="0"
-          href="/ministerio/instituciones"
           id="menu-list-:ra:-menuitem-:rb:"
           role="menuitem"
           tabindex="-1"
+          type="button"
         >
-          Instituciones con acceso
-        </a>
+          <a
+            href="/ministerio/instituciones"
+          >
+            Instituciones con acceso
+          </a>
+        </button>
       </div>
     </div>
   </div>

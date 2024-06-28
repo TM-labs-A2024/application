@@ -113,9 +113,10 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
       className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
       data-testid="doctor"
     >
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}
@@ -157,11 +158,11 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
         </div>
         {!doctor?.patientPending && <Button onClick={onRemovalOpen}>Revocar acceso</Button>}
         {doctor?.patientPending && (
-          <div className="flex w-full flex-row gap-4">
-            <Button className="flex-grow" variant="outline" onClick={onOpen}>
+          <div className="flex w-full flex-row">
+            <Button className="mr-2 flex-grow" variant="outline" onClick={onOpen}>
               Rechazar
             </Button>
-            <Button className="flex-grow" onClick={onApprovalOpen}>
+            <Button className="ml-2 flex-grow" onClick={onApprovalOpen}>
               Aceptar
             </Button>
           </div>

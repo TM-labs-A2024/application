@@ -96,12 +96,13 @@ export default function Institution({
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-0 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
       data-testid="institution"
     >
-      <div className={`mb-8 flex flex-row justify-between ${isAndroid() && 'mt-8'}`}>
+      <div className={`mb-8 flex flex-row justify-between`}>
         <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
       </div>
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}
@@ -130,17 +131,17 @@ export default function Institution({
           </Stack>
         </div>
         {institution?.pending && (
-          <div className="mb-4 flex w-full flex-row gap-4">
-            <Button className="flex-grow" variant="outline" onClick={onOpen}>
+          <div className="mb-4 flex w-full flex-row">
+            <Button className="mr-2 flex-grow" variant="outline" onClick={onOpen}>
               Rechazar
             </Button>
-            <Button className="flex-grow" onClick={onApprovalOpen}>
+            <Button className="ml-2 flex-grow" onClick={onApprovalOpen}>
               Aceptar
             </Button>
           </div>
         )}
         {!institution?.pending && (
-          <div className="mb-4 flex w-full flex-row gap-4">
+          <div className="mb-4 flex w-full flex-row">
             <Button className="flex-grow" variant="outline" onClick={onRemovalOpen}>
               Revocar acceso
             </Button>

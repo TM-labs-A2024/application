@@ -6,10 +6,10 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
   data-testid="specialities-search"
 >
   <div
-    class="mb-8 flex flex-row items-center gap-4"
+    class="mb-8 flex flex-row items-center"
   >
     <div
-      class="w-full"
+      class="mr-4 w-full"
       data-testid="search-input-component"
     >
       <div
@@ -65,7 +65,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1mw972v"
@@ -79,7 +79,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Alergología
             </p>
@@ -96,7 +96,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1suxtbl"
@@ -110,7 +110,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Anestesiología y reanimación
             </p>
@@ -127,7 +127,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-11uplnc"
@@ -141,7 +141,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Aparato digestivo
             </p>
@@ -158,7 +158,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-d35ey5"
@@ -172,7 +172,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cardiología
             </p>
@@ -189,7 +189,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-zofkk0"
@@ -203,7 +203,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Endocrinología y nutrición
             </p>
@@ -220,7 +220,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1vg0ixc"
@@ -234,7 +234,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Geriatría
             </p>
@@ -251,7 +251,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-15s93ye"
@@ -265,7 +265,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Hematología y hemoterapia
             </p>
@@ -282,7 +282,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1mhmnk4"
@@ -296,7 +296,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina de la educación física y del deporte
             </p>
@@ -313,7 +313,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1oyq4fl"
@@ -327,7 +327,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina espacial
             </p>
@@ -344,7 +344,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-s9b35e"
@@ -358,7 +358,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina intensiva
             </p>
@@ -375,7 +375,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1lzewqe"
@@ -389,7 +389,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina interna
             </p>
@@ -406,7 +406,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-u80mju"
@@ -420,7 +420,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina legal y forense
             </p>
@@ -437,7 +437,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1ngu9s0"
@@ -451,7 +451,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina preventiva y salud pública
             </p>
@@ -468,7 +468,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1u3wgk6"
@@ -482,7 +482,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina del trabajo
             </p>
@@ -499,7 +499,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-gimo61"
@@ -513,7 +513,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Nefrología
             </p>
@@ -530,7 +530,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-wjjp38"
@@ -544,7 +544,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Neumología
             </p>
@@ -561,7 +561,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1ee3np8"
@@ -575,7 +575,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Neurología
             </p>
@@ -592,7 +592,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-qkyhbb"
@@ -606,7 +606,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Neurofisiología Clínica
             </p>
@@ -623,7 +623,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-qgl2wl"
@@ -637,7 +637,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Oncología médica
             </p>
@@ -654,7 +654,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-5lwjjp"
@@ -668,7 +668,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Oncología radioterápica
             </p>
@@ -685,7 +685,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-l1zexa"
@@ -699,7 +699,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Pediatría
             </p>
@@ -716,7 +716,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-dbvfq3"
@@ -730,7 +730,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Psiquiatría
             </p>
@@ -747,7 +747,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-ybpr2k"
@@ -761,7 +761,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Rehabilitación
             </p>
@@ -778,7 +778,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1zokjr"
@@ -792,7 +792,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Reumatología
             </p>
@@ -809,7 +809,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1x3rnax"
@@ -823,7 +823,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina familiar y comunitaria
             </p>
@@ -840,7 +840,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1ftrvw7"
@@ -854,7 +854,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía cardiovascular
             </p>
@@ -871,7 +871,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-2ecao8"
@@ -885,7 +885,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía general y del aparato digestivo
             </p>
@@ -902,7 +902,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-16ekup4"
@@ -916,7 +916,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía oral y maxilofacial
             </p>
@@ -933,7 +933,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1gemmtm"
@@ -947,7 +947,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía ortopédica y traumatología
             </p>
@@ -964,7 +964,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-7ev6l9"
@@ -978,7 +978,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía pediátrica
             </p>
@@ -995,7 +995,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-boq4vy"
@@ -1009,7 +1009,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía plástica, estética y reparadora
             </p>
@@ -1026,7 +1026,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1roymqh"
@@ -1040,7 +1040,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Cirugía torácica
             </p>
@@ -1057,7 +1057,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-kyhb3k"
@@ -1071,7 +1071,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Neurocirugía
             </p>
@@ -1088,7 +1088,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1tvyueo"
@@ -1102,7 +1102,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Angiología y cirugía vascular
             </p>
@@ -1119,7 +1119,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-qsxtja"
@@ -1133,7 +1133,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Dermatología médico-quirúrgica y venereología
             </p>
@@ -1150,7 +1150,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1ubjzeo"
@@ -1164,7 +1164,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Obstetricia y ginecología
             </p>
@@ -1181,7 +1181,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1a8iloz"
@@ -1195,7 +1195,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Oftalmología
             </p>
@@ -1212,7 +1212,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1l74pql"
@@ -1226,7 +1226,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Otorrinolaringología
             </p>
@@ -1243,7 +1243,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-kt881q"
@@ -1257,7 +1257,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Urología
             </p>
@@ -1274,7 +1274,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-biv2cz"
@@ -1288,7 +1288,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Análisis clínicos
             </p>
@@ -1305,7 +1305,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-wp2wfn"
@@ -1319,7 +1319,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Anatomía patológica
             </p>
@@ -1336,7 +1336,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1cpoeex"
@@ -1350,7 +1350,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Bioquímica clínica
             </p>
@@ -1367,7 +1367,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-17z445n"
@@ -1381,7 +1381,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Farmacología clínica
             </p>
@@ -1398,7 +1398,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-ba2oa2"
@@ -1412,7 +1412,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Inmunología
             </p>
@@ -1429,7 +1429,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-zwxkat"
@@ -1443,7 +1443,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Medicina nuclear
             </p>
@@ -1460,7 +1460,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-1hd0yeh"
@@ -1474,7 +1474,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Microbiología y parasitología
             </p>
@@ -1491,7 +1491,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-hxkvh2"
@@ -1505,7 +1505,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Neurofisiología clínica
             </p>
@@ -1522,7 +1522,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
           class="flex w-full flex-row items-center justify-between"
         >
           <div
-            class="flex flex-row items-center gap-4"
+            class="flex flex-row items-center"
           >
             <span
               class="chakra-avatar css-ycb1az"
@@ -1536,7 +1536,7 @@ exports[`Organisms > Search > SpecialitiesSearch test Matches the snapshot 1`] =
               </div>
             </span>
             <p
-              class="chakra-text css-0"
+              class="chakra-text ml-4 css-0"
             >
               Radiodiagnóstico
             </p>

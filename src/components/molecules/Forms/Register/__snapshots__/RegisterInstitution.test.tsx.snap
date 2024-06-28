@@ -34,28 +34,28 @@ exports[
       Datos de la institución
     </h2>
     <div
-      class="chakra-stack h-3/4 overflow-scroll css-1811skr"
+      class="chakra-stack h-3/4 overflow-scroll css-8g8ihq"
     >
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="institution"
         name="institution"
         placeholder="Nombre de la institución"
       />
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="institutionId"
         name="institutionId"
         placeholder="RIF"
       />
       <input
-        class="chakra-input min-h-10 css-1cjy4zv"
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="credential"
         name="credential"
         placeholder="Credenciales"
       />
       <div
-        class=" css-b62m3t-container"
+        class="mt-2 css-b62m3t-container"
         id="institutionType"
       >
         <span

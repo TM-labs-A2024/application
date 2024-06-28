@@ -65,9 +65,10 @@ export default function AddAttachmentForm({
       className={`flex h-screen w-screen flex-col overflow-hidden p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
       data-testid="add-attachment-form"
     >
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}
@@ -85,7 +86,7 @@ export default function AddAttachmentForm({
           isInvalid={verifyErrors(errors)}
           className="relative flex h-full w-full flex-col justify-between"
         >
-          <Stack spacing={4} className="h-5/6 overflow-scroll">
+          <Stack className="h-5/6 overflow-scroll">
             <Input
               id="title"
               placeholder={isOrder ? 'Titulo de la orden' : 'Titulo del análisis'}
@@ -96,6 +97,7 @@ export default function AddAttachmentForm({
             />
             <FormErrorMessage>{errors?.title && errors?.title?.message}</FormErrorMessage>
             <Textarea
+              className="mt-2"
               id="description"
               placeholder="Descripción"
               {...register('description', {

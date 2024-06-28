@@ -6,11 +6,11 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
   data-testid="add-evolution-form"
 >
   <div
-    class="mb-8 flex flex-row items-center justify-start gap-4"
+    class="mb-8 flex flex-row items-center justify-start"
   >
     <button
       aria-label="back"
-      class="chakra-button css-84vx7q"
+      class="chakra-button mr-4 css-84vx7q"
       type="button"
     >
       <svg
@@ -39,7 +39,7 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
       role="group"
     >
       <div
-        class="chakra-stack h-5/6 overflow-scroll css-1811skr"
+        class="chakra-stack h-5/6 overflow-scroll css-8g8ihq"
       >
         <div
           class=" css-b62m3t-container"
@@ -124,13 +124,12 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
           />
         </div>
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="reason"
           name="reason"
           placeholder="Patología"
         />
         <label
-          class="-mb-2"
           for="description"
         >
           Descripción (Notas evolutivas)
@@ -141,7 +140,6 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
           name="description"
         />
         <label
-          class="-mb-2"
           for="history"
         >
           Antecedentes
@@ -152,7 +150,6 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
           name="history"
         />
         <label
-          class="-mb-2"
           for="examination"
         >
           Exámenes físicos
@@ -163,7 +160,6 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
           name="examination"
         />
         <label
-          class="-mb-2"
           for="comments"
         >
           Comentarios

@@ -265,8 +265,8 @@ export default function PatientsSearch({
           </Heading>
           <form onSubmit={handleSubmit(onSubmit)} className="h-full w-full">
             <FormControl isInvalid={verifyErrors(errors)} className="relative h-4/5 w-full">
-              <div className="my-6 flex w-full flex-row gap-4">
-                <div className="flex w-1/2 flex-col">
+              <div className="my-6 flex w-full flex-row">
+                <div className="mr-2 flex w-1/2 flex-col">
                   <FormLabel>Desde</FormLabel>
                   <Input
                     id="fromAge"
@@ -286,7 +286,7 @@ export default function PatientsSearch({
                   />
                   <FormErrorMessage>{errors?.fromAge && errors?.fromAge?.message}</FormErrorMessage>
                 </div>
-                <div className="flex w-1/2 flex-col">
+                <div className="ml-2 flex w-1/2 flex-col">
                   <FormLabel>Hasta</FormLabel>
                   <Input
                     id="toAge"
@@ -346,13 +346,14 @@ export default function PatientsSearch({
                   />
                 )}
               />
-              <Stack spacing={4} mt={4} className="absolute bottom-0 w-full">
+              <Stack mt={4} className="absolute bottom-0 w-full">
                 <Button type="submit">Aplicar filtros</Button>
                 <Button
                   variant="link"
                   colorScheme="black"
                   fontWeight="normal"
                   onClick={removeFilters}
+                  className="mt-2"
                 >
                   Quitar filtros
                 </Button>
@@ -363,10 +364,10 @@ export default function PatientsSearch({
       )}
       {!showFilters && (
         <>
-          <div className="mb-8 flex flex-row items-center gap-4">
+          <div className="mb-8 flex flex-row items-center">
             <SearchInputComponent
               placeholder="Buscar paciente"
-              className="w-full"
+              className="mr-4 w-full"
               onChange={onChange}
               inputRef={inputRef}
             />

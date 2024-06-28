@@ -151,7 +151,7 @@ export default function RegisterForm(): ReactElement {
             <Heading as="h2" size="sm" mb={4} noOfLines={1}>
               Datos personales
             </Heading>
-            <Stack spacing={4} className="h-3/4 overflow-scroll">
+            <Stack className="mb-4 h-3/4 overflow-scroll">
               <Controller
                 control={control}
                 name="type"
@@ -165,7 +165,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.type && errors?.type?.message}</FormErrorMessage>
               <Input
                 id="firstname"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 placeholder="Nombres"
                 {...register('firstname', {
                   required: 'Este campo es obligatorio'
@@ -174,7 +174,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.firstname && errors?.firstname?.message}</FormErrorMessage>
               <Input
                 id="lastname"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 placeholder="Apellidos"
                 {...register('lastname', {
                   required: 'Este campo es obligatorio'
@@ -188,12 +188,19 @@ export default function RegisterForm(): ReactElement {
                   required: 'Este campo es obligatorio'
                 }}
                 render={({ field }) => (
-                  <Select id="gender" {...field} placeholder="Sexo" options={genderTypeOptions} />
+                  <Select
+                    id="gender"
+                    {...field}
+                    placeholder="Sexo"
+                    options={genderTypeOptions}
+                    className="mt-2"
+                  />
                 )}
               />
+              <FormErrorMessage>{errors?.gender && errors?.gender?.message}</FormErrorMessage>
               <Input
                 id="id"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 placeholder="Cédula"
                 {...register('id', {
                   required: 'Este campo es obligatorio'
@@ -202,7 +209,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
               <Input
                 id="birthdate"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 type="date"
                 placeholder="Fecha de nacimiento"
                 {...register('birthdate', {
@@ -214,7 +221,7 @@ export default function RegisterForm(): ReactElement {
                 <>
                   <Input
                     id="credential"
-                    className="min-h-10"
+                    className="mt-2 min-h-10"
                     placeholder="Credencial"
                     {...register('credential', {
                       required: 'Este campo es obligatorio'
@@ -236,6 +243,7 @@ export default function RegisterForm(): ReactElement {
                         {...field}
                         placeholder="Especialidad"
                         options={specialitiesOptions}
+                        className="mt-2"
                       />
                     )}
                   />
@@ -254,21 +262,25 @@ export default function RegisterForm(): ReactElement {
                         {...field}
                         placeholder="Institución"
                         options={institutionsOptions}
+                        className="mt-2"
                       />
                     )}
                   />
+                  <FormErrorMessage>
+                    {errors?.institution && errors?.institution?.message}
+                  </FormErrorMessage>
                 </>
               )}
               <Input
                 id="email"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 placeholder="Correo electrónico"
                 {...register('email', {
                   required: 'Este campo es obligatorio'
                 })}
               />
               <FormErrorMessage>{errors?.email && errors?.email?.message}</FormErrorMessage>
-              <InputGroup>
+              <InputGroup className="mt-2">
                 <InputLeftAddon>+58</InputLeftAddon>
                 <Input
                   id="phone"
@@ -302,10 +314,10 @@ export default function RegisterForm(): ReactElement {
             <Heading as="h2" size="sm" mb={4} noOfLines={1}>
               Seguridad
             </Heading>
-            <Stack spacing={4} className="h-3/4 overflow-scroll">
+            <Stack className="h-3/4 overflow-scroll">
               <Input
                 id="password"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 type="password"
                 placeholder="Contraseña"
                 {...register('password', {
@@ -315,7 +327,7 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.password && errors?.password?.message}</FormErrorMessage>
               <Input
                 id="repeatPassword"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 type="password"
                 placeholder="Repetir contraseña"
                 {...register('repeatPassword', {
@@ -342,10 +354,10 @@ export default function RegisterForm(): ReactElement {
             <Heading as="h2" size="sm" mb={4} noOfLines={1}>
               Confirmar correo electronico
             </Heading>
-            <Stack spacing={4} className="h-3/4 overflow-scroll">
+            <Stack className="h-3/4 overflow-scroll">
               <Input
                 id="code"
-                className="min-h-10"
+                className="mt-2 min-h-10"
                 placeholder="Ingresar código"
                 {...register('code', {
                   required: 'Este campo es obligatorio',

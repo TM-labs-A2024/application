@@ -6,7 +6,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
   data-testid="institution-requests"
 >
   <div
-    class="mb-8 flex flex-row justify-between false"
+    class="mb-8 flex flex-row justify-between"
   >
     <img
       alt="logo"
@@ -52,26 +52,34 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
         tabindex="-1"
       >
-        <a
+        <button
           class="chakra-menu__menuitem css-18esm8n"
           data-index="0"
-          href="/institucion/medicos"
           id="menu-list-:rh:-menuitem-:ri:"
           role="menuitem"
           tabindex="-1"
+          type="button"
         >
-          Médicos con acceso
-        </a>
-        <a
+          <a
+            href="/institucion/medicos"
+          >
+            Médicos con acceso
+          </a>
+        </button>
+        <button
           class="chakra-menu__menuitem css-18esm8n"
           data-index="1"
-          href="/perfil/institucion"
           id="menu-list-:rh:-menuitem-:rj:"
           role="menuitem"
           tabindex="-1"
+          type="button"
         >
-          Perfil de la institución
-        </a>
+          <a
+            href="/perfil/institucion"
+          >
+            Perfil de la institución
+          </a>
+        </button>
       </div>
     </div>
   </div>

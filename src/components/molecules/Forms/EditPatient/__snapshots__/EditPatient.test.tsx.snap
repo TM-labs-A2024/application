@@ -6,11 +6,11 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
   data-testid="edit-patient-form"
 >
   <div
-    class="mb-8 flex flex-row items-center justify-start gap-4"
+    class="mb-8 flex flex-row items-center justify-start"
   >
     <button
       aria-label="back"
-      class="chakra-button css-84vx7q"
+      class="chakra-button mr-4 css-84vx7q"
       type="button"
     >
       <svg
@@ -44,31 +44,31 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
         Datos personales
       </h2>
       <div
-        class="chakra-stack h-3/4 overflow-scroll css-1811skr"
+        class="chakra-stack h-3/4 overflow-scroll css-8g8ihq"
       >
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="firstname"
           name="firstname"
           placeholder="Nombres"
           value="José Feliciano"
         />
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="lastname"
           name="lastname"
           placeholder="Apellidos"
           value="Gutierrez García"
         />
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="id"
           name="id"
           placeholder="Cédula"
           value="E99885561"
         />
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="birthdate"
           name="birthdate"
           placeholder="Fecha de nacimiento"
@@ -76,14 +76,14 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
           value="1997-08-19"
         />
         <input
-          class="chakra-input min-h-10 css-1cjy4zv"
+          class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="email"
           name="email"
           placeholder="Correo electrónico"
           value="user@example.com"
         />
         <div
-          class="chakra-input__group css-1y0e7gb"
+          class="chakra-input__group mt-2 css-1y0e7gb"
           data-group="true"
         >
           <div

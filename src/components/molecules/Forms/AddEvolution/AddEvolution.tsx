@@ -68,9 +68,10 @@ export default function AddEvolutionForm(): ReactElement {
       className={`flex h-screen w-screen flex-col overflow-hidden p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
       data-testid="add-evolution-form"
     >
-      <div className="mb-8 flex flex-row items-center justify-start gap-4">
+      <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton
           size="xl"
+          className="mr-4"
           aria-label="back"
           variant="link"
           icon={<ArrowBackIcon />}
@@ -85,7 +86,7 @@ export default function AddEvolutionForm(): ReactElement {
           isInvalid={verifyErrors(errors)}
           className="relative flex h-full w-full flex-col justify-between"
         >
-          <Stack spacing={4} className="h-5/6 overflow-scroll">
+          <Stack className="h-5/6 overflow-scroll">
             <Controller
               control={control}
               name="type"
@@ -100,15 +101,13 @@ export default function AddEvolutionForm(): ReactElement {
             <Input
               id="reason"
               placeholder="Patología"
-              className="min-h-10"
+              className="mt-2 min-h-10"
               {...register('reason', {
                 required: 'Este campo es obligatorio'
               })}
             />
             <FormErrorMessage>{errors?.reason && errors?.reason?.message}</FormErrorMessage>
-            <label className="-mb-2" htmlFor="description">
-              Descripción (Notas evolutivas)
-            </label>
+            <label htmlFor="description">Descripción (Notas evolutivas)</label>
             <Textarea
               id="description"
               {...register('description', {
@@ -118,9 +117,7 @@ export default function AddEvolutionForm(): ReactElement {
             <FormErrorMessage>
               {errors?.description && errors?.description?.message}
             </FormErrorMessage>
-            <label className="-mb-2" htmlFor="history">
-              Antecedentes
-            </label>
+            <label htmlFor="history">Antecedentes</label>
             <Textarea
               id="history"
               {...register('history', {
@@ -128,9 +125,7 @@ export default function AddEvolutionForm(): ReactElement {
               })}
             />
             <FormErrorMessage>{errors?.history && errors?.history?.message}</FormErrorMessage>
-            <label className="-mb-2" htmlFor="examination">
-              Exámenes físicos
-            </label>
+            <label htmlFor="examination">Exámenes físicos</label>
             <Textarea
               id="examination"
               {...register('examination', {
@@ -140,9 +135,7 @@ export default function AddEvolutionForm(): ReactElement {
             <FormErrorMessage>
               {errors?.examination && errors?.examination?.message}
             </FormErrorMessage>
-            <label className="-mb-2" htmlFor="comments">
-              Comentarios
-            </label>
+            <label htmlFor="comments">Comentarios</label>
             <Textarea id="comments" {...register('comments')} />
           </Stack>
           <Button isLoading={isSubmitting} type="submit" className="absolute bottom-12">
