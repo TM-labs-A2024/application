@@ -1,13 +1,13 @@
-import { doctors, specialities as specialitiesList } from '@src/constants'
+import { doctors, specialties as specialtiesList } from '@src/constants'
 import { render, screen } from '@test/utils/index'
 
 import '@testing-library/jest-dom'
 import RequestsList from './RequestsList'
 
-const formatedRequests = doctors.map(({ id, firstname, lastname, specialities }) => ({
+const formatedRequests = doctors.map(({ id, firstname, lastname, specialties }) => ({
   href: `/institucion/medico/${id}`,
   title: `${firstname} ${lastname}`,
-  description: `C.I: ${id},${specialities.map((speciality) => ' ' + specialitiesList.find((el) => el.id === speciality)?.name)}.`
+  description: `C.I: ${id},${specialties.map((specialty) => ' ' + specialtiesList.find((el) => el.id === specialty)?.name)}.`
 }))
 
 const props = {

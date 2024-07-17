@@ -1,5 +1,5 @@
 import { Text, Stack, Heading, Divider, FormErrorMessage, Button } from '@chakra-ui/react'
-import { specialities } from '@constants/index'
+import { specialties } from '@constants/index'
 import { Doctor } from '@src/types'
 import { ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
@@ -9,13 +9,13 @@ import React, { ReactElement, useMemo } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialitiesOptions = specialities?.map((option: { name: string; id: number }) => ({
+const specialtiesOptions = specialties?.map((option: { name: string; id: string }) => ({
   value: option.id,
   label: option.name
 }))
 
 type FormData = {
-  specialities: ReactSelectOption[]
+  specialties: ReactSelectOption[]
 }
 
 export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElement {
@@ -24,12 +24,10 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
     alert(JSON.stringify(data))
   }
 
-  const selectedSpecialities = useMemo(
+  const selectedSpecialties = useMemo(
     () =>
-      specialitiesOptions?.filter((speciality) =>
-        doctor?.specialities?.includes(Number(speciality?.value))
-      ),
-    [doctor?.specialities]
+      specialtiesOptions?.filter((specialty) => doctor?.specialties?.includes(specialty?.value)),
+    [doctor?.specialties]
   )
   // --- END: Data and handlers ------------------------------------------------
 
@@ -38,7 +36,7 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
     handleSubmit,
     formState: { errors, isSubmitting },
     control
-  } = useForm<FormData>({ defaultValues: { specialities: selectedSpecialities } })
+  } = useForm<FormData>({ defaultValues: { specialties: selectedSpecialties } })
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -82,29 +80,29 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElem
             </Stack>
             <Stack mb={6}>
               <h4 className="text-sm text-gray-600">Teléfono</h4>
-              <Text className="font-medium">{doctor.phone}</Text>
+              <Text className="font-medium">{doctor.phoneNumber}</Text>
             </Stack>
             <Divider orientation="horizontal" />
             <Controller
               control={control}
-              name="specialities"
+              name="specialties"
               rules={{
                 required: 'Este campo es obligatorio'
               }}
               render={({ field }) => (
                 <Select
-                  id="specialities"
+                  id="specialties"
                   className="mt-6"
                   isMulti
                   {...field}
                   placeholder="Especialidad"
-                  defaultValue={selectedSpecialities}
-                  options={specialitiesOptions}
+                  defaultValue={selectedSpecialties}
+                  options={specialtiesOptions}
                 />
               )}
             />
             <FormErrorMessage>
-              {errors?.specialities && errors?.specialities?.message}
+              {errors?.specialties && errors?.specialties?.message}
             </FormErrorMessage>
           </div>
           <Button isLoading={isSubmitting} type="submit" className="mt-0 w-full">

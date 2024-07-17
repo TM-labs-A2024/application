@@ -4,6 +4,7 @@ export type Institution = {
   credentials: string
   address: string
   email: string
-  phone: string
+  phoneNumber: string
   pending?: boolean
+  password?: string
 }

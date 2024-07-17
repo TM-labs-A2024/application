@@ -64,7 +64,7 @@ exports[`Organisms > InstitutionDoctor test Matches the snapshot 1`] = `
           class="chakra-text css-0"
         >
           CI: 
-          1.000.000
+          1000000
         </p>
       </div>
       <hr
@@ -86,6 +86,12 @@ exports[`Organisms > InstitutionDoctor test Matches the snapshot 1`] = `
             class="chakra-text text-nowrap font-medium css-0"
           >
             Alergología
+            ,
+          </p>
+          <p
+            class="chakra-text text-nowrap font-medium css-0"
+          >
+            Cardiología
           </p>
         </div>
       </div>

@@ -27,7 +27,7 @@ describe('Organisms > Institution test', () => {
     expect(institutionCredentials).toBeInTheDocument()
 
     expect(screen.getByText(institution.name)).toBeInTheDocument()
-    expect(screen.getByText(institution.phone)).toBeInTheDocument()
+    expect(screen.getByText(institution.phoneNumber)).toBeInTheDocument()
   })
 
   test('When clicking on the access removal button, the respective confirmation modal is shown', () => {

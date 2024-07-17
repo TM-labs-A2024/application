@@ -14,7 +14,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVAL } from '@constants/index'
-import { specialities } from '@constants/index'
+import { specialties } from '@constants/index'
 import { Doctor as DoctorType } from '@src/types'
 import { isIOS, isAndroid, isMobile } from '@utils/index'
 import { format } from 'date-fns'
@@ -123,13 +123,13 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
             <div className="flex flex-row flex-wrap gap-2">
-              {doctor.specialities?.map((speciality, idx) => (
+              {doctor.specialties?.map((specialty, idx) => (
                 <Text
                   className="text-nowrap font-medium"
-                  key={`institution-doctor-card-${speciality}`}
+                  key={`institution-doctor-card-${specialty}`}
                 >
-                  {specialities.find((el) => el.id === speciality)?.name}
-                  {doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1
+                  {specialties.find((el) => el.id === specialty)?.name}
+                  {doctor.specialties.length > 0 && idx !== doctor.specialties.length - 1
                     ? ','
                     : ''}
                 </Text>
@@ -150,7 +150,7 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{doctor.phone}</Text>
+            <Text className="font-medium">{doctor.phoneNumber}</Text>
           </Stack>
         </div>
         {doctor?.pending && (

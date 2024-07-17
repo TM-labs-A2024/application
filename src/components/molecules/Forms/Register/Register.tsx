@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Button,
   FormControl,
@@ -10,18 +11,17 @@ import {
 } from '@chakra-ui/react'
 import {
   userTypes,
-  genderTypes,
+  sexTypes,
   institutions
 } from '@components/molecules/Forms/Register/Register.constants'
-import { specialities } from '@constants/index'
-import { ReactSelectOption } from '@src/types'
-import { sendEmail } from '@utils/email'
+import { specialties } from '@constants/index'
+import { Patient, Doctor, ReactSelectOption } from '@src/types'
 import Image from 'next/image'
-import React, { ReactElement, useMemo, useState } from 'react'
+import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialitiesOptions = specialities.map((option: { name: string; id: number }) => ({
+const specialtiesOptions = specialties.map((option: { name: string; id: string }) => ({
   value: option.id,
   label: option.name
 }))
@@ -31,7 +31,7 @@ const userTypeOptions = userTypes.map((option) => ({
   label: option.name
 }))
 
-const genderTypeOptions = genderTypes.map((option) => ({
+const sexTypeOptions = sexTypes.map((option) => ({
   value: option.name,
   label: option.name
 }))
@@ -42,19 +42,20 @@ const institutionsOptions = institutions.map((option) => ({
 }))
 
 type FormData = {
+  id: string
   type: ReactSelectOption | null
   firstname: string
   lastname: string
-  id: string
+  govId: string
   birthdate: string
-  credential: string
+  credentials: string
   email: string
-  phone: string
+  phoneNumber: string
   password: string
   repeatPassword: string
-  specialty: ReactSelectOption | null
-  gender: ReactSelectOption | null
-  institution: ReactSelectOption | null
+  specialties: ReactSelectOption[] | null
+  sex: ReactSelectOption | null
+  institutionId: ReactSelectOption | null
   code: string
 }
 
@@ -75,7 +76,16 @@ function RegisterHeader() {
   )
 }
 
-export default function RegisterForm(): ReactElement {
+export default function RegisterForm({
+  context: { createPatient, createDoctor, verificationCode, userCreated }
+}: {
+  context: {
+    createPatient: (arg: Patient) => void
+    createDoctor: (arg: Doctor) => void
+    verificationCode: string
+    userCreated: boolean
+  }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
@@ -87,7 +97,6 @@ export default function RegisterForm(): ReactElement {
 
   // --- Local state -----------------------------------------------------------
   const [step, setStep] = useState(1)
-  const [codeToVerify, setCodeToVerify] = useState('')
 
   const typeField = useWatch({
     control,
@@ -106,24 +115,27 @@ export default function RegisterForm(): ReactElement {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const type = useMemo(() => typeField?.value, [typeField])
+
   const onSubmitDetails = (data: FormData) => {
-    const apiURL = process.env.NEXT_PUBLIC_API_URL
-    alert(JSON.stringify({ ...data, apiURL }))
+    console.log(JSON.stringify({ ...data }))
     setStep(2)
   }
 
   const onSubmitPassword = (data: FormData) => {
-    const verificationCode = String(Math.floor(Math.random() * 1000000))
-    const emailTemplate = {
-      from_name: 'HealthCore',
-      to_name: data.firstname,
-      code: verificationCode,
-      to_email: data.email
+    if (type === 'Paciente') {
+      createPatient({ ...data, sex: String(data?.sex?.value), specialties: undefined })
     }
-    sendEmail(emailTemplate)
-    setCodeToVerify(verificationCode)
-    setStep(3)
-    alert(JSON.stringify({ ...data, codeToVerify, verificationCode }))
+
+    if (type === 'Médico') {
+      createDoctor({
+        ...data,
+        institutionId: data.institutionId ? String(data.institutionId.value) : '',
+        specialties: data.specialties
+          ? data.specialties.map((el: ReactSelectOption) => String(el?.value))
+          : []
+      })
+    }
   }
 
   const onSubmitConfirmation = (data: FormData) => {
@@ -132,7 +144,11 @@ export default function RegisterForm(): ReactElement {
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
 
-  const type = useMemo(() => typeField?.value, [typeField])
+  useEffect(() => {
+    if (userCreated) {
+      setStep(3)
+    }
+  }, [userCreated])
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -183,30 +199,30 @@ export default function RegisterForm(): ReactElement {
               <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
               <Controller
                 control={control}
-                name="gender"
+                name="sex"
                 rules={{
                   required: 'Este campo es obligatorio'
                 }}
                 render={({ field }) => (
                   <Select
-                    id="gender"
+                    id="sex"
                     {...field}
                     placeholder="Sexo"
-                    options={genderTypeOptions}
+                    options={sexTypeOptions}
                     className="mt-2"
                   />
                 )}
               />
-              <FormErrorMessage>{errors?.gender && errors?.gender?.message}</FormErrorMessage>
+              <FormErrorMessage>{errors?.sex && errors?.sex?.message}</FormErrorMessage>
               <Input
                 id="id"
                 className="mt-2 min-h-10"
                 placeholder="Cédula"
-                {...register('id', {
+                {...register('govId', {
                   required: 'Este campo es obligatorio'
                 })}
               />
-              <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
+              <FormErrorMessage>{errors?.govId && errors?.govId?.message}</FormErrorMessage>
               <Input
                 id="birthdate"
                 className="mt-2 min-h-10"
@@ -220,45 +236,45 @@ export default function RegisterForm(): ReactElement {
               {type === 'Médico' && (
                 <>
                   <Input
-                    id="credential"
+                    id="credentials"
                     className="mt-2 min-h-10"
                     placeholder="Credencial"
-                    {...register('credential', {
+                    {...register('credentials', {
                       required: 'Este campo es obligatorio'
                     })}
                   />
                   <FormErrorMessage>
-                    {errors?.credential && errors?.credential?.message}
+                    {errors?.credentials && errors?.credentials?.message}
                   </FormErrorMessage>
                   <Controller
                     control={control}
-                    name="specialty"
+                    name="specialties"
                     rules={{
                       required: 'Este campo es obligatorio'
                     }}
                     render={({ field }) => (
                       <Select
-                        id="specialty"
+                        id="specialties"
                         isMulti
                         {...field}
                         placeholder="Especialidad"
-                        options={specialitiesOptions}
+                        options={specialtiesOptions}
                         className="mt-2"
                       />
                     )}
                   />
                   <FormErrorMessage>
-                    {errors?.specialty && errors?.specialty?.message}
+                    {errors?.specialties && errors?.specialties?.message}
                   </FormErrorMessage>
                   <Controller
                     control={control}
-                    name="institution"
+                    name="institutionId"
                     rules={{
                       required: 'Este campo es obligatorio'
                     }}
                     render={({ field }) => (
                       <Select
-                        id="institution"
+                        id="institutionId"
                         {...field}
                         placeholder="Institución"
                         options={institutionsOptions}
@@ -267,7 +283,30 @@ export default function RegisterForm(): ReactElement {
                     )}
                   />
                   <FormErrorMessage>
-                    {errors?.institution && errors?.institution?.message}
+                    {errors?.institutionId && errors?.institutionId?.message}
+                  </FormErrorMessage>
+                </>
+              )}
+              {type !== 'Paciente' && type !== 'Médico' && (
+                <>
+                  <Controller
+                    control={control}
+                    name="institutionId"
+                    rules={{
+                      required: 'Este campo es obligatorio'
+                    }}
+                    render={({ field }) => (
+                      <Select
+                        id="institutionId"
+                        {...field}
+                        placeholder="Institución"
+                        options={institutionsOptions}
+                        className="mt-2"
+                      />
+                    )}
+                  />
+                  <FormErrorMessage>
+                    {errors?.institutionId && errors?.institutionId?.message}
                   </FormErrorMessage>
                 </>
               )}
@@ -283,16 +322,18 @@ export default function RegisterForm(): ReactElement {
               <InputGroup className="mt-2">
                 <InputLeftAddon>+58</InputLeftAddon>
                 <Input
-                  id="phone"
+                  id="phoneNumber"
                   className="min-h-10"
                   type="tel"
                   placeholder="Teléfono"
-                  {...register('phone', {
+                  {...register('phoneNumber', {
                     required: 'Este campo es obligatorio'
                   })}
                 />
               </InputGroup>
-              <FormErrorMessage>{errors?.phone && errors?.phone?.message}</FormErrorMessage>
+              <FormErrorMessage>
+                {errors?.phoneNumber && errors?.phoneNumber?.message}
+              </FormErrorMessage>
             </Stack>
             <Button isLoading={isSubmitting} type="submit">
               Siguiente
@@ -362,7 +403,7 @@ export default function RegisterForm(): ReactElement {
                 {...register('code', {
                   required: 'Este campo es obligatorio',
                   validate: {
-                    verifyCode: (code) => codeToVerify === code || 'El código no concuerda'
+                    verifyCode: (code) => verificationCode === code || 'El código no concuerda'
                   }
                 })}
               />

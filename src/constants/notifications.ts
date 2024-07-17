@@ -115,3 +115,31 @@ export const FILTERS_APPLIED = (isMobile: boolean) => ({
     duration: 3000
   }
 })
+
+// Generic success message
+export const GENERIC_NOTIFICATION = (message: string, isMobile: boolean) => ({
+  title: 'Mensaje',
+  message,
+  type: 'success' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})
+
+// Generic error message
+export const GENERIC_ERROR = (message: string, isMobile: boolean) => ({
+  title: 'Mensaje',
+  message: message,
+  type: 'danger' as NOTIFICATION_TYPE,
+  insert: (isMobile ? 'bottom' : 'top') as NOTIFICATION_INSERTION,
+  container: (isMobile ? 'bottom-center' : 'top-right') as NOTIFICATION_CONTAINER,
+  animationIn: ['animated', 'fadeIn'],
+  animationOut: ['animated', 'fadeOut'],
+  dismiss: {
+    duration: 3000
+  }
+})

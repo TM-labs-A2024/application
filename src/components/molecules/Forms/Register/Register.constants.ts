@@ -13,7 +13,7 @@ export const userTypes = [
   }
 ]
 
-export const genderTypes = [
+export const sexTypes = [
   {
     id: 1,
     name: 'Masculino'

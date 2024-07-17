@@ -127,7 +127,7 @@ export default function Institution({
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{institution.phone}</Text>
+            <Text className="font-medium">{institution.phoneNumber}</Text>
           </Stack>
         </div>
         {institution?.pending && (

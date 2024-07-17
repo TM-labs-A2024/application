@@ -1,4 +1,4 @@
-import { specialityData } from '@src/constants'
+import { specialtyData } from '@src/constants'
 import { render, screen } from '@test/utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -6,7 +6,7 @@ import { es } from 'date-fns/locale/es'
 import '@testing-library/jest-dom'
 import EvolutionsList from './EvolutionsList'
 
-const props = specialityData.evolutions.map(({ id, date, type, author, reason }) => ({
+const props = specialtyData.evolutions.map(({ id, date, type, author, reason }) => ({
   href: `/evolucion/1/${id}`,
   title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
     locale: es

@@ -4,11 +4,11 @@ import React from 'react'
 export default function AddAttachmentView({
   type,
   patientId,
-  speciality
+  specialty
 }: {
   type: string
   patientId: string
-  speciality: string
+  specialty: string
 }) {
-  return <AddAttachment type={type} patientId={patientId} speciality={speciality} />
+  return <AddAttachment type={type} patientId={patientId} specialty={specialty} />
 }

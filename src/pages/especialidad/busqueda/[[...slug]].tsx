@@ -1,10 +1,10 @@
-import { specialityData } from '@src/constants'
+import { specialtyData } from '@src/constants'
 import { getSession } from '@src/shared'
-import SpecialitySearchView from '@views/Speciality/Search'
+import SpecialtySearchView from '@src/views/Specialty/Search'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
-export default function SpecialitySearchPage() {
+export default function SpecialtySearchPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -23,7 +23,7 @@ export default function SpecialitySearchPage() {
   const isDoctor = useMemo(() => getSession() === 'doctor', [])
   const isNurse = useMemo(() => !isPatient && !isDoctor, [isDoctor, isPatient])
 
-  const specialityId = useMemo(
+  const specialtyId = useMemo(
     () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
     [isPatient, router.query.slug]
   )
@@ -35,22 +35,22 @@ export default function SpecialitySearchPage() {
 
   const goBackRef = useMemo(
     () =>
-      isPatient ? `/especialidad/${specialityId}` : `/especialidad/${patientId}/${specialityId}`,
-    [isPatient, patientId, specialityId]
+      isPatient ? `/especialidad/${specialtyId}` : `/especialidad/${patientId}/${specialtyId}`,
+    [isPatient, patientId, specialtyId]
   )
 
   const context = useMemo(
     () => ({
       goBackRef,
-      specialityData,
+      specialtyData,
       isNurse,
       isPatient,
-      specialityId,
+      specialtyId,
       patientId
     }),
-    [goBackRef, isNurse, isPatient, patientId, specialityId]
+    [goBackRef, isNurse, isPatient, patientId, specialtyId]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialitySearchView context={context} />
+  return <SpecialtySearchView context={context} />
 }

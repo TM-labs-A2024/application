@@ -1,7 +1,7 @@
 export type Patient = {
-  uuid: string
-  specialities: number[]
-  gender: string
+  id?: string
+  specialties?: string[]
+  sex?: string
   firstname: string
   lastname: string
   govId: string
@@ -11,6 +11,7 @@ export type Patient = {
   pending?: boolean
   status?: string
   bed?: string
+  password?: string
 }
 
 export type PatientSummary = {

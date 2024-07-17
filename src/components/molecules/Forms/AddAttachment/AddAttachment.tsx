@@ -23,11 +23,11 @@ type FormData = {
 export default function AddAttachmentForm({
   type,
   patientId,
-  speciality
+  specialty
 }: {
   type: string
   patientId: string
-  speciality: string
+  specialty: string
 }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
@@ -74,8 +74,8 @@ export default function AddAttachmentForm({
           icon={<ArrowBackIcon />}
           onClick={() => {
             isOrder
-              ? router.push(`/especialidad/${patientId}/${speciality}?type=order`)
-              : router.push(`/especialidad/${patientId}/${speciality}?type=test`)
+              ? router.push(`/especialidad/${patientId}/${specialty}?type=order`)
+              : router.push(`/especialidad/${patientId}/${specialty}?type=test`)
           }}
         />
         {isOrder && <Text className="font-medium">Nueva orden médica</Text>}

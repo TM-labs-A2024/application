@@ -11,8 +11,8 @@ export default function PatientsPage() {
 
   const patientsFormatted = useMemo(
     () =>
-      patients.map(({ uuid, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
-        href: pending ? '/pacientes' : `/especialidades/${uuid}`,
+      patients.map(({ id, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
+        href: pending ? '/pacientes' : `/especialidades/${id}`,
         title: `${firstname} ${lastname}`,
         description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
           locale: es,

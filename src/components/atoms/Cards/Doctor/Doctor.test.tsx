@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import Doctor from './Doctor'
 
 describe('Atoms > Cards > Doctor test', () => {
-  test('The card shows the firstname, lastname and specialities of the doctor', async () => {
+  test('The card shows the firstname, lastname and specialties of the doctor', async () => {
     render(<Doctor doctor={doctors[0]} />)
 
     expect(

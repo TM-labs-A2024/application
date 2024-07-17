@@ -26,7 +26,7 @@ describe('Organisms > NurseProfile test', () => {
       )
     ).toBeInTheDocument()
     expect(nurseEmail).toBeInTheDocument()
-    expect(screen.getByText(nurse.phone)).toBeInTheDocument()
+    expect(screen.getByText(nurse.phoneNumber)).toBeInTheDocument()
   })
 
   test('Matches the snapshot', () => {

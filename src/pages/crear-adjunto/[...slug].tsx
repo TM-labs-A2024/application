@@ -12,8 +12,8 @@ export default function AddAttachmentPage() {
 
   const patientId = useMemo(() => String(router?.query?.slug?.[0]), [router?.query?.slug])
 
-  const speciality = useMemo(() => String(router?.query?.slug?.[1]), [router?.query?.slug])
+  const specialty = useMemo(() => String(router?.query?.slug?.[1]), [router?.query?.slug])
   // --- END: Data and handlers ------------------------------------------------
 
-  return <AddAttachmentView type={type} patientId={patientId} speciality={speciality} />
+  return <AddAttachmentView type={type} patientId={patientId} specialty={specialty} />
 }

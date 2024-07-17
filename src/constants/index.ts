@@ -10,22 +10,24 @@ import {
   IMAGE_DELETED,
   ACCESS_DENIED,
   ACCESS_GRANTED,
-  ACCESS_REMOVAL
+  ACCESS_REMOVAL,
+  GENERIC_NOTIFICATION,
+  GENERIC_ERROR
 } from './notifications'
 import { nurse } from './nurses'
-import { patient, genderOptions, statusOptions } from './patient'
+import { patient, sexOptions, statusOptions } from './patient'
 import { patients } from './patients'
-import { specialities } from './specialities'
-import { specialityData } from './specialityData'
+import { specialties } from './specialties'
+import { specialtyData } from './specialtyData'
 
 export {
-  specialities,
+  specialties,
   doctors,
   nurse,
   patient,
-  genderOptions,
+  sexOptions,
   statusOptions,
-  specialityData,
+  specialtyData,
   evolutionTypes,
   patients,
   institution,
@@ -37,5 +39,7 @@ export {
   IMAGE_DELETED,
   ACCESS_DENIED,
   ACCESS_GRANTED,
-  ACCESS_REMOVAL
+  ACCESS_REMOVAL,
+  GENERIC_NOTIFICATION,
+  GENERIC_ERROR
 }

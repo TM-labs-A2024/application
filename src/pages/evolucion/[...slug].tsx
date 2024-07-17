@@ -1,4 +1,4 @@
-import { specialityData, patients } from '@constants/index'
+import { specialtyData, patients } from '@constants/index'
 import { getSession } from '@src/shared'
 import EvolutionView from '@views/Evolution'
 import { format } from 'date-fns'
@@ -30,7 +30,7 @@ export default function EvolutionPage() {
   const isPatient = useMemo(() => getSession() === 'patient', [])
   const evolution = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
   const evolutionData = useMemo(
-    () => specialityData.evolutions.find((item) => String(item.id) === evolution),
+    () => specialtyData.evolutions.find((item) => String(item.id) === evolution),
     [evolution]
   )
 
@@ -48,7 +48,7 @@ export default function EvolutionPage() {
     return ''
   }, [evolutionData])
 
-  const speciality = useMemo(
+  const specialty = useMemo(
     () => (isPatient ? String(router?.query?.slug?.[0]) : String(router?.query?.slug?.[1])),
     [isPatient, router?.query?.slug]
   )
@@ -58,14 +58,14 @@ export default function EvolutionPage() {
     [isPatient, router?.query?.slug]
   )
 
-  const patient = useMemo(() => patients.find((patient) => patient.uuid === patientId), [patientId])
+  const patient = useMemo(() => patients.find((patient) => patient.id === patientId), [patientId])
 
   const goBackRef = useMemo(
     () =>
       isPatient
-        ? `/especialidad/${speciality}?type=evolution`
-        : `/especialidad/${patientId}/${speciality}?type=evolution`,
-    [isPatient, patientId, speciality]
+        ? `/especialidad/${specialty}?type=evolution`
+        : `/especialidad/${patientId}/${specialty}?type=evolution`,
+    [isPatient, patientId, specialty]
   )
 
   const data = useMemo(

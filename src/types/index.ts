@@ -4,7 +4,7 @@ import { ReactSelectOption } from './forms'
 import { Institution } from './institution'
 import { Nurse } from './nurses'
 import { Patient, PatientSummary } from './patients'
-import { Speciality, Specialities } from './specialities'
+import { Specialty, Specialties } from './specialties'
 
 export type {
   Evolution,
@@ -16,6 +16,6 @@ export type {
   Doctor,
   Institution,
   Nurse,
-  Speciality,
-  Specialities
+  Specialty,
+  Specialties
 }

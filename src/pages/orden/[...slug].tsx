@@ -1,5 +1,5 @@
 import { useDisclosure } from '@chakra-ui/react'
-import { specialityData } from '@constants/index'
+import { specialtyData } from '@constants/index'
 import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
 import { getSession } from '@src/shared'
 import { isMobile } from '@utils/index'
@@ -35,11 +35,11 @@ export default function OrdersPage() {
   const isDoctor = useMemo(() => getSession() === 'doctor', [])
   const order = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
   const orderData = useMemo(
-    () => specialityData.orders.find((item) => String(item.id) === order),
+    () => specialtyData.orders.find((item) => String(item.id) === order),
     [order]
   )
   const title = useMemo(() => String(orderData?.title), [orderData])
-  const speciality = useMemo(
+  const specialty = useMemo(
     () => (isPatient ? String(router?.query?.slug?.[0]) : String(router?.query?.slug?.[1])),
     [isPatient, router?.query?.slug]
   )
@@ -52,9 +52,9 @@ export default function OrdersPage() {
   const goBackRef = useMemo(
     () =>
       isPatient
-        ? `/especialidad/${speciality}?type=order`
-        : `/especialidad/${patientId}/${speciality}?type=order`,
-    [isPatient, patientId, speciality]
+        ? `/especialidad/${specialty}?type=order`
+        : `/especialidad/${patientId}/${specialty}?type=order`,
+    [isPatient, patientId, specialty]
   )
 
   const data = useMemo(

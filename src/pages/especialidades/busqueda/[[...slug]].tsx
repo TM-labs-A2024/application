@@ -1,24 +1,24 @@
-import { specialities, patients } from '@src/constants'
-import SpecialitiesSearchView from '@views/Specialities/Search'
+import { specialties, patients } from '@src/constants'
+import SpecialtiesSearchView from '@views/Specialties/Search'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
-export default function SpecialitiesSearchPage() {
+export default function SpecialtiesSearchPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
-  const uuid = router?.query?.slug?.[0]
+  const id = router?.query?.slug?.[0]
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const patient = useMemo(() => patients.find((patient) => patient.uuid === uuid), [uuid])
+  const patient = useMemo(() => patients.find((patient) => patient.id === id), [id])
   const context = useMemo(
     () => ({
-      specialities,
+      specialties,
       patient
     }),
     [patient]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialitiesSearchView context={context} />
+  return <SpecialtiesSearchView context={context} />
 }

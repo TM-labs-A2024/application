@@ -16,7 +16,7 @@ import {
 import SearchInputComponent from '@components/atoms/SearchInput'
 import PatientList from '@components/molecules/PatientsList'
 import { FILTERS_APPLIED } from '@constants/index'
-import { genderOptions, statusOptions, specialities } from '@constants/index'
+import { sexOptions, statusOptions, specialties } from '@constants/index'
 import { ReactSelectOption, Patient } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { formatDistanceToNowStrict } from 'date-fns'
@@ -29,7 +29,7 @@ import Select from 'react-select'
 
 import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
 
-const genderOptionsList = genderOptions.map(({ id, name }: { id: string; name: string }) => ({
+const sexOptionsList = sexOptions.map(({ id, name }: { id: string; name: string }) => ({
   value: id,
   label: name
 }))
@@ -39,15 +39,15 @@ const statusOptionsList = statusOptions.map(({ id, name }: { id: string; name: s
   label: name
 }))
 
-const specialitiesList = specialities.map(({ id, name }: { id: number; name: string }) => ({
+const specialtiesList = specialties.map(({ id, name }: { id: string; name: string }) => ({
   value: id,
   label: name
 }))
 
 type FormData = {
-  gender: ReactSelectOption | null
+  sex: ReactSelectOption | null
   status: ReactSelectOption | null
-  speciality: ReactSelectOption | null
+  specialty: ReactSelectOption | null
   fromAge: string
   toAge: string
 }
@@ -81,7 +81,7 @@ export default function PatientsSearch({
     () =>
       approvedPatients.map(
         ({
-          uuid,
+          id,
           birthdate,
           govId,
           status,
@@ -89,10 +89,10 @@ export default function PatientsSearch({
           firstname,
           lastname,
           pending,
-          gender,
-          specialities
+          sex,
+          specialties
         }) => ({
-          href: pending ? '/pacientes' : `/paciente/${uuid}`,
+          href: pending ? '/pacientes' : `/paciente/${id}`,
           title: `${firstname} ${lastname}`,
           description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
             locale: es,
@@ -100,13 +100,13 @@ export default function PatientsSearch({
           })}${status ? `, Cama: ${bed}` : ''}`,
           status,
           pending,
-          gender,
+          sex,
           age: formatDistanceToNowStrict(new Date(birthdate), {
             locale: es,
             roundingMethod: 'floor'
           }).split(' ')[0],
           bed,
-          specialities
+          specialties
         })
       ),
     [approvedPatients]
@@ -119,7 +119,7 @@ export default function PatientsSearch({
   const [search, setSearch] = useState('')
   const [fromAge, setFromAge] = useState('')
   const [toAge, setToAge] = useState('')
-  const [gender, setGender] = useState<ReactSelectOption>({
+  const [sex, setsex] = useState<ReactSelectOption>({
     value: 0,
     label: ''
   })
@@ -127,7 +127,7 @@ export default function PatientsSearch({
     value: 0,
     label: ''
   })
-  const [speciality, setSpeciality] = useState<ReactSelectOption>({
+  const [specialty, setSpecialty] = useState<ReactSelectOption>({
     value: null,
     label: ''
   })
@@ -159,11 +159,9 @@ export default function PatientsSearch({
       )
     }
 
-    // Gender filtering
-    if (gender?.value) {
-      filteredPatientsList = filteredPatientsList.filter(
-        (patient) => patient.gender === gender?.value
-      )
+    // sex filtering
+    if (sex?.value) {
+      filteredPatientsList = filteredPatientsList.filter((patient) => patient.sex === sex?.value)
     }
 
     // Status filtering
@@ -171,10 +169,10 @@ export default function PatientsSearch({
       filteredPatientsList = filteredPatientsList.filter((patient) => patient?.bed)
     }
 
-    // speciality filtering
-    if (speciality?.value) {
+    // specialty filtering
+    if (specialty?.value) {
       filteredPatientsList = filteredPatientsList.filter((patient) =>
-        patient.specialities.includes(Number(speciality?.value))
+        patient?.specialties?.includes(String(specialty.value))
       )
     }
 
@@ -194,10 +192,10 @@ export default function PatientsSearch({
     setPatientsList(filteredPatientsList)
   }, [
     approvedPatients,
-    gender?.value,
+    sex?.value,
     search,
     status?.label,
-    speciality?.value,
+    specialty?.value,
     fromAge,
     toAge,
     patientsFormatted
@@ -208,7 +206,7 @@ export default function PatientsSearch({
   const removeFilters = useCallback(() => {
     setFromAge('')
     setToAge('')
-    setGender({
+    setsex({
       value: 0,
       label: ''
     })
@@ -216,24 +214,24 @@ export default function PatientsSearch({
       value: 0,
       label: ''
     })
-    setSpeciality({
+    setSpecialty({
       value: null,
       label: ''
     })
     setValue('fromAge', '')
     setValue('toAge', '')
-    setValue('gender', null)
+    setValue('sex', null)
     setValue('status', null)
-    setValue('speciality', null)
+    setValue('specialty', null)
     setShowFilters(false)
-  }, [setFromAge, setToAge, setGender, setStatus, setSpeciality, setValue])
+  }, [setFromAge, setToAge, setsex, setStatus, setSpecialty, setValue])
 
   const onSubmit = (data: FormData) => {
     setFromAge(data.fromAge)
     setToAge(data.toAge)
-    setGender(data?.gender)
+    setsex(data?.sex)
     setStatus(data?.status)
-    setSpeciality(data?.speciality)
+    setSpecialty(data?.specialty)
     setShowFilters(false)
     Store.addNotification(FILTERS_APPLIED(isMobile(window)))
   }
@@ -309,13 +307,13 @@ export default function PatientsSearch({
               </div>
               <Controller
                 control={control}
-                name="gender"
+                name="sex"
                 render={({ field }) => (
                   <Select
-                    id="gender"
+                    id="sex"
                     {...field}
                     placeholder="Sexo"
-                    options={genderOptionsList}
+                    options={sexOptionsList}
                     className="mb-6"
                   />
                 )}
@@ -335,13 +333,13 @@ export default function PatientsSearch({
               />
               <Controller
                 control={control}
-                name="speciality"
+                name="specialty"
                 render={({ field }) => (
                   <Select
-                    id="speciality"
+                    id="specialty"
                     {...field}
                     placeholder="Especialidad"
-                    options={specialitiesList}
+                    options={specialtiesList}
                     className="mb-6"
                   />
                 )}
@@ -399,13 +397,13 @@ export default function PatientsSearch({
                   />
                 </Tag>
               )}
-              {gender?.label && (
+              {sex?.label && (
                 <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>Sexo: {gender.label}</TagLabel>
+                  <TagLabel>Sexo: {sex.label}</TagLabel>
                   <TagCloseButton
                     onClick={() => {
-                      setGender(null)
-                      setValue('gender', null)
+                      setsex(null)
+                      setValue('sex', null)
                     }}
                   />
                 </Tag>
@@ -421,13 +419,13 @@ export default function PatientsSearch({
                   />
                 </Tag>
               )}
-              {speciality?.label && (
+              {specialty?.label && (
                 <Tag size="md" variant="outline" colorScheme="blackAlpha">
-                  <TagLabel>Especialidad: {speciality.label}</TagLabel>
+                  <TagLabel>Especialidad: {specialty.label}</TagLabel>
                   <TagCloseButton
                     onClick={() => {
-                      setSpeciality(null)
-                      setValue('speciality', null)
+                      setSpecialty(null)
+                      setValue('specialty', null)
                     }}
                   />
                 </Tag>

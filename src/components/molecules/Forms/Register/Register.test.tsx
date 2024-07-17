@@ -7,8 +7,14 @@ import '@testing-library/jest-dom'
 jest.mock('next/navigation')
 
 describe('Molecules > Forms > Register test', () => {
+  const context = {
+    createPatient: jest.fn(),
+    verificationCode: '',
+    userCreated: false
+  }
+
   test('The component requires the fields for a patient in step 1', () => {
-    render(<Register />)
+    render(<Register context={context} />)
 
     expect(screen.getByText('Tipo')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Nombres')).toBeInTheDocument()
@@ -21,7 +27,7 @@ describe('Molecules > Forms > Register test', () => {
   })
 
   test('Step 1 matches the snapshot', () => {
-    render(<Register />)
+    render(<Register context={context} />)
 
     expect(screen.getByTestId('register-step-1')).toMatchSnapshot('register-step-1')
   })

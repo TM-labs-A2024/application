@@ -42,12 +42,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                1.000.000
+                1000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -82,13 +83,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                2.000.000
+                2000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Anestesiología y reanimación, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -123,14 +124,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                3.000.000
+                3000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Aparato digestivo, 
-                Endocrinología y nutrición, 
-                Hematología y hemoterapia.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -165,13 +165,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                4.000.000
+                4000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cardiología, 
-                Alergología.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -206,14 +206,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                5.000.000
+                5000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Endocrinología y nutrición, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -248,14 +247,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                6.000.000
+                6000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Geriatría, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -290,14 +288,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                7.000.000
+                7000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Hematología y hemoterapia, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -332,14 +329,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                16.000.000
+                16000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Neumología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -374,14 +370,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                17.000.000
+                17000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Neurología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -416,14 +411,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                18.000.000
+                18000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Neurofisiología Clínica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -458,14 +452,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                19.000.000
+                19000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Oncología médica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -500,14 +493,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                20.000.000
+                20000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Oncología radioterápica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -542,14 +534,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                21.000.000
+                21000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Pediatría, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -584,14 +575,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                22.000.000
+                22000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Psiquiatría, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -633,16 +623,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                8.000.000
+                8000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina de la educación física y del deporte, 
-                Medicina espacial, 
-                Endocrinología y nutrición, 
                 Alergología, 
-                Aparato digestivo, 
                 Cardiología.
               </p>
             </div>
@@ -678,14 +664,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                9.000.000
+                9000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina espacial, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -720,14 +705,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                10.000.000
+                10000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina intensiva, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -762,14 +746,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                11.000.000
+                11000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina interna, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -804,14 +787,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                12.000.000
+                12000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina legal y forense, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -846,14 +828,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                13.000.000
+                13000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina preventiva y salud pública, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -888,14 +869,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                14.000.000
+                14000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina del trabajo, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -930,14 +910,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                15.000.000
+                15000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Nefrología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -972,14 +951,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                23.000.000
+                23000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Rehabilitación, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1014,14 +992,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                24.000.000
+                24000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Reumatología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1056,14 +1033,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                25.000.000
+                25000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina familiar y comunitaria, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1098,14 +1074,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                26.000.000
+                26000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía cardiovascular, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1140,14 +1115,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                27.000.000
+                27000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía general y del aparato digestivo, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1182,14 +1156,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                28.000.000
+                28000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía oral y maxilofacial, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1224,14 +1197,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                29.000.000
+                29000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía ortopédica y traumatología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1266,14 +1238,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                30.000.000
+                30000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía pediátrica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1308,14 +1279,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                31.000.000
+                31000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía plástica, estética y reparadora, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1350,14 +1320,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                32.000.000
+                32000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Cirugía torácica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1392,14 +1361,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                33.000.000
+                33000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Neurocirugía, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1434,14 +1402,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                34.000.000
+                34000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Angiología y cirugía vascular, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1476,14 +1443,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                35.000.000
+                35000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Dermatología médico-quirúrgica y venereología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1518,14 +1484,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                36.000.000
+                36000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Obstetricia y ginecología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1560,14 +1525,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                37.000.000
+                37000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Oftalmología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1602,14 +1566,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                38.000.000
+                38000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Otorrinolaringología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1644,14 +1607,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                39.000.000
+                39000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Urología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1686,14 +1648,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                40.000.000
+                40000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Análisis clínicos, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1728,14 +1689,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                41.000.000
+                41000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Anatomía patológica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1770,14 +1730,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                42.000.000
+                42000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Bioquímica clínica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1812,14 +1771,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                43.000.000
+                43000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Farmacología clínica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1854,14 +1812,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                44.000.000
+                44000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Inmunología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1896,14 +1853,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                45.000.000
+                45000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Medicina nuclear, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1938,14 +1894,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                46.000.000
+                46000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Microbiología y parasitología, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -1980,14 +1935,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                47.000.000
+                47000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Neurofisiología clínica, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>
@@ -2022,14 +1976,13 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
                 class="chakra-text text-nowrap css-0"
               >
                 CI: 
-                48.000.000
+                48000000
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Radiodiagnóstico, 
-                Medicina espacial, 
-                Endocrinología y nutrición.
+                Alergología, 
+                Cardiología.
               </p>
             </div>
           </div>

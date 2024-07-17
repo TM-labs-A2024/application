@@ -6,7 +6,7 @@
   "author": "TM-labs-A2024",
   "description": "Electron + NextJS medical app",
   "scripts": {
-    "dev": "concurrently -n \"NEXT,ELECTRON\" -c \"yellow,blue\" --kill-others \"next dev\" \"electron .\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest out",
     "lint": "next lint",
@@ -29,6 +29,7 @@
     "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "axios": "^1.7.2",
     "date-fns": "^3.6.0",
     "electron-serve": "^1.3.0",
     "framer-motion": "^11.0.20",
@@ -37,6 +38,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.1",
     "react-notifications-component": "^4.0.1",
+    "react-query": "^3.39.3",
     "react-select": "^5.8.0"
   },
   "devDependencies": {

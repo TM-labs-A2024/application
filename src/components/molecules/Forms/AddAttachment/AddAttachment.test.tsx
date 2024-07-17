@@ -9,7 +9,7 @@ jest.mock('next/navigation')
 const props = {
   type: 'order',
   patientId: '1',
-  speciality: '1'
+  specialty: '1'
 }
 
 const propsTest = {

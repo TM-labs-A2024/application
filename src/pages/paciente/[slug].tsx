@@ -11,7 +11,7 @@ export default function Patient() {
 
   // --- Data and handlers -----------------------------------------------------
   const patient = useMemo(
-    () => patients?.find((patient) => patient.uuid === router?.query?.slug) as PatientType,
+    () => patients?.find((patient) => patient.id === router?.query?.slug) as PatientType,
     [router?.query?.slug]
   )
   // --- END: Data and handlers ------------------------------------------------

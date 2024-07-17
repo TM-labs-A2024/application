@@ -29,7 +29,9 @@
       "@providers/*": ["./providers/*"],
       "@utils/*": ["./utils/*"],
       "@shared/*": ["./shared/*"],
-      "@test/*": ["../test/*"]
+      "@test/*": ["../test/*"],
+      "@services/*": ["./services/*"],
+      "@api/*": ["./api/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__mocks__/svg.js"],

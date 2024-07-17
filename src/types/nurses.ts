@@ -4,5 +4,6 @@ export type Nurse = {
   lastname: string
   birthdate: string
   email: string
-  phone: string
+  phoneNumber: string
+  password?: string
 }

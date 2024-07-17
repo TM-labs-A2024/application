@@ -7,8 +7,8 @@ import '@testing-library/jest-dom'
 import PatientsList from './PatientsList'
 
 const patientsFormatted = patients.map(
-  ({ uuid, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
-    href: pending ? '/pacientes' : `/especialidades/${uuid}`,
+  ({ id, birthdate, govId, status, bed, firstname, lastname, pending }) => ({
+    href: pending ? '/pacientes' : `/especialidades/${id}`,
     title: `${firstname} ${lastname}`,
     description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
       locale: es,

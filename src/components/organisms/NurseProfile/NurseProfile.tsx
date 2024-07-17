@@ -33,7 +33,7 @@ export default function NurseProfile({ nurse }: { nurse: Nurse }): ReactElement 
         </Stack>
         <Stack mb={6}>
           <h4 className="text-sm text-gray-600">Teléfono</h4>
-          <Text className="font-medium">{nurse.phone}</Text>
+          <Text className="font-medium">{nurse.phoneNumber}</Text>
         </Stack>
       </div>
     </div>

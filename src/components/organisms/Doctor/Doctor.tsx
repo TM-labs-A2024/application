@@ -14,7 +14,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVED } from '@constants/index'
-import { specialities } from '@constants/index'
+import { specialties } from '@constants/index'
 import { Doctor as DoctorType } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { format } from 'date-fns'
@@ -100,11 +100,11 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
     router.push('/medicos')
   }, [onRemovalClose, router])
 
-  const doctorSpecialitiesList = doctor.specialities?.map(
-    (speciality, idx) =>
-      `${specialities.find((el) => el.id === speciality)?.name}${
-        doctor.specialities.length > 0 && idx !== doctor.specialities.length - 1 ? ',' : ''
-      }${idx === doctor.specialities.length - 1 ? '.' : ' '}`
+  const doctorSpecialtiesList = doctor.specialties?.map(
+    (specialty, idx) =>
+      `${specialties.find((el: { id: string; name: string }) => el.id === specialty)?.name}${
+        doctor.specialties.length > 0 && idx !== doctor.specialties.length - 1 ? ',' : ''
+      }${idx === doctor.specialties.length - 1 ? '.' : ' '}`
   )
   // --- END: Data and handlers ------------------------------------------------
 
@@ -137,7 +137,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
-            <Text className="text-wrap">{doctorSpecialitiesList}</Text>
+            <Text className="text-wrap">{doctorSpecialtiesList}</Text>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
@@ -153,7 +153,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{doctor.phone}</Text>
+            <Text className="font-medium">{doctor.phoneNumber}</Text>
           </Stack>
         </div>
         {!doctor?.patientPending && <Button onClick={onRemovalOpen}>Revocar acceso</Button>}

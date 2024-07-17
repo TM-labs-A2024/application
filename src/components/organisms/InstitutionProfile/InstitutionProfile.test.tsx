@@ -17,7 +17,7 @@ describe('Organisms > InstitutionProfile test', () => {
     expect(institutionCredentials).toBeInTheDocument()
     expect(screen.getByText(institution.address)).toBeInTheDocument()
     expect(screen.getByText(institution.email)).toBeInTheDocument()
-    expect(screen.getByText(institution.phone)).toBeInTheDocument()
+    expect(screen.getByText(institution.phoneNumber)).toBeInTheDocument()
   })
 
   test('Matches the snapshot', () => {

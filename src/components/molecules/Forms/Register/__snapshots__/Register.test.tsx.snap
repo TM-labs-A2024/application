@@ -40,7 +40,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-4-live-region"
+          id="react-select-5-live-region"
         />
         <span
           aria-atomic="false"
@@ -57,7 +57,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
           >
             <div
               class=" css-1jqq78o-placeholder"
-              id="react-select-4-placeholder"
+              id="react-select-5-placeholder"
             >
               Tipo
             </div>
@@ -68,14 +68,14 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
               <input
                 aria-activedescendant=""
                 aria-autocomplete="list"
-                aria-describedby="react-select-4-placeholder"
+                aria-describedby="react-select-5-placeholder"
                 aria-expanded="false"
                 aria-haspopup="true"
                 autocapitalize="none"
                 autocomplete="off"
                 autocorrect="off"
                 class=""
-                id="react-select-4-input"
+                id="react-select-5-input"
                 role="combobox"
                 spellcheck="false"
                 style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
@@ -130,11 +130,11 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
       />
       <div
         class="mt-2 css-b62m3t-container"
-        id="gender"
+        id="sex"
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-5-live-region"
+          id="react-select-6-live-region"
         />
         <span
           aria-atomic="false"
@@ -151,7 +151,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
           >
             <div
               class=" css-1jqq78o-placeholder"
-              id="react-select-5-placeholder"
+              id="react-select-6-placeholder"
             >
               Sexo
             </div>
@@ -162,14 +162,14 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
               <input
                 aria-activedescendant=""
                 aria-autocomplete="list"
-                aria-describedby="react-select-5-placeholder"
+                aria-describedby="react-select-6-placeholder"
                 aria-expanded="false"
                 aria-haspopup="true"
                 autocapitalize="none"
                 autocomplete="off"
                 autocorrect="off"
                 class=""
-                id="react-select-5-input"
+                id="react-select-6-input"
                 role="combobox"
                 spellcheck="false"
                 style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
@@ -205,7 +205,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
           </div>
         </div>
         <input
-          name="gender"
+          name="sex"
           type="hidden"
           value=""
         />
@@ -213,7 +213,7 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
       <input
         class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="id"
-        name="id"
+        name="govId"
         placeholder="Cédula"
       />
       <input
@@ -223,6 +223,88 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
         placeholder="Fecha de nacimiento"
         type="date"
       />
+      <div
+        class="mt-2 css-b62m3t-container"
+        id="institutionId"
+      >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-7-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+          role="log"
+        />
+        <div
+          class=" css-13cymwt-control"
+        >
+          <div
+            class=" css-1fdsijx-ValueContainer"
+          >
+            <div
+              class=" css-1jqq78o-placeholder"
+              id="react-select-7-placeholder"
+            >
+              Institución
+            </div>
+            <div
+              class=" css-qbdosj-Input"
+              data-value=""
+            >
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-describedby="react-select-7-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
+                class=""
+                id="react-select-7-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              class=" css-1u9des2-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              class=" css-1xc3v61-indicatorContainer"
+            >
+              <svg
+                aria-hidden="true"
+                class="css-tj5bde-Svg"
+                focusable="false"
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <input
+          name="institutionId"
+          type="hidden"
+          value=""
+        />
+      </div>
       <input
         class="chakra-input mt-2 min-h-10 css-1cjy4zv"
         id="email"
@@ -240,8 +322,8 @@ exports[`Molecules > Forms > Register test Step 1 matches the snapshot: register
         </div>
         <input
           class="chakra-input min-h-10 css-10wjqo2"
-          id="phone"
-          name="phone"
+          id="phoneNumber"
+          name="phoneNumber"
           placeholder="Teléfono"
           type="tel"
         />

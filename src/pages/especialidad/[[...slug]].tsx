@@ -1,12 +1,12 @@
-import { specialities, specialityData } from '@constants/index'
+import { specialties, specialtyData } from '@constants/index'
 import { getSession } from '@shared/index'
-import SpecialityView from '@views/Speciality'
+import SpecialtyView from '@src/views/Specialty'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
-export default function SpecialityPage() {
+export default function SpecialtyPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -26,7 +26,7 @@ export default function SpecialityPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const specialityId = useMemo(
+  const specialtyId = useMemo(
     () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
     [isPatient, router.query.slug]
   )
@@ -36,9 +36,9 @@ export default function SpecialityPage() {
     [isPatient, router.query.slug]
   )
 
-  const speciality = useMemo(
-    () => specialities.find((speciality) => String(speciality.id) === specialityId),
-    [specialityId]
+  const specialty = useMemo(
+    () => specialties.find((specialty) => String(specialty.id) === specialtyId),
+    [specialtyId]
   )
 
   const currentTab = useMemo(() => {
@@ -64,30 +64,30 @@ export default function SpecialityPage() {
 
   const data = useMemo(
     () => ({
-      evolutions: specialityData.evolutions.map(({ id, date, type, author, reason }) => ({
+      evolutions: specialtyData.evolutions.map(({ id, date, type, author, reason }) => ({
         href: isPatient
-          ? `/evolucion/${specialityId}/${id}`
-          : `/evolucion/${patientId}/${specialityId}/${id}`,
+          ? `/evolucion/${specialtyId}/${id}`
+          : `/evolucion/${patientId}/${specialtyId}/${id}`,
         title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
         })}`,
         description: `Editado por: ${author}`,
         comment: `Patología: ${reason}`
       })),
-      orders: specialityData.orders.map(({ id, title, date, author }) => ({
+      orders: specialtyData.orders.map(({ id, title, date, author }) => ({
         href: isPatient
-          ? `/orden/${specialityId}/${id}`
-          : `/orden/${patientId}/${specialityId}/${id}`,
+          ? `/orden/${specialtyId}/${id}`
+          : `/orden/${patientId}/${specialtyId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
         })}`,
         comment: `Agregado por: ${author}`
       })),
-      tests: specialityData.tests.map(({ id, title, date, author }) => ({
+      tests: specialtyData.tests.map(({ id, title, date, author }) => ({
         href: isPatient
-          ? `/analisis/${specialityId}/${id}`
-          : `/analisis/${patientId}/${specialityId}/${id}`,
+          ? `/analisis/${specialtyId}/${id}`
+          : `/analisis/${patientId}/${specialtyId}/${id}`,
         title,
         description: `${format(new Date(date), 'dd, MMMM yyyy', {
           locale: es
@@ -95,20 +95,20 @@ export default function SpecialityPage() {
         comment: `Agregado por: ${author}`
       }))
     }),
-    [isPatient, patientId, specialityId]
+    [isPatient, patientId, specialtyId]
   )
 
   const context = useMemo(
     () => ({
       isPatient,
       isDoctor,
-      speciality: speciality ?? specialities[0],
+      specialty: specialty ?? specialties[0],
       data,
       currentTab
     }),
-    [isPatient, speciality, data, currentTab, isDoctor]
+    [isPatient, specialty, data, currentTab, isDoctor]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialityView context={context} />
+  return <SpecialtyView context={context} />
 }

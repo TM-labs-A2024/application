@@ -29,6 +29,8 @@ const jestConfig = async () => {
       '^@utils/(.*)$': '<rootDir>/src/utils/$1',
       '^@shared/(.*)$': '<rootDir>/src/shared/$1',
       '^@test/(.*)$': '<rootDir>/test/$1',
+      '^@services/(.*)$': '<rootDir>/src/services/$1',
+      '^@api/(.*)$': '<rootDir>/src/api/$1',
       ...nextJestConfig.moduleNameMapper
     }
   }

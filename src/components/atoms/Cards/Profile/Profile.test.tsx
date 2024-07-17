@@ -34,7 +34,7 @@ describe('Atoms > Cards > Profile test', () => {
     render(<Profile patient={patient} />)
 
     const enlace = await screen.findByRole('link')
-    expect(enlace).toHaveAttribute('href', `/paciente/${patient.uuid}`)
+    expect(enlace).toHaveAttribute('href', `/paciente/${patient.id}`)
   })
 
   test('Matches the snapshot', async () => {

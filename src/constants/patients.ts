@@ -1,7 +1,7 @@
 export const patients = [
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa1',
-    specialities: [1, 2, 3],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa1',
+    specialties: [1, 2, 3],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -12,8 +12,8 @@ export const patients = [
     pending: true
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa2',
-    specialities: [2, 4, 6],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa2',
+    specialties: [2, 4, 6],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -24,8 +24,8 @@ export const patients = [
     pending: true
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa3',
-    specialities: [9],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa3',
+    specialties: [9],
     gender: 'female',
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
@@ -37,8 +37,8 @@ export const patients = [
     bed: 'B-67'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa4',
-    specialities: [5],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa4',
+    specialties: [5],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -50,8 +50,8 @@ export const patients = [
     bed: 'C-66'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa5',
-    specialities: [1, 3, 5, 7],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa5',
+    specialties: [1, 3, 5, 7],
     gender: 'female',
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
@@ -61,8 +61,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
-    specialities: [4, 6, 8],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+    specialties: [4, 6, 8],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -72,8 +72,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa7',
-    specialities: [1],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa7',
+    specialties: [1],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -83,8 +83,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa8',
-    specialities: [4],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa8',
+    specialties: [4],
     gender: 'female',
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
@@ -94,8 +94,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa9',
-    specialities: [3],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa9',
+    specialties: [3],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -105,8 +105,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa10',
-    specialities: [5, 6, 7],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa10',
+    specialties: [5, 6, 7],
     gender: 'female',
     firstname: 'Josefa Feliciana',
     lastname: 'Gutierrez García',
@@ -116,8 +116,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa11',
-    specialities: [8],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa11',
+    specialties: [8],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -127,8 +127,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa12',
-    specialities: [5],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa12',
+    specialties: [5],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
@@ -138,8 +138,8 @@ export const patients = [
     phoneNumber: '+584127659814'
   },
   {
-    uuid: '3fa85f64-5717-4562-b3fc-2c963f66afa13',
-    specialities: [1],
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa13',
+    specialties: [1],
     gender: 'male',
     firstname: 'José Feliciano',
     lastname: 'Gutierrez García',
