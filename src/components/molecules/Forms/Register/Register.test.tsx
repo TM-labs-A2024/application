@@ -10,6 +10,7 @@ describe('Molecules > Forms > Register test', () => {
   const context = {
     createPatient: jest.fn(),
     createDoctor: jest.fn(),
+    createNurse: jest.fn(),
     verificationCode: '',
     userCreated: false,
     isLoading: false,

@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import Splash from '@components/atoms/Splash'
 import { userTypes, sexTypes } from '@components/molecules/Forms/Register/Register.constants'
-import { Patient, Doctor, ReactSelectOption, Institution, Specialties } from '@src/types'
+import { Patient, Doctor, ReactSelectOption, Institution, Specialties, Nurse } from '@src/types'
 import Image from 'next/image'
 import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
@@ -66,6 +66,7 @@ export default function RegisterForm({
   context: {
     createPatient,
     createDoctor,
+    createNurse,
     verificationCode,
     userCreated,
     isLoading,
@@ -76,6 +77,7 @@ export default function RegisterForm({
   context: {
     createPatient: (arg: Patient) => void
     createDoctor: (arg: Doctor) => void
+    createNurse: (arg: Nurse) => void
     verificationCode: string
     userCreated: boolean
     isLoading: boolean
@@ -138,18 +140,25 @@ export default function RegisterForm({
   }
 
   const onSubmitPassword = (data: FormData) => {
+    const body = {
+      ...data,
+      institutionId: data.institutionId ? String(data.institutionId.value) : '',
+      sex: String(data?.sex?.value),
+      specialties: data.specialties
+        ? data.specialties.map((el: ReactSelectOption) => String(el?.value))
+        : []
+    }
+
     if (type === 'Paciente') {
-      createPatient({ ...data, sex: String(data?.sex?.value), specialties: undefined })
+      createPatient(body)
     }
 
     if (type === 'Médico') {
-      createDoctor({
-        ...data,
-        institutionId: data.institutionId ? String(data.institutionId.value) : '',
-        specialties: data.specialties
-          ? data.specialties.map((el: ReactSelectOption) => String(el?.value))
-          : []
-      })
+      createDoctor(body)
+    }
+
+    if (type === 'Enfermero/a') {
+      createNurse(body)
     }
   }
 

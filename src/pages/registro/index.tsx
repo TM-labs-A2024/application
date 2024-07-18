@@ -3,6 +3,7 @@ import { GENERIC_ERROR } from '@constants/index'
 import {
   usePatientMutation,
   useDoctorMutation,
+  useNurseMutation,
   useInstitutions,
   useSpecialties
 } from '@src/services'
@@ -70,6 +71,19 @@ export default function RegisterPage() {
     }
   )
 
+  const { mutate: createNurse, isLoading: isNurseCreationLoading } = useNurseMutation(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { firstname, email } = data as Patient
+      setupEmailSending(firstname, verificationCode, email)
+      setUserCreated(true)
+    },
+    () => {
+      setupErrorNotification()
+      setUserCreated(false)
+    }
+  )
+
   const { data: institutions, isLoading: isInstitutionsLoading } = useInstitutions()
 
   const { data: specialties, isLoading: isSpecialtiesLoading } = useSpecialties()
@@ -90,8 +104,15 @@ export default function RegisterPage() {
       isPatientCreationLoading ||
       isDoctorCreationLoading ||
       isInstitutionsLoading ||
+      isSpecialtiesLoading ||
+      isNurseCreationLoading,
+    [
+      isDoctorCreationLoading,
+      isInstitutionsLoading,
+      isPatientCreationLoading,
       isSpecialtiesLoading,
-    [isDoctorCreationLoading, isInstitutionsLoading, isPatientCreationLoading, isSpecialtiesLoading]
+      isNurseCreationLoading
+    ]
   )
 
   const institutionsData = useMemo(() => {
@@ -114,13 +135,22 @@ export default function RegisterPage() {
     () => ({
       createPatient,
       createDoctor,
+      createNurse,
       verificationCode,
       userCreated,
       isLoading,
       institutionsData,
       specialtiesData
     }),
-    [createPatient, createDoctor, userCreated, isLoading, institutionsData, specialtiesData]
+    [
+      createPatient,
+      createDoctor,
+      createNurse,
+      userCreated,
+      isLoading,
+      institutionsData,
+      specialtiesData
+    ]
   )
   // --- END: Data and handlers ------------------------------------------------
 

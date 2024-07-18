@@ -5,6 +5,7 @@ export type Doctor = {
   lastname: string
   birthdate: string
   email: string
+  sex?: string
   phoneNumber: string
   credentials: string
   specialties: (string | number | null | undefined)[]
