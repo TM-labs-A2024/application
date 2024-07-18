@@ -3,8 +3,8 @@ export type Institution = {
   name: string
   credentials: string
   address: string
-  email: string
-  phoneNumber: string
+  email?: string
+  phoneNumber?: string
   pending?: boolean
   password?: string
 }

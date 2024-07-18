@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
 import { GENERIC_ERROR } from '@constants/index'
-import { usePatientMutation, useDoctorMutation } from '@src/services'
+import {
+  usePatientMutation,
+  useDoctorMutation,
+  useInstitutions,
+  useSpecialties
+} from '@src/services'
 import { Patient } from '@src/types'
 // import { sendEmail } from '@utils/index'
 import { isMobile } from '@utils/index'
@@ -19,51 +24,55 @@ export default function RegisterPage() {
   // --- END: Local state ------------------------------------------------------
 
   // --- Hooks -----------------------------------------------------------------
-  const { mutate: createPatient } = usePatientMutation(
+  const setupEmailSending = (name: string, code: string, email: string) => {
+    const emailTemplate = {
+      from_name: 'HealthCore',
+      to_name: name,
+      code: code,
+      to_email: email
+    }
+    console.log(emailTemplate)
+    // sendEmail(emailTemplate)
+  }
+
+  const setupErrorNotification = () => {
+    Store.addNotification(
+      GENERIC_ERROR(
+        'Algo salió mal, por favor recargue la página e inténtelo de nuevo.',
+        isMobile(window)
+      )
+    )
+  }
+
+  const { mutate: createPatient, isLoading: isPatientCreationLoading } = usePatientMutation(
     (res) => {
       const { data } = res as AxiosResponse
       const { firstname, email } = data as Patient
-      const emailTemplate = {
-        from_name: 'HealthCore',
-        to_name: firstname,
-        code: verificationCode,
-        to_email: email
-      }
-      console.log(emailTemplate)
-      // sendEmail(emailTemplate)
+      setupEmailSending(firstname, verificationCode, email)
       setUserCreated(true)
     },
-    () =>
-      Store.addNotification(
-        GENERIC_ERROR(
-          'Algo salió mal, por favor recargue la página e inténtelo de nuevo.',
-          isMobile(window)
-        )
-      )
+    () => {
+      setupErrorNotification()
+      setUserCreated(false)
+    }
   )
 
-  const { mutate: createDoctor } = useDoctorMutation(
+  const { mutate: createDoctor, isLoading: isDoctorCreationLoading } = useDoctorMutation(
     (res) => {
       const { data } = res as AxiosResponse
       const { firstname, email } = data as Patient
-      const emailTemplate = {
-        from_name: 'HealthCore',
-        to_name: firstname,
-        code: verificationCode,
-        to_email: email
-      }
-      console.log(emailTemplate)
-      // sendEmail(emailTemplate)
+      setupEmailSending(firstname, verificationCode, email)
       setUserCreated(true)
     },
-    () =>
-      Store.addNotification(
-        GENERIC_ERROR(
-          'Algo salió mal, por favor recargue la página e inténtelo de nuevo.',
-          isMobile(window)
-        )
-      )
+    () => {
+      setupErrorNotification()
+      setUserCreated(false)
+    }
   )
+
+  const { data: institutions, isLoading: isInstitutionsLoading } = useInstitutions()
+
+  const { data: specialties, isLoading: isSpecialtiesLoading } = useSpecialties()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -76,14 +85,42 @@ export default function RegisterPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isLoading = useMemo(
+    () =>
+      isPatientCreationLoading ||
+      isDoctorCreationLoading ||
+      isInstitutionsLoading ||
+      isSpecialtiesLoading,
+    [isDoctorCreationLoading, isInstitutionsLoading, isPatientCreationLoading, isSpecialtiesLoading]
+  )
+
+  const institutionsData = useMemo(() => {
+    if (!institutions) return []
+
+    const { data } = institutions as AxiosResponse
+
+    return data
+  }, [institutions])
+
+  const specialtiesData = useMemo(() => {
+    if (!specialties) return []
+
+    const { data } = specialties as AxiosResponse
+
+    return data
+  }, [specialties])
+
   const context = useMemo(
     () => ({
       createPatient,
       createDoctor,
       verificationCode,
-      userCreated
+      userCreated,
+      isLoading,
+      institutionsData,
+      specialtiesData
     }),
-    [createPatient, createDoctor, userCreated]
+    [createPatient, createDoctor, userCreated, isLoading, institutionsData, specialtiesData]
   )
   // --- END: Data and handlers ------------------------------------------------
 

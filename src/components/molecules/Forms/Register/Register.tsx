@@ -9,22 +9,13 @@ import {
   InputGroup,
   Stack
 } from '@chakra-ui/react'
-import {
-  userTypes,
-  sexTypes,
-  institutions
-} from '@components/molecules/Forms/Register/Register.constants'
-import { specialties } from '@constants/index'
-import { Patient, Doctor, ReactSelectOption } from '@src/types'
+import Splash from '@components/atoms/Splash'
+import { userTypes, sexTypes } from '@components/molecules/Forms/Register/Register.constants'
+import { Patient, Doctor, ReactSelectOption, Institution, Specialties } from '@src/types'
 import Image from 'next/image'
 import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
 import Select from 'react-select'
-
-const specialtiesOptions = specialties.map((option: { name: string; id: string }) => ({
-  value: option.id,
-  label: option.name
-}))
 
 const userTypeOptions = userTypes.map((option) => ({
   value: option.name,
@@ -32,11 +23,6 @@ const userTypeOptions = userTypes.map((option) => ({
 }))
 
 const sexTypeOptions = sexTypes.map((option) => ({
-  value: option.name,
-  label: option.name
-}))
-
-const institutionsOptions = institutions.map((option) => ({
   value: option.name,
   label: option.name
 }))
@@ -77,13 +63,24 @@ function RegisterHeader() {
 }
 
 export default function RegisterForm({
-  context: { createPatient, createDoctor, verificationCode, userCreated }
+  context: {
+    createPatient,
+    createDoctor,
+    verificationCode,
+    userCreated,
+    isLoading,
+    institutionsData,
+    specialtiesData
+  }
 }: {
   context: {
     createPatient: (arg: Patient) => void
     createDoctor: (arg: Doctor) => void
     verificationCode: string
     userCreated: boolean
+    isLoading: boolean
+    institutionsData: Institution[]
+    specialtiesData: Specialties
   }
 }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
@@ -116,6 +113,24 @@ export default function RegisterForm({
 
   // --- Data and handlers -----------------------------------------------------
   const type = useMemo(() => typeField?.value, [typeField])
+
+  const institutionsOptions = useMemo(
+    () =>
+      institutionsData?.map((option) => ({
+        value: option.id,
+        label: option.name
+      })),
+    [institutionsData]
+  )
+
+  const specialtiesOptions = useMemo(
+    () =>
+      specialtiesData?.map((option) => ({
+        value: option.id,
+        label: option.name
+      })),
+    [specialtiesData]
+  )
 
   const onSubmitDetails = (data: FormData) => {
     console.log(JSON.stringify({ ...data }))
@@ -151,7 +166,9 @@ export default function RegisterForm({
   }, [userCreated])
   // --- END: Data and handlers ------------------------------------------------
 
-  return (
+  return isLoading ? (
+    <Splash />
+  ) : (
     <div className="h-full w-full px-8 py-12 lg:px-96">
       {step === 1 && (
         <form
@@ -287,7 +304,7 @@ export default function RegisterForm({
                   </FormErrorMessage>
                 </>
               )}
-              {type !== 'Paciente' && type !== 'Médico' && (
+              {type === 'Enfermero/a' && (
                 <>
                   <Controller
                     control={control}

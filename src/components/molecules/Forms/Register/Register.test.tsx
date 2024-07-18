@@ -9,8 +9,12 @@ jest.mock('next/navigation')
 describe('Molecules > Forms > Register test', () => {
   const context = {
     createPatient: jest.fn(),
+    createDoctor: jest.fn(),
     verificationCode: '',
-    userCreated: false
+    userCreated: false,
+    isLoading: false,
+    institutionsData: [],
+    specialtiesData: []
   }
 
   test('The component requires the fields for a patient in step 1', () => {

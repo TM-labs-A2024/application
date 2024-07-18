@@ -6,7 +6,7 @@ export const useNurseMutation = (
   onSuccess?: (arg: unknown) => void,
   onError?: (arg: unknown) => void
 ) => {
-  const mutationInfo = useMutation({
+  const mutationData = useMutation({
     mutationFn: (data: Nurse) => createNurse(data),
     onSuccess: (data) => {
       if (onSuccess) onSuccess(data)
@@ -16,5 +16,5 @@ export const useNurseMutation = (
     }
   })
 
-  return mutationInfo
+  return mutationData
 }
