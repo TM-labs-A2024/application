@@ -11,7 +11,15 @@ import {
 } from '@chakra-ui/react'
 import Splash from '@components/atoms/Splash'
 import { userTypes, sexTypes } from '@components/molecules/Forms/Register/Register.constants'
-import { Patient, Doctor, ReactSelectOption, Institution, Specialties, Nurse } from '@src/types'
+import {
+  Patient,
+  Doctor,
+  ReactSelectOption,
+  Institution,
+  Specialties,
+  Nurse,
+  Login
+} from '@src/types'
 import Image from 'next/image'
 import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
@@ -67,6 +75,9 @@ export default function RegisterForm({
     createPatient,
     createDoctor,
     createNurse,
+    loginPatient,
+    loginDoctor,
+    loginNurse,
     verificationCode,
     userCreated,
     isLoading,
@@ -78,6 +89,9 @@ export default function RegisterForm({
     createPatient: (arg: Patient) => void
     createDoctor: (arg: Doctor) => void
     createNurse: (arg: Nurse) => void
+    loginPatient: (arg: Login) => void
+    loginDoctor: (arg: Login) => void
+    loginNurse: (arg: Login) => void
     verificationCode: string
     userCreated: boolean
     isLoading: boolean
@@ -140,6 +154,7 @@ export default function RegisterForm({
   }
 
   const onSubmitPassword = (data: FormData) => {
+    console.log(data)
     const body = {
       ...data,
       institutionId: data.institutionId ? String(data.institutionId.value) : '',
@@ -163,17 +178,29 @@ export default function RegisterForm({
   }
 
   const onSubmitConfirmation = (data: FormData) => {
-    alert(JSON.stringify(data))
+    if (type === 'Paciente') {
+      loginPatient(data)
+    }
+
+    if (type === 'Médico') {
+      loginDoctor(data)
+    }
+
+    if (type === 'Enfermero/a') {
+      loginNurse(data)
+    }
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
+  // --- END: Data and handlers ------------------------------------------------
 
+  // --- Side effects ----------------------------------------------------------
   useEffect(() => {
     if (userCreated) {
       setStep(3)
     }
   }, [userCreated])
-  // --- END: Data and handlers ------------------------------------------------
+  // --- END: Side effects -----------------------------------------------------
 
   return isLoading ? (
     <Splash />

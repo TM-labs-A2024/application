@@ -1,49 +1,42 @@
-/* eslint-disable no-console */
-import { GENERIC_ERROR } from '@constants/index'
+import { setSession } from '@shared/index'
 import {
   usePatientMutation,
   useDoctorMutation,
   useNurseMutation,
+  usePatientLogin,
+  useDoctorLogin,
+  useNurseLogin,
   useInstitutions,
   useSpecialties
 } from '@src/services'
-import { Patient } from '@src/types'
-// import { sendEmail } from '@utils/index'
-import { isMobile } from '@utils/index'
+import { LoginResponse, Patient } from '@src/types'
+import { setupEmailSending, generateVerificationCode, setupErrorNotification } from '@utils/index'
 import RegisterView from '@views/Register'
 import { AxiosResponse } from 'axios'
-import { useMemo, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useMemo, useState, useEffect } from 'react'
 import React from 'react'
-import { Store } from 'react-notifications-component'
 
-// Creation of the verification code
-const verificationCode = String(Math.floor(Math.random() * 1000000))
+const verificationCode = generateVerificationCode()
 
 export default function RegisterPage() {
   // --- Local state -----------------------------------------------------------
   const [userCreated, setUserCreated] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   // --- END: Local state ------------------------------------------------------
 
   // --- Hooks -----------------------------------------------------------------
-  const setupEmailSending = (name: string, code: string, email: string) => {
-    const emailTemplate = {
-      from_name: 'HealthCore',
-      to_name: name,
-      code: code,
-      to_email: email
-    }
-    console.log(emailTemplate)
-    // sendEmail(emailTemplate)
-  }
+  const router = useRouter()
 
-  const setupErrorNotification = () => {
-    Store.addNotification(
-      GENERIC_ERROR(
-        'Algo salió mal, por favor recargue la página e inténtelo de nuevo.',
-        isMobile(window)
-      )
-    )
-  }
+  const { data: institutions, isLoading: isInstitutionsLoading } = useInstitutions(
+    () => setIsLoading(false),
+    () => setIsLoading(false)
+  )
+
+  const { data: specialties, isLoading: isSpecialtiesLoading } = useSpecialties(
+    () => setIsLoading(false),
+    () => setIsLoading(false)
+  )
 
   const { mutate: createPatient, isLoading: isPatientCreationLoading } = usePatientMutation(
     (res) => {
@@ -51,8 +44,10 @@ export default function RegisterPage() {
       const { firstname, email } = data as Patient
       setupEmailSending(firstname, verificationCode, email)
       setUserCreated(true)
+      setIsLoading(false)
     },
     () => {
+      setIsLoading(false)
       setupErrorNotification()
       setUserCreated(false)
     }
@@ -64,8 +59,10 @@ export default function RegisterPage() {
       const { firstname, email } = data as Patient
       setupEmailSending(firstname, verificationCode, email)
       setUserCreated(true)
+      setIsLoading(false)
     },
     () => {
+      setIsLoading(false)
       setupErrorNotification()
       setUserCreated(false)
     }
@@ -77,16 +74,56 @@ export default function RegisterPage() {
       const { firstname, email } = data as Patient
       setupEmailSending(firstname, verificationCode, email)
       setUserCreated(true)
+      setIsLoading(false)
     },
     () => {
+      setIsLoading(false)
       setupErrorNotification()
       setUserCreated(false)
     }
   )
 
-  const { data: institutions, isLoading: isInstitutionsLoading } = useInstitutions()
+  const { mutate: loginPatient, isLoading: isPatientLoginLoading } = usePatientLogin(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { token } = data as LoginResponse
+      setSession('patient', token)
+      router.replace('/especialidades')
+      window.setTimeout(() => setIsLoading(false), 2000)
+    },
+    () => {
+      setIsLoading(false)
+      setupErrorNotification()
+    }
+  )
 
-  const { data: specialties, isLoading: isSpecialtiesLoading } = useSpecialties()
+  const { mutate: loginDoctor, isLoading: isDoctorLoginLoading } = useDoctorLogin(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { token } = data as LoginResponse
+      setSession('doctor', token)
+      router.replace('/pacientes')
+      window.setTimeout(() => setIsLoading(false), 2000)
+    },
+    () => {
+      setIsLoading(false)
+      setupErrorNotification()
+    }
+  )
+
+  const { mutate: loginNurse, isLoading: isNurseLoginLoading } = useNurseLogin(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { token } = data as LoginResponse
+      setSession('enfermere', token)
+      router.replace('/pacientes')
+      window.setTimeout(() => setIsLoading(false), 2000)
+    },
+    () => {
+      setIsLoading(false)
+      setupErrorNotification()
+    }
+  )
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -96,24 +133,31 @@ export default function RegisterPage() {
   // --- END: Redux ------------------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    if (
+      isPatientCreationLoading ||
+      isDoctorCreationLoading ||
+      isNurseCreationLoading ||
+      isPatientLoginLoading ||
+      isDoctorLoginLoading ||
+      isNurseLoginLoading ||
+      isInstitutionsLoading ||
+      isSpecialtiesLoading
+    )
+      setIsLoading(true)
+  }, [
+    isDoctorCreationLoading,
+    isNurseCreationLoading,
+    isPatientCreationLoading,
+    isDoctorLoginLoading,
+    isNurseLoginLoading,
+    isPatientLoginLoading,
+    isInstitutionsLoading,
+    isSpecialtiesLoading
+  ])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const isLoading = useMemo(
-    () =>
-      isPatientCreationLoading ||
-      isDoctorCreationLoading ||
-      isInstitutionsLoading ||
-      isSpecialtiesLoading ||
-      isNurseCreationLoading,
-    [
-      isDoctorCreationLoading,
-      isInstitutionsLoading,
-      isPatientCreationLoading,
-      isSpecialtiesLoading,
-      isNurseCreationLoading
-    ]
-  )
 
   const institutionsData = useMemo(() => {
     if (!institutions) return []
@@ -136,6 +180,9 @@ export default function RegisterPage() {
       createPatient,
       createDoctor,
       createNurse,
+      loginPatient,
+      loginDoctor,
+      loginNurse,
       verificationCode,
       userCreated,
       isLoading,
@@ -146,6 +193,9 @@ export default function RegisterPage() {
       createPatient,
       createDoctor,
       createNurse,
+      loginPatient,
+      loginDoctor,
+      loginNurse,
       userCreated,
       isLoading,
       institutionsData,

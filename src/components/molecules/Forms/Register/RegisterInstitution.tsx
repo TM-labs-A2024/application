@@ -1,9 +1,9 @@
 import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@chakra-ui/react'
+import Splash from '@components/atoms/Splash'
 import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
-import { ReactSelectOption } from '@src/types'
-import { sendEmail } from '@utils/email'
+import { InstitutionRegister, Login, ReactSelectOption } from '@src/types'
 import Image from 'next/image'
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useState, useEffect } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
 import Select from 'react-select'
 
@@ -13,10 +13,14 @@ const institutionTypeOptions = institutionTypes.map((option) => ({
 }))
 
 type FormData = {
+  address: string
   firstname: string
   lastname: string
-  credential: string
+  govId: string
+  birthdate: string
+  credentials: string
   email: string
+  phoneNumber: string
   password: string
   repeatPassword: string
   code: string
@@ -43,7 +47,17 @@ function RegisterHeader() {
   )
 }
 
-export default function RegisterForm(): ReactElement {
+export default function RegisterForm({
+  context: { createInstitution, loginInstitution, verificationCode, institutionCreated, isLoading }
+}: {
+  context: {
+    createInstitution: (arg: InstitutionRegister) => void
+    loginInstitution: (arg: Login) => void
+    verificationCode: string
+    institutionCreated: boolean
+    isLoading: boolean
+  }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
@@ -55,7 +69,6 @@ export default function RegisterForm(): ReactElement {
 
   // --- Local state -----------------------------------------------------------
   const [step, setStep] = useState(1)
-  const [codeToVerify, setCodeToVerify] = useState('')
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -73,28 +86,51 @@ export default function RegisterForm(): ReactElement {
     setStep(2)
   }
 
-  const onSubmitPassword = (data: FormData) => {
-    const verificationCode = String(Math.floor(Math.random() * 1000000))
-    const emailTemplate = {
-      from_name: 'HealthCore',
-      to_name: data.firstname,
-      code: verificationCode,
-      to_email: data.email
-    }
-    sendEmail(emailTemplate)
-    setCodeToVerify(verificationCode)
+  const onSubmitUserDetails = (data: FormData) => {
+    alert(JSON.stringify(data))
     setStep(3)
-    alert(JSON.stringify({ ...data, codeToVerify, verificationCode }))
+  }
+
+  const onSubmitPassword = (data: FormData) => {
+    const body = {
+      name: data.institution,
+      govId: data.institutionId,
+      credentials: data.credentials,
+      type: String(data?.institutionType?.value).toLocaleLowerCase(),
+      address: data.address,
+      institutionUser: {
+        firstname: data.firstname,
+        lastname: data.lastname,
+        govId: data.govId,
+        birthdate: data.birthdate,
+        email: data.email,
+        password: data.password,
+        phoneNumber: data.phoneNumber,
+        role: data.title
+      }
+    }
+
+    createInstitution(body)
   }
 
   const onSubmitConfirmation = (data: FormData) => {
-    alert(JSON.stringify(data))
+    loginInstitution(data)
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
   // --- END: Data and handlers ------------------------------------------------
 
-  return (
+  // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    if (institutionCreated) {
+      setStep(4)
+    }
+  }, [institutionCreated])
+  // --- END: Side effects -----------------------------------------------------
+
+  return isLoading ? (
+    <Splash />
+  ) : (
     <div className="h-full w-full px-8 py-12 lg:px-96">
       {step === 1 && (
         <form
@@ -134,15 +170,24 @@ export default function RegisterForm(): ReactElement {
                 {errors?.institutionId && errors?.institutionId?.message}
               </FormErrorMessage>
               <Input
-                id="credential"
+                id="address"
+                className="mt-2 min-h-10"
+                placeholder="Dirección"
+                {...register('address', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.address && errors?.address?.message}</FormErrorMessage>
+              <Input
+                id="credentials"
                 className="mt-2 min-h-10"
                 placeholder="Credenciales"
-                {...register('credential', {
+                {...register('credentials', {
                   required: 'Este campo es obligatorio'
                 })}
               />
               <FormErrorMessage>
-                {errors?.credential && errors?.credential?.message}
+                {errors?.credentials && errors?.credentials?.message}
               </FormErrorMessage>
               <Controller
                 control={control}
@@ -171,7 +216,7 @@ export default function RegisterForm(): ReactElement {
         </form>
       )}
       {step === 2 && (
-        <form onSubmit={handleSubmit(onSubmitPassword)} className="h-full w-full">
+        <form onSubmit={handleSubmit(onSubmitUserDetails)} className="h-full w-full">
           <FormControl
             isInvalid={verifyErrors(errors)}
             className="flex h-full w-full flex-col justify-between"
@@ -200,6 +245,25 @@ export default function RegisterForm(): ReactElement {
               />
               <FormErrorMessage>{errors?.lastname && errors?.lastname?.message}</FormErrorMessage>
               <Input
+                id="govId"
+                className="mt-2 min-h-10"
+                placeholder="Cédula"
+                {...register('govId', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.govId && errors?.govId?.message}</FormErrorMessage>
+              <Input
+                id="birthdate"
+                className="mt-2 min-h-10"
+                type="date"
+                placeholder="Fecha de nacimiento"
+                {...register('birthdate', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.birthdate && errors?.birthdate?.message}</FormErrorMessage>
+              <Input
                 id="title"
                 className="mt-2 min-h-10"
                 placeholder="Cargo"
@@ -208,6 +272,17 @@ export default function RegisterForm(): ReactElement {
                 })}
               />
               <FormErrorMessage>{errors?.title && errors?.title?.message}</FormErrorMessage>
+              <Input
+                id="phoneNumber"
+                className="mt-2 min-h-10"
+                placeholder="Teléfono"
+                {...register('phoneNumber', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>
+                {errors?.phoneNumber && errors?.phoneNumber?.message}
+              </FormErrorMessage>
               <Input
                 id="email"
                 className="mt-2 min-h-10"
@@ -225,6 +300,50 @@ export default function RegisterForm(): ReactElement {
         </form>
       )}
       {step === 3 && (
+        <form
+          onSubmit={handleSubmit(onSubmitPassword)}
+          className="h-full w-full"
+          data-testid="register-step-2"
+        >
+          <FormControl
+            isInvalid={verifyErrors(errors)}
+            className="flex h-full w-full flex-col justify-between"
+          >
+            <RegisterHeader />
+            <Heading as="h2" size="sm" mb={4} noOfLines={1}>
+              Seguridad
+            </Heading>
+            <Stack className="h-3/4 overflow-scroll">
+              <Input
+                id="password"
+                className="mt-2 min-h-10"
+                type="password"
+                placeholder="Contraseña"
+                {...register('password', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>{errors?.password && errors?.password?.message}</FormErrorMessage>
+              <Input
+                id="repeatPassword"
+                className="mt-2 min-h-10"
+                type="password"
+                placeholder="Repetir contraseña"
+                {...register('repeatPassword', {
+                  required: 'Este campo es obligatorio'
+                })}
+              />
+              <FormErrorMessage>
+                {errors?.repeatPassword && errors?.repeatPassword?.message}
+              </FormErrorMessage>
+            </Stack>
+            <Button isLoading={isSubmitting} type="submit">
+              Siguiente
+            </Button>
+          </FormControl>
+        </form>
+      )}
+      {step === 4 && (
         <form onSubmit={handleSubmit(onSubmitConfirmation)} className="h-full w-full">
           <FormControl
             isInvalid={verifyErrors(errors)}
@@ -242,7 +361,7 @@ export default function RegisterForm(): ReactElement {
                 {...register('code', {
                   required: 'Este campo es obligatorio',
                   validate: {
-                    verifyCode: (code) => codeToVerify === code || 'El código no concuerda'
+                    verifyCode: (code) => verificationCode === code || 'El código no concuerda'
                   }
                 })}
               />

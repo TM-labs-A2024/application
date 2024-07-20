@@ -8,3 +8,21 @@ export type Institution = {
   pending?: boolean
   password?: string
 }
+
+export type InstitutionRegister = {
+  name: string
+  govId: string
+  credentials: string
+  type: string
+  address: string
+  institutionUser: {
+    firstname: string
+    lastname: string
+    govId: string
+    birthdate: string
+    email: string
+    password: string
+    phoneNumber: string
+    role: string
+  }
+}

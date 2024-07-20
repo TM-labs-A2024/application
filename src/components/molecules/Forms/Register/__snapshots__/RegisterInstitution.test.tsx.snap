@@ -50,8 +50,14 @@ exports[
       />
       <input
         class="chakra-input mt-2 min-h-10 css-1cjy4zv"
-        id="credential"
-        name="credential"
+        id="address"
+        name="address"
+        placeholder="Dirección"
+      />
+      <input
+        class="chakra-input mt-2 min-h-10 css-1cjy4zv"
+        id="credentials"
+        name="credentials"
         placeholder="Credenciales"
       />
       <div

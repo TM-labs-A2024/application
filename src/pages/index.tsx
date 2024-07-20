@@ -6,6 +6,15 @@ import React from 'react'
 export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-center">
+      <Link as={NextLink} href="/login" onClick={() => setSession('patient')}>
+        Login Paciente
+      </Link>
+      <Link as={NextLink} href="/login" onClick={() => setSession('doctor')}>
+        Login Doctor
+      </Link>
+      <Link as={NextLink} href="/login" onClick={() => setSession('enfermere')}>
+        Login Enfermera/o
+      </Link>
       <Link as={NextLink} href="/especialidades" onClick={() => setSession('patient')}>
         Paciente
       </Link>

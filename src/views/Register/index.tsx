@@ -1,5 +1,5 @@
 import { RegisterForm } from '@components/molecules/Forms/Register'
-import { Patient, Doctor, Institution, Specialties, Nurse } from '@src/types'
+import { Patient, Doctor, Institution, Specialties, Nurse, Login } from '@src/types'
 import React from 'react'
 
 export default function RegisterView({
@@ -9,6 +9,9 @@ export default function RegisterView({
     createPatient: (arg: Patient) => void
     createDoctor: (arg: Doctor) => void
     createNurse: (arg: Nurse) => void
+    loginPatient: (arg: Login) => void
+    loginDoctor: (arg: Login) => void
+    loginNurse: (arg: Login) => void
     verificationCode: string
     userCreated: boolean
     isLoading: boolean
