@@ -9,6 +9,8 @@ describe('Molecules > Forms > Login test', () => {
     loginPatient: jest.fn(),
     loginDoctor: jest.fn(),
     loginNurse: jest.fn(),
+    loginInstitution: jest.fn(),
+    loginGovernment: jest.fn(),
     isLoading: false
   }
 

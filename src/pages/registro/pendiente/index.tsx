@@ -1,6 +1,11 @@
-import PendingDoctorView from '@views/Register/Pending'
+import PendingAccountView from '@views/Register/Pending'
+import { useRouter } from 'next/router'
 import React from 'react'
 
-export default function PendingDoctorPage() {
-  return <PendingDoctorView name="Pedro Pérez" id="CI: 12345678" onClick={() => alert('OK')} />
+export default function PendingAccountPage() {
+  // --- Hooks -----------------------------------------------------------------
+  const router = useRouter()
+  // --- END: Hooks ------------------------------------------------------------
+
+  return <PendingAccountView onClick={() => router.push('/')} />
 }

@@ -1,14 +1,6 @@
-import PendingDoctor from '@components/organisms/PendingDoctor'
+import PendingAccount from '@src/components/organisms/PendingAccount'
 import React from 'react'
 
-export default function PendingDoctorView({
-  name,
-  id,
-  onClick
-}: {
-  name: string
-  id: string
-  onClick: () => void
-}) {
-  return <PendingDoctor name={name} id={id} onClick={onClick} />
+export default function PendingAccountView({ onClick }: { onClick: () => void }) {
+  return <PendingAccount onClick={onClick} />
 }

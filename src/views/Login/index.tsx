@@ -15,6 +15,8 @@ export default function LoginView({
     loginPatient: (arg: Login) => void
     loginDoctor: (arg: Login) => void
     loginNurse: (arg: Login) => void
+    loginInstitution: (arg: Login) => void
+    loginGovernment: (arg: Login) => void
   }
 }) {
   return context.isLoading ? (

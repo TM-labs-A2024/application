@@ -1,11 +1,10 @@
-import { useInstitutionMutation, useInstitutionLogin } from '@src/services'
-import { setSession } from '@src/shared'
-import { InstitutionRegister, LoginResponse } from '@src/types'
+import { useInstitutionMutation } from '@src/services'
+import { InstitutionRegister } from '@src/types'
 import { setupEmailSending, generateVerificationCode, setupErrorNotification } from '@utils/index'
 import RegisterInstitutionView from '@views/RegisterInstitution'
 import { AxiosResponse } from 'axios'
 import { useRouter } from 'next/router'
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useCallback } from 'react'
 
 const verificationCode = generateVerificationCode()
 
@@ -33,20 +32,6 @@ export default function RegisterPage() {
         setIsLoading(false)
       }
     )
-
-  const { mutate: loginInstitution, isLoading: isInstitutionLoginLoading } = useInstitutionLogin(
-    (res) => {
-      const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('institucion', token)
-      router.replace('/institucion/solicitudes')
-      window.setTimeout(() => setIsLoading(false), 2000)
-    },
-    () => {
-      setIsLoading(false)
-      setupErrorNotification()
-    }
-  )
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -57,11 +42,16 @@ export default function RegisterPage() {
 
   // --- Side effects ----------------------------------------------------------
   useEffect(() => {
-    if (isInstitutionCreationLoading || isInstitutionLoginLoading) setIsLoading(true)
-  }, [isInstitutionCreationLoading, isInstitutionLoginLoading])
+    if (isInstitutionCreationLoading) setIsLoading(true)
+  }, [isInstitutionCreationLoading])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const loginInstitution = useCallback(() => {
+    router.replace('/registro/pendiente')
+    window.setTimeout(() => setIsLoading(false), 2000)
+  }, [router])
+
   const context = useMemo(
     () => ({
       createInstitution,

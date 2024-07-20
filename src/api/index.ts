@@ -1,4 +1,5 @@
 import { createDoctor, loginDoctor } from './doctors'
+import { loginGovernment } from './government'
 import { createInstitution, getInstitutions, loginInstitution } from './institutions'
 import { createNurse, loginNurse } from './nurses'
 import { createPatient, loginPatient } from './patients'
@@ -14,5 +15,6 @@ export {
   loginPatient,
   getInstitutions,
   loginInstitution,
-  getSpecialties
+  getSpecialties,
+  loginGovernment
 }

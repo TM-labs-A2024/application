@@ -1,5 +1,11 @@
 import { setSession, getSession } from '@shared/index'
-import { usePatientLogin, useDoctorLogin, useNurseLogin } from '@src/services'
+import {
+  usePatientLogin,
+  useDoctorLogin,
+  useNurseLogin,
+  useInstitutionLogin,
+  useGovernmentLogin
+} from '@src/services'
 import { LoginResponse } from '@src/types'
 import { setupErrorNotification } from '@utils/index'
 import LoginView from '@views/Login'
@@ -57,6 +63,34 @@ export default function LoginPage() {
       setupErrorNotification()
     }
   )
+
+  const { mutate: loginInstitution, isLoading: isInstitutionLoginLoading } = useInstitutionLogin(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { token } = data as LoginResponse
+      setSession('institucion', token)
+      router.replace('/institucion/solicitudes')
+      window.setTimeout(() => setIsLoading(false), 2000)
+    },
+    () => {
+      setIsLoading(false)
+      setupErrorNotification()
+    }
+  )
+
+  const { mutate: loginGovernment, isLoading: isGovernmentLoginLoading } = useGovernmentLogin(
+    (res) => {
+      const { data } = res as AxiosResponse
+      const { token } = data as LoginResponse
+      setSession('institucion', token)
+      router.replace('/institucion/solicitudes')
+      window.setTimeout(() => setIsLoading(false), 2000)
+    },
+    () => {
+      setIsLoading(false)
+      setupErrorNotification()
+    }
+  )
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -67,8 +101,21 @@ export default function LoginPage() {
 
   // --- Side effects ----------------------------------------------------------
   useEffect(() => {
-    if (isPatientLoginLoading || isDoctorLoginLoading || isNurseLoginLoading) setIsLoading(true)
-  }, [isDoctorLoginLoading, isNurseLoginLoading, isPatientLoginLoading])
+    if (
+      isPatientLoginLoading ||
+      isDoctorLoginLoading ||
+      isNurseLoginLoading ||
+      isInstitutionLoginLoading ||
+      isGovernmentLoginLoading
+    )
+      setIsLoading(true)
+  }, [
+    isDoctorLoginLoading,
+    isNurseLoginLoading,
+    isPatientLoginLoading,
+    isInstitutionLoginLoading,
+    isGovernmentLoginLoading
+  ])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -80,9 +127,11 @@ export default function LoginPage() {
       loginPatient,
       loginDoctor,
       loginNurse,
+      loginInstitution,
+      loginGovernment,
       isLoading
     }),
-    [type, loginPatient, loginDoctor, loginNurse, isLoading]
+    [type, loginPatient, loginDoctor, loginNurse, loginInstitution, loginGovernment, isLoading]
   )
   // --- END: Data and handlers ------------------------------------------------
 

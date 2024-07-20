@@ -4,8 +4,6 @@ import {
   useDoctorMutation,
   useNurseMutation,
   usePatientLogin,
-  useDoctorLogin,
-  useNurseLogin,
   useInstitutions,
   useSpecialties
 } from '@src/services'
@@ -14,7 +12,7 @@ import { setupEmailSending, generateVerificationCode, setupErrorNotification } f
 import RegisterView from '@views/Register'
 import { AxiosResponse } from 'axios'
 import { useRouter } from 'next/router'
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useCallback } from 'react'
 import React from 'react'
 
 const verificationCode = generateVerificationCode()
@@ -96,34 +94,6 @@ export default function RegisterPage() {
       setupErrorNotification()
     }
   )
-
-  const { mutate: loginDoctor, isLoading: isDoctorLoginLoading } = useDoctorLogin(
-    (res) => {
-      const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('doctor', token)
-      router.replace('/pacientes')
-      window.setTimeout(() => setIsLoading(false), 2000)
-    },
-    () => {
-      setIsLoading(false)
-      setupErrorNotification()
-    }
-  )
-
-  const { mutate: loginNurse, isLoading: isNurseLoginLoading } = useNurseLogin(
-    (res) => {
-      const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('enfermere', token)
-      router.replace('/pacientes')
-      window.setTimeout(() => setIsLoading(false), 2000)
-    },
-    () => {
-      setIsLoading(false)
-      setupErrorNotification()
-    }
-  )
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -139,8 +109,6 @@ export default function RegisterPage() {
       isDoctorCreationLoading ||
       isNurseCreationLoading ||
       isPatientLoginLoading ||
-      isDoctorLoginLoading ||
-      isNurseLoginLoading ||
       isInstitutionsLoading ||
       isSpecialtiesLoading
     )
@@ -149,8 +117,6 @@ export default function RegisterPage() {
     isDoctorCreationLoading,
     isNurseCreationLoading,
     isPatientCreationLoading,
-    isDoctorLoginLoading,
-    isNurseLoginLoading,
     isPatientLoginLoading,
     isInstitutionsLoading,
     isSpecialtiesLoading
@@ -158,6 +124,15 @@ export default function RegisterPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const loginDoctor = useCallback(() => {
+    router.replace('/registro/pendiente')
+    window.setTimeout(() => setIsLoading(false), 2000)
+  }, [router])
+
+  const loginNurse = useCallback(() => {
+    router.replace('/registro/pendiente')
+    window.setTimeout(() => setIsLoading(false), 2000)
+  }, [router])
 
   const institutionsData = useMemo(() => {
     if (!institutions) return []

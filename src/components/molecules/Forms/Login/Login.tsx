@@ -10,7 +10,15 @@ type FormData = {
 }
 
 export default function LoginForm({
-  context: { isLoading, type, loginPatient, loginDoctor, loginNurse }
+  context: {
+    isLoading,
+    type,
+    loginPatient,
+    loginDoctor,
+    loginNurse,
+    loginInstitution,
+    loginGovernment
+  }
 }: {
   context: {
     isLoading: boolean
@@ -18,6 +26,8 @@ export default function LoginForm({
     loginPatient: (arg: FormData) => void
     loginDoctor: (arg: FormData) => void
     loginNurse: (arg: FormData) => void
+    loginInstitution: (arg: FormData) => void
+    loginGovernment: (arg: FormData) => void
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -52,6 +62,14 @@ export default function LoginForm({
 
     if (type === 'enfermere') {
       loginNurse(data)
+    }
+
+    if (type === 'institucion') {
+      loginInstitution(data)
+    }
+
+    if (type === 'ministerio') {
+      loginGovernment(data)
     }
   }
 

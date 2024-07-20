@@ -1,4 +1,5 @@
 import { useDoctorMutation, useDoctorLogin } from './doctors'
+import { useGovernmentLogin } from './government'
 import { useInstitutionMutation, useInstitutions, useInstitutionLogin } from './institutions'
 import { useNurseMutation, useNurseLogin } from './nurses'
 import { usePatientMutation, usePatientLogin } from './patients'
@@ -14,5 +15,6 @@ export {
   usePatientLogin,
   useInstitutions,
   useInstitutionLogin,
-  useSpecialties
+  useSpecialties,
+  useGovernmentLogin
 }

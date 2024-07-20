@@ -5,15 +5,7 @@ import React from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
-export default function PendingDoctor({
-  name,
-  id,
-  onClick
-}: {
-  name: string
-  id: string
-  onClick: () => void
-}) {
+export default function PendingDoctor({ onClick }: { onClick: () => void }) {
   return (
     <div
       className={`flex h-screen w-screen flex-col items-center p-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
@@ -31,12 +23,8 @@ export default function PendingDoctor({
         <Text as="b" mt={4}>
           Aprobación pendiente
         </Text>
-        <Text mb={8} mt={8}>
-          {name} {id}
-        </Text>
         <Text textAlign="center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam risus
-          vel elementum in vulputate.
+          Su cuenta está bajo revisión, cuando sea aprobada podrá iniciar sesión.
         </Text>
       </div>
       <Button colorScheme="blackAlpha" onClick={onClick}>
