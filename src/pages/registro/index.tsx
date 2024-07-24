@@ -84,8 +84,8 @@ export default function RegisterPage() {
   const { mutate: loginPatient, isLoading: isPatientLoginLoading } = usePatientLogin(
     (res) => {
       const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('patient', token)
+      const { token, patient } = data as LoginResponse
+      setSession('patient', token, patient)
       router.replace('/especialidades')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
@@ -113,6 +113,8 @@ export default function RegisterPage() {
       isSpecialtiesLoading
     )
       setIsLoading(true)
+
+    return () => setIsLoading(false)
   }, [
     isDoctorCreationLoading,
     isNurseCreationLoading,

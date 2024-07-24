@@ -6,34 +6,42 @@ import React from 'react'
 export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-center">
-      <Link as={NextLink} href="/login" onClick={() => setSession('patient')}>
+      <Link as={NextLink} href="/login" onClick={() => setSession('patient', '', '')}>
         Login Paciente
       </Link>
-      <Link as={NextLink} href="/login" onClick={() => setSession('doctor')}>
+      <Link as={NextLink} href="/login" onClick={() => setSession('doctor', '', '')}>
         Login Doctor
       </Link>
-      <Link as={NextLink} href="/login" onClick={() => setSession('enfermere')}>
+      <Link as={NextLink} href="/login" onClick={() => setSession('enfermere', '', '')}>
         Login Enfermera/o
       </Link>
-      <Link as={NextLink} href="/login" onClick={() => setSession('institucion')}>
+      <Link as={NextLink} href="/login" onClick={() => setSession('institucion', '', '')}>
         Login Institución
       </Link>
-      <Link as={NextLink} href="/login" onClick={() => setSession('ministerio')}>
+      <Link as={NextLink} href="/login" onClick={() => setSession('ministerio', '', '')}>
         Login Ministerio
       </Link>
-      <Link as={NextLink} href="/especialidades" onClick={() => setSession('patient')}>
+      <Link as={NextLink} href="/especialidades" onClick={() => setSession('patient', '', '')}>
         Paciente
       </Link>
-      <Link as={NextLink} href="/pacientes" onClick={() => setSession('doctor')}>
+      <Link as={NextLink} href="/pacientes" onClick={() => setSession('doctor', '', '')}>
         Doctor
       </Link>
-      <Link as={NextLink} href="/pacientes" onClick={() => setSession('enfermere')}>
+      <Link as={NextLink} href="/pacientes" onClick={() => setSession('enfermere', '', '')}>
         Enfermera/o
       </Link>
-      <Link as={NextLink} href="/institucion/solicitudes" onClick={() => setSession('institucion')}>
+      <Link
+        as={NextLink}
+        href="/institucion/solicitudes"
+        onClick={() => setSession('institucion', '')}
+      >
         Institución
       </Link>
-      <Link as={NextLink} href="/ministerio/solicitudes" onClick={() => setSession('ministerio')}>
+      <Link
+        as={NextLink}
+        href="/ministerio/solicitudes"
+        onClick={() => setSession('ministerio', '')}
+      >
         Ministerio
       </Link>
       <Link as={NextLink} href="/registro">

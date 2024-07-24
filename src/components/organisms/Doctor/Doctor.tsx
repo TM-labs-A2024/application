@@ -11,17 +11,15 @@ import {
   ModalContent,
   ModalFooter,
   ModalBody,
-  useDisclosure
+  Spinner
 } from '@chakra-ui/react'
-import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVED } from '@constants/index'
 import { specialties } from '@constants/index'
 import { Doctor as DoctorType } from '@src/types'
-import { isIOS, isMobile } from '@utils/index'
+import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/navigation'
-import React, { ReactElement, useCallback } from 'react'
-import { Store } from 'react-notifications-component'
+import React, { ReactElement } from 'react'
 
 function ConfirmationModal({
   isOpen,
@@ -57,16 +55,43 @@ function ConfirmationModal({
   )
 }
 
-export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement {
+export default function Doctor({
+  context: {
+    doctor,
+    isDenialOpen,
+    onDenialOpen,
+    onDenialClose,
+    isApprovalOpen,
+    onApprovalOpen,
+    onApprovalClose,
+    isRemovalOpen,
+    onRemovalOpen,
+    onRemovalClose,
+    onApproval,
+    onDenial,
+    onRemoval,
+    isLoading
+  }
+}: {
+  context: {
+    doctor: DoctorType
+    isDenialOpen: boolean
+    onDenialOpen: () => void
+    onDenialClose: () => void
+    isApprovalOpen: boolean
+    onApprovalOpen: () => void
+    onApprovalClose: () => void
+    isRemovalOpen: boolean
+    onRemovalOpen: () => void
+    onRemovalClose: () => void
+    onApproval: () => void
+    onDenial: () => void
+    onRemoval: () => void
+    isLoading: boolean
+  }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const {
-    isOpen: isApprovalOpen,
-    onOpen: onApprovalOpen,
-    onClose: onApprovalClose
-  } = useDisclosure()
-  const { isOpen: isRemovalOpen, onOpen: onRemovalOpen, onClose: onRemovalClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
@@ -82,24 +107,6 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const onApproval = useCallback(() => {
-    Store.addNotification(ACCESS_GRANTED(isMobile(window)))
-    onApprovalClose()
-    router.push('/medicos')
-  }, [onApprovalClose, router])
-
-  const onDenial = useCallback(() => {
-    Store.addNotification(ACCESS_DENIED(isMobile(window)))
-    onClose()
-    router.push('/medicos')
-  }, [onClose, router])
-
-  const onRemoval = useCallback(() => {
-    Store.addNotification(ACCESS_REMOVED(isMobile(window)))
-    onRemovalClose()
-    router.push('/medicos')
-  }, [onRemovalClose, router])
-
   const doctorSpecialtiesList = doctor.specialties?.map(
     (specialty, idx) =>
       `${specialties.find((el: { id: string; name: string }) => el.id === specialty)?.name}${
@@ -132,7 +139,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
             <Heading as="h3" size="md" noOfLines={1}>
               {doctor.firstname} {doctor.lastname}
             </Heading>
-            <Text>CI: {doctor.id.toLocaleString('es-ES')}</Text>
+            <Text>CI: {doctor.govId}</Text>
           </Stack>
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>
@@ -156,10 +163,13 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
             <Text className="font-medium">{doctor.phoneNumber}</Text>
           </Stack>
         </div>
-        {!doctor?.patientPending && <Button onClick={onRemovalOpen}>Revocar acceso</Button>}
-        {doctor?.patientPending && (
+        {isLoading && <Spinner />}
+        {!doctor?.patientPending && !isLoading && (
+          <Button onClick={onRemovalOpen}>Revocar acceso</Button>
+        )}
+        {doctor?.patientPending && !isLoading && (
           <div className="flex w-full flex-row">
-            <Button className="mr-2 flex-grow" variant="outline" onClick={onOpen}>
+            <Button className="mr-2 flex-grow" variant="outline" onClick={onDenialOpen}>
               Rechazar
             </Button>
             <Button className="ml-2 flex-grow" onClick={onApprovalOpen}>
@@ -169,8 +179,8 @@ export default function Doctor({ doctor }: { doctor: DoctorType }): ReactElement
         )}
       </div>
       <ConfirmationModal
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={isDenialOpen}
+        onClose={onDenialClose}
         onSubmit={onDenial}
         method="Denegar"
         name={`${doctor.firstname} ${doctor.lastname}`}

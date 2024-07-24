@@ -81,8 +81,7 @@ export default function Specialties({
         >
           <Logo />
           <Text textAlign="center" mt={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
-            risus vel elementum in vulputate.
+            Este paciente no posee evoluciones asociadas.
           </Text>
           <Button mt={4} onClick={() => router.push(`/crear-historia/${patient?.id}`)}>
             Crear evolución

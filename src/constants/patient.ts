@@ -1,7 +1,7 @@
 export const patient = {
   id: '3fa85f64-5717-4562-b3fc-2c963f66afa1',
   specialties: ['1', '2', '3'],
-  gender: 'male',
+  sex: 'male',
   firstname: 'José Feliciano',
   lastname: 'Gutierrez García',
   govId: 'E99885561',

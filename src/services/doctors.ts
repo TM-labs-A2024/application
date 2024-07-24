@@ -1,6 +1,6 @@
-import { createDoctor, loginDoctor } from '@api/index'
+import { createDoctor, loginDoctor, getDoctorPatients, getDoctors, getDoctorById } from '@api/index'
 import { Doctor, Login } from '@src/types'
-import { useMutation } from 'react-query'
+import { useMutation, useQuery } from 'react-query'
 
 export const useDoctorMutation = (
   onSuccess?: (arg: unknown) => void,
@@ -34,4 +34,58 @@ export const useDoctorLogin = (
   })
 
   return mutationData
+}
+
+export const useDoctorPetients = (
+  doctorId: string,
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryData = useQuery({
+    queryFn: () => getDoctorPatients(doctorId),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return queryData
+}
+
+export const useDoctors = (
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryData = useQuery({
+    queryFn: () => getDoctors(),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return queryData
+}
+
+export const useDoctor = (
+  doctorId: string,
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryData = useQuery({
+    queryKey: ['doctor', doctorId],
+    queryFn: () => getDoctorById(doctorId),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return queryData
 }

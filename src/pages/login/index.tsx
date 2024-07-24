@@ -25,8 +25,8 @@ export default function LoginPage() {
   const { mutate: loginPatient, isLoading: isPatientLoginLoading } = usePatientLogin(
     (res) => {
       const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('patient', token)
+      const { token, patient } = data as LoginResponse
+      setSession('patient', token, patient)
       router.replace('/especialidades')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
@@ -39,8 +39,8 @@ export default function LoginPage() {
   const { mutate: loginDoctor, isLoading: isDoctorLoginLoading } = useDoctorLogin(
     (res) => {
       const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('doctor', token)
+      const { token, doctor } = data as LoginResponse
+      setSession('doctor', token, doctor)
       router.replace('/pacientes')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
@@ -53,8 +53,8 @@ export default function LoginPage() {
   const { mutate: loginNurse, isLoading: isNurseLoginLoading } = useNurseLogin(
     (res) => {
       const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('enfermere', token)
+      const { token, nurse } = data as LoginResponse
+      setSession('enfermere', token, nurse)
       router.replace('/pacientes')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
@@ -67,8 +67,8 @@ export default function LoginPage() {
   const { mutate: loginInstitution, isLoading: isInstitutionLoginLoading } = useInstitutionLogin(
     (res) => {
       const { data } = res as AxiosResponse
-      const { token } = data as LoginResponse
-      setSession('institucion', token)
+      const { token, user } = data as LoginResponse
+      setSession('institucion', token, user)
       router.replace('/institucion/solicitudes')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
@@ -82,8 +82,8 @@ export default function LoginPage() {
     (res) => {
       const { data } = res as AxiosResponse
       const { token } = data as LoginResponse
-      setSession('institucion', token)
-      router.replace('/institucion/solicitudes')
+      setSession('institucion', token, '')
+      router.replace('/ministerio/solicitudes')
       window.setTimeout(() => setIsLoading(false), 2000)
     },
     () => {

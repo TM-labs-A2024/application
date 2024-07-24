@@ -117,7 +117,7 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
             <Heading as="h3" size="md" noOfLines={1}>
               {doctor.firstname} {doctor.lastname}
             </Heading>
-            <Text>CI: {doctor.id.toLocaleString('es-ES')}</Text>
+            <Text>CI: {doctor.govId}</Text>
           </Stack>
           <Divider orientation="horizontal" />
           <Stack mb={6} mt={6}>

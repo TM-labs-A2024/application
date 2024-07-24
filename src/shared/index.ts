@@ -1,3 +1,3 @@
-import { setSession, getSession, getToken, removeSession } from './session'
+import { setSession, getSession, getToken, removeSession, getUser } from './session'
 
-export { setSession, getSession, getToken, removeSession }
+export { setSession, getSession, getToken, removeSession, getUser }

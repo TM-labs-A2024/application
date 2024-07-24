@@ -17,7 +17,7 @@ describe('Atoms > Cards > Doctor test', () => {
     render(<Doctor doctor={doctors[0]} />)
 
     const enlace = await screen.findByRole('link')
-    expect(enlace).toHaveAttribute('href', `/medico/${doctors[0].id}`)
+    expect(enlace).toHaveAttribute('href', `/medico/${doctors[0].id}/${doctors[0].requestId}`)
   })
 
   test('Matches the snapshot', async () => {

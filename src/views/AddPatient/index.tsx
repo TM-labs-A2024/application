@@ -9,7 +9,8 @@ export default function AddPatientView({
   context: {
     onChange: (id: string) => void
     filteredPatients: Patient[] | []
-    onSubmit: () => void
+    onSubmit: (id: string) => void
+    loadingId: string
   }
 }) {
   return (

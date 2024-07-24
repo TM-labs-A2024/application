@@ -9,7 +9,7 @@ import Logo from '../../../../public/static/icons/logo.svg'
 export default function Doctors({
   context
 }: {
-  context: { doctors: DoctorType[]; pendingDoctors: DoctorType[] }
+  context: { doctors: (DoctorType | undefined)[]; pendingDoctors: (DoctorType | undefined)[] }
 }) {
   // --- Local state -----------------------------------------------------------
   const { doctors, pendingDoctors } = context

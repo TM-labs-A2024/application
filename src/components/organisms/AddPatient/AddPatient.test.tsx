@@ -7,19 +7,22 @@ import AddPatient from './AddPatient'
 const context = {
   onChange: (id: string) => id,
   filteredPatients: patients,
-  onSubmit: () => null
+  onSubmit: jest.fn(),
+  loadingId: ''
 }
 
 const pendingPatients = {
   onChange: (id: string) => id,
   filteredPatients: [patients.find((patient) => patient.pending) ?? patients[0]],
-  onSubmit: () => null
+  onSubmit: jest.fn(),
+  loadingId: ''
 }
 
 const approvedPatients = {
   onChange: (id: string) => id,
   filteredPatients: [patients.find((patient) => !patient.pending) ?? patients[0]],
-  onSubmit: () => null
+  onSubmit: jest.fn(),
+  loadingId: ''
 }
 
 describe('Organisms > AddPatient test', () => {

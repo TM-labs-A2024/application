@@ -10,14 +10,15 @@ export default function AddPatient({
   context: {
     onChange: (id: string) => void
     filteredPatients: Patient[] | []
-    onSubmit: () => void
+    onSubmit: (id: string) => void
+    loadingId: string
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { onChange, filteredPatients, onSubmit } = context
+  const { onChange, filteredPatients, onSubmit, loadingId } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -56,9 +57,10 @@ export default function AddPatient({
               <Text>{patient.govId}</Text>
             </div>
             <Button
-              onClick={patient?.pending ? () => null : onSubmit}
+              onClick={patient?.pending ? () => null : () => onSubmit(patient.id ?? '')}
               disabled={patient?.pending}
               className={patient?.pending ? 'cursor-not-allowed' : ''}
+              isLoading={patient.id === loadingId}
             >
               {patient?.pending ? 'Solicitado' : 'Solicitar acceso'}
             </Button>

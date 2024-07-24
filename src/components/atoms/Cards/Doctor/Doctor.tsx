@@ -18,14 +18,19 @@ export default function Doctor({ doctor }: { doctor: DoctorType }) {
   // --- END: Data and handlers ------------------------------------------------
 
   return (
-    <Link as={NextLink} href={`/medico/${doctor.id}`} className="w-full" data-testid="doctor-card">
+    <Link
+      as={NextLink}
+      href={`/medico/${doctor.id}/${doctor.requestId}`}
+      className="w-full"
+      data-testid="doctor-card"
+    >
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-col items-start gap-1 overflow-hidden">
           <Text>
             {doctor.firstname} {doctor.lastname}
           </Text>
           <div className="flex flex-row flex-wrap items-center gap-2">
-            <Text className="text-nowrap">CI: {doctor.id.toLocaleString('es-ES')}</Text>
+            <Text className="text-nowrap">CI: {doctor.govId}</Text>
             <Text className="text-wrap">{doctorSpecialtiesList}</Text>
           </div>
         </div>

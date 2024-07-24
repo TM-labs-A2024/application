@@ -6,7 +6,7 @@ import React from 'react'
 export default function DoctorsView({
   context
 }: {
-  context: { doctors: DoctorType[]; pendingDoctors: DoctorType[] }
+  context: { doctors: (DoctorType | undefined)[]; pendingDoctors: (DoctorType | undefined)[] }
 }) {
   return (
     <PatientsLayout>
