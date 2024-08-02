@@ -2,10 +2,11 @@ import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@c
 import Splash from '@components/atoms/Splash'
 import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
 import { InstitutionRegister, Login, ReactSelectOption } from '@src/types'
-import Image from 'next/image'
 import React, { ReactElement, useState, useEffect } from 'react'
 import { Controller, useForm, FieldErrors } from 'react-hook-form'
 import Select from 'react-select'
+
+import Logo from '../../../../../public/static/icons/logo.svg'
 
 const institutionTypeOptions = institutionTypes.map((option) => ({
   value: option.name,
@@ -33,13 +34,7 @@ type FormData = {
 function RegisterHeader() {
   return (
     <>
-      <Image
-        alt="logo"
-        src="/static/images/logo-horizontal.png"
-        width={200}
-        height={80}
-        className="mx-auto my-4 hidden md:block"
-      />
+      <Logo className="mx-auto my-4 hidden md:block" />
       <Heading as="h2" size="md" mb={4} noOfLines={1}>
         Registro
       </Heading>

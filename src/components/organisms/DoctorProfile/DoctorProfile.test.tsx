@@ -7,9 +7,19 @@ import '@testing-library/jest-dom'
 import DoctorProfile from './DoctorProfile'
 
 describe('Organisms > DoctorProfile test', () => {
+  const specialtiesOptions = specialties?.map((option: { name: string; id: string }) => ({
+    value: option.id,
+    label: option.name
+  }))
+
+  const doctor = doctors[0]
+  const context = {
+    doctor: doctors[0],
+    specialtiesOptions: specialtiesOptions ?? [],
+    onSubmit: jest.fn()
+  }
   test('The component shows the name, govId, specialties, birthdate, email and phoneNumber of the doctor', () => {
-    const doctor = doctors[0]
-    render(<DoctorProfile doctor={doctor} />)
+    render(<DoctorProfile context={context} />)
 
     const idMatcher = (content: string) => content.includes(doctor.id)
     const doctorId = screen.getByText(idMatcher)
@@ -37,7 +47,7 @@ describe('Organisms > DoctorProfile test', () => {
   })
 
   test("The component allows to edit the doctor's specialties", () => {
-    render(<DoctorProfile doctor={doctors[0]} />)
+    render(<DoctorProfile context={context} />)
 
     const select = screen.getByText('Alergología')
 
@@ -49,7 +59,7 @@ describe('Organisms > DoctorProfile test', () => {
   })
 
   test('Matches the snapshot', () => {
-    render(<DoctorProfile doctor={doctors[0]} />)
+    render(<DoctorProfile context={context} />)
 
     expect(screen.getByTestId('doctor-profile')).toMatchSnapshot()
   })

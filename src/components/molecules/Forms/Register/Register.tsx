@@ -20,10 +20,11 @@ import {
   Nurse,
   Login
 } from '@src/types'
-import Image from 'next/image'
 import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { Controller, useForm, FieldErrors, useWatch } from 'react-hook-form'
 import Select from 'react-select'
+
+import Logo from '../../../../../public/static/icons/logo.svg'
 
 const userTypeOptions = userTypes.map((option) => ({
   value: option.name,
@@ -56,13 +57,7 @@ type FormData = {
 function RegisterHeader() {
   return (
     <>
-      <Image
-        alt="logo"
-        src="/static/images/logo-horizontal.png"
-        width={200}
-        height={80}
-        className="mx-auto my-4 hidden md:block"
-      />
+      <Logo className="mx-auto my-4 hidden md:block" />
       <Heading as="h2" size="md" mb={4} noOfLines={1}>
         Registro
       </Heading>

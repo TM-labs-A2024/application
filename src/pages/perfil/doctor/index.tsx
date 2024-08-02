@@ -1,7 +1,104 @@
-import { doctors } from '@constants/index'
+import Splash from '@components/atoms/Splash'
+import { doctors, GENERIC_NOTIFICATION, GENERIC_ERROR } from '@constants/index'
+import { useDoctor, useSpecialties, useUpdateDoctor } from '@services/index'
+import { getUser } from '@shared/index'
+import { ReactSelectOption } from '@src/types'
 import DoctorProfileView from '@src/views/DoctorProfile'
-import React from 'react'
+import { isMobile } from '@utils/index'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import { Store } from 'react-notifications-component'
 
 export default function DoctorProfile() {
-  return <DoctorProfileView doctor={doctors[7]} />
+  // --- Hooks -----------------------------------------------------------------
+  const user = getUser()
+
+  const { data: doctorData, isLoading: isDoctorLoading } = useDoctor(
+    user?.id,
+    () => setIsLoading(false),
+    () => setIsLoading(false)
+  )
+
+  const { data: specialties, isLoading: isSpecialtiesLoading } = useSpecialties(
+    () => setIsLoading(false),
+    () => setIsLoading(false)
+  )
+
+  const { mutate: updateDoctor, isLoading: isMutationLoading } = useUpdateDoctor(
+    () => {
+      Store.addNotification(
+        GENERIC_NOTIFICATION('Datos actualizados exitosamente.', isMobile(window))
+      )
+      setIsLoading(false)
+    },
+    () => {
+      Store.addNotification(
+        GENERIC_ERROR(
+          'Ha ocurrido un error actualizando los datos. Por favor inténtelo de nuevo.',
+          isMobile(window)
+        )
+      )
+      setIsLoading(false)
+    }
+  )
+  // --- END: Hooks ------------------------------------------------------------
+
+  // --- Local state -----------------------------------------------------------
+  const [isLoading, setIsLoading] = useState(false)
+  // --- END: Local state ------------------------------------------------------
+
+  // --- Refs ------------------------------------------------------------------
+  // --- END: Refs -------------------------------------------------------------
+
+  // --- Redux -----------------------------------------------------------------
+  // --- END: Redux ------------------------------------------------------------
+
+  // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    if (isSpecialtiesLoading || isMutationLoading || isDoctorLoading) setIsLoading(true)
+
+    return () => setIsLoading(false)
+  }, [isSpecialtiesLoading, isMutationLoading, isDoctorLoading])
+  // --- END: Side effects -----------------------------------------------------
+
+  // --- Data and handlers -----------------------------------------------------
+  const onSubmit = useCallback(
+    (specialties: ReactSelectOption[]) => {
+      const data = doctorData?.data ?? doctors[0]
+      const body = {
+        ...data,
+        specialties: specialties.map((specialty) => String(specialty?.value ?? ''))
+      }
+      updateDoctor(body)
+    },
+    [doctorData?.data, updateDoctor]
+  )
+
+  const specialtiesOptions = specialties?.data?.map((option: { name: string; id: string }) => ({
+    value: option.id,
+    label: option.name
+  }))
+
+  const doctor = useMemo(
+    () =>
+      doctorData
+        ? {
+            ...doctorData?.data,
+            specialties:
+              doctorData?.data?.specialities?.map((specialty: { id: string }) => specialty.id) ?? []
+          }
+        : doctors[0],
+    [doctorData]
+  )
+
+  const context = useMemo(
+    () => ({
+      doctor,
+      specialtiesOptions: specialtiesOptions ?? [],
+      onSubmit
+    }),
+    [doctor, specialtiesOptions, onSubmit]
+  )
+  // --- END: Data and handlers ------------------------------------------------
+
+  return isLoading ? <Splash /> : <DoctorProfileView context={context} />
 }

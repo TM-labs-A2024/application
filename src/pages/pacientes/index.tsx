@@ -1,7 +1,6 @@
+import { getSession, getUser } from '@shared/index'
 import Splash from '@src/components/atoms/Splash'
 import { useDoctorPetients } from '@src/services'
-import { getSession } from '@src/shared'
-import { getUser } from '@src/shared/session'
 import PatientsView from '@views/Patients'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { es } from 'date-fns/locale/es'

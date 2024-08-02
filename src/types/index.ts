@@ -4,7 +4,8 @@ import {
   Evolutions,
   CardEvolution,
   EvolutionResponse,
-  EvolutionBody
+  EvolutionBody,
+  EvolutionFormData
 } from './evolutions'
 import { ReactSelectOption } from './forms'
 import { Institution, InstitutionRegister } from './institution'
@@ -18,6 +19,7 @@ export type {
   Evolutions,
   CardEvolution,
   EvolutionBody,
+  EvolutionFormData,
   EvolutionResponse,
   ReactSelectOption,
   Patient,

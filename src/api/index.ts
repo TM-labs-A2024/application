@@ -1,4 +1,11 @@
-import { createDoctor, loginDoctor, getDoctorPatients, getDoctors, getDoctorById } from './doctors'
+import {
+  createDoctor,
+  updateDoctor,
+  loginDoctor,
+  getDoctorPatients,
+  getDoctors,
+  getDoctorById
+} from './doctors'
 import { loginGovernment } from './government'
 import { createInstitution, getInstitutions, loginInstitution } from './institutions'
 import { createNurse, loginNurse } from './nurses'
@@ -20,6 +27,7 @@ import { getSpecialties } from './specialities'
 export {
   createInstitution,
   createDoctor,
+  updateDoctor,
   loginDoctor,
   getDoctorPatients,
   getDoctors,

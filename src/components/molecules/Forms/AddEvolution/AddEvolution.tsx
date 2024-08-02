@@ -10,7 +10,7 @@ import {
   Textarea
 } from '@chakra-ui/react'
 import { evolutionTypes } from '@src/constants'
-import { ReactSelectOption } from '@src/types'
+import { EvolutionFormData } from '@src/types'
 import { isIOS } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement } from 'react'
@@ -22,23 +22,18 @@ const userTypeOptions = evolutionTypes.map((option) => ({
   label: option.name
 }))
 
-type FormData = {
-  type: ReactSelectOption | null
-  reason: string
-  description: string
-  history: string
-  examination: string
-  comments: string
-}
-
-export default function AddEvolutionForm(): ReactElement {
+export default function AddEvolutionForm({
+  context: { onSubmit, isLoading }
+}: {
+  context: { onSubmit: (data: EvolutionFormData) => void; isLoading: boolean }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
     formState: { errors, isSubmitting },
     register,
     control
-  } = useForm<FormData>()
+  } = useForm<EvolutionFormData>()
 
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -56,11 +51,11 @@ export default function AddEvolutionForm(): ReactElement {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const onSubmitDetails = (data: FormData) => {
-    alert(JSON.stringify(data))
+  const onSubmitDetails = (data: EvolutionFormData) => {
+    onSubmit(data)
   }
 
-  const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
+  const verifyErrors = (errors: FieldErrors<EvolutionFormData>) => Object.keys(errors).length > 0
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -138,7 +133,11 @@ export default function AddEvolutionForm(): ReactElement {
             <label htmlFor="comments">Comentarios</label>
             <Textarea id="comments" {...register('comments')} />
           </Stack>
-          <Button isLoading={isSubmitting} type="submit" className="absolute bottom-12">
+          <Button
+            isLoading={isSubmitting || isLoading}
+            type="submit"
+            className="absolute bottom-12"
+          >
             Guardar
           </Button>
         </FormControl>

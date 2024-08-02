@@ -1,7 +1,5 @@
 import { Text, Stack, Heading, Divider, FormErrorMessage, Button } from '@chakra-ui/react'
-import { specialties } from '@constants/index'
-import { Doctor } from '@src/types'
-import { ReactSelectOption } from '@src/types'
+import { Doctor, ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -9,25 +7,31 @@ import React, { ReactElement, useMemo } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import Select from 'react-select'
 
-const specialtiesOptions = specialties?.map((option: { name: string; id: string }) => ({
-  value: option.id,
-  label: option.name
-}))
-
 type FormData = {
   specialties: ReactSelectOption[]
 }
 
-export default function DoctorProfile({ doctor }: { doctor: Doctor }): ReactElement {
+export default function DoctorProfile({
+  context: { doctor, specialtiesOptions, onSubmit }
+}: {
+  context: {
+    doctor: Doctor
+    specialtiesOptions: {
+      value: string
+      label: string
+    }[]
+    onSubmit: (specialties: ReactSelectOption[]) => void
+  }
+}): ReactElement {
   // --- Data and handlers -----------------------------------------------------
   const onSubmitDetails = (data: FormData) => {
-    alert(JSON.stringify(data))
+    onSubmit(data.specialties)
   }
 
   const selectedSpecialties = useMemo(
     () =>
       specialtiesOptions?.filter((specialty) => doctor?.specialties?.includes(specialty?.value)),
-    [doctor?.specialties]
+    [doctor?.specialties, specialtiesOptions]
   )
   // --- END: Data and handlers ------------------------------------------------
 

@@ -10,6 +10,11 @@ export type Doctor = {
   phoneNumber: string
   credentials: string
   specialties: string[]
+  specialities?: {
+    id: string
+    description: string
+    name: string
+  }[]
   pending?: boolean
   patientPending?: boolean
   password?: string

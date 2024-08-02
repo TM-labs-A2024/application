@@ -1,5 +1,6 @@
 import {
   useDoctorMutation,
+  useUpdateDoctor,
   useDoctorLogin,
   useDoctorPetients,
   useDoctors,
@@ -26,6 +27,7 @@ import { useSpecialties } from './specialties'
 export {
   useInstitutionMutation,
   useDoctorMutation,
+  useUpdateDoctor,
   useDoctorLogin,
   useDoctorPetients,
   useDoctors,

@@ -7,8 +7,13 @@ import '@testing-library/jest-dom'
 jest.mock('next/navigation')
 
 describe('Molecules > Forms > AddEvolution test', () => {
+  const context = {
+    onSubmit: jest.fn(),
+    isLoading: false
+  }
+
   test('The component requires the fields: Type, reason, description, history, examination and comments', () => {
-    render(<AddEvolution />)
+    render(<AddEvolution context={context} />)
 
     expect(screen.getByText('Tipo')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Patología')).toBeInTheDocument()
@@ -19,7 +24,7 @@ describe('Molecules > Forms > AddEvolution test', () => {
   })
 
   test('Matches the snapshot', () => {
-    render(<AddEvolution />)
+    render(<AddEvolution context={context} />)
 
     expect(screen.getByTestId('add-evolution-form')).toMatchSnapshot()
   })

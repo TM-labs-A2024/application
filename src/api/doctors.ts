@@ -6,6 +6,10 @@ export function createDoctor(body: Doctor) {
   return axiosClient.post<Doctor>('/doctors', body)
 }
 
+export function updateDoctor(body: Doctor) {
+  return axiosClient.put<Doctor>('/doctors', body)
+}
+
 export function loginDoctor(body: Login) {
   return axiosClient.post<LoginResponse>('/doctors/login', body)
 }

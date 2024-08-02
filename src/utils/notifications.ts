@@ -4,9 +4,6 @@ import { Store } from 'react-notifications-component'
 
 export const setupErrorNotification = () => {
   Store.addNotification(
-    GENERIC_ERROR(
-      'Algo salió mal, por favor recargue la página e inténtelo de nuevo.',
-      isMobile(window)
-    )
+    GENERIC_ERROR('Algo salió mal, por favor inténtelo de nuevo.', isMobile(window))
   )
 }

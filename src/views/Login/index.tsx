@@ -25,7 +25,7 @@ export default function LoginView({
     <div className="flex h-screen w-screen flex-col items-center justify-between p-24">
       <Logo />
       <LoginForm context={context} />
-      <Link href="/registro">Abrir cuenta</Link>
+      <Link href="/registro">Crear cuenta</Link>
     </div>
   )
 }

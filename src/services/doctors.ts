@@ -1,6 +1,13 @@
-import { createDoctor, loginDoctor, getDoctorPatients, getDoctors, getDoctorById } from '@api/index'
+import {
+  createDoctor,
+  updateDoctor,
+  loginDoctor,
+  getDoctorPatients,
+  getDoctors,
+  getDoctorById
+} from '@api/index'
 import { Doctor, Login } from '@src/types'
-import { useMutation, useQuery } from 'react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 
 export const useDoctorMutation = (
   onSuccess?: (arg: unknown) => void,
@@ -88,4 +95,23 @@ export const useDoctor = (
   })
 
   return queryData
+}
+
+export const useUpdateDoctor = (
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryClient = useQueryClient()
+  const mutationData = useMutation({
+    mutationFn: (data: Doctor) => updateDoctor(data),
+    onSuccess: ({ data }) => {
+      queryClient.invalidateQueries(['doctor', data.id])
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return mutationData
 }

@@ -1,3 +1,5 @@
+import { ReactSelectOption } from './forms'
+
 export type Evolution = {
   id: string
   type?: string
@@ -7,21 +9,16 @@ export type Evolution = {
   reason?: string
 }
 
-export type EvolutionBody = {
-  specialty: string
-  patientId: string
-  type: string
-  payload:
-    | {
-        title: string
-        content: string
-      }[]
-    | {
-        title: string
-        description: string
-        attachment: { 0: FormData }
-      }
+export type EvolutionFormData = {
+  type: ReactSelectOption | null
+  reason: string
+  description: string
+  history: string
+  examination: string
+  comments: string
 }
+
+export type EvolutionBody = FormData
 
 export type EvolutionResponse = {
   id: string
