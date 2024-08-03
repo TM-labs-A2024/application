@@ -35,7 +35,7 @@ describe('Atoms > Cards > Specialty test', () => {
     const enlace = await screen.findByRole('link')
     expect(enlace).toHaveAttribute(
       'href',
-      `/especialidad/${specialtyWithPatient?.patient?.id}/${specialtyWithPatient.id}`
+      `/especialidad/${specialtyWithPatient?.patient?.govId}/${specialtyWithPatient.id}`
     )
   })
 

@@ -80,19 +80,8 @@ export default function PatientsSearch({
   const patientsFormatted = useMemo(
     () =>
       approvedPatients.map(
-        ({
-          id,
-          birthdate,
-          govId,
-          status,
-          bed,
-          firstname,
-          lastname,
-          pending,
-          sex,
-          specialties
-        }) => ({
-          href: pending ? '/pacientes' : `/paciente/${id}`,
+        ({ birthdate, govId, status, bed, firstname, lastname, pending, sex, specialties }) => ({
+          href: pending ? '' : `/especialidades/${govId}`,
           title: `${firstname} ${lastname}`,
           description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
             locale: es,

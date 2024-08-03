@@ -75,7 +75,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa3"
+              href="/especialidades/E99885563"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -123,7 +123,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa4"
+              href="/especialidades/E99885564"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -171,7 +171,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa5"
+              href="/especialidades/E99885565"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -200,7 +200,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              href="/especialidades/E99885566"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -229,7 +229,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa7"
+              href="/especialidades/E99885567"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -258,7 +258,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa8"
+              href="/especialidades/E99885568"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -287,7 +287,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa9"
+              href="/especialidades/E99885569"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -316,7 +316,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa10"
+              href="/especialidades/E99885560"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -345,7 +345,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa11"
+              href="/especialidades/E99885511"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -374,7 +374,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa12"
+              href="/especialidades/E99885512"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -403,7 +403,7 @@ exports[`Organisms > Search > PatientsSearch test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="patient-card"
-              href="/paciente/3fa85f64-5717-4562-b3fc-2c963f66afa13"
+              href="/especialidades/E99885513"
             >
               <div
                 class="flex flex-row items-center justify-between"

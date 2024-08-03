@@ -6,6 +6,13 @@ export const doctors = [
     institutionId: '1000000',
     credentials: '1000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -21,6 +28,13 @@ export const doctors = [
     institutionId: '2000000',
     credentials: '2000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -36,6 +50,13 @@ export const doctors = [
     institutionId: '3000000',
     credentials: '3000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -51,6 +72,13 @@ export const doctors = [
     institutionId: '4000000',
     credentials: '4000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -66,6 +94,13 @@ export const doctors = [
     institutionId: '5000000',
     credentials: '5000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -81,6 +116,13 @@ export const doctors = [
     institutionId: '6000000',
     credentials: '6000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -96,6 +138,13 @@ export const doctors = [
     institutionId: '7000000',
     credentials: '7000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -111,6 +160,13 @@ export const doctors = [
     institutionId: '8000000',
     credentials: '8000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -124,6 +180,13 @@ export const doctors = [
     institutionId: '9000000',
     credentials: '9000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -137,6 +200,13 @@ export const doctors = [
     institutionId: '10000000',
     credentials: '10000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -150,6 +220,13 @@ export const doctors = [
     institutionId: '11000000',
     credentials: '11000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -163,6 +240,13 @@ export const doctors = [
     institutionId: '12000000',
     credentials: '12000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -176,6 +260,13 @@ export const doctors = [
     institutionId: '13000000',
     credentials: '13000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -189,6 +280,13 @@ export const doctors = [
     institutionId: '14000000',
     credentials: '14000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -202,6 +300,13 @@ export const doctors = [
     institutionId: '15000000',
     credentials: '15000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -215,6 +320,13 @@ export const doctors = [
     institutionId: '16000000',
     credentials: '16000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -230,6 +342,13 @@ export const doctors = [
     institutionId: '17000000',
     credentials: '17000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -245,6 +364,13 @@ export const doctors = [
     institutionId: '18000000',
     credentials: '18000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -260,6 +386,13 @@ export const doctors = [
     institutionId: '19000000',
     credentials: '19000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -275,6 +408,13 @@ export const doctors = [
     institutionId: '20000000',
     credentials: '20000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -290,6 +430,13 @@ export const doctors = [
     institutionId: '21000000',
     credentials: '21000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -305,6 +452,13 @@ export const doctors = [
     institutionId: '22000000',
     credentials: '22000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -320,6 +474,13 @@ export const doctors = [
     institutionId: '23000000',
     credentials: '23000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -333,6 +494,13 @@ export const doctors = [
     institutionId: '24000000',
     credentials: '24000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -346,6 +514,13 @@ export const doctors = [
     institutionId: '25000000',
     credentials: '25000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -359,6 +534,13 @@ export const doctors = [
     institutionId: '26000000',
     credentials: '26000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -372,6 +554,13 @@ export const doctors = [
     institutionId: '27000000',
     credentials: '27000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -385,6 +574,13 @@ export const doctors = [
     institutionId: '28000000',
     credentials: '28000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -398,6 +594,13 @@ export const doctors = [
     institutionId: '29000000',
     credentials: '29000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -411,6 +614,13 @@ export const doctors = [
     institutionId: '30000000',
     credentials: '30000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -424,6 +634,13 @@ export const doctors = [
     institutionId: '31000000',
     credentials: '31000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -437,6 +654,13 @@ export const doctors = [
     institutionId: '32000000',
     credentials: '32000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -450,6 +674,13 @@ export const doctors = [
     institutionId: '33000000',
     credentials: '33000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -463,6 +694,13 @@ export const doctors = [
     institutionId: '34000000',
     credentials: '34000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -476,6 +714,13 @@ export const doctors = [
     institutionId: '35000000',
     credentials: '35000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -489,6 +734,13 @@ export const doctors = [
     institutionId: '36000000',
     credentials: '36000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -502,6 +754,13 @@ export const doctors = [
     institutionId: '37000000',
     credentials: '37000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -515,6 +774,13 @@ export const doctors = [
     institutionId: '38000000',
     credentials: '38000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -528,6 +794,13 @@ export const doctors = [
     institutionId: '39000000',
     credentials: '39000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -541,6 +814,13 @@ export const doctors = [
     institutionId: '40000000',
     credentials: '40000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -554,6 +834,13 @@ export const doctors = [
     institutionId: '41000000',
     credentials: '41000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -567,6 +854,13 @@ export const doctors = [
     institutionId: '42000000',
     credentials: '42000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -580,6 +874,13 @@ export const doctors = [
     institutionId: '43000000',
     credentials: '43000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -593,6 +894,13 @@ export const doctors = [
     institutionId: '44000000',
     credentials: '44000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -606,6 +914,13 @@ export const doctors = [
     institutionId: '45000000',
     credentials: '45000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -619,6 +934,13 @@ export const doctors = [
     institutionId: '46000000',
     credentials: '46000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -632,6 +954,13 @@ export const doctors = [
     institutionId: '47000000',
     credentials: '47000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
@@ -645,6 +974,13 @@ export const doctors = [
     institutionId: '48000000',
     credentials: '48000000',
     specialties: ['1', '4'],
+    specialities: [
+      {
+        id: '89ca4324-1af0-44b8-94cf-116fee714517',
+        description: 'DESCRIPTION',
+        name: 'Allergy and immunology'
+      }
+    ],
     firstname: 'José',
     lastname: 'Pérez',
     birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',

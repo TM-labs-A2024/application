@@ -26,3 +26,12 @@ export type InstitutionRegister = {
     role: string
   }
 }
+
+export type DoctorsRequests = {
+  id: string
+  institutionId: string
+  doctorId: string
+  pending: true
+  approved: false
+  'professional-type': string
+}

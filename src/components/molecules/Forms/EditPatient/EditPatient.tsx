@@ -21,13 +21,17 @@ import { useForm, FieldErrors } from 'react-hook-form'
 type FormData = {
   firstname: string
   lastname: string
-  id: string
+  govId: string
   birthdate: string
   email: string
-  phone: string
+  phoneNumber: string
 }
 
-export default function EditPatientForm({ patient }: { patient: Patient }): ReactElement {
+export default function EditPatientForm({
+  context: { patient, onSubmit }
+}: {
+  context: { patient: Patient; onSubmit: (patient: Patient) => void }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
@@ -52,8 +56,7 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
 
   // --- Data and handlers -----------------------------------------------------
   const onSubmitDetails = (data: FormData) => {
-    // TODO: Add mandatory +58 for mobile numbers before submitting if needed
-    alert(JSON.stringify(data))
+    onSubmit(data)
   }
 
   const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
@@ -111,11 +114,11 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
               className="mt-2 min-h-10"
               defaultValue={patient.govId}
               placeholder="Cédula"
-              {...register('id', {
+              {...register('govId', {
                 required: 'Este campo es obligatorio'
               })}
             />
-            <FormErrorMessage>{errors?.id && errors?.id?.message}</FormErrorMessage>
+            <FormErrorMessage>{errors?.govId && errors?.govId?.message}</FormErrorMessage>
             <Input
               id="birthdate"
               className="mt-2 min-h-10"
@@ -145,12 +148,14 @@ export default function EditPatientForm({ patient }: { patient: Patient }): Reac
                 defaultValue={patient.phoneNumber}
                 type="tel"
                 placeholder="Teléfono"
-                {...register('phone', {
+                {...register('phoneNumber', {
                   required: 'Este campo es obligatorio'
                 })}
               />
             </InputGroup>
-            <FormErrorMessage>{errors?.phone && errors?.phone?.message}</FormErrorMessage>
+            <FormErrorMessage>
+              {errors?.phoneNumber && errors?.phoneNumber?.message}
+            </FormErrorMessage>
           </Stack>
           <Button isLoading={isSubmitting} type="submit" className="absolute top-0">
             Guardar

@@ -17,7 +17,7 @@ export default function NurseProfile({ nurse }: { nurse: Nurse }): ReactElement 
           <Heading as="h3" size="md" noOfLines={1}>
             {nurse.firstname} {nurse.lastname}
           </Heading>
-          <Text>CI: {nurse.id.toLocaleString('es-ES')}</Text>
+          <Text>CI: {nurse.govId}</Text>
         </Stack>
         <Stack mb={6}>
           <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>

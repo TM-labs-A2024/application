@@ -1,6 +1,6 @@
-import { createNurse, loginNurse } from '@api/index'
+import { createNurse, loginNurse, getNurse } from '@api/index'
 import { Login, Nurse } from '@src/types'
-import { useMutation } from 'react-query'
+import { useMutation, useQuery } from 'react-query'
 
 export const useNurseMutation = (
   onSuccess?: (arg: unknown) => void,
@@ -17,6 +17,25 @@ export const useNurseMutation = (
   })
 
   return mutationData
+}
+
+export const useNurseById = (
+  nurseId: string,
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryData = useQuery({
+    queryKey: ['nurse', nurseId],
+    queryFn: () => getNurse(nurseId),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return queryData
 }
 
 export const useNurseLogin = (

@@ -10,7 +10,7 @@ describe('Organisms > NurseProfile test', () => {
   test('The component shows the name, govId, birthdate, email and phoneNumber of the nurse', () => {
     render(<NurseProfile nurse={nurse} />)
 
-    const idMatcher = (content: string) => content.includes(nurse.id.toLocaleString('es-ES'))
+    const idMatcher = (content: string) => content.includes(nurse.govId)
     const nurseId = screen.getByText(idMatcher)
 
     const emailMatcher = (content: string) => content.includes(nurse.email)

@@ -47,7 +47,7 @@ export default function Specialties({
           </div>
           <Avatar
             className="cursor-pointer rounded-full"
-            onClick={() => router.push(`/paciente/${patient?.id}`)}
+            onClick={() => router.push(`/paciente/${patient?.govId}`)}
           />
         </div>
       )}
@@ -83,7 +83,7 @@ export default function Specialties({
           <Text textAlign="center" mt={4}>
             Este paciente no posee evoluciones asociadas.
           </Text>
-          <Button mt={4} onClick={() => router.push(`/crear-historia/${patient?.id}`)}>
+          <Button mt={4} onClick={() => router.push(`/crear-historia/${patient?.govId}`)}>
             Crear evolución
           </Button>
         </div>

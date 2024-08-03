@@ -1,22 +1,28 @@
+import Splash from '@components/atoms/Splash'
+import { useDoctorPetients } from '@services/index'
 import { patients } from '@src/constants'
-import { getSession } from '@src/shared'
+import { getSession, getUser } from '@src/shared'
 import PatientsSearchView from '@views/Patients/Search'
 import React, { useMemo } from 'react'
 
 export default function PatientsSearchPage() {
+  // --- Hooks -----------------------------------------------------------------
+  const user = useMemo(() => getUser(), [])
+
+  const { data, isLoading } = useDoctorPetients(user.id)
+  // --- END: Hooks ------------------------------------------------------------
+
   // --- Data and handlers -----------------------------------------------------
   const isDoctor = useMemo(() => getSession() === 'doctor', [])
 
   const approvedPatients = useMemo(
     () =>
       isDoctor
-        ? patients.filter((patient) => !patient.pending)
+        ? data?.data?.filter((patient) => !patient.pending) ?? []
         : patients.filter((patient) => !patient.pending && patient?.status === 'hospitalizado'),
-    [isDoctor]
+    [isDoctor, data]
   )
-  // --- END: Data and handlers ------------------------------------------------
 
-  // --- Data and handlers -----------------------------------------------------
   const context = useMemo(
     () => ({
       approvedPatients
@@ -25,5 +31,5 @@ export default function PatientsSearchPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <PatientsSearchView context={context} />
+  return isLoading ? <Splash /> : <PatientsSearchView context={context} />
 }

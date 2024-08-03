@@ -1,4 +1,9 @@
-import { createInstitution, getInstitutions, loginInstitution } from '@api/index'
+import {
+  createInstitution,
+  getInstitutions,
+  loginInstitution,
+  getInstitutionRequests
+} from '@api/index'
 import { InstitutionRegister, Login } from '@src/types'
 import { useQuery, useMutation } from 'react-query'
 
@@ -43,6 +48,24 @@ export const useInstitutionLogin = (
 ) => {
   const mutationData = useMutation({
     mutationFn: (data: Login) => loginInstitution(data),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return mutationData
+}
+
+export const useInstitutionRequests = (
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const mutationData = useQuery({
+    queryKey: 'institution_requests',
+    queryFn: () => getInstitutionRequests(),
     onSuccess: (data) => {
       if (onSuccess) onSuccess(data)
     },

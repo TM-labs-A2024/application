@@ -7,10 +7,16 @@ import {
   getDoctorById
 } from './doctors'
 import { loginGovernment } from './government'
-import { createInstitution, getInstitutions, loginInstitution } from './institutions'
-import { createNurse, loginNurse } from './nurses'
+import {
+  createInstitution,
+  getInstitutions,
+  loginInstitution,
+  getInstitutionRequests
+} from './institutions'
+import { createNurse, loginNurse, getNurse } from './nurses'
 import {
   createPatient,
+  updatePatient,
   loginPatient,
   getPatients,
   requestAccess,
@@ -34,7 +40,9 @@ export {
   getDoctorById,
   createNurse,
   loginNurse,
+  getNurse,
   createPatient,
+  updatePatient,
   loginPatient,
   getPatients,
   requestAccess,
@@ -46,6 +54,7 @@ export {
   getPatientByGovId,
   getInstitutions,
   loginInstitution,
+  getInstitutionRequests,
   getSpecialties,
   loginGovernment,
   createRecord

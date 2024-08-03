@@ -24,7 +24,7 @@ export default function Profile({ patient }: { patient: Patient }) {
         </div>
         <div className="flex w-full flex-col items-end gap-1">
           <Link
-            href={`/paciente/${patient.id}`}
+            href={`/paciente/${patient.govId}`}
             color="white"
             className="rounded-md bg-black px-4 py-2 font-bold text-white no-underline"
           >

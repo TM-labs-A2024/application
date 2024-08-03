@@ -1,5 +1,6 @@
 import {
   createPatient,
+  updatePatient,
   loginPatient,
   getPatients,
   requestAccess,
@@ -39,6 +40,26 @@ export const usePatientMutation = (
   const mutationData = useMutation({
     mutationFn: (data: Patient) => createPatient(data),
     onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return mutationData
+}
+
+export const usePatientUpdate = (
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryClient = useQueryClient()
+
+  const mutationData = useMutation({
+    mutationFn: (data: Patient) => updatePatient(data),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries(['patient', data.data.govId])
       if (onSuccess) onSuccess(data)
     },
     onError: (err: Error) => {

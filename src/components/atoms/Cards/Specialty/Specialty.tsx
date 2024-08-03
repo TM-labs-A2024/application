@@ -18,7 +18,7 @@ export default function Specialty({
   return (
     <Link
       as={NextLink}
-      href={patient ? `/especialidad/${patient?.id}/${id}` : `/especialidad/${id}`}
+      href={patient ? `/especialidad/${patient?.govId}/${id}` : `/especialidad/${id}`}
       className="border-1 flex w-full rounded-md border border-gray-400 p-4"
       data-testid="specialty-card"
     >

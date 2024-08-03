@@ -10,6 +10,10 @@ export function createPatient(body: Patient) {
   return axiosClient.post<Patient>('/patients', body)
 }
 
+export function updatePatient(body: Patient) {
+  return axiosClient.put<Patient>('/patients', body)
+}
+
 export function loginPatient(body: Login) {
   return axiosClient.post<LoginResponse>('/patients/login', body)
 }

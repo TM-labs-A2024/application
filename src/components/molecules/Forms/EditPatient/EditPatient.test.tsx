@@ -9,8 +9,12 @@ import '@testing-library/jest-dom'
 jest.mock('next/navigation')
 
 describe('Molecules > Forms > EditPatient test', () => {
+  const context = {
+    patient,
+    onSubmit: jest.fn()
+  }
   test('The component requires the fields: Firstname, lastname, govId, birthdate, email and phoneNumber', () => {
-    render(<EditPatient patient={patient} />)
+    render(<EditPatient context={context} />)
 
     expect(screen.getByPlaceholderText('Nombres')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Apellidos')).toBeInTheDocument()
@@ -21,7 +25,7 @@ describe('Molecules > Forms > EditPatient test', () => {
   })
 
   test("The component shows the placeholder text with the patient's data", () => {
-    render(<EditPatient patient={patient} />)
+    render(<EditPatient context={context} />)
 
     const formatedDate = format(new Date(patient.birthdate), 'yyyy-MM-dd')
 
@@ -34,7 +38,7 @@ describe('Molecules > Forms > EditPatient test', () => {
   })
 
   test('Matches the snapshot', () => {
-    render(<EditPatient patient={patient} />)
+    render(<EditPatient context={context} />)
 
     expect(screen.getByTestId('edit-patient-form')).toMatchSnapshot()
   })

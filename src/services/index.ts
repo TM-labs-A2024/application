@@ -7,10 +7,16 @@ import {
   useDoctor
 } from './doctors'
 import { useGovernmentLogin } from './government'
-import { useInstitutionMutation, useInstitutions, useInstitutionLogin } from './institutions'
-import { useNurseMutation, useNurseLogin } from './nurses'
+import {
+  useInstitutionMutation,
+  useInstitutions,
+  useInstitutionLogin,
+  useInstitutionRequests
+} from './institutions'
+import { useNurseMutation, useNurseLogin, useNurseById } from './nurses'
 import {
   usePatientMutation,
+  usePatientUpdate,
   usePatientLogin,
   usePatients,
   usePatientAccessRequestMutation,
@@ -34,7 +40,9 @@ export {
   useDoctor,
   useNurseMutation,
   useNurseLogin,
+  useNurseById,
   usePatientMutation,
+  usePatientUpdate,
   usePatientLogin,
   usePatients,
   usePatientAccessRequestMutation,
@@ -46,6 +54,7 @@ export {
   usePatientByGovId,
   useInstitutions,
   useInstitutionLogin,
+  useInstitutionRequests,
   useSpecialties,
   useGovernmentLogin,
   useRecordMutation

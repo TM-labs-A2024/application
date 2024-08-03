@@ -63,7 +63,7 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
         <input
           class="chakra-input mt-2 min-h-10 css-1cjy4zv"
           id="id"
-          name="id"
+          name="govId"
           placeholder="Cédula"
           value="E99885561"
         />
@@ -94,7 +94,7 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
           <input
             class="chakra-input min-h-10 css-10wjqo2"
             id="phone"
-            name="phone"
+            name="phoneNumber"
             placeholder="Teléfono"
             type="tel"
             value="+584127659814"
