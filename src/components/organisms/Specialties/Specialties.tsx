@@ -1,12 +1,12 @@
 import { ArrowBackIcon } from '@chakra-ui/icons'
-import { IconButton, Text, Button } from '@chakra-ui/react'
+import { IconButton, Text, Button, Icon } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import SpecialtiesList from '@src/components/molecules/SpecialtiesList'
 import { Patient, Specialties as SpecialtiesType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { RiHealthBookFill } from 'react-icons/ri'
 
 import Avatar from '../../../../public/static/icons/Avatar.svg'
 import Logo from '../../../../public/static/icons/logo.svg'
@@ -51,15 +51,7 @@ export default function Specialties({
           />
         </div>
       )}
-      {isPatient && (
-        <Image
-          alt="logo"
-          src="/static/images/logo-horizontal.png"
-          width={200}
-          height={80}
-          className="mx-auto my-8"
-        />
-      )}
+      {isPatient && <Logo className="mx-auto my-8" />}
       {specialties.length > 0 && (
         <SearchInputComponent
           placeholder="Buscar especialidad"
@@ -73,6 +65,17 @@ export default function Specialties({
       )}
       {specialties.length > 0 && (
         <SpecialtiesList specialties={specialties} label="Especialidades" patient={patient} />
+      )}
+      {isPatient && specialties.length === 0 && (
+        <div
+          className="flex h-full w-full flex-col items-center justify-center"
+          data-testid="specialties-empty-state"
+        >
+          <Icon fontSize="xxx-large" as={RiHealthBookFill} />
+          <Text textAlign="center" mt={4}>
+            No hay especialidades asociadas aún.
+          </Text>
+        </div>
       )}
       {!isPatient && specialties.length === 0 && (
         <div

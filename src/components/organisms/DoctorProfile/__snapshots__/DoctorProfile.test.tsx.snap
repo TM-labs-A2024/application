@@ -14,7 +14,7 @@ exports[`Organisms > DoctorProfile test Matches the snapshot 1`] = `
     class="flex h-full flex-col"
   >
     <form
-      class="h-full"
+      class="h-5/6"
     >
       <div
         class="h-5/6 overflow-scroll"
@@ -241,6 +241,12 @@ exports[`Organisms > DoctorProfile test Matches the snapshot 1`] = `
         type="submit"
       >
         Guardar
+      </button>
+      <button
+        class="chakra-button mt-4 w-full css-jzcxx5"
+        type="button"
+      >
+        Cerrar sesión
       </button>
     </form>
   </div>

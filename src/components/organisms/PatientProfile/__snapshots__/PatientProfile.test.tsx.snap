@@ -79,5 +79,11 @@ exports[`Organisms > Patient test Matches the snapshot 1`] = `
       +584127659814
     </p>
   </div>
+  <button
+    class="chakra-button mt-56 w-full css-jzcxx5"
+    type="button"
+  >
+    Cerrar sesión
+  </button>
 </div>
 `

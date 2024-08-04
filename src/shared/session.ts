@@ -25,7 +25,11 @@ function getUser() {
 }
 
 function removeSession() {
-  if (typeof window !== 'undefined') localStorage?.removeItem('session')
+  if (typeof window !== 'undefined') {
+    localStorage?.removeItem('session')
+    localStorage?.removeItem('token')
+    localStorage?.removeItem('user')
+  }
 }
 
 export { setSession, getSession, getToken, removeSession, getUser }

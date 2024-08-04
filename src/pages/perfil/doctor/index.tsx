@@ -1,16 +1,18 @@
 import Splash from '@components/atoms/Splash'
 import { doctors, GENERIC_NOTIFICATION, GENERIC_ERROR } from '@constants/index'
 import { useDoctor, useSpecialties, useUpdateDoctor } from '@services/index'
-import { getUser } from '@shared/index'
+import { getUser, removeSession } from '@shared/index'
 import { ReactSelectOption } from '@src/types'
 import DoctorProfileView from '@src/views/DoctorProfile'
 import { isMobile } from '@utils/index'
+import { useRouter } from 'next/navigation'
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { Store } from 'react-notifications-component'
 
 export default function DoctorProfile() {
   // --- Hooks -----------------------------------------------------------------
   const user = getUser()
+  const router = useRouter()
 
   const { data: doctorData, isLoading: isDoctorLoading } = useDoctor(
     user?.id,
@@ -90,13 +92,19 @@ export default function DoctorProfile() {
     [doctorData]
   )
 
+  const onLogout = useCallback(() => {
+    removeSession()
+    router.push('/')
+  }, [router])
+
   const context = useMemo(
     () => ({
       doctor,
       specialtiesOptions: specialtiesOptions ?? [],
-      onSubmit
+      onSubmit,
+      onLogout
     }),
-    [doctor, specialtiesOptions, onSubmit]
+    [doctor, specialtiesOptions, onSubmit, onLogout]
   )
   // --- END: Data and handlers ------------------------------------------------
 

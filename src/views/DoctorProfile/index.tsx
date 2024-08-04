@@ -13,6 +13,7 @@ export default function DoctorProfileView({
       label: string
     }[]
     onSubmit: (specialties: ReactSelectOption[]) => void
+    onLogout?: () => void
   }
 }) {
   return (

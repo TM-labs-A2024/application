@@ -3,9 +3,11 @@ import { Institution as InstitutionType } from '@src/types'
 import React from 'react'
 
 export default function MinistryRequestsView({
-  institutions
+  institutions,
+  onLogout
 }: {
   institutions: InstitutionType[]
+  onLogout?: () => void
 }) {
-  return <MinistryRequests institutions={institutions} />
+  return <MinistryRequests institutions={institutions} onLogout={onLogout} />
 }

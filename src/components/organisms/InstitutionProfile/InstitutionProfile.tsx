@@ -1,12 +1,18 @@
 import { ArrowBackIcon } from '@chakra-ui/icons'
-import { IconButton, Text, Stack, Heading, Divider } from '@chakra-ui/react'
+import { IconButton, Text, Stack, Heading, Divider, Button } from '@chakra-ui/react'
 import { Institution } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export default function InstitutionProfile({ institution }: { institution: Institution }) {
+export default function InstitutionProfile({
+  institution,
+  onLogout
+}: {
+  institution: Institution
+  onLogout?: () => void
+}) {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -53,6 +59,14 @@ export default function InstitutionProfile({ institution }: { institution: Insti
             <h4 className="text-sm text-gray-600">Teléfono</h4>
             <Text className="font-medium">{institution.phoneNumber}</Text>
           </Stack>
+          <Button
+            type="button"
+            colorScheme="blackAlpha"
+            className="mt-56 w-full"
+            onClick={onLogout}
+          >
+            Cerrar sesión
+          </Button>
         </div>
       </div>
     </div>

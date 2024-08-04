@@ -1,10 +1,9 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, Text, Icon } from '@chakra-ui/react'
 import DoctorList from '@components/molecules/DoctorsList/DoctorsList'
 import { Doctor as DoctorType } from '@src/types'
 import { isIOS } from '@utils/index'
 import React from 'react'
-
-import Logo from '../../../../public/static/icons/logo.svg'
+import { FaUserDoctor } from 'react-icons/fa6'
 
 export default function Doctors({
   context
@@ -21,7 +20,7 @@ export default function Doctors({
       data-testid="doctors"
     >
       <Heading as="h2" size="md" mb={4} noOfLines={1}>
-        Medicos
+        Médicos
       </Heading>
       {(doctors.length > 0 || pendingDoctors.length > 0) && (
         <DoctorList doctors={doctors} pendingDoctors={pendingDoctors} />
@@ -31,10 +30,9 @@ export default function Doctors({
           className="flex h-full w-full flex-col items-center justify-center"
           data-testid="doctors-empty-state"
         >
-          <Logo />
+          <Icon fontSize="xxx-large" as={FaUserDoctor} />
           <Text textAlign="center" mt={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
-            risus vel elementum in vulputate.
+            No hay médicos asociados aún.
           </Text>
         </div>
       )}

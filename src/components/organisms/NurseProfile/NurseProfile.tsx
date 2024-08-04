@@ -1,11 +1,17 @@
-import { Text, Stack, Heading } from '@chakra-ui/react'
+import { Text, Stack, Heading, Button } from '@chakra-ui/react'
 import { Nurse } from '@src/types'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import React, { ReactElement } from 'react'
 
-export default function NurseProfile({ nurse }: { nurse: Nurse }): ReactElement {
+export default function NurseProfile({
+  nurse,
+  onLogout
+}: {
+  nurse: Nurse
+  onLogout?: () => void
+}): ReactElement {
   return (
     <div
       className={`flex h-screen w-screen flex-col p-8 lg:px-96 ${isIOS() ? 'pt-20' : ''}`}
@@ -35,6 +41,9 @@ export default function NurseProfile({ nurse }: { nurse: Nurse }): ReactElement 
           <h4 className="text-sm text-gray-600">Teléfono</h4>
           <Text className="font-medium">{nurse.phoneNumber}</Text>
         </Stack>
+        <Button type="button" colorScheme="blackAlpha" className="mt-56 w-full" onClick={onLogout}>
+          Cerrar sesión
+        </Button>
       </div>
     </div>
   )

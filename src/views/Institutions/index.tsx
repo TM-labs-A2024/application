@@ -3,9 +3,11 @@ import { Institution as InstitutionType } from '@src/types'
 import React from 'react'
 
 export default function InstitutionDoctorsView({
-  institutions
+  institutions,
+  onLogout
 }: {
   institutions: InstitutionType[]
+  onLogout?: () => void
 }) {
-  return <Institutions institutions={institutions} />
+  return <Institutions institutions={institutions} onLogout={onLogout} />
 }

@@ -1,4 +1,4 @@
-import { Text, Heading, Stack, Link } from '@chakra-ui/react'
+import { Text, Heading, Stack, Link, Button } from '@chakra-ui/react'
 import { Patient as PatientType } from '@src/types'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
@@ -6,7 +6,13 @@ import { es } from 'date-fns/locale/es'
 import NextLink from 'next/link'
 import React from 'react'
 
-export default function PatientProfile({ patient }: { patient: PatientType }) {
+export default function PatientProfile({
+  patient,
+  onLogout
+}: {
+  patient: PatientType
+  onLogout?: () => void
+}) {
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pt-20' : 'pt-8'}`}
@@ -42,6 +48,9 @@ export default function PatientProfile({ patient }: { patient: PatientType }) {
         <h4 className="text-sm text-gray-600">Teléfono</h4>
         <Text className="font-medium">{patient.phoneNumber}</Text>
       </Stack>
+      <Button type="button" colorScheme="blackAlpha" className="mt-56 w-full" onClick={onLogout}>
+        Cerrar sesión
+      </Button>
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
-import { Text, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { Text, IconButton, Menu, MenuButton, MenuList, MenuItem, Icon } from '@chakra-ui/react'
 import RequestsList from '@components/molecules/RequestsList'
 import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
+import { FaUserDoctor } from 'react-icons/fa6'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
@@ -32,7 +32,7 @@ export default function InstitutionDoctors({
       data-testid="institution-doctors"
     >
       <div className={`mb-8 flex flex-row justify-between`}>
-        <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
+        <Logo />
         <Menu>
           <MenuButton
             as={IconButton}
@@ -63,10 +63,9 @@ export default function InstitutionDoctors({
           className="flex h-3/4 w-full flex-col items-center justify-center"
           data-testid="approved-doctors-empty-state"
         >
-          <Logo />
+          <Icon fontSize="xxx-large" as={FaUserDoctor} />
           <Text textAlign="center" mt={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
-            risus vel elementum in vulputate.
+            No hay personal de salud aún.
           </Text>
         </div>
       )}

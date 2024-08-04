@@ -9,7 +9,7 @@ export default function PatientsSearchPage() {
   // --- Hooks -----------------------------------------------------------------
   const user = useMemo(() => getUser(), [])
 
-  const { data, isLoading } = useDoctorPetients(user.id)
+  const { data, isLoading } = useDoctorPetients(user?.id)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------

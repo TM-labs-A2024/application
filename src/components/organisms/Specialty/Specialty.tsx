@@ -9,7 +9,8 @@ import {
   Tab,
   TabPanel,
   TabIndicator,
-  Button
+  Button,
+  Icon
 } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import EvolutionsList from '@components/molecules/EvolutionsList'
@@ -18,8 +19,7 @@ import { isAndroid, isIOS, isMobile } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import { useRouter as queryRouter } from 'next/router'
 import React, { useState, useEffect, useMemo } from 'react'
-
-import Logo from '../../../../public/static/icons/logo.svg'
+import { RiHealthBookFill } from 'react-icons/ri'
 
 export default function Specialty({
   context
@@ -137,10 +137,9 @@ export default function Specialty({
                 className="flex h-full w-full items-center justify-center"
                 data-testid="orders-empty-state"
               >
-                <Logo />
+                <Icon fontSize="xxx-large" as={RiHealthBookFill} />
                 <Text textAlign="center" mt={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
-                  risus vel elementum in vulputate.
+                  No hay órdenes asociadas aún.
                 </Text>
                 {isDoctor && (
                   <Button
@@ -163,10 +162,9 @@ export default function Specialty({
                   className="flex h-full w-full items-center justify-center"
                   data-testid="tests-empty-state"
                 >
-                  <Logo />
+                  <Icon fontSize="xxx-large" as={RiHealthBookFill} />
                   <Text textAlign="center" mt={4}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo
-                    risus vel elementum in vulputate.
+                    No hay análisis asociados aún.
                   </Text>
                   <Button
                     mt={4}

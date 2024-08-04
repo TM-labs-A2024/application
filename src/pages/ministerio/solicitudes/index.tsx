@@ -1,14 +1,17 @@
 import { institutions } from '@constants/index'
 import { useGovernmentRequests, useInstitutions } from '@services/index'
+import { removeSession } from '@shared/index'
 import MinistryRequestsView from '@views/MinistryRequests'
-import React, { useMemo } from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useMemo, useCallback } from 'react'
 
 export default function MinistryRequestsPage() {
-  // --- Data and handlers -----------------------------------------------------
+  // --- Hooks -----------------------------------------------------------------
   const { data } = useGovernmentRequests()
+  const router = useRouter()
 
   const { data: institutionsData } = useInstitutions()
-  // --- END: Data and handlers ------------------------------------------------
+  // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
   const formattedInstitutions = useMemo(
@@ -25,7 +28,17 @@ export default function MinistryRequestsPage() {
       }) ?? [],
     [data, institutionsData]
   )
+
+  const onLogout = useCallback(() => {
+    removeSession()
+    router.push('/')
+  }, [router])
   // --- END: Data and handlers ------------------------------------------------
 
-  return <MinistryRequestsView institutions={formattedInstitutions ?? institutions} />
+  return (
+    <MinistryRequestsView
+      institutions={formattedInstitutions ?? institutions}
+      onLogout={onLogout}
+    />
+  )
 }

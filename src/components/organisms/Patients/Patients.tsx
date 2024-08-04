@@ -1,11 +1,11 @@
-import { Text, Button } from '@chakra-ui/react'
+import { Text, Button, Icon } from '@chakra-ui/react'
 import SearchInputComponent from '@components/atoms/SearchInput'
 import PatientsList from '@components/molecules/PatientsList'
 import { PatientSummary } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { FaRegUser } from 'react-icons/fa6'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
@@ -30,13 +30,7 @@ export default function Patients({
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 ${isIOS() ? 'pb-72 pt-20' : 'pb-64'} ${isAndroid() && 'pb-64 pt-8'}`}
       data-testid="patients"
     >
-      <Image
-        alt="logo"
-        src="/static/images/logo-horizontal.png"
-        width={200}
-        height={80}
-        className="mx-auto my-8"
-      />
+      <Logo className="mx-auto my-8" />
       {(pendingPatients.length > 0 || approvedPatients.length > 0) && (
         <>
           <SearchInputComponent
@@ -58,10 +52,9 @@ export default function Patients({
           className="flex h-full w-full flex-col items-center justify-center"
           data-testid="patients-empty-state"
         >
-          <Logo />
+          <Icon fontSize="xxx-large" as={FaRegUser} />
           <Text textAlign="center" mt={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis porttitor leo diam
-            risus vel elementum in vulputate.
+            No hay pacientes asociados aún.
           </Text>
           <Button mt={4} onClick={() => router.push('/agregar-paciente')}>
             Nuevo paciente

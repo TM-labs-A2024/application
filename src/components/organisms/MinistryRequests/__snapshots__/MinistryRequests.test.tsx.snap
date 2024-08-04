@@ -8,24 +8,14 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
   <div
     class="mb-8 flex flex-row justify-between"
   >
-    <img
-      alt="logo"
-      data-nimg="1"
-      decoding="async"
-      height="80"
-      loading="lazy"
-      src="/_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=640&q=75"
-      srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=256&q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=640&q=75 2x"
-      style="color: transparent;"
-      width="200"
-    />
+    <div />
     <button
-      aria-controls="menu-list-:ra:"
+      aria-controls="menu-list-:rd:"
       aria-expanded="false"
       aria-haspopup="menu"
       aria-label="Options"
       class="chakra-button chakra-menu__menu-button css-wpzvz6"
-      id="menu-button-:ra:"
+      id="menu-button-:rd:"
       type="button"
     >
       <svg
@@ -47,7 +37,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
       <div
         aria-orientation="vertical"
         class="chakra-menu__menu-list css-1kfu8nn"
-        id="menu-list-:ra:"
+        id="menu-list-:rd:"
         role="menu"
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
         tabindex="-1"
@@ -55,7 +45,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
         <button
           class="chakra-menu__menuitem css-18esm8n"
           data-index="0"
-          id="menu-list-:ra:-menuitem-:rb:"
+          id="menu-list-:rd:-menuitem-:re:"
           role="menuitem"
           tabindex="-1"
           type="button"
@@ -64,6 +54,20 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             href="/ministerio/instituciones"
           >
             Instituciones con acceso
+          </a>
+        </button>
+        <button
+          class="chakra-menu__menuitem css-18esm8n"
+          data-index="1"
+          id="menu-list-:rd:-menuitem-:rf:"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <a
+            href="/"
+          >
+            Cerrar sesión
           </a>
         </button>
       </div>

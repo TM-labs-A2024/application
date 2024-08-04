@@ -111,6 +111,12 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
           +582742214441
         </p>
       </div>
+      <button
+        class="chakra-button mt-56 w-full css-jzcxx5"
+        type="button"
+      >
+        Cerrar sesión
+      </button>
     </div>
   </div>
 </div>

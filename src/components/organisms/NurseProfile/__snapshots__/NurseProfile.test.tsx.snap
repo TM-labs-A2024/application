@@ -72,6 +72,12 @@ exports[`Organisms > NurseProfile test Matches the snapshot 1`] = `
         4127775522
       </p>
     </div>
+    <button
+      class="chakra-button mt-56 w-full css-jzcxx5"
+      type="button"
+    >
+      Cerrar sesión
+    </button>
   </div>
 </div>
 `

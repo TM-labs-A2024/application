@@ -12,7 +12,7 @@ type FormData = {
 }
 
 export default function DoctorProfile({
-  context: { doctor, specialtiesOptions, onSubmit }
+  context: { doctor, specialtiesOptions, onSubmit, onLogout }
 }: {
   context: {
     doctor: Doctor
@@ -21,6 +21,7 @@ export default function DoctorProfile({
       label: string
     }[]
     onSubmit: (specialties: ReactSelectOption[]) => void
+    onLogout?: () => void
   }
 }): ReactElement {
   // --- Data and handlers -----------------------------------------------------
@@ -62,7 +63,7 @@ export default function DoctorProfile({
     >
       <Text className="mb-6 font-medium">Perfil</Text>
       <div className="flex h-full flex-col">
-        <form onSubmit={handleSubmit(onSubmitDetails)} className="h-full">
+        <form onSubmit={handleSubmit(onSubmitDetails)} className="h-5/6">
           <div className="h-5/6 overflow-scroll">
             <Stack spacing={1} mb={6}>
               <Heading as="h3" size="md" noOfLines={1}>
@@ -111,6 +112,9 @@ export default function DoctorProfile({
           </div>
           <Button isLoading={isSubmitting} type="submit" className="mt-0 w-full">
             Guardar
+          </Button>
+          <Button type="button" colorScheme="blackAlpha" className="mt-4 w-full" onClick={onLogout}>
+            Cerrar sesión
           </Button>
         </form>
       </div>

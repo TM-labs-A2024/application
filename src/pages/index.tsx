@@ -21,29 +21,6 @@ export default function Home() {
       <Link as={NextLink} href="/login" onClick={() => setSession('ministerio', '', '')}>
         Login Ministerio
       </Link>
-      <Link as={NextLink} href="/especialidades" onClick={() => setSession('patient', '', '')}>
-        Paciente
-      </Link>
-      <Link as={NextLink} href="/pacientes" onClick={() => setSession('doctor', '', '')}>
-        Doctor
-      </Link>
-      <Link as={NextLink} href="/pacientes" onClick={() => setSession('enfermere', '', '')}>
-        Enfermera/o
-      </Link>
-      <Link
-        as={NextLink}
-        href="/institucion/solicitudes"
-        onClick={() => setSession('institucion', '')}
-      >
-        Institución
-      </Link>
-      <Link
-        as={NextLink}
-        href="/ministerio/solicitudes"
-        onClick={() => setSession('ministerio', '')}
-      >
-        Ministerio
-      </Link>
       <Link as={NextLink} href="/registro">
         Registro
       </Link>
