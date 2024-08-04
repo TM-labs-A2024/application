@@ -11,15 +11,13 @@ import {
   ModalContent,
   ModalFooter,
   ModalBody,
-  useDisclosure
+  Spinner
 } from '@chakra-ui/react'
-import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVAL } from '@constants/index'
 import { Institution as InstitutionType } from '@src/types'
-import { isIOS, isAndroid, isMobile } from '@utils/index'
+import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { ReactElement, useCallback } from 'react'
-import { Store } from 'react-notifications-component'
+import React, { ReactElement } from 'react'
 
 function ConfirmationModal({
   isOpen,
@@ -56,40 +54,43 @@ function ConfirmationModal({
 }
 
 export default function Institution({
-  institution
+  context: {
+    institution,
+    isDenialOpen,
+    onDenialOpen,
+    onDenialClose,
+    isApprovalOpen,
+    onApprovalOpen,
+    onApprovalClose,
+    isRemovalOpen,
+    onRemovalOpen,
+    onRemovalClose,
+    onApproval,
+    onDenial,
+    onRemoval,
+    isLoading
+  }
 }: {
-  institution: InstitutionType
+  context: {
+    institution: InstitutionType
+    isDenialOpen: boolean
+    onDenialOpen: () => void
+    onDenialClose: () => void
+    isApprovalOpen: boolean
+    onApprovalOpen: () => void
+    onApprovalClose: () => void
+    isRemovalOpen: boolean
+    onRemovalOpen: () => void
+    onRemovalClose: () => void
+    onApproval: () => void
+    onDenial: () => void
+    onRemoval: () => void
+    isLoading: boolean
+  }
 }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const {
-    isOpen: isApprovalOpen,
-    onOpen: onApprovalOpen,
-    onClose: onApprovalClose
-  } = useDisclosure()
-  const { isOpen: isRemovalOpen, onOpen: onRemovalOpen, onClose: onRemovalClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
-
-  // --- Data and handlers -----------------------------------------------------
-  const onDenial = useCallback(() => {
-    Store.addNotification(ACCESS_DENIED(isMobile(window)))
-    onClose()
-    router.push('/ministerio/solicitudes')
-  }, [onClose, router])
-
-  const onApproval = useCallback(() => {
-    Store.addNotification(ACCESS_GRANTED(isMobile(window)))
-    onApprovalClose()
-    router.push('/ministerio/solicitudes')
-  }, [onApprovalClose, router])
-
-  const onRemoval = useCallback(() => {
-    Store.addNotification(ACCESS_REMOVAL(isMobile(window)))
-    onRemovalClose()
-    router.push('/ministerio/instituciones')
-  }, [onRemovalClose, router])
-  // --- END: Data and handlers ------------------------------------------------
 
   return (
     <div
@@ -118,7 +119,7 @@ export default function Institution({
             <Heading as="h3" size="md" noOfLines={1}>
               {institution.name}
             </Heading>
-            <Text>RIF {institution.credentials}</Text>
+            <Text>RIF {institution.govId}</Text>
           </Stack>
           <Divider orientation="horizontal" />
           <Stack mb={6}>
@@ -130,9 +131,10 @@ export default function Institution({
             <Text className="font-medium">{institution.phoneNumber}</Text>
           </Stack>
         </div>
-        {institution?.pending && (
+        {isLoading && <Spinner />}
+        {institution?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
-            <Button className="mr-2 flex-grow" variant="outline" onClick={onOpen}>
+            <Button className="mr-2 flex-grow" variant="outline" onClick={onDenialOpen}>
               Rechazar
             </Button>
             <Button className="ml-2 flex-grow" onClick={onApprovalOpen}>
@@ -140,7 +142,7 @@ export default function Institution({
             </Button>
           </div>
         )}
-        {!institution?.pending && (
+        {!institution?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
             <Button className="flex-grow" variant="outline" onClick={onRemovalOpen}>
               Revocar acceso
@@ -149,8 +151,8 @@ export default function Institution({
         )}
       </div>
       <ConfirmationModal
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={isDenialOpen}
+        onClose={onDenialClose}
         onSubmit={onDenial}
         method="Denegar"
         name={institution.name}

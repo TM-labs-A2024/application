@@ -3,9 +3,24 @@ import { Institution as InstitutionType } from '@src/types'
 import React, { ReactElement } from 'react'
 
 export default function InstitutionView({
-  institution
+  context
 }: {
-  institution: InstitutionType
+  context: {
+    institution: InstitutionType
+    isDenialOpen: boolean
+    onDenialOpen: () => void
+    onDenialClose: () => void
+    isApprovalOpen: boolean
+    onApprovalOpen: () => void
+    onApprovalClose: () => void
+    isRemovalOpen: boolean
+    onRemovalOpen: () => void
+    onRemovalClose: () => void
+    onApproval: () => void
+    onDenial: () => void
+    onRemoval: () => void
+    isLoading: boolean
+  }
 }): ReactElement {
-  return <Institution institution={institution} />
+  return <Institution context={context} />
 }

@@ -25,3 +25,7 @@ export function getDoctors() {
 export function getDoctorById(doctorId: string) {
   return axiosClient.get<Doctor>(`/doctors/${doctorId}`)
 }
+
+export function getInstitutionDoctors(institutionId: string) {
+  return axiosClient.get<Doctor[]>(`/doctors/institutions/${institutionId}`)
+}

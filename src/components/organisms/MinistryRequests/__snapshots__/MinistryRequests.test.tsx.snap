@@ -94,7 +94,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa1"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa1/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -110,7 +110,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa1
                   </p>
                 </div>
                 <div />
@@ -123,7 +123,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa11"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa11/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -139,7 +139,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa11
                   </p>
                 </div>
                 <div />
@@ -152,7 +152,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa12"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa12/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -168,7 +168,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa12
                   </p>
                 </div>
                 <div />
@@ -181,7 +181,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa13"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa13/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -197,7 +197,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa13
                   </p>
                 </div>
                 <div />
@@ -210,7 +210,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa2"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa2/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -226,7 +226,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa2
                   </p>
                 </div>
                 <div />
@@ -239,7 +239,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa3"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa3/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -255,7 +255,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa3
                   </p>
                 </div>
                 <div />
@@ -268,7 +268,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa4"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa4/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -284,7 +284,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa4
                   </p>
                 </div>
                 <div />
@@ -297,7 +297,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa5"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa5/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -313,7 +313,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa5
                   </p>
                 </div>
                 <div />
@@ -326,7 +326,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa6"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa6/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -342,7 +342,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa6
                   </p>
                 </div>
                 <div />
@@ -355,7 +355,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa7"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa7/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -371,7 +371,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa7
                   </p>
                 </div>
                 <div />
@@ -384,7 +384,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
             <a
               class="chakra-link w-full css-spn4bz"
               data-testid="request-card"
-              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa8"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa8/undefined"
             >
               <div
                 class="flex flex-row items-center justify-between"
@@ -400,7 +400,7 @@ exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    RIF 14578245
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa8
                   </p>
                 </div>
                 <div />

@@ -1,11 +1,12 @@
 import { institutions } from '@src/constants'
+import { useApprovedInstitutions } from '@src/services'
 import InstitutionsView from '@views/Institutions'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 export default function InstitutionsPage() {
-  // --- Data and handlers -----------------------------------------------------
-  const institutionsFiltered = useMemo(() => institutions.filter((doctor) => !doctor.pending), [])
-  // --- END: Data and handlers ------------------------------------------------
+  // --- Hooks -----------------------------------------------------------------
+  const { data } = useApprovedInstitutions()
+  // --- END: Hooks ------------------------------------------------------------
 
-  return <InstitutionsView institutions={institutionsFiltered} />
+  return <InstitutionsView institutions={data?.data ?? institutions} />
 }

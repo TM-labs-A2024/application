@@ -1,7 +1,11 @@
 import InstitutionDoctors from '@components/organisms/InstitutionDoctors'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import React from 'react'
 
-export default function InstitutionDoctorsView({ doctors }: { doctors: DoctorType[] }) {
-  return <InstitutionDoctors doctors={doctors} />
+export default function InstitutionDoctorsView({
+  context
+}: {
+  context: { doctors: DoctorType[]; specialtiesOptions: ReactSelectOption[] }
+}) {
+  return <InstitutionDoctors context={context} />
 }

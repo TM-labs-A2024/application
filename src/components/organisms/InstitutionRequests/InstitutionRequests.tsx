@@ -20,8 +20,8 @@ export default function InstitutionRequests({
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
-      doctors.map(({ id, govId, firstname, lastname, specialties }) => ({
-        href: `/institucion/medico/${id}`,
+      doctors.map(({ id, govId, firstname, lastname, specialties, requestId }) => ({
+        href: `/institucion/medico/${id}/${requestId}`,
         title: `${firstname} ${lastname}`,
         description: `C.I: ${govId},${specialties.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty)?.label)}.`
       })),

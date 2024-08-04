@@ -4,14 +4,26 @@ import {
   useDoctorLogin,
   useDoctorPetients,
   useDoctors,
-  useDoctor
+  useDoctor,
+  useInstitutionDoctors
 } from './doctors'
-import { useGovernmentLogin } from './government'
+import {
+  useGovernmentLogin,
+  useGovernmentApproveAccessRequestsMutation,
+  useGovernmentDenyAccessRequestsMutation,
+  useGovernmentRevokeAccessRequestsMutation,
+  useGovernmentRequests
+} from './government'
 import {
   useInstitutionMutation,
   useInstitutions,
+  useInstitutionById,
   useInstitutionLogin,
-  useInstitutionRequests
+  useInstitutionRequests,
+  useInstitutionApproveAccessRequestsMutation,
+  useInstitutionDenyAccessRequestsMutation,
+  useInstitutionRevokeAccessRequestsMutation,
+  useApprovedInstitutions
 } from './institutions'
 import { useNurseMutation, useNurseLogin, useNurseById } from './nurses'
 import {
@@ -38,6 +50,7 @@ export {
   useDoctorPetients,
   useDoctors,
   useDoctor,
+  useInstitutionDoctors,
   useNurseMutation,
   useNurseLogin,
   useNurseById,
@@ -53,9 +66,18 @@ export {
   usePatientsSpecialties,
   usePatientByGovId,
   useInstitutions,
+  useInstitutionById,
   useInstitutionLogin,
   useInstitutionRequests,
+  useInstitutionApproveAccessRequestsMutation,
+  useInstitutionDenyAccessRequestsMutation,
+  useInstitutionRevokeAccessRequestsMutation,
+  useApprovedInstitutions,
   useSpecialties,
   useGovernmentLogin,
+  useGovernmentApproveAccessRequestsMutation,
+  useGovernmentDenyAccessRequestsMutation,
+  useGovernmentRevokeAccessRequestsMutation,
+  useGovernmentRequests,
   useRecordMutation
 }

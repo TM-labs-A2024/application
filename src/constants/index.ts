@@ -17,11 +17,12 @@ import {
 import { nurse } from './nurses'
 import { patient, sexOptions, statusOptions } from './patient'
 import { patients } from './patients'
-import { specialties } from './specialties'
+import { specialties, specialities } from './specialties'
 import { specialtyData } from './specialtyData'
 
 export {
   specialties,
+  specialities,
   doctors,
   nurse,
   patient,

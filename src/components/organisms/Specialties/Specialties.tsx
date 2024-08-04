@@ -66,7 +66,7 @@ export default function Specialties({
           className="mb-8 w-full"
           onClick={() => {
             router.push(
-              patient ? `/especialidades/busqueda/${patient?.id}` : '/especialidades/busqueda'
+              patient ? `/especialidades/busqueda/${patient?.govId}` : '/especialidades/busqueda'
             )
           }}
         />

@@ -13,10 +13,10 @@ export default function MinistryRequests({ institutions }: { institutions: Insti
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
-      institutions.map(({ id, name, credentials }) => ({
-        href: `/ministerio/institucion/${id}`,
+      institutions.map(({ govId, name, requestId }) => ({
+        href: `/ministerio/institucion/${govId}/${requestId}`,
         title: name,
-        description: `RIF ${credentials}`
+        description: `RIF ${govId}`
       })),
     [institutions]
   )

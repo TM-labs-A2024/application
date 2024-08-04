@@ -85,13 +85,7 @@ exports[`Organisms > InstitutionDoctor test Matches the snapshot 1`] = `
           <p
             class="chakra-text text-nowrap font-medium css-0"
           >
-            Alergología
-            ,
-          </p>
-          <p
-            class="chakra-text text-nowrap font-medium css-0"
-          >
-            Cardiología
+            Allergy and immunology
           </p>
         </div>
       </div>

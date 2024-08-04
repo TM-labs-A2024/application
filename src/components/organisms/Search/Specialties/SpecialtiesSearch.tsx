@@ -70,7 +70,7 @@ export default function SpecialtiesSearch({
         />
         <Link
           as={NextLink}
-          href={patient?.id ? `/especialidades/${patient?.id}` : '/especialidades'}
+          href={patient?.govId ? `/especialidades/${patient?.govId}` : '/especialidades'}
         >
           Cancelar
         </Link>

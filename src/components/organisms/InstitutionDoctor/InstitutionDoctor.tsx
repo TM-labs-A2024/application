@@ -11,18 +11,15 @@ import {
   ModalContent,
   ModalFooter,
   ModalBody,
-  useDisclosure
+  Spinner
 } from '@chakra-ui/react'
-import { ACCESS_DENIED, ACCESS_GRANTED, ACCESS_REMOVAL } from '@constants/index'
-import { specialties } from '@constants/index'
-import { Doctor as DoctorType } from '@src/types'
-import { isIOS, isAndroid, isMobile } from '@utils/index'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
+import { isIOS, isAndroid } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { ReactElement, useCallback } from 'react'
-import { Store } from 'react-notifications-component'
+import React, { ReactElement } from 'react'
 
 function ConfirmationModal({
   isOpen,
@@ -58,37 +55,46 @@ function ConfirmationModal({
   )
 }
 
-export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): ReactElement {
+export default function InstitutionDoctor({
+  context: {
+    doctor,
+    specialtiesOptions,
+    isDenialOpen,
+    onDenialOpen,
+    onDenialClose,
+    isApprovalOpen,
+    onApprovalOpen,
+    onApprovalClose,
+    isRemovalOpen,
+    onRemovalOpen,
+    onRemovalClose,
+    onApproval,
+    onDenial,
+    onRemoval,
+    isLoading
+  }
+}: {
+  context: {
+    doctor: DoctorType
+    specialtiesOptions: ReactSelectOption[]
+    isDenialOpen: boolean
+    onDenialOpen: () => void
+    onDenialClose: () => void
+    isApprovalOpen: boolean
+    onApprovalOpen: () => void
+    onApprovalClose: () => void
+    isRemovalOpen: boolean
+    onRemovalOpen: () => void
+    onRemovalClose: () => void
+    onApproval: () => void
+    onDenial: () => void
+    onRemoval: () => void
+    isLoading: boolean
+  }
+}): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const {
-    isOpen: isApprovalOpen,
-    onOpen: onApprovalOpen,
-    onClose: onApprovalClose
-  } = useDisclosure()
-  const { isOpen: isRemovalOpen, onOpen: onRemovalOpen, onClose: onRemovalClose } = useDisclosure()
   // --- END: Hooks ------------------------------------------------------------
-
-  // --- Data and handlers -----------------------------------------------------
-  const onDenial = useCallback(() => {
-    Store.addNotification(ACCESS_DENIED(isMobile(window)))
-    onClose()
-    router.push('/institucion/solicitudes')
-  }, [onClose, router])
-
-  const onApproval = useCallback(() => {
-    Store.addNotification(ACCESS_GRANTED(isMobile(window)))
-    onApprovalClose()
-    router.push('/institucion/solicitudes')
-  }, [onApprovalClose, router])
-
-  const onRemoval = useCallback(() => {
-    Store.addNotification(ACCESS_REMOVAL(isMobile(window)))
-    onRemovalClose()
-    router.push('/institucion/medicos')
-  }, [onRemovalClose, router])
-  // --- END: Data and handlers ------------------------------------------------
 
   return (
     <div
@@ -123,15 +129,16 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
             <div className="flex flex-row flex-wrap gap-2">
-              {doctor.specialties?.map((specialty, idx) => (
+              {doctor?.specialities?.map((specialty, idx) => (
                 <Text
                   className="text-nowrap font-medium"
                   key={`institution-doctor-card-${specialty}`}
                 >
-                  {specialties.find((el) => el.id === specialty)?.name}
-                  {doctor.specialties.length > 0 && idx !== doctor.specialties.length - 1
-                    ? ','
-                    : ''}
+                  {specialtiesOptions.find((el) => el?.value === specialty.id)?.label}
+                  {doctor?.specialities &&
+                    (doctor?.specialities?.length > 0 && idx !== doctor?.specialities?.length - 1
+                      ? ','
+                      : '')}
                 </Text>
               ))}
             </div>
@@ -153,9 +160,10 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
             <Text className="font-medium">{doctor.phoneNumber}</Text>
           </Stack>
         </div>
-        {doctor?.pending && (
+        {isLoading && <Spinner />}
+        {doctor?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
-            <Button className="mr-2 flex-grow" variant="outline" onClick={onOpen}>
+            <Button className="mr-2 flex-grow" variant="outline" onClick={onDenialOpen}>
               Rechazar
             </Button>
             <Button className="ml-2 flex-grow" onClick={onApprovalOpen}>
@@ -163,7 +171,7 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
             </Button>
           </div>
         )}
-        {!doctor?.pending && (
+        {!doctor?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
             <Button className="flex-grow" variant="outline" onClick={onRemovalOpen}>
               Revocar acceso
@@ -172,8 +180,8 @@ export default function InstitutionDoctor({ doctor }: { doctor: DoctorType }): R
         )}
       </div>
       <ConfirmationModal
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={isDenialOpen}
+        onClose={onDenialClose}
         onSubmit={onDenial}
         method="Denegar"
         name={`${doctor.firstname} ${doctor.lastname}`}

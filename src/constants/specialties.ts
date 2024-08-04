@@ -192,3 +192,11 @@ export const specialties = [
     name: 'Radiodiagnóstico'
   }
 ]
+
+export const specialities = [
+  {
+    id: '89ca4324-1af0-44b8-94cf-116fee714517',
+    description: 'DESCRIPTION',
+    name: 'Allergy and immunology'
+  }
+]

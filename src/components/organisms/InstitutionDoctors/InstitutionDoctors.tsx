@@ -1,8 +1,7 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Text, IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import RequestsList from '@components/molecules/RequestsList'
-import { specialties as specialtiesList } from '@src/constants'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,16 +9,20 @@ import React, { useMemo } from 'react'
 
 import Logo from '../../../../public/static/icons/logo.svg'
 
-export default function InstitutionDoctors({ doctors }: { doctors: DoctorType[] }) {
+export default function InstitutionDoctors({
+  context: { doctors, specialtiesOptions }
+}: {
+  context: { doctors: DoctorType[]; specialtiesOptions: ReactSelectOption[] }
+}) {
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
-      doctors.map(({ id, firstname, lastname, specialties }) => ({
+      doctors.map(({ id, govId, firstname, lastname, specialities }) => ({
         href: `/institucion/medico/${id}`,
         title: `${firstname} ${lastname}`,
-        description: `C.I: ${id},${specialties.map((specialty) => ' ' + specialtiesList.find((el) => el.id === specialty)?.name)}.`
+        description: `C.I: ${govId},${specialities?.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty.id)?.label)}.`
       })),
-    [doctors]
+    [doctors, specialtiesOptions]
   )
   // --- END: Data and handlers ------------------------------------------------
 

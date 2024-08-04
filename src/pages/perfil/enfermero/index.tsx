@@ -1,8 +1,8 @@
 import Splash from '@components/atoms/Splash'
 import { nurse } from '@constants/index'
+import { useNurseById } from '@services/index'
 import { getUser } from '@shared/index'
-import { useNurseById } from '@src/services'
-import NurseProfileView from '@src/views/NurseProfile'
+import NurseProfileView from '@views/NurseProfile'
 import React from 'react'
 
 export default function Nurserofile() {

@@ -124,7 +124,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 8000000, Alergología, Cardiología.
+                    C.I: 8000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -153,7 +153,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 9000000, Alergología, Cardiología.
+                    C.I: 9000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -182,7 +182,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 10000000, Alergología, Cardiología.
+                    C.I: 10000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -211,7 +211,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 11000000, Alergología, Cardiología.
+                    C.I: 11000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -240,7 +240,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 12000000, Alergología, Cardiología.
+                    C.I: 12000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -269,7 +269,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 13000000, Alergología, Cardiología.
+                    C.I: 13000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -298,7 +298,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 14000000, Alergología, Cardiología.
+                    C.I: 14000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -327,7 +327,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 15000000, Alergología, Cardiología.
+                    C.I: 15000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -356,7 +356,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 23000000, Alergología, Cardiología.
+                    C.I: 23000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -385,7 +385,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 24000000, Alergología, Cardiología.
+                    C.I: 24000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -414,7 +414,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 25000000, Alergología, Cardiología.
+                    C.I: 25000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -443,7 +443,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 26000000, Alergología, Cardiología.
+                    C.I: 26000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -472,7 +472,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 27000000, Alergología, Cardiología.
+                    C.I: 27000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -501,7 +501,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 28000000, Alergología, Cardiología.
+                    C.I: 28000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -530,7 +530,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 29000000, Alergología, Cardiología.
+                    C.I: 29000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -559,7 +559,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 30000000, Alergología, Cardiología.
+                    C.I: 30000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -588,7 +588,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 31000000, Alergología, Cardiología.
+                    C.I: 31000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -617,7 +617,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 32000000, Alergología, Cardiología.
+                    C.I: 32000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -646,7 +646,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 33000000, Alergología, Cardiología.
+                    C.I: 33000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -675,7 +675,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 34000000, Alergología, Cardiología.
+                    C.I: 34000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -704,7 +704,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 35000000, Alergología, Cardiología.
+                    C.I: 35000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -733,7 +733,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 36000000, Alergología, Cardiología.
+                    C.I: 36000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -762,7 +762,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 37000000, Alergología, Cardiología.
+                    C.I: 37000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -791,7 +791,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 38000000, Alergología, Cardiología.
+                    C.I: 38000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -820,7 +820,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 39000000, Alergología, Cardiología.
+                    C.I: 39000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -849,7 +849,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 40000000, Alergología, Cardiología.
+                    C.I: 40000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -878,7 +878,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 41000000, Alergología, Cardiología.
+                    C.I: 41000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -907,7 +907,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 42000000, Alergología, Cardiología.
+                    C.I: 42000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -936,7 +936,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 43000000, Alergología, Cardiología.
+                    C.I: 43000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -965,7 +965,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 44000000, Alergología, Cardiología.
+                    C.I: 44000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -994,7 +994,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 45000000, Alergología, Cardiología.
+                    C.I: 45000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -1023,7 +1023,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 46000000, Alergología, Cardiología.
+                    C.I: 46000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -1052,7 +1052,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 47000000, Alergología, Cardiología.
+                    C.I: 47000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -1081,7 +1081,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 48000000, Alergología, Cardiología.
+                    C.I: 48000000, undefined.
                   </p>
                 </div>
                 <div />
