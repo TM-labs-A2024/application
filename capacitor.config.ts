@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli'
 
 const config: CapacitorConfig = {
   appId: 'com.TMLabs.app',
-  appName: 'TacoMedical',
+  appName: 'HealthCore',
   webDir: 'out',
   server: {
     androidScheme: 'https'

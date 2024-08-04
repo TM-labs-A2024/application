@@ -1,5 +1,5 @@
 appId: 'io.github.TM-labs-A2024.application'
-productName: 'TacoMedical'
+productName: 'HealthCore'
 copyright: 'Copyright (c) 2024 TM-labs-A2024'
 win:
   target: ['dir', 'portable', 'zip']

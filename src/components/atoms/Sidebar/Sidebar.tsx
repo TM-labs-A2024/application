@@ -27,7 +27,7 @@ export default function Sidebar({
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader>Taco Medical</DrawerHeader>
+        <DrawerHeader>HealthCore</DrawerHeader>
 
         <DrawerBody>{children}</DrawerBody>
 
