@@ -17,7 +17,7 @@ import SearchInputComponent from '@components/atoms/SearchInput'
 import PatientList from '@components/molecules/PatientsList'
 import { FILTERS_APPLIED } from '@constants/index'
 import { sexOptions, statusOptions, specialties } from '@constants/index'
-import { ReactSelectOption, Patient } from '@src/types'
+import { ReactSelectOption, Patient, Institution } from '@src/types'
 import { isIOS, isMobile } from '@utils/index'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -57,6 +57,7 @@ export default function PatientsSearch({
 }: {
   context: {
     approvedPatients: Patient[]
+    institutionsData: Institution[]
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -73,14 +74,25 @@ export default function PatientsSearch({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { approvedPatients } = context
+  const { approvedPatients, institutionsData } = context
   // --- END: Local state ------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
   const patientsFormatted = useMemo(
     () =>
       approvedPatients.map(
-        ({ birthdate, govId, status, bed, firstname, lastname, pending, sex, specialties }) => ({
+        ({
+          birthdate,
+          govId,
+          status,
+          bed,
+          firstname,
+          lastname,
+          pending,
+          sex,
+          specialties,
+          institution_id
+        }) => ({
           href: pending ? '' : `/especialidades/${govId}`,
           title: `${firstname} ${lastname}`,
           description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
@@ -95,7 +107,8 @@ export default function PatientsSearch({
             roundingMethod: 'floor'
           }).split(' ')[0],
           bed,
-          specialties
+          specialties,
+          hospitalizationPlace: institutionsData?.find((el) => el.id === institution_id)?.name
         })
       ),
     [approvedPatients]

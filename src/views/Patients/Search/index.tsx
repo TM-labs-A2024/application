@@ -1,5 +1,5 @@
 import PatientsSearch from '@components/organisms/Search/Patients'
-import { Patient } from '@src/types'
+import { Patient, Institution } from '@src/types'
 import React from 'react'
 
 export default function PatientsSearchView({
@@ -7,6 +7,7 @@ export default function PatientsSearchView({
 }: {
   context: {
     approvedPatients: Patient[]
+    institutionsData: Institution[]
   }
 }) {
   return <PatientsSearch context={context} />

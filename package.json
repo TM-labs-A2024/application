@@ -6,8 +6,8 @@
   "author": "TM-labs-A2024",
   "description": "Electron + NextJS medical app",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently -n \"NEXT,ELECTRON\" -c \"yellow,blue\" --kill-others \"next dev\" \"electron .\"",
+    "build": "next build && electron-builder",
     "start": "npx serve@latest out",
     "lint": "next lint",
     "prettier:format": "prettier --write .",

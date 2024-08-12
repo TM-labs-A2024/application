@@ -1,5 +1,5 @@
 import Splash from '@components/atoms/Splash'
-import { useDoctorPatients } from '@services/index'
+import { useDoctorPatients, useApprovedInstitutions } from '@services/index'
 import { patients } from '@src/constants'
 import { getSession, getUser } from '@src/shared'
 import PatientsSearchView from '@views/Patients/Search'
@@ -10,6 +10,7 @@ export default function PatientsSearchPage() {
   const user = useMemo(() => getUser(), [])
 
   const { data, isLoading } = useDoctorPatients(user?.id)
+  const { data: institutionsData } = useApprovedInstitutions()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -25,7 +26,8 @@ export default function PatientsSearchPage() {
 
   const context = useMemo(
     () => ({
-      approvedPatients
+      approvedPatients,
+      institutionsData: institutionsData?.data ?? []
     }),
     [approvedPatients]
   )

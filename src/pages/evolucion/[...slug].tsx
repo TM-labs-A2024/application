@@ -48,6 +48,7 @@ export default function EvolutionPage() {
         setInfo(allInfo)
         setIsLoading(false)
       } catch (error) {
+        setIsLoading(false)
         console.error('Error fetching info:', error)
       }
     }
