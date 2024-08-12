@@ -63,8 +63,8 @@ export default function EvolutionPage() {
   )
 
   const patientId = useMemo(
-    () => (isPatient ? user.govId : router?.query?.slug?.[0]),
-    [isPatient, router?.query?.slug, user.govId]
+    () => (isPatient ? user?.govId : router?.query?.slug?.[0]),
+    [isPatient, router?.query?.slug, user?.govId]
   )
 
   const patient = useMemo(() => patients.find((patient) => patient.id === patientId), [patientId])
