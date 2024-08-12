@@ -5,5 +5,16 @@ export const institution = {
   credentials: '14578245',
   address: 'Av. Fernandez Peña, 147.',
   email: 'test@test.com',
-  phoneNumber: '+582742214441'
+  phoneNumber: '+582742214441',
+  institutionUser: {
+    id: '',
+    firstname: '',
+    lastname: '',
+    govId: '',
+    birthdate: '',
+    email: 'test@test.com',
+    phoneNumber: '+582742214441',
+    role: '',
+    institutionId: ''
+  }
 }

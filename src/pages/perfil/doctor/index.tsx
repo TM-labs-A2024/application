@@ -80,17 +80,7 @@ export default function DoctorProfile() {
     label: option.name
   }))
 
-  const doctor = useMemo(
-    () =>
-      doctorData
-        ? {
-            ...doctorData?.data,
-            specialties:
-              doctorData?.data?.specialities?.map((specialty: { id: string }) => specialty.id) ?? []
-          }
-        : doctors[0],
-    [doctorData]
-  )
+  const doctor = useMemo(() => doctorData?.data, [doctorData])
 
   const onLogout = useCallback(() => {
     removeSession()
@@ -102,9 +92,10 @@ export default function DoctorProfile() {
       doctor,
       specialtiesOptions: specialtiesOptions ?? [],
       onSubmit,
-      onLogout
+      onLogout,
+      isLoading
     }),
-    [doctor, specialtiesOptions, onSubmit, onLogout]
+    [doctor, specialtiesOptions, onSubmit, onLogout, isLoading]
   )
   // --- END: Data and handlers ------------------------------------------------
 

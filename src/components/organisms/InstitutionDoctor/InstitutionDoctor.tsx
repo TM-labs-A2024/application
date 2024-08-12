@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import Image from 'next/image'
@@ -129,14 +130,14 @@ export default function InstitutionDoctor({
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Especialidad</h4>
             <div className="flex flex-row flex-wrap gap-2">
-              {doctor?.specialities?.map((specialty, idx) => (
+              {doctor?.specialties?.map((specialty, idx) => (
                 <Text
                   className="text-nowrap font-medium"
                   key={`institution-doctor-card-${specialty}`}
                 >
                   {specialtiesOptions.find((el) => el?.value === specialty.id)?.label}
-                  {doctor?.specialities &&
-                    (doctor?.specialities?.length > 0 && idx !== doctor?.specialities?.length - 1
+                  {doctor?.specialties &&
+                    (doctor?.specialties?.length > 0 && idx !== doctor?.specialties?.length - 1
                       ? ','
                       : '')}
                 </Text>
@@ -146,9 +147,10 @@ export default function InstitutionDoctor({
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
             <Text className="font-medium">
-              {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
-                locale: es
-              })}
+              {doctor.birthdate &&
+                format(new Date(formatDate(doctor.birthdate)), "dd 'de' MMMM, yyyy", {
+                  locale: es
+                })}
             </Text>
           </Stack>
           <Stack mb={6}>

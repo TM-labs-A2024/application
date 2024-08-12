@@ -5,7 +5,7 @@ import {
   usePatientDenyAccessRequestsMutation,
   usePatientRevokeAccessRequestsMutation
 } from '@services/index'
-import { useDoctor } from '@services/index'
+import { useDoctor, useSpecialties } from '@services/index'
 import Splash from '@src/components/atoms/Splash'
 import { doctors as DoctorsFallback } from '@src/constants'
 import { isMobile, setupErrorNotification } from '@utils/index'
@@ -17,6 +17,8 @@ import { Store } from 'react-notifications-component'
 export default function DoctorPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+
+  const { data: specialtiesData } = useSpecialties()
 
   const { isOpen: isDenialOpen, onOpen: onDenialOpen, onClose: onDenialClose } = useDisclosure()
   const {
@@ -101,8 +103,14 @@ export default function DoctorPage() {
     removeAccess(doctorData?.id ?? '')
   }, [removeAccess, doctorData])
 
+  const specialtiesOptions = specialtiesData?.data?.map((option: { name: string; id: string }) => ({
+    value: option.id,
+    label: option.name
+  }))
+
   const context = useMemo(
     () => ({
+      specialties: specialtiesOptions ?? [],
       doctor: doctorData,
       isDenialOpen,
       onDenialOpen,
@@ -119,6 +127,7 @@ export default function DoctorPage() {
       isLoading
     }),
     [
+      specialtiesOptions,
       doctorData,
       isApprovalOpen,
       isDenialOpen,

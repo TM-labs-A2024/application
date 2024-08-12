@@ -1,14 +1,16 @@
 import { StackDivider, Stack, Text } from '@chakra-ui/react'
 import Doctor from '@components/atoms/Cards/Doctor'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import React from 'react'
 
 export default function DoctorsList({
   doctors,
-  pendingDoctors
+  pendingDoctors,
+  specialties
 }: {
   doctors: (DoctorType | undefined)[]
   pendingDoctors: (DoctorType | undefined)[]
+  specialties: ReactSelectOption[]
 }) {
   return (
     <Stack divider={<StackDivider />} spacing="4" className="h-full" data-testid="doctors-list">
@@ -20,7 +22,14 @@ export default function DoctorsList({
             </Text>
             <Stack divider={<StackDivider />} spacing="4" data-testid="pending-doctors-list">
               {pendingDoctors.map(
-                (doctor) => doctor && <Doctor doctor={doctor} key={`pending-doctor-${doctor.id}`} />
+                (doctor) =>
+                  doctor && (
+                    <Doctor
+                      doctor={doctor}
+                      key={`pending-doctor-${doctor.id}`}
+                      specialties={specialties}
+                    />
+                  )
               )}
             </Stack>
           </>
@@ -34,7 +43,14 @@ export default function DoctorsList({
             )}
             <Stack divider={<StackDivider />} spacing="4" data-testid="approved-doctors-list">
               {doctors?.map(
-                (doctor) => doctor && <Doctor doctor={doctor} key={`pending-doctor-${doctor.id}`} />
+                (doctor) =>
+                  doctor && (
+                    <Doctor
+                      doctor={doctor}
+                      key={`pending-doctor-${doctor.id}`}
+                      specialties={specialties}
+                    />
+                  )
               )}
             </Stack>
           </>

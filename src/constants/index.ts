@@ -1,4 +1,5 @@
 import { doctors } from './doctors'
+import { evolution } from './evolutions'
 import { evolutionTypes } from './evolutionTypes'
 import { institution } from './institution'
 import { institutions } from './institutions'
@@ -29,6 +30,7 @@ export {
   sexOptions,
   statusOptions,
   specialtyData,
+  evolution,
   evolutionTypes,
   patients,
   institution,

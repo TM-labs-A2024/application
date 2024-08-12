@@ -1,24 +1,34 @@
 import { useDisclosure } from '@chakra-ui/react'
-import { specialtyData } from '@constants/index'
+import Splash from '@components/atoms/Splash'
 import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
-import { getSession } from '@src/shared'
+import { useRecordById } from '@services/index'
+import { getSession, getUser } from '@src/shared'
 import { isMobile } from '@utils/index'
 import AttachmentsView from '@views/Attachments'
 import { useRouter } from 'next/router'
-import React, { useMemo, useState, useCallback } from 'react'
+import React, { useMemo, useState, useCallback, useEffect } from 'react'
 import { Store } from 'react-notifications-component'
-
-const lorem =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
 export default function OrdersPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  const user = getUser()
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const isPatient = useMemo(() => getSession() === 'patient', [])
+  const isDoctor = useMemo(() => getSession() === 'doctor', [])
+  const order = useMemo(
+    () => (isPatient ? String(router?.query?.slug?.[1]) : String(router?.query?.slug?.[2])),
+    [isPatient, router?.query?.slug]
+  )
+
+  const { data: recordData } = useRecordById(order)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
   const [deleteType, setDeleteType] = useState('all')
+  const [imageUrl, setImageUrl] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -28,16 +38,27 @@ export default function OrdersPage() {
   // --- END: Redux ------------------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    if (!recordData?.data) return
+
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(recordData.data.content)
+        const blob = await response.blob()
+        const imageUrl = URL.createObjectURL(blob)
+        setImageUrl(imageUrl)
+        setIsLoading(false)
+      } catch (error) {
+        console.error('Error fetching image:', error)
+      }
+    }
+
+    fetchImage()
+  }, [recordData])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const isPatient = useMemo(() => getSession() === 'patient', [])
-  const isDoctor = useMemo(() => getSession() === 'doctor', [])
-  const order = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
-  const orderData = useMemo(
-    () => specialtyData.orders.find((item) => String(item.id) === order),
-    [order]
-  )
+  const orderData = useMemo(() => recordData?.data, [recordData?.data])
   const title = useMemo(() => String(orderData?.title), [orderData])
   const specialty = useMemo(
     () => (isPatient ? String(router?.query?.slug?.[0]) : String(router?.query?.slug?.[1])),
@@ -45,33 +66,26 @@ export default function OrdersPage() {
   )
 
   const patientId = useMemo(
-    () => !isPatient && router?.query?.slug?.[0],
-    [isPatient, router?.query?.slug]
+    () => (isPatient ? user.govId : router?.query?.slug?.[0]),
+    [isPatient, router?.query?.slug, user.govId]
   )
 
   const goBackRef = useMemo(
-    () =>
-      isPatient
-        ? `/especialidad/${specialty}?type=order`
-        : `/especialidad/${patientId}/${specialty}?type=order`,
-    [isPatient, patientId, specialty]
+    () => `/especialidad/${patientId}/${specialty}?type=order`,
+    [patientId, specialty]
   )
 
   const data = useMemo(
     () => ({
-      description: lorem,
+      description: orderData?.description ?? '',
       attachments: [
         {
-          url: 'https://cdn.pixabay.com/photo/2018/11/20/16/44/laboratory-3827740_1280.jpg',
-          alt: 'Test'
-        },
-        {
-          url: 'https://cdn.pixabay.com/photo/2018/11/20/16/44/laboratory-3827742_1280.jpg',
+          url: imageUrl,
           alt: 'Test'
         }
       ]
     }),
-    []
+    [imageUrl, orderData?.description]
   )
 
   const onDeleteClick = useCallback(
@@ -127,5 +141,5 @@ export default function OrdersPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <AttachmentsView context={context} />
+  return isLoading ? <Splash /> : <AttachmentsView context={context} />
 }

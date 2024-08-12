@@ -53,11 +53,11 @@ export default function InstitutionProfile({
           </Stack>
           <Stack mb={6} mt={6}>
             <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-            <Text className="font-medium">{institution.email}</Text>
+            <Text className="font-medium">{institution.institutionUser?.email}</Text>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{institution.phoneNumber}</Text>
+            <Text className="font-medium">{institution.institutionUser?.phoneNumber}</Text>
           </Stack>
           <Button
             type="button"

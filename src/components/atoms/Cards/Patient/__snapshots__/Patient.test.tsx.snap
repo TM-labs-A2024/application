@@ -39,7 +39,7 @@ exports[`Atoms > Cards > Patient test Matches the snapshot 1`] = `
       <span
         class="css-1ny2kle"
       >
-        Hospitalizado
+        hospitalizado
       </span>
     </span>
     <div />

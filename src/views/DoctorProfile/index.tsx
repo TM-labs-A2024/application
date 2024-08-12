@@ -7,13 +7,14 @@ export default function DoctorProfileView({
   context
 }: {
   context: {
-    doctor: Doctor
+    doctor?: Doctor
     specialtiesOptions: {
       value: string
       label: string
     }[]
     onSubmit: (specialties: ReactSelectOption[]) => void
     onLogout?: () => void
+    isLoading: boolean
   }
 }) {
   return (

@@ -13,16 +13,7 @@ export default function InstitutionDoctorsPage() {
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const doctorsFiltered = useMemo(
-    () =>
-      data?.data.map((doctor) => {
-        return {
-          ...doctor,
-          specialties: doctor.specialities?.map((el) => el.id) ?? []
-        }
-      }) ?? DoctorsFallback,
-    [data]
-  )
+  const doctorsFiltered = useMemo(() => data?.data ?? DoctorsFallback, [data])
 
   const specialtiesOptions = specialties?.data?.map((option: { name: string; id: string }) => ({
     value: option.id,

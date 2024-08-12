@@ -1,5 +1,6 @@
-import { specialties, specialtyData } from '@constants/index'
-import { getSession } from '@shared/index'
+import { specialties as specialtiesFallback } from '@constants/index'
+import { useSpecialties, useSpecialityRecordsByPatientGovId } from '@services/index'
+import { getSession, getUser } from '@shared/index'
 import SpecialtyView from '@src/views/Specialty'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -7,14 +8,24 @@ import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
 
 export default function SpecialtyPage() {
-  // --- Hooks -----------------------------------------------------------------
-  const router = useRouter()
-  // --- END: Hooks ------------------------------------------------------------
-
   // --- Local state -----------------------------------------------------------
+  const router = useRouter()
+  const user = getUser()
+
   const isPatient = useMemo(() => getSession() === 'patient', [])
   const isDoctor = useMemo(() => getSession() === 'doctor', [])
+  const specialtyId = useMemo(() => String(router.query.slug?.[1]), [router.query.slug])
+
+  const patientId = useMemo(
+    () => (isPatient ? user?.govId : String(router.query.slug?.[0])),
+    [isPatient, router.query.slug, user?.govId]
+  )
   // --- END: Local state ------------------------------------------------------
+
+  // --- Hooks -----------------------------------------------------------------
+  const { data: specialties } = useSpecialties()
+  const { data: records } = useSpecialityRecordsByPatientGovId(specialtyId, patientId)
+  // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
   // --- END: Refs -------------------------------------------------------------
@@ -26,19 +37,9 @@ export default function SpecialtyPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const specialtyId = useMemo(
-    () => (isPatient ? router.query.slug?.[0] : router.query.slug?.[1]),
-    [isPatient, router.query.slug]
-  )
-
-  const patientId = useMemo(
-    () => !isPatient && router.query.slug?.[0],
-    [isPatient, router.query.slug]
-  )
-
   const specialty = useMemo(
-    () => specialties.find((specialty) => String(specialty.id) === specialtyId),
-    [specialtyId]
+    () => specialties?.data?.find((specialty) => String(specialty.id) === specialtyId),
+    [specialties?.data, specialtyId]
   )
 
   const currentTab = useMemo(() => {
@@ -62,19 +63,42 @@ export default function SpecialtyPage() {
     }
   }, [router])
 
+  const specialtyData = useMemo(
+    () => ({
+      evolutions: records?.data
+        ?.filter((el) => el.type !== 'orden' && el.type !== 'análisis')
+        ?.map((evolution) => ({
+          ...evolution,
+          reason: evolution.description,
+          date: new Date(evolution.created_at)
+        })),
+      orders: records?.data
+        ?.filter((el) => el.type === 'orden')
+        ?.map((evolution) => ({
+          ...evolution,
+          date: new Date(evolution.created_at)
+        })),
+      tests: records?.data
+        ?.filter((el) => el.type === 'análisis')
+        ?.map((evolution) => ({
+          ...evolution,
+          date: new Date(evolution.created_at)
+        }))
+    }),
+    [records]
+  )
+
   const data = useMemo(
     () => ({
-      evolutions: specialtyData.evolutions.map(({ id, date, type, author, reason }) => ({
+      evolutions: specialtyData?.evolutions?.map(({ id, title, author, reason }) => ({
         href: isPatient
           ? `/evolucion/${specialtyId}/${id}`
           : `/evolucion/${patientId}/${specialtyId}/${id}`,
-        title: `${type}: ${format(new Date(date), 'dd, MMMM yyyy', {
-          locale: es
-        })}`,
+        title,
         description: `Editado por: ${author}`,
         comment: `Patología: ${reason}`
       })),
-      orders: specialtyData.orders.map(({ id, title, date, author }) => ({
+      orders: specialtyData?.orders?.map(({ id, title, date, author }) => ({
         href: isPatient
           ? `/orden/${specialtyId}/${id}`
           : `/orden/${patientId}/${specialtyId}/${id}`,
@@ -84,7 +108,7 @@ export default function SpecialtyPage() {
         })}`,
         comment: `Agregado por: ${author}`
       })),
-      tests: specialtyData.tests.map(({ id, title, date, author }) => ({
+      tests: specialtyData?.tests?.map(({ id, title, date, author }) => ({
         href: isPatient
           ? `/analisis/${specialtyId}/${id}`
           : `/analisis/${patientId}/${specialtyId}/${id}`,
@@ -95,14 +119,14 @@ export default function SpecialtyPage() {
         comment: `Agregado por: ${author}`
       }))
     }),
-    [isPatient, patientId, specialtyId]
+    [isPatient, patientId, specialtyId, specialtyData]
   )
 
   const context = useMemo(
     () => ({
       isPatient,
       isDoctor,
-      specialty: specialty ?? specialties[0],
+      specialty: specialty ?? specialtiesFallback[0],
       data,
       currentTab
     }),

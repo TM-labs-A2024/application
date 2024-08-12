@@ -13,8 +13,8 @@ import {
   ModalBody,
   Spinner
 } from '@chakra-ui/react'
-import { specialties } from '@constants/index'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
+import { formatDate } from '@utils/index'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -57,6 +57,7 @@ function ConfirmationModal({
 
 export default function Doctor({
   context: {
+    specialties,
     doctor,
     isDenialOpen,
     onDenialOpen,
@@ -74,6 +75,7 @@ export default function Doctor({
   }
 }: {
   context: {
+    specialties: ReactSelectOption[]
     doctor: DoctorType
     isDenialOpen: boolean
     onDenialOpen: () => void
@@ -109,7 +111,7 @@ export default function Doctor({
   // --- Data and handlers -----------------------------------------------------
   const doctorSpecialtiesList = doctor.specialties?.map(
     (specialty, idx) =>
-      `${specialties.find((el: { id: string; name: string }) => el.id === specialty)?.name}${
+      `${specialties.find((el) => el?.value === specialty.id)?.label}${
         doctor.specialties.length > 0 && idx !== doctor.specialties.length - 1 ? ',' : ''
       }${idx === doctor.specialties.length - 1 ? '.' : ' '}`
   )
@@ -149,9 +151,10 @@ export default function Doctor({
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
             <Text className="font-medium">
-              {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
-                locale: es
-              })}
+              {doctor.birthdate &&
+                format(new Date(formatDate(doctor.birthdate)), "dd 'de' MMMM, yyyy", {
+                  locale: es
+                })}
             </Text>
           </Stack>
           <Stack mb={6}>

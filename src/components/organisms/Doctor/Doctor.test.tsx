@@ -1,4 +1,5 @@
 import { doctors, specialties } from '@src/constants'
+import { formatDate } from '@src/utils'
 import { render, screen } from '@test/utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -39,7 +40,13 @@ const onRemovalClose = () => {
   isRemovalOpen = false
 }
 
+const specialtiesOptions = specialties.map((option: { name: string; id: string }) => ({
+  value: option.id,
+  label: option.name
+}))
+
 const context = {
+  specialties: specialtiesOptions,
   doctor,
   isDenialOpen,
   onDenialOpen,
@@ -70,13 +77,13 @@ describe('Organisms > Doctor test', () => {
     expect(doctorId).toBeInTheDocument()
     doctor.specialties?.forEach((specialty) => {
       const specialtyMatcher = (content: string) =>
-        content.includes(String(specialties?.find((el) => el.id === specialty)?.name))
+        content.includes(String(specialtiesOptions?.find((el) => el.value === specialty.id)?.label))
 
       expect(screen.getByText(specialtyMatcher)).toBeInTheDocument()
     })
     expect(
       screen.getByText(
-        format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
+        format(new Date(formatDate(doctor.birthdate)), "dd 'de' MMMM, yyyy", {
           locale: es
         })
       )

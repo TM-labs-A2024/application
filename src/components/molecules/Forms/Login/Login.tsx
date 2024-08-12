@@ -1,5 +1,12 @@
-/* eslint-disable no-console */
-import { Button, FormErrorMessage, FormControl } from '@chakra-ui/react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import {
+  Button,
+  FormErrorMessage,
+  FormControl,
+  InputGroup,
+  InputRightElement,
+  IconButton
+} from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 import React from 'react'
 import { useForm, FieldErrors } from 'react-hook-form'
@@ -39,6 +46,7 @@ export default function LoginForm({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const [show, setShow] = React.useState(false)
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -51,6 +59,8 @@ export default function LoginForm({
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const handleClick = () => setShow(!show)
+
   const onSubmitDetails = (data: FormData) => {
     if (type === 'patient') {
       loginPatient(data)
@@ -99,16 +109,29 @@ export default function LoginForm({
         <FormErrorMessage>{errors?.email && errors?.email?.message}</FormErrorMessage>
         <div className="w-full" data-testid="input-component">
           <label htmlFor="password">Contraseña</label>
-          <Input
-            placeholder="Introduzca su contraseña"
-            size="md"
-            disabled={isLoading}
-            id="password"
-            className="mb-4 mt-1 min-h-10"
-            {...register('password', {
-              required: 'Este campo es obligatorio'
-            })}
-          />
+          <InputGroup size="md">
+            <Input
+              placeholder="Introduzca su contraseña"
+              size="md"
+              disabled={isLoading}
+              id="password"
+              type={show ? 'text' : 'password'}
+              className="mb-4 mt-1 min-h-10"
+              {...register('password', {
+                required: 'Este campo es obligatorio'
+              })}
+            />
+            <InputRightElement className="mt-1" width="3rem">
+              <IconButton
+                size="xl"
+                fontSize="20px"
+                aria-label="show"
+                variant="link"
+                icon={show ? <ViewOffIcon /> : <ViewIcon />}
+                onClick={handleClick}
+              />
+            </InputRightElement>
+          </InputGroup>
         </div>
         <FormErrorMessage>{errors?.password && errors?.password?.message}</FormErrorMessage>
         <Button isLoading={isSubmitting} type="submit">

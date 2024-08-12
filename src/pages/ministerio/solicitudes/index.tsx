@@ -1,6 +1,7 @@
 import { institutions } from '@constants/index'
 import { useGovernmentRequests, useInstitutions } from '@services/index'
 import { removeSession } from '@shared/index'
+import { Institution } from '@src/types'
 import MinistryRequestsView from '@views/MinistryRequests'
 import { useRouter } from 'next/navigation'
 import React, { useMemo, useCallback } from 'react'
@@ -14,20 +15,22 @@ export default function MinistryRequestsPage() {
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const formattedInstitutions = useMemo(
-    () =>
+  const formattedInstitutions = useMemo(() => {
+    const institutionsMap =
       data?.data?.map((institution) => {
-        const obj =
+        const obj: Institution =
           institutionsData?.data?.find((el) => el.id === institution.institutionId) ??
           institutions[0]
 
         return {
           ...obj,
-          requestId: institution?.id
+          requestId: institution?.id,
+          approved: institution?.approved
         }
-      }) ?? [],
-    [data, institutionsData]
-  )
+      }) ?? []
+
+    return institutionsMap.filter((el: Institution) => el.pending && !el.approved)
+  }, [data, institutionsData])
 
   const onLogout = useCallback(() => {
     removeSession()

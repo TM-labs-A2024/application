@@ -12,6 +12,7 @@ import {
   Text
 } from '@chakra-ui/react'
 import { Patient } from '@src/types'
+import { formatDate } from '@src/utils'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { useRouter } from 'next/navigation'
@@ -122,7 +123,7 @@ export default function EditPatientForm({
             <Input
               id="birthdate"
               className="mt-2 min-h-10"
-              defaultValue={format(new Date(patient.birthdate), 'yyyy-MM-dd')}
+              defaultValue={format(new Date(formatDate(patient.birthdate)), 'yyyy-MM-dd')}
               type="date"
               placeholder="Fecha de nacimiento"
               {...register('birthdate', {

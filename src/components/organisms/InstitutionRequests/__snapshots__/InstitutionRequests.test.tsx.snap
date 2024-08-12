@@ -114,7 +114,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 1000000, undefined, undefined.
+                    C.I: 1000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -143,7 +143,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 2000000, undefined, undefined.
+                    C.I: 2000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -172,7 +172,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 3000000, undefined, undefined.
+                    C.I: 3000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -201,7 +201,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 4000000, undefined, undefined.
+                    C.I: 4000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -230,7 +230,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 5000000, undefined, undefined.
+                    C.I: 5000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -259,7 +259,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 6000000, undefined, undefined.
+                    C.I: 6000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -288,7 +288,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 7000000, undefined, undefined.
+                    C.I: 7000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -317,7 +317,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 16000000, undefined, undefined.
+                    C.I: 16000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -346,7 +346,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 17000000, undefined, undefined.
+                    C.I: 17000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -375,7 +375,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 18000000, undefined, undefined.
+                    C.I: 18000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -404,7 +404,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 19000000, undefined, undefined.
+                    C.I: 19000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -433,7 +433,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 20000000, undefined, undefined.
+                    C.I: 20000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -462,7 +462,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 21000000, undefined, undefined.
+                    C.I: 21000000, undefined.
                   </p>
                 </div>
                 <div />
@@ -491,7 +491,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
                   <p
                     class="chakra-text css-0"
                   >
-                    C.I: 22000000, undefined, undefined.
+                    C.I: 22000000, undefined.
                   </p>
                 </div>
                 <div />

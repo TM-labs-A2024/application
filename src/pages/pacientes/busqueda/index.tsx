@@ -1,5 +1,5 @@
 import Splash from '@components/atoms/Splash'
-import { useDoctorPetients } from '@services/index'
+import { useDoctorPatients } from '@services/index'
 import { patients } from '@src/constants'
 import { getSession, getUser } from '@src/shared'
 import PatientsSearchView from '@views/Patients/Search'
@@ -9,7 +9,7 @@ export default function PatientsSearchPage() {
   // --- Hooks -----------------------------------------------------------------
   const user = useMemo(() => getUser(), [])
 
-  const { data, isLoading } = useDoctorPetients(user?.id)
+  const { data, isLoading } = useDoctorPatients(user?.id)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------

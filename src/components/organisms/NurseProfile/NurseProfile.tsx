@@ -1,6 +1,7 @@
 import { Text, Stack, Heading, Button } from '@chakra-ui/react'
 import { Nurse } from '@src/types'
 import { isIOS } from '@utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import React, { ReactElement } from 'react'
@@ -28,9 +29,10 @@ export default function NurseProfile({
         <Stack mb={6}>
           <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
           <Text className="font-medium">
-            {format(new Date(nurse.birthdate), "dd 'de' MMMM, yyyy", {
-              locale: es
-            })}
+            {nurse.birthdate &&
+              format(new Date(formatDate(nurse.birthdate)), "dd 'de' MMMM, yyyy", {
+                locale: es
+              })}
           </Text>
         </Stack>
         <Stack mb={6}>

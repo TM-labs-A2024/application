@@ -4,7 +4,7 @@ import {
   useDoctorMutation,
   useNurseMutation,
   usePatientLogin,
-  useInstitutions,
+  useApprovedInstitutions,
   useSpecialties
 } from '@src/services'
 import { LoginResponse, Patient } from '@src/types'
@@ -26,7 +26,7 @@ export default function RegisterPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
 
-  const { data: institutions, isLoading: isInstitutionsLoading } = useInstitutions(
+  const { data: institutions, isLoading: isInstitutionsLoading } = useApprovedInstitutions(
     () => setIsLoading(false),
     () => setIsLoading(false)
   )

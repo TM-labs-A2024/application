@@ -8,7 +8,7 @@ exports[`Atoms > Sidebar test Matches the snapshot 1`] = `
   class="chakra-slide chakra-modal__content css-1o3pyl4"
   id="chakra-modal-:r9:"
   role="dialog"
-  style="position: fixed; left: 0px; top: 0px; bottom: 0px; width: 100%; transform: translateX(-100%) translateY(0px) translateZ(0);"
+  style="position: fixed; left: 0px; top: 0px; bottom: 0px; width: 100%; transform: none;"
   tabindex="-1"
 >
   <button

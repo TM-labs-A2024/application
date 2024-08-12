@@ -9,32 +9,29 @@ import {
   Text,
   Textarea
 } from '@chakra-ui/react'
+import { AttachmentFormData } from '@src/types'
 import { isIOS } from '@utils/index'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement, useMemo } from 'react'
 import { useForm, FieldErrors } from 'react-hook-form'
 
-type FormData = {
-  title: string
-  description: string
-  attachment: FormData
-}
-
 export default function AddAttachmentForm({
-  type,
-  patientId,
-  specialty
+  context: { onSubmit, isLoading, type, patientId, specialty }
 }: {
-  type: string
-  patientId: string
-  specialty: string
+  context: {
+    onSubmit: (data: AttachmentFormData) => void
+    isLoading: boolean
+    type: string
+    patientId: string
+    specialty: string
+  }
 }): ReactElement {
   // --- Hooks -----------------------------------------------------------------
   const {
     handleSubmit,
     formState: { errors, isSubmitting },
     register
-  } = useForm<FormData>()
+  } = useForm<AttachmentFormData>()
 
   const router = useRouter()
   // --- END: Hooks ------------------------------------------------------------
@@ -53,11 +50,13 @@ export default function AddAttachmentForm({
 
   // --- Data and handlers -----------------------------------------------------
   const isOrder = useMemo(() => type === 'order', [type])
-  const onSubmitDetails = (data: FormData) => {
+
+  const onSubmitDetails = (data: AttachmentFormData) => {
     alert(JSON.stringify(data))
+    onSubmit(data)
   }
 
-  const verifyErrors = (errors: FieldErrors<FormData>) => Object.keys(errors).length > 0
+  const verifyErrors = (errors: FieldErrors<AttachmentFormData>) => Object.keys(errors).length > 0
   // --- END: Data and handlers ------------------------------------------------
 
   return (
@@ -116,7 +115,7 @@ export default function AddAttachmentForm({
               <AttachmentIcon /> Adjuntar imagen
             </label>
             <Input id="attachment" type="file" className="hidden" {...register('attachment')} />
-            <Button isLoading={isSubmitting} type="submit" className="w-full">
+            <Button isLoading={isSubmitting || isLoading} type="submit" className="w-full">
               Guardar
             </Button>
           </div>

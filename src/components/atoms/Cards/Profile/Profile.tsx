@@ -1,6 +1,7 @@
 import { Link } from '@chakra-ui/next-js'
 import { Text } from '@chakra-ui/react'
 import { Patient } from '@src/types'
+import { formatDate } from '@src/utils'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import React from 'react'
@@ -16,10 +17,11 @@ export default function Profile({ patient }: { patient: Patient }) {
           <Text>CI: {patient.govId}</Text>
           <Text>
             Edad:{' '}
-            {formatDistanceToNowStrict(new Date(patient.birthdate), {
-              locale: es,
-              roundingMethod: 'floor'
-            })}
+            {patient.birthdate &&
+              formatDistanceToNowStrict(new Date(formatDate(patient.birthdate)), {
+                locale: es,
+                roundingMethod: 'floor'
+              })}
           </Text>
         </div>
         <div className="flex w-full flex-col items-end gap-1">

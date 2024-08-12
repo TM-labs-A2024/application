@@ -17,7 +17,11 @@ function getSession() {
 }
 
 function getToken() {
-  if (typeof window !== 'undefined') return JSON?.parse(localStorage?.getItem('token') ?? '')
+  if (typeof window !== 'undefined') {
+    const token = localStorage?.getItem('token')
+
+    return JSON?.parse(token ?? '')
+  }
 }
 
 function getUser() {

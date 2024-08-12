@@ -32,9 +32,9 @@ export default function Specialty({
       name: string
     }
     data: {
-      evolutions: CardEvolution[]
-      orders: CardEvolution[]
-      tests: CardEvolution[]
+      evolutions?: CardEvolution[]
+      orders?: CardEvolution[]
+      tests?: CardEvolution[]
     }
     currentTab: number
   }
@@ -89,7 +89,7 @@ export default function Specialty({
         </div>
         <Avatar name={specialty.name} src="/" size="sm" />
       </div>
-      {data.evolutions.length > 0 && (
+      {data?.evolutions && data?.evolutions?.length > 0 && (
         <SearchInputComponent
           placeholder="Buscar"
           className="mb-8 w-full"
@@ -123,57 +123,55 @@ export default function Specialty({
           )}
         </TabList>
         <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="1px" />
-
         <TabPanels className="h-full pb-0">
           {(isPatient || isDoctor) && (
             <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
-              <EvolutionsList evolutions={data.evolutions} />
+              {data.evolutions && data?.evolutions?.length > 0 && (
+                <EvolutionsList evolutions={data?.evolutions ?? []} />
+              )}
+              {data?.evolutions?.length === 0 && (
+                <div
+                  className="flex h-full w-full flex-col items-center justify-center"
+                  data-testid="evolutions-empty-state"
+                >
+                  <Icon fontSize="xxx-large" as={RiHealthBookFill} />
+                  <Text textAlign="center" mt={4}>
+                    No hay historias asociadas aún.
+                  </Text>
+                </div>
+              )}
             </TabPanel>
           )}
           <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
-            {data.orders.length > 0 && <EvolutionsList evolutions={data.orders} />}
-            {data.orders.length === 0 && (
+            {data.orders && data.orders?.length > 0 && (
+              <EvolutionsList evolutions={data?.orders ?? []} />
+            )}
+            {data.orders?.length === 0 && (
               <div
-                className="flex h-full w-full items-center justify-center"
+                className="flex h-full w-full flex-col items-center justify-center"
                 data-testid="orders-empty-state"
               >
                 <Icon fontSize="xxx-large" as={RiHealthBookFill} />
                 <Text textAlign="center" mt={4}>
                   No hay órdenes asociadas aún.
                 </Text>
-                {isDoctor && (
-                  <Button
-                    mt={4}
-                    onClick={() =>
-                      router.push(`/crear-adjunto/${patientId}/${specialty.id}?type=order`)
-                    }
-                  >
-                    Nueva orden
-                  </Button>
-                )}
               </div>
             )}
           </TabPanel>
           {(isPatient || isDoctor) && (
             <TabPanel className={`${isAndroid() ? 'h-[75%]' : 'h-[90%]'} overflow-scroll`}>
-              {data.tests.length > 0 && <EvolutionsList evolutions={data.tests} />}
-              {data.tests.length === 0 && (
+              {data.tests && data.tests?.length > 0 && (
+                <EvolutionsList evolutions={data?.tests ?? []} />
+              )}
+              {data.tests?.length === 0 && (
                 <div
-                  className="flex h-full w-full items-center justify-center"
+                  className="flex h-full w-full flex-col items-center justify-center"
                   data-testid="tests-empty-state"
                 >
                   <Icon fontSize="xxx-large" as={RiHealthBookFill} />
                   <Text textAlign="center" mt={4}>
                     No hay análisis asociados aún.
                   </Text>
-                  <Button
-                    mt={4}
-                    onClick={() =>
-                      router.push(`/crear-adjunto/${patientId}/${specialty.id}?type=order`)
-                    }
-                  >
-                    Nuevo análisis
-                  </Button>
                 </div>
               )}
             </TabPanel>
@@ -181,7 +179,7 @@ export default function Specialty({
           {isDoctor && tabIndex === 0 && (
             <Button
               className="mt-4 w-full"
-              onClick={() => router.push(`/crear-historia/${patientId}`)}
+              onClick={() => router.push(`/crear-historia/${patientId}/${specialty.id}`)}
             >
               Nueva evolución
             </Button>

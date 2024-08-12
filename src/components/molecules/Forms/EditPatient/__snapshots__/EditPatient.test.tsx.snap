@@ -73,7 +73,7 @@ exports[`Molecules > Forms > EditPatient test Matches the snapshot 1`] = `
           name="birthdate"
           placeholder="Fecha de nacimiento"
           type="date"
-          value="1997-08-19"
+          value="1999-11-11"
         />
         <input
           class="chakra-input mt-2 min-h-10 css-1cjy4zv"

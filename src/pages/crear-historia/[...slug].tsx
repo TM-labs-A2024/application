@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
-import { useRecordMutation, usePatients } from '@src/services'
+import { useEvolutionMutation, useDoctorPatients } from '@src/services'
+import { getUser } from '@src/shared'
 import { EvolutionFormData } from '@src/types'
 import AddEvolutionView from '@src/views/AddEvolution'
+import { format } from 'date-fns'
+import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/navigation'
 import { useRouter as queryRouter } from 'next/router'
 import React, { useCallback, useMemo } from 'react'
@@ -10,13 +13,15 @@ export default function AddEvolutionPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   const route = queryRouter()
+  const user = getUser()
   const patientId = route?.query.slug?.[0]
+  const specialtyId = route?.query.slug?.[1]
 
-  const { data: patients } = usePatients()
-  const patient = patients?.data?.find((el) => el.id === patientId)
+  const { data: patients } = useDoctorPatients(user?.id)
+  const patient = patients?.data?.find((el) => el.govId === patientId)
 
-  const { mutate: createRecord, isLoading } = useRecordMutation(() => {
-    router.push(`/especialidades/${patient?.govId}`)
+  const { mutate: createEvolution, isLoading } = useEvolutionMutation(() => {
+    router.push(`/especialidad/${patient?.govId}/${specialtyId}`)
   })
   // --- END: Hooks ------------------------------------------------------------
 
@@ -35,19 +40,20 @@ export default function AddEvolutionPage() {
   // --- Data and handlers -----------------------------------------------------
   const onSubmit = useCallback(
     (data: EvolutionFormData) => {
-      const blob = new Blob([JSON.stringify(data)], { type: 'text/plain' })
+      const body = {
+        specialty: specialtyId ?? '',
+        patientId: patient?.id ?? '',
+        bed: '',
+        title: `${data?.type?.label}: ${format(new Date(), 'dd, MMMM yyyy', {
+          locale: es
+        })}`,
+        description: data.reason,
+        payload: { ...data }
+      }
 
-      const form = new FormData()
-      form.append('specialty', '89ca4324-1af0-44b8-94cf-116fee714517')
-      form.append('patientId', patientId ?? '')
-      form.append('type', data?.type?.label ?? '')
-      form.append('description', data.description)
-      form.append('title', data.reason)
-      form.append('payload', blob)
-
-      createRecord(form)
+      createEvolution(body)
     },
-    [createRecord, patientId]
+    [createEvolution, patient, specialtyId]
   )
 
   const context = useMemo(

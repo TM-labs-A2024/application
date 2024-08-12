@@ -1,6 +1,7 @@
 import { getSession, getUser } from '@shared/index'
 import Splash from '@src/components/atoms/Splash'
-import { useDoctorPetients } from '@src/services'
+import { useDoctorPatients } from '@src/services'
+import { formatDate } from '@src/utils'
 import PatientsView from '@views/Patients'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -20,7 +21,7 @@ export default function PatientsPage() {
   // --- Hooks -----------------------------------------------------------------
   const user = useMemo(() => getUser(), [])
 
-  const { data, isLoading } = useDoctorPetients(user?.id)
+  const { data, isLoading } = useDoctorPatients(user?.id)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
@@ -31,10 +32,10 @@ export default function PatientsPage() {
       data?.data.map(({ birthdate, govId, status, bed, firstname, lastname, pending }) => ({
         href: pending ? '/pacientes' : `/especialidades/${govId}`,
         title: `${firstname} ${lastname}`,
-        description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(birthdate), {
+        description: `C.I: ${govId}, ${formatDistanceToNowStrict(new Date(formatDate(birthdate)), {
           locale: es,
           roundingMethod: 'floor'
-        })}${status ? `, Cama: ${bed}` : ''}`,
+        })}${status == 'hospitalizado' ? `, Cama: ${bed}` : ''}`,
         status,
         pending
       })) ?? fallback,
@@ -62,7 +63,8 @@ export default function PatientsPage() {
   const context = useMemo(
     () => ({
       pendingPatients: isDoctor ? pendingPatients : [],
-      approvedPatients: isDoctor ? approvedPatients : hospitalizedPatients
+      approvedPatients: isDoctor ? approvedPatients : hospitalizedPatients,
+      isDoctor
     }),
     [isDoctor, pendingPatients, approvedPatients, hospitalizedPatients]
   )

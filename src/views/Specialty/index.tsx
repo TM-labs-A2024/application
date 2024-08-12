@@ -13,9 +13,9 @@ export default function SpecialtyView({
       name: string
     }
     data: {
-      evolutions: CardEvolution[]
-      orders: CardEvolution[]
-      tests: CardEvolution[]
+      evolutions?: CardEvolution[]
+      orders?: CardEvolution[]
+      tests?: CardEvolution[]
     }
     currentTab: number
   }

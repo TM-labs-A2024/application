@@ -1,20 +1,28 @@
-import { specialtyData, patients } from '@constants/index'
-import { getSession } from '@src/shared'
+import Splash from '@components/atoms/Splash'
+import { patients, evolution as evolutionFallback } from '@constants/index'
+import { useRecordById } from '@services/index'
+import { getSession, getUser } from '@src/shared'
 import EvolutionView from '@views/Evolution'
-import { format } from 'date-fns'
-import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/router'
-import React, { useMemo } from 'react'
-
-const lorem =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+import React, { useMemo, useEffect, useState } from 'react'
 
 export default function EvolutionPage() {
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
+  const user = getUser()
+
+  const isPatient = useMemo(() => getSession() === 'patient', [])
+  const evolution = useMemo(
+    () => (isPatient ? String(router?.query?.slug?.[1]) : String(router?.query?.slug?.[2])),
+    [isPatient, router?.query?.slug]
+  )
+
+  const { data: recordData } = useRecordById(evolution)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
+  const [info, setInfo] = useState(evolutionFallback)
+  const [isLoading, setIsLoading] = useState(true)
   // --- END: Local state ------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -24,80 +32,87 @@ export default function EvolutionPage() {
   // --- END: Redux ------------------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    if (!recordData?.data) return
+
+    const fetchInfo = async () => {
+      try {
+        const response = await fetch(recordData.data.content)
+        const body = await response.json()
+        const allInfo = {
+          ...recordData.data,
+          payload: {
+            ...body
+          }
+        }
+        setInfo(allInfo)
+        setIsLoading(false)
+      } catch (error) {
+        console.error('Error fetching info:', error)
+      }
+    }
+
+    fetchInfo()
+  }, [recordData])
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const isPatient = useMemo(() => getSession() === 'patient', [])
-  const evolution = useMemo(() => String(router?.query?.slug?.[1]), [router.query.slug])
-  const evolutionData = useMemo(
-    () => specialtyData.evolutions.find((item) => String(item.id) === evolution),
-    [evolution]
-  )
-
-  const title = useMemo(() => {
-    if (evolutionData?.type && evolutionData?.date) {
-      return `${evolutionData?.type}: ${format(
-        new Date(String(evolutionData?.date ?? '')),
-        'dd, MMMM yyyy',
-        {
-          locale: es
-        }
-      )}`
-    }
-
-    return ''
-  }, [evolutionData])
-
   const specialty = useMemo(
     () => (isPatient ? String(router?.query?.slug?.[0]) : String(router?.query?.slug?.[1])),
     [isPatient, router?.query?.slug]
   )
 
   const patientId = useMemo(
-    () => !isPatient && router?.query?.slug?.[0],
-    [isPatient, router?.query?.slug]
+    () => (isPatient ? user.govId : router?.query?.slug?.[0]),
+    [isPatient, router?.query?.slug, user.govId]
   )
 
   const patient = useMemo(() => patients.find((patient) => patient.id === patientId), [patientId])
 
   const goBackRef = useMemo(
-    () =>
-      isPatient
-        ? `/especialidad/${specialty}?type=evolution`
-        : `/especialidad/${patientId}/${specialty}?type=evolution`,
-    [isPatient, patientId, specialty]
+    () => `/especialidad/${patientId}/${specialty}?type=evolution`,
+    [patientId, specialty]
   )
 
   const data = useMemo(
     () => [
       {
         title: 'Descripción (notas evolutivas)',
-        content: lorem
+        content: info?.payload?.description
       },
       {
         title: 'Antecedentes',
-        content: lorem
+        content: info?.payload?.history
       },
       {
         title: 'Exámenes físicos',
-        content: lorem
+        content: info?.payload?.examination
       },
       {
         title: 'Resumen de ingreso',
-        content: lorem
+        content: info?.payload?.summary
       },
       {
         title: 'Diagnóstico',
-        content: lorem
+        content: info?.payload?.diagnostic
       },
       {
         title: 'Comentarios',
-        content: lorem
+        content: info?.payload?.comments
       }
     ],
-    []
+    [info]
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <EvolutionView patient={patient} goBackRef={goBackRef} title={title} data={data} />
+  return isLoading ? (
+    <Splash />
+  ) : (
+    <EvolutionView
+      patient={patient}
+      goBackRef={goBackRef}
+      title={recordData?.data?.title ?? ''}
+      data={data}
+    />
+  )
 }

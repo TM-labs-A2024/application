@@ -9,6 +9,7 @@ export default function PatientsView({
   context: {
     pendingPatients: PatientSummary[]
     approvedPatients: PatientSummary[]
+    isDoctor: boolean
   }
 }) {
   return (

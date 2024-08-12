@@ -61,7 +61,7 @@ describe('Organisms > Institution test', () => {
   test('The component shows the name, rif, email and phoneNumber of the institution', () => {
     render(<Institution context={context} />)
 
-    const emailMatcher = (content: string) => content.includes(institution.email)
+    const emailMatcher = (content: string) => content.includes(institution.institutionUser.email)
     const institutionEmail = screen.getByText(emailMatcher)
 
     expect(institutionEmail).toBeInTheDocument()

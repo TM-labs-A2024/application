@@ -7,8 +7,20 @@ export type Institution = {
   email?: string
   phoneNumber?: string
   pending?: boolean
+  approved?: boolean
   password?: string
   requestId?: string
+  institutionUser?: {
+    id: string
+    firstname: string
+    lastname: string
+    govId: string
+    birthdate: string
+    email: string
+    phoneNumber: string
+    role: string
+    institutionId: string
+  }
 }
 
 export type InstitutionRegister = {

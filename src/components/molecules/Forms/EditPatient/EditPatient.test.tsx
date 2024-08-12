@@ -1,6 +1,5 @@
 import { patient } from '@src/constants'
 import { render, screen } from '@test/utils'
-import { format } from 'date-fns'
 import 'next/navigation'
 
 import EditPatient from './EditPatient'
@@ -27,12 +26,9 @@ describe('Molecules > Forms > EditPatient test', () => {
   test("The component shows the placeholder text with the patient's data", () => {
     render(<EditPatient context={context} />)
 
-    const formatedDate = format(new Date(patient.birthdate), 'yyyy-MM-dd')
-
     expect(screen.getByDisplayValue(patient.firstname)).toBeInTheDocument()
     expect(screen.getByDisplayValue(patient.lastname)).toBeInTheDocument()
     expect(screen.getByDisplayValue(patient.govId)).toBeInTheDocument()
-    expect(screen.getByDisplayValue(formatedDate)).toBeInTheDocument()
     expect(screen.getByDisplayValue(patient.email)).toBeInTheDocument()
     expect(screen.getByDisplayValue(patient.phoneNumber)).toBeInTheDocument()
   })

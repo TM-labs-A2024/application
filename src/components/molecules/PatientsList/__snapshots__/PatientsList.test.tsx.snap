@@ -160,7 +160,7 @@ exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
               <p
                 class="chakra-text css-0"
               >
-                C.I: E99885564, 28 años, Cama: C-66
+                C.I: E99885564, 29 años, Cama: C-66
               </p>
             </div>
             <span
@@ -208,7 +208,7 @@ exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
               <p
                 class="chakra-text css-0"
               >
-                C.I: E99885565, 29 años
+                C.I: E99885565, 30 años
               </p>
             </div>
             <div />
@@ -237,7 +237,7 @@ exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
               <p
                 class="chakra-text css-0"
               >
-                C.I: E99885566, 30 años
+                C.I: E99885566, 31 años
               </p>
             </div>
             <div />
@@ -266,7 +266,7 @@ exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
               <p
                 class="chakra-text css-0"
               >
-                C.I: E99885567, 31 años
+                C.I: E99885567, 32 años
               </p>
             </div>
             <div />
@@ -295,7 +295,7 @@ exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
               <p
                 class="chakra-text css-0"
               >
-                C.I: E99885568, 32 años
+                C.I: E99885568, 33 años
               </p>
             </div>
             <div />

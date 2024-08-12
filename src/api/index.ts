@@ -39,7 +39,7 @@ import {
   getPatientsSpecialties,
   getPatientByGovId
 } from './patients'
-import { createRecord } from './records'
+import { createRecord, getRecords, getRecord, createEvolution } from './records'
 import { getSpecialties } from './specialities'
 
 export {
@@ -79,5 +79,8 @@ export {
   denyInstitutionsAccessRequests,
   revokeInstitutionsAccessRequests,
   getGovernmentRequests,
-  createRecord
+  createRecord,
+  getRecords,
+  getRecord,
+  createEvolution
 }

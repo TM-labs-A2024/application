@@ -1,9 +1,10 @@
 import { Text, Stack, Heading, Divider, FormErrorMessage, Button } from '@chakra-ui/react'
 import { Doctor, ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
-import React, { ReactElement, useMemo } from 'react'
+import React, { ReactElement, useMemo, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import Select from 'react-select'
 
@@ -15,7 +16,7 @@ export default function DoctorProfile({
   context: { doctor, specialtiesOptions, onSubmit, onLogout }
 }: {
   context: {
-    doctor: Doctor
+    doctor?: Doctor
     specialtiesOptions: {
       value: string
       label: string
@@ -31,7 +32,9 @@ export default function DoctorProfile({
 
   const selectedSpecialties = useMemo(
     () =>
-      specialtiesOptions?.filter((specialty) => doctor?.specialties?.includes(specialty?.value)),
+      specialtiesOptions?.filter((specialty) =>
+        doctor?.specialties?.find((el) => el.id === specialty?.value)
+      ),
     [doctor?.specialties, specialtiesOptions]
   )
   // --- END: Data and handlers ------------------------------------------------
@@ -40,7 +43,8 @@ export default function DoctorProfile({
   const {
     handleSubmit,
     formState: { errors, isSubmitting },
-    control
+    control,
+    setValue
   } = useForm<FormData>({ defaultValues: { specialties: selectedSpecialties } })
   // --- END: Hooks ------------------------------------------------------------
 
@@ -54,6 +58,9 @@ export default function DoctorProfile({
   // --- END: Redux ------------------------------------------------------------
 
   // --- Side effects ----------------------------------------------------------
+  useEffect(() => {
+    setValue('specialties', selectedSpecialties)
+  }, [selectedSpecialties, setValue])
   // --- END: Side effects -----------------------------------------------------
 
   return (
@@ -67,25 +74,26 @@ export default function DoctorProfile({
           <div className="h-5/6 overflow-scroll">
             <Stack spacing={1} mb={6}>
               <Heading as="h3" size="md" noOfLines={1}>
-                {doctor.firstname} {doctor.lastname}
+                {doctor?.firstname} {doctor?.lastname}
               </Heading>
-              <Text>CI: {doctor.govId}</Text>
+              <Text>CI: {doctor?.govId}</Text>
             </Stack>
             <Stack mb={6}>
               <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
               <Text className="font-medium">
-                {format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
-                  locale: es
-                })}
+                {doctor?.birthdate &&
+                  format(new Date(formatDate(doctor?.birthdate)), "dd 'de' MMMM, yyyy", {
+                    locale: es
+                  })}
               </Text>
             </Stack>
             <Stack mb={6}>
               <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-              <Text className="font-medium">{doctor.email}</Text>
+              <Text className="font-medium">{doctor?.email}</Text>
             </Stack>
             <Stack mb={6}>
               <h4 className="text-sm text-gray-600">Teléfono</h4>
-              <Text className="font-medium">{doctor.phoneNumber}</Text>
+              <Text className="font-medium">{doctor?.phoneNumber}</Text>
             </Stack>
             <Divider orientation="horizontal" />
             <Controller

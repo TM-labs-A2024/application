@@ -5,7 +5,7 @@ export const patient = {
   firstname: 'José Feliciano',
   lastname: 'Gutierrez García',
   govId: 'E99885561',
-  birthdate: '1997-08-20',
+  birthdate: '1999-11-11',
   email: 'user@example.com',
   phoneNumber: '+584127659814',
   pending: true

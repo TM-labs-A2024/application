@@ -1,5 +1,6 @@
 import { patient } from '@src/constants'
 import { render, screen } from '@test/utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 
@@ -20,7 +21,7 @@ describe('Organisms > Patient test', () => {
     expect(patientId).toBeInTheDocument()
     expect(
       screen.getByText(
-        format(new Date(patient.birthdate), "dd 'de' MMMM, yyyy", {
+        format(new Date(formatDate(patient.birthdate)), "dd 'de' MMMM, yyyy", {
           locale: es
         })
       )

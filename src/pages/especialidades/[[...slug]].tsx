@@ -1,4 +1,4 @@
-import { usePatientsSpecialties, usePatientByGovId } from '@services/index'
+import { useSpecialties, usePatientByGovId } from '@services/index'
 import { getSession, getUser } from '@shared/index'
 import Splash from '@src/components/atoms/Splash'
 import { specialties as specialtiesFallback } from '@src/constants'
@@ -14,9 +14,7 @@ export default function SpecialtiesPage() {
     router?.query?.slug?.[0] ?? getUser()?.govId
   )
   const patient = useMemo(() => patientData?.data, [patientData])
-  const { data: specialitiesData, isLoading: isSpecialitiesLoading } = usePatientsSpecialties(
-    patient?.govId ?? ''
-  )
+  const { data: specialitiesData, isLoading: isSpecialitiesLoading } = useSpecialties()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------

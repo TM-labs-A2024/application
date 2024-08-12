@@ -1,11 +1,13 @@
-import { Doctor, AccessRequest } from './doctors'
+import { Doctor, AccessRequest, DoctorUpdate } from './doctors'
 import {
   Evolution,
   Evolutions,
   CardEvolution,
   EvolutionResponse,
   EvolutionBody,
-  EvolutionFormData
+  EvolutionFormData,
+  AttachmentFormData,
+  EvolutionJSONBody
 } from './evolutions'
 import { ReactSelectOption } from './forms'
 import {
@@ -25,11 +27,14 @@ export type {
   CardEvolution,
   EvolutionBody,
   EvolutionFormData,
+  AttachmentFormData,
+  EvolutionJSONBody,
   EvolutionResponse,
   ReactSelectOption,
   Patient,
   PatientSummary,
   Doctor,
+  DoctorUpdate,
   AccessRequest,
   Institution,
   InstitutionRegister,

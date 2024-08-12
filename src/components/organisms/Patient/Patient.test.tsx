@@ -1,5 +1,6 @@
 import { patient } from '@src/constants'
 import { render, screen } from '@test/utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 
@@ -11,7 +12,7 @@ jest.mock('next/navigation')
 
 const hospitalizedPatient = {
   ...patient,
-  status: 'Hospitalizado'
+  status: 'hospitalizado'
 }
 
 describe('Organisms > Patient test', () => {
@@ -28,7 +29,7 @@ describe('Organisms > Patient test', () => {
     expect(patientId).toBeInTheDocument()
     expect(
       screen.getByText(
-        format(new Date(patient.birthdate), "dd 'de' MMMM, yyyy", {
+        format(new Date(formatDate(patient.birthdate)), "dd 'de' MMMM, yyyy", {
           locale: es
         })
       )

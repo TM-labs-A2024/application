@@ -17,11 +17,13 @@ export default function InstitutionDoctors({
   // --- Data and handlers -----------------------------------------------------
   const formatedRequests = useMemo(
     () =>
-      doctors.map(({ id, govId, firstname, lastname, specialities }) => ({
-        href: `/institucion/medico/${id}`,
-        title: `${firstname} ${lastname}`,
-        description: `C.I: ${govId},${specialities?.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty.id)?.label)}.`
-      })),
+      doctors.map(({ id, govId, firstname, lastname, specialties }) => {
+        return {
+          href: `/institucion/medico/${id}`,
+          title: `${firstname} ${lastname}`,
+          description: `C.I: ${govId},${specialties?.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty.id)?.label)}.`
+        }
+      }),
     [doctors, specialtiesOptions]
   )
   // --- END: Data and handlers ------------------------------------------------

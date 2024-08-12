@@ -27,12 +27,12 @@ exports[`Atoms > Cards > Doctor test Matches the snapshot 1`] = `
         >
           CI: 
           1000000
+          ,
         </p>
         <p
           class="chakra-text text-wrap css-0"
         >
-          Alergología, 
-          Cardiología.
+          undefined.
         </p>
       </div>
     </div>

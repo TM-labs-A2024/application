@@ -1,12 +1,12 @@
-import { Doctor, Login, LoginResponse, Patient } from '@src/types'
+import { Doctor, DoctorUpdate, Login, LoginResponse, Patient } from '@src/types'
 
 import { axiosClient } from './clients'
 
-export function createDoctor(body: Doctor) {
+export function createDoctor(body: DoctorUpdate) {
   return axiosClient.post<Doctor>('/doctors', body)
 }
 
-export function updateDoctor(body: Doctor) {
+export function updateDoctor(body: DoctorUpdate) {
   return axiosClient.put<Doctor>('/doctors', body)
 }
 

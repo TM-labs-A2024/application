@@ -11,7 +11,7 @@ export default function InstitutionProfilePage() {
   const user = getUser()
   const router = useRouter()
 
-  const { data, isLoading } = useInstitutionById(user?.id)
+  const { data, isLoading } = useInstitutionById(user?.institutionId)
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------

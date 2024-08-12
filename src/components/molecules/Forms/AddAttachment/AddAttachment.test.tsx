@@ -7,14 +7,20 @@ import '@testing-library/jest-dom'
 jest.mock('next/navigation')
 
 const props = {
-  type: 'order',
-  patientId: '1',
-  specialty: '1'
+  context: {
+    type: 'order',
+    patientId: '1',
+    specialty: '1',
+    onSubmit: jest.fn(),
+    isLoading: false
+  }
 }
 
 const propsTest = {
-  ...props,
-  type: 'test'
+  context: {
+    ...props.context,
+    type: 'test'
+  }
 }
 
 describe('Molecules > Forms > AddAttachment test', () => {

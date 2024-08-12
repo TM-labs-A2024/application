@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { Patient as PatientType } from '@src/types'
 import { isIOS } from '@utils/index'
+import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/navigation'
@@ -60,7 +61,7 @@ export default function Patient({ patient }: { patient: PatientType }) {
           </Heading>
           <Text>CI: {patient?.govId.toLocaleString()}</Text>
         </Stack>
-        {patient?.status && (
+        {patient?.status === 'hospitalizado' && (
           <Tag size="md" key={patient?.status} variant="subtle" colorScheme="gray">
             <TagLeftIcon boxSize="12px" as={WarningIcon} />
             <TagLabel>{patient?.status}</TagLabel>
@@ -71,9 +72,10 @@ export default function Patient({ patient }: { patient: PatientType }) {
       <Stack mb={6} mt={6}>
         <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
         <Text className="font-medium">
-          {format(new Date(patient?.birthdate), "dd 'de' MMMM, yyyy", {
-            locale: es
-          })}
+          {patient?.birthdate &&
+            format(new Date(formatDate(patient?.birthdate)), "dd 'de' MMMM, yyyy", {
+              locale: es
+            })}
         </Text>
       </Stack>
       <Stack mb={6}>

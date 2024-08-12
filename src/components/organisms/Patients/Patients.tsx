@@ -15,6 +15,7 @@ export default function Patients({
   context: {
     pendingPatients: PatientSummary[]
     approvedPatients: PatientSummary[]
+    isDoctor: boolean
   }
 }) {
   // --- Hooks -----------------------------------------------------------------
@@ -22,7 +23,7 @@ export default function Patients({
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Local state -----------------------------------------------------------
-  const { pendingPatients, approvedPatients } = context
+  const { pendingPatients, approvedPatients, isDoctor } = context
   // --- END: Local state ------------------------------------------------------
 
   return (
@@ -56,9 +57,11 @@ export default function Patients({
           <Text textAlign="center" mt={4}>
             No hay pacientes asociados aún.
           </Text>
-          <Button mt={4} onClick={() => router.push('/agregar-paciente')}>
-            Nuevo paciente
-          </Button>
+          {isDoctor && (
+            <Button mt={4} onClick={() => router.push('/agregar-paciente')}>
+              Nuevo paciente
+            </Button>
+          )}
         </div>
       )}
     </div>

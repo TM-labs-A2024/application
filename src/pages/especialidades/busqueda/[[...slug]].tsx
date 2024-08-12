@@ -1,6 +1,6 @@
 import Splash from '@components/atoms/Splash'
 import { specialties as specialtiesFallback } from '@constants/index'
-import { usePatientByGovId, usePatientsSpecialties } from '@services/index'
+import { usePatientByGovId, useSpecialties } from '@services/index'
 import { getUser } from '@shared/index'
 import SpecialtiesSearchView from '@views/Specialties/Search'
 import { useRouter } from 'next/router'
@@ -14,9 +14,7 @@ export default function SpecialtiesSearchPage() {
     router?.query?.slug?.[0] ?? getUser()?.govId
   )
   const patient = useMemo(() => patientData?.data, [patientData])
-  const { data: specialitiesData, isLoading: isSpecialitiesLoading } = usePatientsSpecialties(
-    patient?.govId ?? ''
-  )
+  const { data: specialitiesData, isLoading: isSpecialitiesLoading } = useSpecialties()
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------

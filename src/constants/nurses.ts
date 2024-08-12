@@ -3,7 +3,7 @@ export const nurse = {
   govId: '1000000',
   firstname: 'José',
   lastname: 'Pérez',
-  birthdate: 'Wed Sep 17 1997 00:00:00 GMT-0400 (hora de Venezuela)',
+  birthdate: '1999-11-11',
   email: 'joseperez@gmail.com',
   phoneNumber: '4127775522'
 }

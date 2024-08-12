@@ -13,7 +13,7 @@ import Splash from '@components/atoms/Splash'
 import { userTypes, sexTypes } from '@components/molecules/Forms/Register/Register.constants'
 import {
   Patient,
-  Doctor,
+  DoctorUpdate,
   ReactSelectOption,
   Institution,
   Specialties,
@@ -82,7 +82,7 @@ export default function RegisterForm({
 }: {
   context: {
     createPatient: (arg: Patient) => void
-    createDoctor: (arg: Doctor) => void
+    createDoctor: (arg: DoctorUpdate) => void
     createNurse: (arg: Nurse) => void
     loginPatient: (arg: Login) => void
     loginDoctor: (arg: Login) => void

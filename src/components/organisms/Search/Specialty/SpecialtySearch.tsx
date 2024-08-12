@@ -29,7 +29,7 @@ import Select from 'react-select'
 
 import Swimmer from '../../../../../public/static/icons/Swimmer.svg'
 
-const evolutionTypesOptions = evolutionTypes.map(({ id, name }: { id: number; name: string }) => ({
+const evolutionTypesOptions = evolutionTypes.map(({ id, name }: { id: string; name: string }) => ({
   value: id,
   label: name
 }))
@@ -46,9 +46,9 @@ export default function SpecialtySearch({
   context: {
     goBackRef: string
     specialtyData: {
-      evolutions: Evolutions
-      orders: Evolutions
-      tests: Evolutions
+      evolutions?: Evolutions
+      orders?: Evolutions
+      tests?: Evolutions
     }
     isNurse: boolean
     isPatient: boolean
@@ -72,9 +72,9 @@ export default function SpecialtySearch({
   // --- Local state -----------------------------------------------------------
   const { goBackRef, isNurse, isPatient, specialtyData, patientId, specialtyId } = context
   const [showFilters, setShowFilters] = useState(false)
-  const [evolutionsList, setEvolutionsList] = useState(specialtyData.evolutions)
-  const [ordersList, setOrdersList] = useState(specialtyData.orders)
-  const [testsList, setTestsList] = useState(specialtyData.tests)
+  const [evolutionsList, setEvolutionsList] = useState(specialtyData?.evolutions)
+  const [ordersList, setOrdersList] = useState(specialtyData?.orders)
+  const [testsList, setTestsList] = useState(specialtyData?.tests)
   const [search, setSearch] = useState('')
   const [fromDate, setFromDate] = useState('')
   const [toDate, setToDate] = useState('')
@@ -88,7 +88,7 @@ export default function SpecialtySearch({
   const data = useMemo(() => {
     return {
       evolutions: !isNurse
-        ? evolutionsList.map(({ id, date, type, author, reason }) => ({
+        ? evolutionsList?.map(({ id, date, type, author, reason }) => ({
             href: isPatient
               ? `/evolucion/${specialtyId}/${id}`
               : `/evolucion/${patientId}/${specialtyId}/${id}`,
@@ -99,7 +99,7 @@ export default function SpecialtySearch({
             comment: `Patología: ${reason}`
           }))
         : [],
-      orders: ordersList.map(({ id, title, date, author }) => ({
+      orders: ordersList?.map(({ id, title, date, author }) => ({
         href: isPatient
           ? `/orden/${specialtyId}/${id}`
           : `/orden/${patientId}/${specialtyId}/${id}`,
@@ -110,7 +110,7 @@ export default function SpecialtySearch({
         comment: `Agregado por: ${author}`
       })),
       tests: !isNurse
-        ? testsList.map(({ id, title, date, author }) => ({
+        ? testsList?.map(({ id, title, date, author }) => ({
             href: isPatient
               ? `/analisis/${specialtyId}/${id}`
               : `/analisis/${patientId}/${specialtyId}/${id}`,
@@ -140,28 +140,28 @@ export default function SpecialtySearch({
   }, [inputRef])
 
   useEffect(() => {
-    let filteredEvolutionsList = specialtyData.evolutions
-    let filteredOrdersList = specialtyData.orders
-    let filteredTestsList = specialtyData.tests
+    let filteredEvolutionsList = specialtyData?.evolutions
+    let filteredOrdersList = specialtyData?.orders
+    let filteredTestsList = specialtyData?.tests
 
     // Title filtering
     if (search !== '') {
-      filteredEvolutionsList = filteredEvolutionsList.filter((evolution) =>
+      filteredEvolutionsList = filteredEvolutionsList?.filter((evolution) =>
         evolution?.type?.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
 
-      filteredOrdersList = filteredOrdersList.filter((order) =>
+      filteredOrdersList = filteredOrdersList?.filter((order) =>
         order?.title?.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
 
-      filteredTestsList = filteredTestsList.filter((test) =>
+      filteredTestsList = filteredTestsList?.filter((test) =>
         test?.title?.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
     }
 
     // Type filtering
     if (type?.label) {
-      filteredEvolutionsList = filteredEvolutionsList.filter((evolution) =>
+      filteredEvolutionsList = filteredEvolutionsList?.filter((evolution) =>
         evolution?.type?.toLocaleLowerCase().includes(String(type?.label.toLocaleLowerCase()))
       )
 
@@ -174,15 +174,15 @@ export default function SpecialtySearch({
     if (fromDate !== '') {
       const formattedFromDate = new Date(fromDate).getTime()
 
-      filteredEvolutionsList = filteredEvolutionsList.filter(
+      filteredEvolutionsList = filteredEvolutionsList?.filter(
         (evolution) => new Date(evolution.date).getTime() >= formattedFromDate
       )
 
-      filteredOrdersList = filteredOrdersList.filter(
+      filteredOrdersList = filteredOrdersList?.filter(
         (order) => new Date(order.date).getTime() >= formattedFromDate
       )
 
-      filteredTestsList = filteredTestsList.filter(
+      filteredTestsList = filteredTestsList?.filter(
         (test) => new Date(test.date).getTime() >= formattedFromDate
       )
     }
@@ -190,15 +190,15 @@ export default function SpecialtySearch({
     if (toDate !== '') {
       const formattedToDate = new Date(toDate).getTime()
 
-      filteredEvolutionsList = filteredEvolutionsList.filter(
+      filteredEvolutionsList = filteredEvolutionsList?.filter(
         (evolution) => new Date(evolution.date).getTime() <= formattedToDate
       )
 
-      filteredOrdersList = filteredOrdersList.filter(
+      filteredOrdersList = filteredOrdersList?.filter(
         (order) => new Date(order.date).getTime() <= formattedToDate
       )
 
-      filteredTestsList = filteredTestsList.filter(
+      filteredTestsList = filteredTestsList?.filter(
         (test) => new Date(test.date).getTime() <= formattedToDate
       )
     }
@@ -211,9 +211,9 @@ export default function SpecialtySearch({
   }, [
     fromDate,
     search,
-    specialtyData.evolutions,
-    specialtyData.orders,
-    specialtyData.tests,
+    specialtyData?.evolutions,
+    specialtyData?.orders,
+    specialtyData?.tests,
     toDate,
     type?.label
   ])
@@ -245,11 +245,13 @@ export default function SpecialtySearch({
     setSearch(value)
   }, [])
 
-  const matchesCount = useMemo(
-    () =>
-      !isNurse ? evolutionsList.length + ordersList.length + testsList.length : ordersList.length,
-    [evolutionsList.length, isNurse, ordersList.length, testsList.length]
-  )
+  const matchesCount = useMemo(() => {
+    if (!evolutionsList?.length || !ordersList?.length || !testsList?.length) return 0
+
+    return !isNurse
+      ? evolutionsList?.length + ordersList?.length + testsList?.length
+      : ordersList?.length
+  }, [evolutionsList?.length, isNurse, ordersList?.length, testsList?.length])
 
   const matches = useMemo(
     () => (matchesCount > 0 ? `${matchesCount} resultados` : ''),
@@ -412,15 +414,15 @@ export default function SpecialtySearch({
           )}
           <div className="h-3/4 overflow-scroll">
             <div className="block">
-              {data.evolutions.length > 0 && <Text>Evoluciones</Text>}
-              <EvolutionList evolutions={data.evolutions} />
+              {data?.evolutions && data?.evolutions?.length > 0 && <Text>Evoluciones</Text>}
+              <EvolutionList evolutions={data?.evolutions} />
             </div>
             <div className="block">
-              {data.orders.length > 0 && <Text>Ordenes</Text>}
+              {data.orders && data.orders?.length > 0 && <Text>Ordenes</Text>}
               <EvolutionList evolutions={data.orders} />
             </div>
             <div className="block">
-              {data.tests.length > 0 && <Text>Análisis</Text>}
+              {data.tests && data.tests?.length > 0 && <Text>Análisis</Text>}
               <EvolutionList evolutions={data.tests} />
             </div>
           </div>

@@ -43,12 +43,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 1000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -84,12 +84,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 2000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -125,12 +125,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 3000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -166,12 +166,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 4000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -207,12 +207,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 5000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -248,12 +248,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 6000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -289,12 +289,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 7000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -330,12 +330,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 16000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -371,12 +371,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 17000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -412,12 +412,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 18000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -453,12 +453,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 19000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -494,12 +494,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 20000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -535,12 +535,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 21000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -576,12 +576,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 22000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -624,12 +624,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 8000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -665,12 +665,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 9000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -706,12 +706,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 10000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -747,12 +747,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 11000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -788,12 +788,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 12000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -829,12 +829,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 13000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -870,12 +870,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 14000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -911,12 +911,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 15000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -952,12 +952,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 23000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -993,12 +993,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 24000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1034,12 +1034,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 25000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1075,12 +1075,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 26000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1116,12 +1116,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 27000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1157,12 +1157,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 28000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1198,12 +1198,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 29000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1239,12 +1239,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 30000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1280,12 +1280,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 31000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1321,12 +1321,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 32000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1362,12 +1362,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 33000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1403,12 +1403,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 34000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1444,12 +1444,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 35000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1485,12 +1485,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 36000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1526,12 +1526,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 37000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1567,12 +1567,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 38000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1608,12 +1608,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 39000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1649,12 +1649,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 40000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1690,12 +1690,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 41000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1731,12 +1731,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 42000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1772,12 +1772,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 43000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1813,12 +1813,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 44000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1854,12 +1854,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 45000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1895,12 +1895,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 46000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1936,12 +1936,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 47000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>
@@ -1977,12 +1977,12 @@ exports[`Molecules > DoctorsList test Matches the snapshot 1`] = `
               >
                 CI: 
                 48000000
+                ,
               </p>
               <p
                 class="chakra-text text-wrap css-0"
               >
-                Alergología, 
-                Cardiología.
+                undefined.
               </p>
             </div>
           </div>

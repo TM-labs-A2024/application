@@ -8,9 +8,9 @@ export default function SpecialtySearchView({
   context: {
     goBackRef: string
     specialtyData: {
-      evolutions: Evolutions
-      orders: Evolutions
-      tests: Evolutions
+      evolutions?: Evolutions
+      orders?: Evolutions
+      tests?: Evolutions
     }
     isNurse: boolean
     isPatient: boolean

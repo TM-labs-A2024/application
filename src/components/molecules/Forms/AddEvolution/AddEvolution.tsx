@@ -130,6 +130,22 @@ export default function AddEvolutionForm({
             <FormErrorMessage>
               {errors?.examination && errors?.examination?.message}
             </FormErrorMessage>
+            <label htmlFor="examination">Resumen de ingreso</label>
+            <Textarea
+              id="summary"
+              {...register('summary', {
+                required: 'Este campo es obligatorio'
+              })}
+            />
+            <FormErrorMessage>{errors?.summary && errors?.summary?.message}</FormErrorMessage>
+            <label htmlFor="examination">Diagnóstico</label>
+            <Textarea
+              id="diagnostic"
+              {...register('diagnostic', {
+                required: 'Este campo es obligatorio'
+              })}
+            />
+            <FormErrorMessage>{errors?.diagnostic && errors?.diagnostic?.message}</FormErrorMessage>
             <label htmlFor="comments">Comentarios</label>
             <Textarea id="comments" {...register('comments')} />
           </Stack>

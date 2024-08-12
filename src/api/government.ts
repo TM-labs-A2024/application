@@ -7,15 +7,15 @@ export function loginGovernment(data: Login) {
 }
 
 export function approveInstitutionsAccessRequests(requestId: string) {
-  return axiosClient.post(`/goverment/enrollment-requests/${requestId}/approve`)
+  return axiosClient.post(`/government/enrollment-requests/${requestId}/approve`)
 }
 
 export function denyInstitutionsAccessRequests(requestId: string) {
-  return axiosClient.post(`/goverment/enrollment-requests/${requestId}/deny`)
+  return axiosClient.post(`/government/enrollment-requests/${requestId}/deny`)
 }
 
 export function revokeInstitutionsAccessRequests(institutionId: string) {
-  return axiosClient.post(`/goverment/enrollment/${institutionId}/revoke`)
+  return axiosClient.post(`/government/enrollment/${institutionId}/revoke`)
 }
 
 export function getGovernmentRequests() {

@@ -1,5 +1,6 @@
 import { useInstitutionRequests, useDoctors, useSpecialties } from '@services/index'
 import { doctors as DoctorsFallback } from '@src/constants'
+import { Doctor } from '@src/types'
 import InstitutionRequestsView from '@views/InstitutionRequests'
 import React, { useMemo } from 'react'
 
@@ -11,8 +12,8 @@ export default function InstitutionRequestsPage() {
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
-  const doctorsFiltered = useMemo(
-    () =>
+  const doctorsFiltered = useMemo(() => {
+    const doctorsMap =
       data?.data.map((doctor) => {
         const doctorObj =
           doctors?.data?.find((el) => el.id === doctor.doctorId) ?? DoctorsFallback[0]
@@ -20,11 +21,12 @@ export default function InstitutionRequestsPage() {
         return {
           ...doctorObj,
           requestId: doctor.id,
-          specialties: doctorObj.specialities?.map((el) => el.id) ?? []
+          approved: doctor?.approved
         }
-      }) ?? DoctorsFallback,
-    [doctors, data]
-  )
+      }) ?? DoctorsFallback
+
+    return doctorsMap.filter((el: Doctor) => el.pending && !el.approved)
+  }, [doctors, data])
 
   const specialtiesOptions = specialties?.data?.map((option: { name: string; id: string }) => ({
     value: option.id,

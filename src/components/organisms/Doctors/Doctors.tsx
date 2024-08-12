@@ -1,6 +1,6 @@
 import { Heading, Text, Icon } from '@chakra-ui/react'
 import DoctorList from '@components/molecules/DoctorsList/DoctorsList'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import { isIOS } from '@utils/index'
 import React from 'react'
 import { FaUserDoctor } from 'react-icons/fa6'
@@ -8,10 +8,14 @@ import { FaUserDoctor } from 'react-icons/fa6'
 export default function Doctors({
   context
 }: {
-  context: { doctors: (DoctorType | undefined)[]; pendingDoctors: (DoctorType | undefined)[] }
+  context: {
+    doctors: (DoctorType | undefined)[]
+    pendingDoctors: (DoctorType | undefined)[]
+    specialties: ReactSelectOption[]
+  }
 }) {
   // --- Local state -----------------------------------------------------------
-  const { doctors, pendingDoctors } = context
+  const { doctors, pendingDoctors, specialties } = context
   // --- END: Local state ------------------------------------------------------
 
   return (
@@ -23,7 +27,7 @@ export default function Doctors({
         Médicos
       </Heading>
       {(doctors.length > 0 || pendingDoctors.length > 0) && (
-        <DoctorList doctors={doctors} pendingDoctors={pendingDoctors} />
+        <DoctorList doctors={doctors} pendingDoctors={pendingDoctors} specialties={specialties} />
       )}
       {doctors.length === 0 && pendingDoctors.length === 0 && (
         <div

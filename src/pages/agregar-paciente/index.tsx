@@ -1,18 +1,19 @@
 /* eslint-disable no-console */
 import { ACCESS_REQUESTED } from '@constants/index'
+import { usePatients, usePatientAccessRequestMutation } from '@services/index'
 import Splash from '@src/components/atoms/Splash'
-import { usePatients, usePatientAccessRequestMutation } from '@src/services/index'
 import { Patient } from '@src/types'
 import { isMobile } from '@utils/index'
 import { setupErrorNotification } from '@utils/index'
 import AddPatientView from '@views/AddPatient'
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { Store } from 'react-notifications-component'
 
 export default function AgregarPaciente() {
   // --- Local state -----------------------------------------------------------
   const [filteredPatients, setFilteredPatients] = useState<Patient[] | []>([])
   const [loadingId, setLoadingId] = useState('')
+  const [filteringId, setFilteringId] = useState('')
   // --- END: Local state ------------------------------------------------------
 
   // --- Hooks -----------------------------------------------------------------
@@ -32,13 +33,9 @@ export default function AgregarPaciente() {
 
   // --- Data and handlers -----------------------------------------------------
   const patients = useMemo(() => data?.data, [data])
-  const onChange = useCallback(
-    (id: string) =>
-      id !== ''
-        ? setFilteredPatients(patients?.filter((patient) => patient?.govId?.includes(id)) ?? [])
-        : setFilteredPatients([]),
-    [patients]
-  )
+  const onChange = useCallback((id: string) => {
+    setFilteringId(id)
+  }, [])
 
   const onSubmit = useCallback(
     (patientId: string) => {
@@ -58,6 +55,16 @@ export default function AgregarPaciente() {
     [onChange, filteredPatients, onSubmit, loadingId]
   )
   // --- END: Data and handlers ------------------------------------------------
+
+  useEffect(() => {
+    if (filteringId !== '') {
+      setFilteredPatients(
+        patients?.filter((patient) => patient?.govId?.includes(filteringId)) ?? []
+      )
+    } else {
+      setFilteredPatients([])
+    }
+  }, [patients, filteringId])
 
   return isLoading ? <Splash /> : <AddPatientView context={context} />
 }

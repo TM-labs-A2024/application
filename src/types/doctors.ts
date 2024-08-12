@@ -9,16 +9,25 @@ export type Doctor = {
   govId: string
   phoneNumber: string
   credentials: string
-  specialties: string[]
   specialities?: {
     id: string
     description: string
     name: string
   }[]
+  specialties: {
+    id: string
+    description: string
+    name: string
+  }[]
   pending?: boolean
+  approved?: boolean
   patientPending?: boolean
   password?: string
   requestId?: string
+}
+
+export type DoctorUpdate = {
+  specialties: string[]
 }
 
 export type AccessRequest = {

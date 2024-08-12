@@ -23,7 +23,7 @@ export default function InstitutionRequests({
       doctors.map(({ id, govId, firstname, lastname, specialties, requestId }) => ({
         href: `/institucion/medico/${id}/${requestId}`,
         title: `${firstname} ${lastname}`,
-        description: `C.I: ${govId},${specialties.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty)?.label)}.`
+        description: `C.I: ${govId},${specialties.map((specialty) => ' ' + specialtiesOptions.find((el) => el?.value === specialty.id)?.label)}.`
       })),
     [doctors, specialtiesOptions]
   )

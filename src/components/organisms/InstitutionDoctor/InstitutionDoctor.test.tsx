@@ -1,4 +1,5 @@
 import { doctors, specialities } from '@src/constants'
+import { formatDate } from '@src/utils'
 import { render, screen } from '@test/utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -101,7 +102,7 @@ describe('Organisms > InstitutionDoctor test', () => {
     })
     expect(
       screen.getByText(
-        format(new Date(doctor.birthdate), "dd 'de' MMMM, yyyy", {
+        format(new Date(formatDate(doctor.birthdate)), "dd 'de' MMMM, yyyy", {
           locale: es
         })
       )

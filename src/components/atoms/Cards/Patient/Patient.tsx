@@ -26,7 +26,7 @@ export default function Patient({
           </Text>
           <Text>{description}</Text>
         </div>
-        {status && (
+        {status === 'hospitalizado' && (
           <Tag size="md" key={status} variant="subtle" colorScheme="gray">
             <TagLeftIcon boxSize="12px" as={WarningIcon} />
             <TagLabel>{status}</TagLabel>

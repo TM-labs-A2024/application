@@ -7,7 +7,12 @@ export function getPatientByGovId(govId: string) {
 }
 
 export function createPatient(body: Patient) {
-  return axiosClient.post<Patient>('/patients', body)
+  const data = {
+    ...body,
+    status: 'regular'
+  }
+
+  return axiosClient.post<Patient>('/patients', data)
 }
 
 export function updatePatient(body: Patient) {

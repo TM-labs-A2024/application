@@ -1,17 +1,22 @@
 import { Link } from '@chakra-ui/next-js'
 import { Text } from '@chakra-ui/react'
-import { specialties } from '@constants/index'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import NextLink from 'next/link'
 import React from 'react'
 
 import Chevron from '../../../../../public/static/icons/chevron.svg'
 
-export default function Doctor({ doctor }: { doctor: DoctorType }) {
+export default function Doctor({
+  doctor,
+  specialties
+}: {
+  doctor: DoctorType
+  specialties: ReactSelectOption[]
+}) {
   // --- Data and handlers -----------------------------------------------------
   const doctorSpecialtiesList = doctor.specialties?.map(
     (specialty, idx) =>
-      `${specialties.find((el) => el.id === specialty)?.name}${
+      `${specialties?.find((el) => el?.value === specialty.id)?.label}${
         doctor.specialties.length > 0 && idx !== doctor.specialties.length - 1 ? ',' : ''
       }${idx === doctor.specialties.length - 1 ? '.' : ' '}`
   )
@@ -30,7 +35,7 @@ export default function Doctor({ doctor }: { doctor: DoctorType }) {
             {doctor.firstname} {doctor.lastname}
           </Text>
           <div className="flex flex-row flex-wrap items-center gap-2">
-            <Text className="text-nowrap">CI: {doctor.govId}</Text>
+            <Text className="text-nowrap">CI: {doctor.govId},</Text>
             <Text className="text-wrap">{doctorSpecialtiesList}</Text>
           </div>
         </div>

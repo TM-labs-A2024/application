@@ -21,10 +21,10 @@ export default function Home() {
       <Link as={NextLink} href="/login" onClick={() => setSession('ministerio', '', '')}>
         Login Ministerio
       </Link>
-      <Link as={NextLink} href="/registro">
+      <Link as={NextLink} href="/registro" onClick={() => setSession('', '', '')}>
         Registro
       </Link>
-      <Link as={NextLink} href="/registro-institucion">
+      <Link as={NextLink} href="/registro-institucion" onClick={() => setSession('', '', '')}>
         Registro institución
       </Link>
     </main>

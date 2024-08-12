@@ -160,6 +160,26 @@ exports[`Molecules > Forms > AddEvolution test Matches the snapshot 1`] = `
           name="examination"
         />
         <label
+          for="examination"
+        >
+          Resumen de ingreso
+        </label>
+        <textarea
+          class="chakra-textarea css-1msuebi"
+          id="summary"
+          name="summary"
+        />
+        <label
+          for="examination"
+        >
+          Diagnóstico
+        </label>
+        <textarea
+          class="chakra-textarea css-1msuebi"
+          id="diagnostic"
+          name="diagnostic"
+        />
+        <label
           for="comments"
         >
           Comentarios

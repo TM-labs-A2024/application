@@ -2,7 +2,7 @@ import {
   useDoctorMutation,
   useUpdateDoctor,
   useDoctorLogin,
-  useDoctorPetients,
+  useDoctorPatients,
   useDoctors,
   useDoctor,
   useInstitutionDoctors
@@ -39,7 +39,12 @@ import {
   usePatientsSpecialties,
   usePatientByGovId
 } from './patients'
-import { useRecordMutation } from './records'
+import {
+  useRecordMutation,
+  useSpecialityRecordsByPatientGovId,
+  useRecordById,
+  useEvolutionMutation
+} from './records'
 import { useSpecialties } from './specialties'
 
 export {
@@ -47,7 +52,7 @@ export {
   useDoctorMutation,
   useUpdateDoctor,
   useDoctorLogin,
-  useDoctorPetients,
+  useDoctorPatients,
   useDoctors,
   useDoctor,
   useInstitutionDoctors,
@@ -79,5 +84,8 @@ export {
   useGovernmentDenyAccessRequestsMutation,
   useGovernmentRevokeAccessRequestsMutation,
   useGovernmentRequests,
-  useRecordMutation
+  useRecordMutation,
+  useSpecialityRecordsByPatientGovId,
+  useRecordById,
+  useEvolutionMutation
 }

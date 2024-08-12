@@ -1,5 +1,6 @@
 import { Text, Heading, Stack, Link, Button } from '@chakra-ui/react'
 import { Patient as PatientType } from '@src/types'
+import { formatDate } from '@src/utils'
 import { isIOS } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -35,9 +36,10 @@ export default function PatientProfile({
       <Stack mb={6}>
         <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
         <Text className="font-medium">
-          {format(new Date(patient.birthdate), "dd 'de' MMMM, yyyy", {
-            locale: es
-          })}
+          {patient.birthdate &&
+            format(new Date(formatDate(patient.birthdate)), "dd 'de' MMMM, yyyy", {
+              locale: es
+            })}
         </Text>
       </Stack>
       <Stack mb={6}>

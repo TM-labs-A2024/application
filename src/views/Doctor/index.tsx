@@ -1,11 +1,12 @@
 import Doctor from '@components/organisms/Doctor'
-import { Doctor as DoctorType } from '@src/types'
+import { Doctor as DoctorType, ReactSelectOption } from '@src/types'
 import React from 'react'
 
 export default function DoctorView({
   context
 }: {
   context: {
+    specialties: ReactSelectOption[]
     doctor: DoctorType
     isDenialOpen: boolean
     onDenialOpen: () => void
