@@ -7,7 +7,8 @@ import {
   approveDoctorsAccessRequests,
   denyDoctorsAccessRequests,
   revokeDoctorsAccessRequests,
-  getApprovedInstitutions
+  getApprovedInstitutions,
+  getInstitutionPatients
 } from '@api/index'
 import { InstitutionRegister, Login } from '@src/types'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
@@ -54,6 +55,23 @@ export const useInstitutions = (
   const queryData = useQuery({
     queryKey: 'institutions',
     queryFn: () => getInstitutions(),
+    onSuccess: (data) => {
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return queryData
+}
+export const useInstitutionPatients = (
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryData = useQuery({
+    queryKey: 'institution_patients',
+    queryFn: () => getInstitutionPatients(),
     onSuccess: (data) => {
       if (onSuccess) onSuccess(data)
     },

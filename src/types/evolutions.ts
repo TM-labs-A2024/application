@@ -39,7 +39,7 @@ export type EvolutionFormData = {
 export type EvolutionJSONBody = {
   specialty: string
   patientId: string
-  bed: string
+  bed?: string
   title: string
   description: string
   payload: EvolutionFormData

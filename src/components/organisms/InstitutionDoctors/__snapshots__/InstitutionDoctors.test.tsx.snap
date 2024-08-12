@@ -74,7 +74,7 @@ exports[`Organisms > InstitutionDoctors test Matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    class="h-full lg:px-80"
+    class="lg:px-80"
   >
     <div
       class="chakra-stack h-full css-8g8ihq"

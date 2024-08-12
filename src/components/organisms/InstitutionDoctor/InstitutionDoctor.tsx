@@ -18,9 +18,10 @@ import { isIOS, isAndroid } from '@utils/index'
 import { formatDate } from '@utils/index'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement } from 'react'
+
+import Logo from '../../../../public/static/icons/logo.svg'
 
 function ConfirmationModal({
   isOpen,
@@ -103,7 +104,7 @@ export default function InstitutionDoctor({
       data-testid="institution-doctor"
     >
       <div className={`mb-8 flex flex-row justify-between`}>
-        <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
+        <Logo />
       </div>
       <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton

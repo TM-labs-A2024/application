@@ -43,7 +43,6 @@ export default function AddEvolutionPage() {
       const body = {
         specialty: specialtyId ?? '',
         patientId: patient?.id ?? '',
-        bed: '',
         title: `${data?.type?.label}: ${format(new Date(), 'dd, MMMM yyyy', {
           locale: es
         })}`,
@@ -51,7 +50,30 @@ export default function AddEvolutionPage() {
         payload: { ...data }
       }
 
-      createEvolution(body)
+      if (patient?.status === 'hospitalizado') {
+        const hospitalizedBody = {
+          ...body,
+          bed: patient?.bed
+        }
+
+        if (data?.type?.label === 'Alta') {
+          createEvolution(body)
+        } else {
+          createEvolution(hospitalizedBody)
+        }
+      } else {
+        const bedNumber = Math.floor(Math.random() * 100)
+        const hospitalizationBody = {
+          ...body,
+          bed: `1-${bedNumber}`
+        }
+
+        if (data?.type?.label === 'Hospitalización') {
+          createEvolution(hospitalizationBody)
+        } else {
+          createEvolution(body)
+        }
+      }
     },
     [createEvolution, patient, specialtyId]
   )

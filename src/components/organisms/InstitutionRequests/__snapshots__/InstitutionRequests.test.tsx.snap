@@ -53,7 +53,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
           <a
             href="/institucion/medicos"
           >
-            Médicos con acceso
+            Personal con acceso
           </a>
         </button>
         <button
@@ -73,8 +73,13 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
       </div>
     </div>
   </div>
+  <h2
+    class="chakra-heading mb-4 css-9f6g39"
+  >
+    Solicitudes pendientes
+  </h2>
   <div
-    class="h-full lg:px-80"
+    class="lg:px-80"
   >
     <div
       class="chakra-stack h-full css-8g8ihq"
@@ -83,7 +88,7 @@ exports[`Organisms > InstitutionRequests test Matches the snapshot 1`] = `
       <h2
         class="chakra-heading mb-4 css-9f6g39"
       >
-        Solicitudes pendientes
+        Médicos
       </h2>
       <div
         class="overflow-auto"

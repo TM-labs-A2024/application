@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Button, FormControl, FormErrorMessage, Input, Heading, Stack } from '@chakra-ui/react'
 import Splash from '@components/atoms/Splash'
 import { institutionTypes } from '@components/molecules/Forms/Register/Register.constants'
@@ -77,12 +78,12 @@ export default function RegisterForm({
 
   // --- Data and handlers -----------------------------------------------------
   const onSubmitDetails = (data: FormData) => {
-    alert(JSON.stringify(data))
+    console.log(JSON.stringify(data))
     setStep(2)
   }
 
   const onSubmitUserDetails = (data: FormData) => {
-    alert(JSON.stringify(data))
+    console.log(JSON.stringify(data))
     setStep(3)
   }
 

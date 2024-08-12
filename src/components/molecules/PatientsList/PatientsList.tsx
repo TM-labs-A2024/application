@@ -1,5 +1,6 @@
 import { List, Stack, Heading, Text } from '@chakra-ui/react'
 import Patient from '@components/atoms/Cards/Patient'
+import { PatientSummary } from '@src/types'
 import React from 'react'
 
 export default function PatientsList({
@@ -7,18 +8,8 @@ export default function PatientsList({
   pendingPatients,
   label
 }: {
-  patients: {
-    href: string
-    title: string
-    description: string
-    status?: string
-  }[]
-  pendingPatients: {
-    href: string
-    title: string
-    description: string
-    status?: string
-  }[]
+  patients: PatientSummary[]
+  pendingPatients: PatientSummary[]
   label: string
 }) {
   return (
@@ -45,6 +36,7 @@ export default function PatientsList({
                     title={patient.title}
                     description={patient.description}
                     status={patient.status}
+                    hospitalizationPlace={patient.hospitalizationPlace}
                   />
                 </div>
               ))}
@@ -69,6 +61,7 @@ export default function PatientsList({
                     title={patient.title}
                     description={patient.description}
                     status={patient.status}
+                    hospitalizationPlace={patient.hospitalizationPlace}
                   />
                 </div>
               ))}

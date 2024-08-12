@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Logo from '../../../../public/static/icons/logo.svg'
+import Logo from '../../../../public/static/icons/iso.svg'
 
 export default function Splash() {
   return (

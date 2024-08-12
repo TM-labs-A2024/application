@@ -1,7 +1,7 @@
 import { useDisclosure } from '@chakra-ui/react'
 import Splash from '@components/atoms/Splash'
 import { ATTACHMENT_DELETED, IMAGE_DELETED } from '@constants/index'
-import { useRecordById } from '@services/index'
+import { useRecordById, useRecordDelete, useAttachmentDelete } from '@services/index'
 import { getSession, getUser } from '@src/shared'
 import { isMobile } from '@utils/index'
 import AttachmentsView from '@views/Attachments'
@@ -10,6 +10,12 @@ import React, { useMemo, useState, useCallback, useEffect } from 'react'
 import { Store } from 'react-notifications-component'
 
 export default function OrdersPage() {
+  // --- Local state -----------------------------------------------------------
+  const [deleteType, setDeleteType] = useState('all')
+  const [imageUrl, setImageUrl] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+  // --- END: Local state ------------------------------------------------------
+
   // --- Hooks -----------------------------------------------------------------
   const router = useRouter()
   const user = getUser()
@@ -23,13 +29,18 @@ export default function OrdersPage() {
   )
 
   const { data: recordData } = useRecordById(order)
-  // --- END: Hooks ------------------------------------------------------------
+  const { mutate: deleteRecord } = useRecordDelete(order, () => {
+    setImageUrl('')
+    Store.addNotification(ATTACHMENT_DELETED(isMobile(window), true))
+    router.back()
+  })
 
-  // --- Local state -----------------------------------------------------------
-  const [deleteType, setDeleteType] = useState('all')
-  const [imageUrl, setImageUrl] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
-  // --- END: Local state ------------------------------------------------------
+  const { mutate: deleteAttachment } = useAttachmentDelete(order, () => {
+    setImageUrl('')
+    Store.addNotification(IMAGE_DELETED(isMobile(window)))
+    router.back()
+  })
+  // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
   // --- END: Refs -------------------------------------------------------------
@@ -39,7 +50,11 @@ export default function OrdersPage() {
 
   // --- Side effects ----------------------------------------------------------
   useEffect(() => {
-    if (!recordData?.data) return
+    if (!recordData?.data || !recordData.data.content) {
+      setIsLoading(false)
+
+      return
+    }
 
     const fetchImage = async () => {
       try {
@@ -49,6 +64,8 @@ export default function OrdersPage() {
         setImageUrl(imageUrl)
         setIsLoading(false)
       } catch (error) {
+        setImageUrl('')
+        setIsLoading(false)
         console.error('Error fetching image:', error)
       }
     }
@@ -66,8 +83,8 @@ export default function OrdersPage() {
   )
 
   const patientId = useMemo(
-    () => (isPatient ? user.govId : router?.query?.slug?.[0]),
-    [isPatient, router?.query?.slug, user.govId]
+    () => (isPatient ? user?.govId : router?.query?.slug?.[0]),
+    [isPatient, router?.query?.slug, user?.govId]
   )
 
   const goBackRef = useMemo(
@@ -78,12 +95,14 @@ export default function OrdersPage() {
   const data = useMemo(
     () => ({
       description: orderData?.description ?? '',
-      attachments: [
-        {
-          url: imageUrl,
-          alt: 'Test'
-        }
-      ]
+      attachments: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              alt: 'Test'
+            }
+          ]
+        : []
     }),
     [imageUrl, orderData?.description]
   )
@@ -97,14 +116,13 @@ export default function OrdersPage() {
   )
 
   const onSubmit = useCallback(() => {
-    onClose()
     if (deleteType === 'all') {
-      Store.addNotification(ATTACHMENT_DELETED(isMobile(window), true))
-      router.back()
+      deleteRecord(order)
     } else {
-      Store.addNotification(IMAGE_DELETED(isMobile(window)))
+      deleteAttachment(order)
     }
-  }, [deleteType, onClose, router])
+    onClose()
+  }, [deleteType, onClose, router, order, deleteRecord, deleteAttachment])
 
   const description = useMemo(
     () => (deleteType === 'all' ? '¿Deseas eliminar la orden?' : '¿Deseas eliminar la imagen?'),

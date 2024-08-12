@@ -12,6 +12,7 @@ export type Patient = {
   status?: string
   bed?: string
   password?: string
+  institution_id?: string
 }
 
 export type PatientSummary = {
@@ -20,4 +21,5 @@ export type PatientSummary = {
   description: string
   status?: string
   pending?: boolean
+  hospitalizationPlace?: string
 }

@@ -45,8 +45,9 @@ export type DoctorsRequests = {
   id: string
   institutionId: string
   doctorId: string
-  pending: true
-  approved: false
+  nurseId?: string
+  pending: boolean
+  approved: boolean
   'professional-type': string
 }
 

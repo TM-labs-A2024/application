@@ -8,17 +8,7 @@ exports[`Organisms > Institution test Matches the snapshot 1`] = `
   <div
     class="mb-8 flex flex-row justify-between"
   >
-    <img
-      alt="logo"
-      data-nimg="1"
-      decoding="async"
-      height="80"
-      loading="lazy"
-      src="/_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=640&q=75"
-      srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=256&q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogo-horizontal.png&w=640&q=75 2x"
-      style="color: transparent;"
-      width="200"
-    />
+    <div />
   </div>
   <div
     class="mb-8 flex flex-row items-center justify-start"

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
+exports[`Organisms > InstitutionNurse test Matches the snapshot 1`] = `
 <div
   class="mx-auto block h-screen w-screen overflow-hidden px-8 pb-0 pt-10 false"
-  data-testid="institution-profile"
+  data-testid="institution-nurse"
 >
   <div
     class="mb-8 flex flex-row justify-between"
@@ -33,7 +33,7 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
     <p
       class="chakra-text font-medium css-0"
     >
-      Perfil de la institución
+      Perfil del enfermero
     </p>
   </div>
   <div
@@ -46,13 +46,15 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
         <h3
           class="chakra-heading css-ypohwm"
         >
-          Clínica Tex Mex
+          José
+           
+          Pérez
         </h3>
         <p
           class="chakra-text css-0"
         >
-          Credencial: 
-          14578245
+          CI: 
+          1000000
         </p>
       </div>
       <hr
@@ -60,21 +62,21 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
         class="chakra-divider css-svjswr"
       />
       <div
-        class="chakra-stack css-1420a3n"
+        class="chakra-stack css-1j35777"
       >
         <h4
           class="text-sm text-gray-600"
         >
-          Dirección
+          Fecha de nacimiento
         </h4>
         <p
           class="chakra-text font-medium css-0"
         >
-          Av. Fernandez Peña, 147.
+          11 de noviembre, 1999
         </p>
       </div>
       <div
-        class="chakra-stack css-1420a3n"
+        class="chakra-stack css-1j35777"
       >
         <h4
           class="text-sm text-gray-600"
@@ -84,7 +86,7 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
         <p
           class="chakra-text font-medium css-0"
         >
-          test@test.com
+          joseperez@gmail.com
         </p>
       </div>
       <div
@@ -98,14 +100,18 @@ exports[`Organisms > InstitutionProfile test Matches the snapshot 1`] = `
         <p
           class="chakra-text font-medium css-0"
         >
-          +582742214441
+          4127775522
         </p>
       </div>
+    </div>
+    <div
+      class="mb-4 flex w-full flex-row"
+    >
       <button
-        class="chakra-button mt-56 w-full css-jzcxx5"
+        class="chakra-button flex-grow css-11494p6"
         type="button"
       >
-        Cerrar sesión
+        Revocar acceso
       </button>
     </div>
   </div>

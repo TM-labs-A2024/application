@@ -13,11 +13,13 @@ const specialtiesOptions = specialties?.map((option: { name: string; id: string 
 
 const context = {
   doctors: approvedDoctors,
+  nurses: [],
   specialtiesOptions
 }
 
 const emptyContext = {
   doctors: [],
+  nurses: [],
   specialtiesOptions
 }
 

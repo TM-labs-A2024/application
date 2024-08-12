@@ -23,9 +23,16 @@ import {
   useInstitutionApproveAccessRequestsMutation,
   useInstitutionDenyAccessRequestsMutation,
   useInstitutionRevokeAccessRequestsMutation,
-  useApprovedInstitutions
+  useApprovedInstitutions,
+  useInstitutionPatients
 } from './institutions'
-import { useNurseMutation, useNurseLogin, useNurseById } from './nurses'
+import {
+  useNurseMutation,
+  useNurseLogin,
+  useNurseById,
+  useNurses,
+  useInstitutionNurses
+} from './nurses'
 import {
   usePatientMutation,
   usePatientUpdate,
@@ -43,7 +50,9 @@ import {
   useRecordMutation,
   useSpecialityRecordsByPatientGovId,
   useRecordById,
-  useEvolutionMutation
+  useEvolutionMutation,
+  useRecordDelete,
+  useAttachmentDelete
 } from './records'
 import { useSpecialties } from './specialties'
 
@@ -59,6 +68,8 @@ export {
   useNurseMutation,
   useNurseLogin,
   useNurseById,
+  useNurses,
+  useInstitutionNurses,
   usePatientMutation,
   usePatientUpdate,
   usePatientLogin,
@@ -78,6 +89,7 @@ export {
   useInstitutionDenyAccessRequestsMutation,
   useInstitutionRevokeAccessRequestsMutation,
   useApprovedInstitutions,
+  useInstitutionPatients,
   useSpecialties,
   useGovernmentLogin,
   useGovernmentApproveAccessRequestsMutation,
@@ -87,5 +99,7 @@ export {
   useRecordMutation,
   useSpecialityRecordsByPatientGovId,
   useRecordById,
-  useEvolutionMutation
+  useEvolutionMutation,
+  useRecordDelete,
+  useAttachmentDelete
 }

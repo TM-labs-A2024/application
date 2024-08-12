@@ -1,5 +1,5 @@
 export const nurse = {
-  id: 1000000,
+  id: '1000000',
   govId: '1000000',
   firstname: 'José',
   lastname: 'Pérez',

@@ -52,7 +52,6 @@ export default function AddAttachmentForm({
   const isOrder = useMemo(() => type === 'order', [type])
 
   const onSubmitDetails = (data: AttachmentFormData) => {
-    alert(JSON.stringify(data))
     onSubmit(data)
   }
 

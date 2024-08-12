@@ -36,10 +36,6 @@ export const institutionTypes = [
   {
     id: 2,
     name: 'Clínica'
-  },
-  {
-    id: 3,
-    name: 'Consultorio'
   }
 ]
 

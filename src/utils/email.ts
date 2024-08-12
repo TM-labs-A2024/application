@@ -16,7 +16,7 @@ export function sendEmail(data: {
   const apiKey = process.env.NEXT_PUBLIC_EMAIL_API_KEY ?? ''
 
   emailjs.send(serviceKey, templateKey, templateParams, apiKey).catch(() => {
-    alert('Algo salió mal, por favor reintenta el registro.')
+    console.log('Algo salió mal, por favor reintenta el registro.')
   })
 }
 

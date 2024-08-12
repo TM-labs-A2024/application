@@ -2,9 +2,10 @@ import { ArrowBackIcon } from '@chakra-ui/icons'
 import { IconButton, Text, Stack, Heading, Divider, Button } from '@chakra-ui/react'
 import { Institution } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+
+import Logo from '../../../../public/static/icons/logo.svg'
 
 export default function InstitutionProfile({
   institution,
@@ -23,7 +24,7 @@ export default function InstitutionProfile({
       data-testid="institution-profile"
     >
       <div className={`mb-8 flex flex-row justify-between`}>
-        <Image alt="logo" src="/static/images/logo-horizontal.png" width={200} height={80} />
+        <Logo />
       </div>
       <div className="mb-8 flex flex-row items-center justify-start">
         <IconButton

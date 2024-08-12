@@ -10,6 +10,14 @@ export function createEvolution(body: EvolutionJSONBody) {
   return axiosClient.post<EvolutionResponse>('/health-record/evolution', body)
 }
 
+export function deleteRecord(recordId: string) {
+  return axiosClient.delete(`/health-record/${recordId}`)
+}
+
+export function deleteAttachment(recordId: string) {
+  return axiosClient.post(`/health-record/${recordId}/detach`)
+}
+
 export function getRecords(specialtyId: string, govId: string) {
   return axiosClient.get<EvolutionResponse[]>(`/patients/${govId}/health-records/${specialtyId}`)
 }

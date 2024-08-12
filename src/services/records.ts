@@ -1,6 +1,13 @@
-import { createRecord, getRecords, getRecord, createEvolution } from '@api/index'
+import {
+  createRecord,
+  getRecords,
+  getRecord,
+  createEvolution,
+  deleteRecord,
+  deleteAttachment
+} from '@api/index'
 import { EvolutionBody, EvolutionJSONBody } from '@src/types'
-import { useMutation, useQuery } from 'react-query'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
 
 export const useRecordMutation = (
   onSuccess?: (arg: unknown) => void,
@@ -73,4 +80,44 @@ export const useRecordById = (
   })
 
   return queryData
+}
+
+export const useRecordDelete = (
+  id: string,
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryClient = useQueryClient()
+  const mutationData = useMutation({
+    mutationFn: (recordId: string) => deleteRecord(recordId),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries(['record', id])
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return mutationData
+}
+
+export const useAttachmentDelete = (
+  id: string,
+  onSuccess?: (arg: unknown) => void,
+  onError?: (arg: unknown) => void
+) => {
+  const queryClient = useQueryClient()
+  const mutationData = useMutation({
+    mutationFn: (recordId: string) => deleteAttachment(recordId),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries(['record', id])
+      if (onSuccess) onSuccess(data)
+    },
+    onError: (err: Error) => {
+      if (onError) onError(err)
+    }
+  })
+
+  return mutationData
 }

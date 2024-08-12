@@ -1,6 +1,6 @@
 import { WarningIcon } from '@chakra-ui/icons'
 import { Link } from '@chakra-ui/next-js'
-import { Text, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react'
+import { Text, Tag, TagLeftIcon, TagLabel, Tooltip } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import React from 'react'
 
@@ -10,12 +10,14 @@ export default function Patient({
   href,
   title,
   description,
-  status
+  status,
+  hospitalizationPlace
 }: {
   href: string
   title: string
   description: string
   status?: string
+  hospitalizationPlace?: string
 }) {
   return (
     <Link as={NextLink} href={href} className="w-full" data-testid="patient-card">
@@ -27,10 +29,12 @@ export default function Patient({
           <Text>{description}</Text>
         </div>
         {status === 'hospitalizado' && (
-          <Tag size="md" key={status} variant="subtle" colorScheme="gray">
-            <TagLeftIcon boxSize="12px" as={WarningIcon} />
-            <TagLabel>{status}</TagLabel>
-          </Tag>
+          <Tooltip label={hospitalizationPlace}>
+            <Tag size="md" key={status} variant="subtle" colorScheme="gray">
+              <TagLeftIcon boxSize="12px" as={WarningIcon} />
+              <TagLabel>{status}</TagLabel>
+            </Tag>
+          </Tooltip>
         )}
         <Chevron />
       </div>

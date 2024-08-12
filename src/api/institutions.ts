@@ -1,4 +1,11 @@
-import { Institution, InstitutionRegister, Login, LoginResponse, DoctorsRequests } from '@src/types'
+import {
+  Institution,
+  InstitutionRegister,
+  Login,
+  LoginResponse,
+  DoctorsRequests,
+  Patient
+} from '@src/types'
 
 import { axiosClient } from './clients'
 
@@ -24,6 +31,10 @@ export function loginInstitution(data: Login) {
 
 export function getInstitutionRequests() {
   return axiosClient.get<DoctorsRequests[]>('/institutions/enrollment-requests')
+}
+
+export function getInstitutionPatients() {
+  return axiosClient.get<Patient[]>('/institutions/patients')
 }
 
 export function approveDoctorsAccessRequests(requestId: string) {

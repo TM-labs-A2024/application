@@ -149,7 +149,6 @@ export default function RegisterForm({
   }
 
   const onSubmitPassword = (data: FormData) => {
-    console.log(data)
     const body = {
       ...data,
       institutionId: data.institutionId ? String(data.institutionId.value) : '',

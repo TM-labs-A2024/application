@@ -1,5 +1,5 @@
 export type Nurse = {
-  id: number | string
+  id: string
   govId: string
   firstname: string
   lastname: string
@@ -7,4 +7,7 @@ export type Nurse = {
   email: string
   phoneNumber: string
   password?: string
+  pending?: boolean
+  approved?: boolean
+  requestId?: boolean
 }

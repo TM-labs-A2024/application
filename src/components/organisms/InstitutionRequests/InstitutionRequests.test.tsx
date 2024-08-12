@@ -11,11 +11,13 @@ const pendingDoctors = doctors.filter((doctor) => doctor.pending)
 describe('Organisms > InstitutionRequests test', () => {
   const context = {
     doctors: pendingDoctors,
+    nurses: [],
     specialtiesOptions: []
   }
 
   const emptyContext = {
     doctors: [],
+    nurses: [],
     specialtiesOptions: []
   }
   test('The component shows the list of pending doctors if it has at least one doctor', () => {
@@ -42,7 +44,7 @@ describe('Organisms > InstitutionRequests test', () => {
   test("The component allows to go to the institution's pending requests page", () => {
     render(<InstitutionRequests context={context} />)
 
-    expect(screen.getByText('Médicos con acceso')).toHaveAttribute('href', '/institucion/medicos')
+    expect(screen.getByText('Personal con acceso')).toHaveAttribute('href', '/institucion/medicos')
   })
 
   test('Matches the snapshot', () => {

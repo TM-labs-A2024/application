@@ -13,8 +13,11 @@ import {
   ModalBody,
   Spinner
 } from '@chakra-ui/react'
-import { Institution as InstitutionType } from '@src/types'
+import { Nurse as NurseType } from '@src/types'
 import { isIOS, isAndroid } from '@utils/index'
+import { formatDate } from '@utils/index'
+import { format } from 'date-fns'
+import { es } from 'date-fns/locale/es'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement } from 'react'
 
@@ -54,9 +57,9 @@ function ConfirmationModal({
   )
 }
 
-export default function Institution({
+export default function InstitutionNurse({
   context: {
-    institution,
+    nurse,
     isDenialOpen,
     onDenialOpen,
     onDenialClose,
@@ -73,7 +76,7 @@ export default function Institution({
   }
 }: {
   context: {
-    institution: InstitutionType
+    nurse: NurseType
     isDenialOpen: boolean
     onDenialOpen: () => void
     onDenialClose: () => void
@@ -96,7 +99,7 @@ export default function Institution({
   return (
     <div
       className={`mx-auto block h-screen w-screen overflow-hidden px-8 ${isIOS() ? 'pb-64 pt-20' : 'pb-0 pt-10'} ${isAndroid() ?? 'pb-64 pt-8'}`}
-      data-testid="institution"
+      data-testid="institution-nurse"
     >
       <div className={`mb-8 flex flex-row justify-between`}>
         <Logo />
@@ -112,28 +115,37 @@ export default function Institution({
             router.back()
           }}
         />
-        <Text className="font-medium">Perfil de la institución</Text>
+        <Text className="font-medium">Perfil del enfermero</Text>
       </div>
       <div className="flex h-4/5 flex-col justify-between lg:px-96">
         <div>
           <Stack spacing={1} mb={6}>
             <Heading as="h3" size="md" noOfLines={1}>
-              {institution.name}
+              {nurse.firstname} {nurse.lastname}
             </Heading>
-            <Text>RIF {institution.govId}</Text>
+            <Text>CI: {nurse.govId}</Text>
           </Stack>
           <Divider orientation="horizontal" />
           <Stack mb={6}>
+            <h4 className="text-sm text-gray-600">Fecha de nacimiento</h4>
+            <Text className="font-medium">
+              {nurse.birthdate &&
+                format(new Date(formatDate(nurse.birthdate)), "dd 'de' MMMM, yyyy", {
+                  locale: es
+                })}
+            </Text>
+          </Stack>
+          <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Correo electrónico</h4>
-            <Text className="font-medium">{institution.institutionUser?.email}</Text>
+            <Text className="font-medium">{nurse.email}</Text>
           </Stack>
           <Stack mb={6}>
             <h4 className="text-sm text-gray-600">Teléfono</h4>
-            <Text className="font-medium">{institution.institutionUser?.phoneNumber}</Text>
+            <Text className="font-medium">{nurse.phoneNumber}</Text>
           </Stack>
         </div>
         {isLoading && <Spinner />}
-        {institution?.pending && !isLoading && (
+        {nurse?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
             <Button className="mr-2 flex-grow" variant="outline" onClick={onDenialOpen}>
               Rechazar
@@ -143,7 +155,7 @@ export default function Institution({
             </Button>
           </div>
         )}
-        {!institution?.pending && !isLoading && (
+        {!nurse?.pending && !isLoading && (
           <div className="mb-4 flex w-full flex-row">
             <Button className="flex-grow" variant="outline" onClick={onRemovalOpen}>
               Revocar acceso
@@ -156,21 +168,21 @@ export default function Institution({
         onClose={onDenialClose}
         onSubmit={onDenial}
         method="Denegar"
-        name={institution.name}
+        name={`${nurse.firstname} ${nurse.lastname}`}
       />
       <ConfirmationModal
         isOpen={isApprovalOpen}
         onClose={onApprovalClose}
         onSubmit={onApproval}
         method="Conceder"
-        name={institution.name}
+        name={`${nurse.firstname} ${nurse.lastname}`}
       />
       <ConfirmationModal
         isOpen={isRemovalOpen}
         onClose={onRemovalClose}
         onSubmit={onRemoval}
         method="Revocar"
-        name={institution.name}
+        name={`${nurse.firstname} ${nurse.lastname}`}
       />
     </div>
   )
