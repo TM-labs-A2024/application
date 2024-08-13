@@ -30,7 +30,7 @@ export default function DoctorProfile() {
       Store.addNotification(
         GENERIC_NOTIFICATION('Datos actualizados exitosamente.', isMobile(window))
       )
-      setIsLoading(false)
+      setTimeout(() => setIsLoading(false), 2000)
     },
     () => {
       Store.addNotification(
@@ -39,7 +39,7 @@ export default function DoctorProfile() {
           isMobile(window)
         )
       )
-      setIsLoading(false)
+      setTimeout(() => setIsLoading(false), 2000)
     }
   )
   // --- END: Hooks ------------------------------------------------------------

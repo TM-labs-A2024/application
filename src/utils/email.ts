@@ -30,5 +30,5 @@ export const setupEmailSending = (name: string, code: string, email: string) => 
     to_email: email
   }
   console.log(emailTemplate)
-  // sendEmail(emailTemplate)
+  sendEmail(emailTemplate)
 }

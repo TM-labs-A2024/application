@@ -1,6 +1,7 @@
 import { specialties as specialtiesFallback } from '@constants/index'
 import { useSpecialties, useSpecialityRecordsByPatientGovId } from '@services/index'
 import { getSession, getUser } from '@shared/index'
+import Splash from '@src/components/atoms/Splash'
 import SpecialtyView from '@src/views/Specialty'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale/es'
@@ -23,8 +24,11 @@ export default function SpecialtyPage() {
   // --- END: Local state ------------------------------------------------------
 
   // --- Hooks -----------------------------------------------------------------
-  const { data: specialties } = useSpecialties()
-  const { data: records } = useSpecialityRecordsByPatientGovId(specialtyId, patientId)
+  const { data: specialties, isLoading: isLoadingSpecialties } = useSpecialties()
+  const { data: records, isLoading: isLoadingRecord } = useSpecialityRecordsByPatientGovId(
+    specialtyId,
+    patientId
+  )
   // --- END: Hooks ------------------------------------------------------------
 
   // --- Refs ------------------------------------------------------------------
@@ -37,6 +41,11 @@ export default function SpecialtyPage() {
   // --- END: Side effects -----------------------------------------------------
 
   // --- Data and handlers -----------------------------------------------------
+  const isLoading = useMemo(
+    () => isLoadingSpecialties || isLoadingRecord,
+    [isLoadingSpecialties, isLoadingRecord]
+  )
+
   const specialty = useMemo(
     () => specialties?.data?.find((specialty) => String(specialty.id) === specialtyId),
     [specialties?.data, specialtyId]
@@ -134,5 +143,5 @@ export default function SpecialtyPage() {
   )
   // --- END: Data and handlers ------------------------------------------------
 
-  return <SpecialtyView context={context} />
+  return isLoading ? <Splash /> : <SpecialtyView context={context} />
 }
