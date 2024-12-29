@@ -1,0 +1,2005 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > Doctors test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 pb-32 pt-8"
+  data-testid="doctors"
+>
+  <h2
+    class="chakra-heading css-170f0s2"
+  >
+    Médicos
+  </h2>
+  <div
+    class="chakra-stack h-full css-j7qwjs"
+    data-testid="doctors-list"
+  >
+    <div
+      class="overflow-auto"
+    >
+      <p
+        class="chakra-text my-4 css-zvlevn"
+      >
+        Pendientes
+      </p>
+      <div
+        class="chakra-stack css-j7qwjs"
+        data-testid="pending-doctors-list"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/1000000/1000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  1000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/2000000/2000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  2000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/3000000/3000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  3000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/4000000/4000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  4000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/5000000/5000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  5000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/6000000/6000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  6000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/7000000/7000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  7000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/16000000/16000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  16000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/17000000/17000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  17000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/18000000/18000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  18000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/19000000/19000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  19000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/20000000/20000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  20000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/21000000/21000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  21000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/22000000/22000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  22000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <p
+        class="chakra-text my-4 css-zvlevn"
+      >
+        Todos
+      </p>
+      <div
+        class="chakra-stack css-j7qwjs"
+        data-testid="approved-doctors-list"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/8000000/8000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  8000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/9000000/9000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  9000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/10000000/10000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  10000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/11000000/11000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  11000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/12000000/12000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  12000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/13000000/13000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  13000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/14000000/14000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  14000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/15000000/15000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  15000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/23000000/23000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  23000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/24000000/24000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  24000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/25000000/25000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  25000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/26000000/26000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  26000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/27000000/27000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  27000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/28000000/28000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  28000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/29000000/29000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  29000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/30000000/30000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  30000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/31000000/31000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  31000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/32000000/32000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  32000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/33000000/33000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  33000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/34000000/34000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  34000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/35000000/35000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  35000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/36000000/36000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  36000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/37000000/37000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  37000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/38000000/38000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  38000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/39000000/39000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  39000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/40000000/40000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  40000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/41000000/41000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  41000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/42000000/42000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  42000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/43000000/43000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  43000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/44000000/44000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  44000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/45000000/45000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  45000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/46000000/46000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  46000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/47000000/47000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  47000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+        <div
+          class="chakra-stack__divider css-1q5cbl"
+        />
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="doctor-card"
+          href="/medico/48000000/48000000"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1 overflow-hidden"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                José
+                 
+                Pérez
+              </p>
+              <div
+                class="flex flex-row flex-wrap items-center gap-2"
+              >
+                <p
+                  class="chakra-text text-nowrap css-0"
+                >
+                  CI: 
+                  48000000
+                  ,
+                </p>
+                <p
+                  class="chakra-text text-wrap css-0"
+                >
+                  undefined.
+                </p>
+              </div>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`

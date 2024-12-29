@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Splash test Matches the snapshot 1`] = `
+<div
+  class="flex h-screen w-screen flex-col items-center justify-center"
+  data-testid="splash-screen"
+>
+  <div />
+</div>
+`

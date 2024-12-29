@@ -1,0 +1,12 @@
+appId: 'io.github.TM-labs-A2024.application'
+productName: 'HealthCore'
+copyright: 'Copyright (c) 2024 TM-labs-A2024'
+win:
+  target: ['dir', 'portable', 'zip']
+  icon: 'public/favicon.ico'
+linux:
+  target: ['dir', 'appimage', 'zip']
+  icon: 'public/static/logo-vertical.png'
+mac:
+  target: ['dir', 'dmg', 'zip']
+  icon: 'public/static/logo-vertical.png'

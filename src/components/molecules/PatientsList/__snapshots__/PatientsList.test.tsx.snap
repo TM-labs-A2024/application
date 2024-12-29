@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molecules > PatientsList test Matches the snapshot 1`] = `
+<div
+  class="chakra-stack h-full css-8g8ihq"
+  data-testid="patients-list"
+>
+  <h2
+    class="chakra-heading mb-4 css-9f6g39"
+  >
+    label
+  </h2>
+  <div
+    class="overflow-auto"
+  >
+    <p
+      class="chakra-text mb-4 css-zvlevn"
+    >
+      Pendientes
+    </p>
+    <ul
+      class="css-155za0w"
+      role="list"
+    >
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/pacientes"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885561, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/pacientes"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885562, 25 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+    </ul>
+    <p
+      class="chakra-text mb-4 css-zvlevn"
+    >
+      Todos
+    </p>
+    <ul
+      class="css-155za0w"
+      role="list"
+    >
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa3"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                Josefa Feliciana Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885563, 27 años, Cama: B-67
+              </p>
+            </div>
+            <span
+              class="css-1eveppl"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-vvjt0k"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span
+                class="css-1ny2kle"
+              >
+                hospitalizado
+              </span>
+            </span>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa4"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885564, 29 años, Cama: C-66
+              </p>
+            </div>
+            <span
+              class="css-1eveppl"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-vvjt0k"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span
+                class="css-1ny2kle"
+              >
+                hospitalizado
+              </span>
+            </span>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa5"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                Josefa Feliciana Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885565, 30 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885566, 31 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa7"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885567, 32 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa8"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                Josefa Feliciana Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885568, 33 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa9"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885569, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa10"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                Josefa Feliciana Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885560, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa11"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885511, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa12"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885512, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+      <div
+        class="border-b border-black py-4 last:border-transparent"
+      >
+        <a
+          class="chakra-link w-full css-spn4bz"
+          data-testid="patient-card"
+          href="/especialidades/3fa85f64-5717-4562-b3fc-2c963f66afa13"
+        >
+          <div
+            class="flex flex-row items-center justify-between"
+          >
+            <div
+              class="flex flex-col items-start gap-1"
+            >
+              <b
+                class="chakra-text css-qqfgvy"
+              >
+                José Feliciano Gutierrez García
+              </b>
+              <p
+                class="chakra-text css-0"
+              >
+                C.I: E99885513, 26 años
+              </p>
+            </div>
+            <div />
+          </div>
+        </a>
+      </div>
+    </ul>
+  </div>
+</div>
+`

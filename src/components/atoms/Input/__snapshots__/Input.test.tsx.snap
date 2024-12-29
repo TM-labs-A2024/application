@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Input test Matches the snapshot 1`] = `
+<div
+  class=""
+  data-testid="input-component"
+>
+  <label
+    for=""
+  >
+    Label
+  </label>
+  <input
+    class="chakra-input min-h-10 css-1cjy4zv"
+    id=""
+    placeholder="Placeholder text"
+  />
+</div>
+`

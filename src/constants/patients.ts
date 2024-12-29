@@ -1,0 +1,151 @@
+export const patients = [
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa1',
+    specialties: ['1', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885561',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814',
+    pending: true
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa2',
+    specialties: ['1', '2', '4'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885562',
+    birthdate: '1998-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814',
+    pending: true
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa3',
+    specialties: ['1', '2', '5'],
+    sex: 'female',
+    firstname: 'Josefa Feliciana',
+    lastname: 'Gutierrez García',
+    govId: 'E99885563',
+    birthdate: '1996-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814',
+    status: 'hospitalizado',
+    bed: 'B-67'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa4',
+    specialties: ['6', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885564',
+    birthdate: '1995-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814',
+    status: 'hospitalizado',
+    bed: 'C-66'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa5',
+    specialties: ['1', '7', '3'],
+    sex: 'female',
+    firstname: 'Josefa Feliciana',
+    lastname: 'Gutierrez García',
+    govId: 'E99885565',
+    birthdate: '1994-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+    specialties: ['1', '1', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885566',
+    birthdate: '1993-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa7',
+    specialties: ['1', '2', '2'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885567',
+    birthdate: '1992-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa8',
+    specialties: ['1', '2', '3'],
+    sex: 'female',
+    firstname: 'Josefa Feliciana',
+    lastname: 'Gutierrez García',
+    govId: 'E99885568',
+    birthdate: '1991-08-20',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa9',
+    specialties: ['1', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885569',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa10',
+    specialties: ['1', '2', '3'],
+    sex: 'female',
+    firstname: 'Josefa Feliciana',
+    lastname: 'Gutierrez García',
+    govId: 'E99885560',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa11',
+    specialties: ['1', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885511',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa12',
+    specialties: ['1', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885512',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  },
+  {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa13',
+    specialties: ['1', '2', '3'],
+    sex: 'male',
+    firstname: 'José Feliciano',
+    lastname: 'Gutierrez García',
+    govId: 'E99885513',
+    birthdate: '1997-11-11',
+    email: 'user@example.com',
+    phoneNumber: '+584127659814'
+  }
+]

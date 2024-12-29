@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > Patient test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 lg:px-96 pt-8"
+  data-testid="patient-profile"
+>
+  <div
+    class="mb-8 flex w-full flex-row justify-between"
+  >
+    <h2
+      class="chakra-heading css-ypohwm"
+    >
+      Perfil
+    </h2>
+    <a
+      class="chakra-link css-spn4bz"
+      href="/perfil/editar"
+    >
+      Editar
+    </a>
+  </div>
+  <div
+    class="chakra-stack css-1uriqkk"
+  >
+    <h3
+      class="chakra-heading css-ypohwm"
+    >
+      José Feliciano
+       
+      Gutierrez García
+    </h3>
+    <p
+      class="chakra-text css-0"
+    >
+      CI: 
+      E99885561
+    </p>
+  </div>
+  <div
+    class="chakra-stack css-1j35777"
+  >
+    <h4
+      class="text-sm text-gray-600"
+    >
+      Fecha de nacimiento
+    </h4>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      11 de noviembre, 1999
+    </p>
+  </div>
+  <div
+    class="chakra-stack css-1j35777"
+  >
+    <h4
+      class="text-sm text-gray-600"
+    >
+      Correo electrónico
+    </h4>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      user@example.com
+    </p>
+  </div>
+  <div
+    class="chakra-stack css-1j35777"
+  >
+    <h4
+      class="text-sm text-gray-600"
+    >
+      Teléfono
+    </h4>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      +584127659814
+    </p>
+  </div>
+  <button
+    class="chakra-button mt-56 w-full css-jzcxx5"
+    type="button"
+  >
+    Cerrar sesión
+  </button>
+</div>
+`

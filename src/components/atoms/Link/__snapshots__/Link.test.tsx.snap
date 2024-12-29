@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Link test Matches the snapshot 1`] = `
+<a
+  class="chakra-link css-acipmx"
+  data-testid="link-component"
+  href="/evolucion/3fa85f64-5717-4562-b3fc-2c963f66afa5/1/1"
+>
+  <div>
+    Child
+  </div>
+</a>
+`

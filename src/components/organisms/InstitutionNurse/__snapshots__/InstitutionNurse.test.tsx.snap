@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > InstitutionNurse test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 pb-0 pt-10 false"
+  data-testid="institution-nurse"
+>
+  <div
+    class="mb-8 flex flex-row justify-between"
+  >
+    <div />
+  </div>
+  <div
+    class="mb-8 flex flex-row items-center justify-start"
+  >
+    <button
+      aria-label="back"
+      class="chakra-button mr-4 css-84vx7q"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      Perfil del enfermero
+    </p>
+  </div>
+  <div
+    class="flex h-4/5 flex-col justify-between lg:px-96"
+  >
+    <div>
+      <div
+        class="chakra-stack css-1uriqkk"
+      >
+        <h3
+          class="chakra-heading css-ypohwm"
+        >
+          José
+           
+          Pérez
+        </h3>
+        <p
+          class="chakra-text css-0"
+        >
+          CI: 
+          1000000
+        </p>
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="chakra-divider css-svjswr"
+      />
+      <div
+        class="chakra-stack css-1j35777"
+      >
+        <h4
+          class="text-sm text-gray-600"
+        >
+          Fecha de nacimiento
+        </h4>
+        <p
+          class="chakra-text font-medium css-0"
+        >
+          11 de noviembre, 1999
+        </p>
+      </div>
+      <div
+        class="chakra-stack css-1j35777"
+      >
+        <h4
+          class="text-sm text-gray-600"
+        >
+          Correo electrónico
+        </h4>
+        <p
+          class="chakra-text font-medium css-0"
+        >
+          joseperez@gmail.com
+        </p>
+      </div>
+      <div
+        class="chakra-stack css-1j35777"
+      >
+        <h4
+          class="text-sm text-gray-600"
+        >
+          Teléfono
+        </h4>
+        <p
+          class="chakra-text font-medium css-0"
+        >
+          4127775522
+        </p>
+      </div>
+    </div>
+    <div
+      class="mb-4 flex w-full flex-row"
+    >
+      <button
+        class="chakra-button flex-grow css-11494p6"
+        type="button"
+      >
+        Revocar acceso
+      </button>
+    </div>
+  </div>
+</div>
+`

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > Evolution test Matches the snapshot 1`] = `
+<div
+  class="flex h-screen w-screen flex-col p-8 lg:px-96 pt-8"
+  data-testid="evolution"
+>
+  <div
+    class="mb-8 flex flex-row items-center justify-start"
+  >
+    <button
+      aria-label="back"
+      class="chakra-button mr-4 css-84vx7q"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <p
+      class="chakra-text font-medium css-0"
+    >
+      Evolution title
+    </p>
+  </div>
+  <div
+    class="mb-6 w-full rounded-xl border-2 border-black p-4"
+    data-testid="profile-card"
+  >
+    <div
+      class="flex flex-col items-center justify-between sm:flex-row"
+    >
+      <div
+        class="flex flex-col items-start gap-1"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Nombre: 
+          José Feliciano
+           
+          Gutierrez García
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CI: 
+          E99885561
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          Edad:
+           
+          24 años
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-col items-end gap-1"
+      >
+        <a
+          class="chakra-link rounded-md bg-black px-4 py-2 font-bold text-white no-underline css-1p1ylbe"
+          href="/paciente/E99885561"
+        >
+          Ver perfil
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex h-full flex-col overflow-scroll"
+  >
+    <div
+      class="chakra-accordion css-0"
+    >
+      <div
+        class="chakra-accordion__item css-17mg6aq"
+      >
+        <h2>
+          <button
+            aria-controls="accordion-panel-:rg:"
+            aria-expanded="false"
+            class="chakra-accordion__button css-uttm9k"
+            data-index="0"
+            id="accordion-button-:rg:"
+            type="button"
+          >
+            <span
+              class="css-1eziwv"
+            >
+              Item 1
+            </span>
+            <svg
+              aria-hidden="true"
+              class="chakra-icon chakra-accordion__icon css-186l2rg"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          class="chakra-collapse"
+          style="overflow: hidden; display: none; opacity: 0; height: 0px;"
+        >
+          <div
+            aria-labelledby="accordion-button-:rg:"
+            class="chakra-accordion__panel css-1hb5ode"
+            id="accordion-panel-:rg:"
+            role="region"
+          >
+            Content 1
+          </div>
+        </div>
+      </div>
+      <div
+        class="chakra-accordion__item css-17mg6aq"
+      >
+        <h2>
+          <button
+            aria-controls="accordion-panel-:ri:"
+            aria-expanded="false"
+            class="chakra-accordion__button css-uttm9k"
+            data-index="1"
+            id="accordion-button-:ri:"
+            type="button"
+          >
+            <span
+              class="css-1eziwv"
+            >
+              Item 2
+            </span>
+            <svg
+              aria-hidden="true"
+              class="chakra-icon chakra-accordion__icon css-186l2rg"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          class="chakra-collapse"
+          style="overflow: hidden; display: none; opacity: 0; height: 0px;"
+        >
+          <div
+            aria-labelledby="accordion-button-:ri:"
+            class="chakra-accordion__panel css-1hb5ode"
+            id="accordion-panel-:ri:"
+            role="region"
+          >
+            Content 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Cards > Specialty test Matches the snapshot 1`] = `
+<a
+  class="chakra-link border-1 flex w-full rounded-md border border-gray-400 p-4 css-spn4bz"
+  data-testid="specialty-card"
+  href="/especialidad/10000000"
+>
+  <div
+    class="flex w-full flex-row items-center justify-between"
+  >
+    <div
+      class="flex flex-row items-center"
+    >
+      <span
+        class="chakra-avatar css-1mw972v"
+      >
+        <div
+          aria-label="Alergología"
+          class="chakra-avatar__initials css-1ebyn6"
+          role="img"
+        >
+          A
+        </div>
+      </span>
+      <p
+        class="chakra-text ml-4 css-0"
+      >
+        Alergología
+      </p>
+    </div>
+    <div />
+  </div>
+</a>
+`

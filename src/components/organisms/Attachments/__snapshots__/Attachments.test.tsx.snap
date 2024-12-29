@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > Attachments test Matches the snapshot 1`] = `
+<div
+  class="flex h-screen w-screen flex-col p-8 lg:px-96 pt-8"
+  data-testid="attachments"
+>
+  <div
+    class="mb-8 flex flex-row items-center gap-4 justify-between"
+  >
+    <div
+      class="flex flex-row gap-4"
+    >
+      <button
+        aria-label="back"
+        class="chakra-button css-84vx7q"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="chakra-icon css-onkibi"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+      <p
+        class="chakra-text font-medium css-0"
+      >
+        title
+      </p>
+    </div>
+    <button
+      aria-label="delete"
+      class="chakra-button css-1deodq7"
+      data-testid="delete-button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="currentColor"
+        >
+          <path
+            d="M19.452 7.5H4.547a.5.5 0 00-.5.545l1.287 14.136A2 2 0 007.326 24h9.347a2 2 0 001.992-1.819L19.95 8.045a.5.5 0 00-.129-.382.5.5 0 00-.369-.163zm-9.2 13a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zm5 0a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zM22 4h-4.75a.25.25 0 01-.25-.25V2.5A2.5 2.5 0 0014.5 0h-5A2.5 2.5 0 007 2.5v1.25a.25.25 0 01-.25.25H2a1 1 0 000 2h20a1 1 0 000-2zM9 3.75V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v1.25a.25.25 0 01-.25.25h-5.5A.25.25 0 019 3.75z"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div
+    class="flex h-full flex-col overflow-scroll"
+  >
+    <div>
+      <h2
+        class="chakra-heading css-1p6q0l9"
+      >
+        Descripción
+      </h2>
+      <p
+        class="chakra-text css-0"
+      >
+        description
+      </p>
+    </div>
+    <div
+      class=""
+    >
+      <h2
+        class="chakra-heading css-1rc0ucf"
+      >
+        Archivos adjuntos
+      </h2>
+      <div
+        class="relative w-full"
+      >
+        <button
+          class="absolute right-2 top-2 z-20 rounded-md bg-white px-2 py-1"
+          data-testid="delete-image-button"
+        >
+          <svg
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="currentColor"
+            >
+              <path
+                d="M19.452 7.5H4.547a.5.5 0 00-.5.545l1.287 14.136A2 2 0 007.326 24h9.347a2 2 0 001.992-1.819L19.95 8.045a.5.5 0 00-.129-.382.5.5 0 00-.369-.163zm-9.2 13a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zm5 0a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zM22 4h-4.75a.25.25 0 01-.25-.25V2.5A2.5 2.5 0 0014.5 0h-5A2.5 2.5 0 007 2.5v1.25a.25.25 0 01-.25.25H2a1 1 0 000 2h20a1 1 0 000-2zM9 3.75V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v1.25a.25.25 0 01-.25.25h-5.5A.25.25 0 019 3.75z"
+              />
+            </g>
+          </svg>
+        </button>
+        <img
+          alt="x-ray"
+          class=" css-5tsmix"
+          src="https://cdn.pixabay.com/photo/2020/02/02/16/06/arm-4813365_1280.jpg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`

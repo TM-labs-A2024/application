@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms > Cards > Patient test Matches the snapshot 1`] = `
+<a
+  class="chakra-link w-full css-spn4bz"
+  data-testid="patient-card"
+  href="/evolucion/3fa85f64-5717-4562-b3fc-2c963f66afa5/1/1"
+>
+  <div
+    class="flex flex-row items-center justify-between"
+  >
+    <div
+      class="flex flex-col items-start gap-1"
+    >
+      <b
+        class="chakra-text css-qqfgvy"
+      >
+        Evolución 1: 17, septiembre 2024
+      </b>
+      <p
+        class="chakra-text css-0"
+      >
+        Editado por: Pedro Pérez
+      </p>
+    </div>
+    <span
+      class="css-1eveppl"
+    >
+      <svg
+        class="chakra-icon chakra-icon css-vvjt0k"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="css-1ny2kle"
+      >
+        hospitalizado
+      </span>
+    </span>
+    <div />
+  </div>
+</a>
+`

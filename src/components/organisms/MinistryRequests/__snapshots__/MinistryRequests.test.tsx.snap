@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organisms > MinistryRequests test Matches the snapshot 1`] = `
+<div
+  class="mx-auto block h-screen w-screen overflow-hidden px-8 pb-24 pt-10 false"
+  data-testid="institution-requests"
+>
+  <div
+    class="mb-8 flex flex-row justify-between"
+  >
+    <div />
+    <button
+      aria-controls="menu-list-:rd:"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-label="Options"
+      class="chakra-button chakra-menu__menu-button css-wpzvz6"
+      id="menu-button-:rd:"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <div
+      class="css-r6z5ec"
+      style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+    >
+      <div
+        aria-orientation="vertical"
+        class="chakra-menu__menu-list css-1kfu8nn"
+        id="menu-list-:rd:"
+        role="menu"
+        style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+        tabindex="-1"
+      >
+        <button
+          class="chakra-menu__menuitem css-18esm8n"
+          data-index="0"
+          id="menu-list-:rd:-menuitem-:re:"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <a
+            href="/ministerio/instituciones"
+          >
+            Instituciones con acceso
+          </a>
+        </button>
+        <button
+          class="chakra-menu__menuitem css-18esm8n"
+          data-index="1"
+          id="menu-list-:rd:-menuitem-:rf:"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <a
+            href="/"
+          >
+            Cerrar sesión
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="h-full lg:px-80"
+  >
+    <div
+      class="chakra-stack h-full css-8g8ihq"
+      data-testid="requests-list"
+    >
+      <h2
+        class="chakra-heading mb-4 css-9f6g39"
+      >
+        Solicitudes pendientes
+      </h2>
+      <div
+        class="overflow-auto"
+      >
+        <ul
+          class="css-155za0w"
+          role="list"
+        >
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa1/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 1
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa1
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa11/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 2
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa11
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa12/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 3
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa12
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa13/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 4
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa13
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa2/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 5
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa2
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa3/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 6
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa3
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa4/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 7
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa4
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa5/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 8
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa5
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa6/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 9
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa6
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa7/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 10
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa7
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+          <div
+            class="border-b border-black py-4 last:border-transparent"
+          >
+            <a
+              class="chakra-link w-full css-spn4bz"
+              data-testid="request-card"
+              href="/ministerio/institucion/3fa85f64-5717-4562-b3fc-2c963f66afa8/undefined"
+            >
+              <div
+                class="flex flex-row items-center justify-between"
+              >
+                <div
+                  class="flex flex-col items-start gap-1"
+                >
+                  <b
+                    class="chakra-text css-qqfgvy"
+                  >
+                    Clínica Tex Mex 11
+                  </b>
+                  <p
+                    class="chakra-text css-0"
+                  >
+                    RIF 3fa85f64-5717-4562-b3fc-2c963f66afa8
+                  </p>
+                </div>
+                <div />
+              </div>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`
